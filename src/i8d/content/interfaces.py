@@ -12,7 +12,7 @@ class II8DContentLayer(IDefaultBrowserLayer):
 
 
 class IProduct(Interface):
-
+    """ 產品 """
     title = schema.TextLine(
         title=_(u"Title"),
         required=True,
@@ -22,3 +22,69 @@ class IProduct(Interface):
         title=_(u"Description"),
         required=False,
     )
+
+
+class ICover(Interface):
+    """ 首頁 """
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+
+    description = schema.Text(
+        title=_(u"Description"),
+        required=False,
+    )
+
+
+class IProfile(Interface):
+    """ 個人頁面，含專家檔案 """
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+
+    description = schema.Text(
+        title=_(u"Description"),
+        required=False,
+    )
+
+
+class IForum(Interface):
+    """ 專家給問 """
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+
+    description = schema.Text(
+        title=_(u"Description"),
+        required=False,
+    )
+
+
+class IProvider(Interface):
+    """ 供應商檔案 """
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+
+    description = schema.Text(
+        title=_(u"Description"),
+        required=False,
+    )
+
+
+class IOrder(Interface):
+    """ 訂單 """
+    title = schema.TextLine(
+        title=_(u"Title"),
+        required=True,
+    )
+
+    description = schema.Text(
+        title=_(u"Description"),
+        required=False,
+    )
+

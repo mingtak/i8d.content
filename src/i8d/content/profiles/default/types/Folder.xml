@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<object name="Folder" meta_type="Dexterity FTI" i18n:domain="plone"
+<object name="Folder" meta_type="Dexterity FTI" i18n:domain="i8d.content"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="title" i18n:translate="">Folder</property>
  <property name="description" i18n:translate=""></property>
@@ -22,7 +22,8 @@
   <element value="event_listing"/>
  </property>
  <property name="default_view_fallback">False</property>
- <property name="add_permission">plone.app.contenttypes.addFolder</property>
+<!-- <property name="add_permission">plone.app.contenttypes.addFolder</property> -->
+ <property name="add_permission">cmf.ManagePortal</property>
  <property name="klass">plone.app.contenttypes.content.Folder</property>
  <property name="schema"></property>
  <property name="model_source"></property>

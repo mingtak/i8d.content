@@ -1,0 +1,37 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="i8d.content">
+
+  <!-- Set overrides folder for Just-a-Bunch-Of-Templates product -->
+  <include package="z3c.jbot" file="meta.zcml" />
+  <browser:jbot
+      directory="overrides"
+      layer="i8d.content.interfaces.II8DContentLayer"
+      />
+
+  <!-- Publish static files -->
+  <browser:resourceDirectory
+      name="i8d.content"
+      directory="static"
+      />
+
+
+  <!-- browserview -->
+  <browser:page
+      name="testview"
+      for="zope.interface.Interface"
+      class=".views.TestView"
+      template="template/testview.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="testview2"
+      for="zope.interface.Interface"
+      class=".views.TestView2"
+      permission="zope2.View"
+      />
+
+</configure>

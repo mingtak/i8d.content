@@ -1,0 +1,4 @@
+graft src/i8d
+graft docs
+include *.rst
+global-exclude *.pyc

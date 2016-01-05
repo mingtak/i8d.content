@@ -1,0 +1,6 @@
+[report]
+include =
+    src/i8d/*
+omit =
+    */test*
+    */upgrades/*

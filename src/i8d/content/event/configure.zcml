@@ -1,0 +1,12 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:plone="http://namespaces.plone.org/plone"
+    i18n_domain="i8d.content">
+
+<subscriber
+    for="i8d.content.interfaces.IProduct zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.testevent"
+    />
+
+</configure>
+

@@ -4,6 +4,46 @@
     i18n_domain="i8d.content">
 
 <subscriber
+    for="i8d.content.interfaces.IAnswer zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.namedAnwserTitle"
+    />
+
+<subscriber
+    for="plone.app.contenttypes.interfaces.IDocument zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.moveContentToTop"
+    />
+
+<subscriber
+    for="plone.app.contenttypes.interfaces.INewsItem zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.moveContentToTop"
+    />
+
+<subscriber
+    for="plone.app.contenttypes.interfaces.IEvent zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.moveContentToTop"
+    />
+
+<subscriber
+    for="i8d.content.interfaces.IAnswer zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.moveContentToTop"
+    />
+
+<subscriber
+    for="i8d.content.interfaces.IPost zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.moveContentToTop"
+    />
+
+<subscriber
+    for="i8d.content.interfaces.IQuestion zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.moveContentToTop"
+    />
+
+<subscriber
+    for="i8d.content.interfaces.IOrder zope.lifecycleevent.interfaces.IObjectAddedEvent"
+    handler=".event.moveContentToTop"
+    />
+
+<subscriber
     for="i8d.content.interfaces.IProduct zope.lifecycleevent.interfaces.IObjectAddedEvent"
     handler=".event.testevent"
     />

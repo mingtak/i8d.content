@@ -3,8 +3,10 @@
   <object name="Product" meta_type="Dexterity FTI"/>
   <object name="Cover" meta_type="Dexterity FTI"/>
   <object name="Profile" meta_type="Dexterity FTI"/>
-  <object name="Forum" meta_type="Dexterity FTI"/>
+  <object name="Post" meta_type="Dexterity FTI"/>
+  <object name="Question" meta_type="Dexterity FTI"/>
+  <object name="Answer" meta_type="Dexterity FTI"/>
   <object name="Provider" meta_type="Dexterity FTI"/>
   <object name="Order" meta_type="Dexterity FTI"/>
-
+  <object name="Brand" meta_type="Dexterity FTI"/>
 </object>

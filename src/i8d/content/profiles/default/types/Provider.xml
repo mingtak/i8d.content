@@ -12,6 +12,9 @@
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
+    <element value="Image"/>
+    <element value="File"/>
+    <element value="Product"/>
   </property>
   <property name="allow_discussion">False</property>
   <property name="default_view">view</property>
@@ -20,9 +23,11 @@
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+<!--  <property name="klass">plone.dexterity.content.Item</property> -->
+  <property name="klass">plone.app.contenttypes.content.Folder</property>
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
+    <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes"/>
   </property>
   <property name="schema">i8d.content.interfaces.IProvider</property>
   <property name="model_source"></property>

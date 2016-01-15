@@ -1,12 +1,12 @@
 <?xml version="1.0"?>
-<object name="Forum" meta_type="Dexterity FTI" i18n:domain="i8d.content"
+<object name="Answer" meta_type="Dexterity FTI" i18n:domain="i8d.content"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Forum</property>
+  <property name="title" i18n:translate="">Answer</property>
   <property name="description"
     i18n:translate=""></property>
   <property name="icon_expr"></property>
-  <property name="factory">Forum</property>
-  <property name="add_view_expr">string:${folder_url}/++add++Forum</property>
+  <property name="factory">Answer</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Answer</property>
   <property name="link_target"></property>
   <property name="immediate_view">view</property>
   <property name="global_allow">True</property>
@@ -22,9 +22,9 @@
   <property name="add_permission">cmf.AddPortalContent</property>
   <property name="klass">plone.dexterity.content.Item</property>
   <property name="behaviors">
-    <element value="plone.app.content.interfaces.INameFromTitle"/>
+<!--    <element value="plone.app.content.interfaces.INameFromTitle"/> -->
   </property>
-  <property name="schema">i8d.content.interfaces.IForum</property>
+  <property name="schema">i8d.content.interfaces.IAnswer</property>
   <property name="model_source"></property>
   <property name="model_file"></property>
   <alias from="(Default)" to="(dynamic view)"/>

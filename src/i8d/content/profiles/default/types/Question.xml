@@ -1,17 +1,20 @@
 <?xml version="1.0"?>
-<object name="Product" meta_type="Dexterity FTI" i18n:domain="i8d.content"
+<object name="Question" meta_type="Dexterity FTI" i18n:domain="i8d.content"
    xmlns:i18n="http://xml.zope.org/namespaces/i18n">
-  <property name="title" i18n:translate="">Product</property>
+  <property name="title" i18n:translate="">Question</property>
   <property name="description"
     i18n:translate=""></property>
   <property name="icon_expr"></property>
-  <property name="factory">Product</property>
-  <property name="add_view_expr">string:${folder_url}/++add++Product</property>
+  <property name="factory">Question</property>
+  <property name="add_view_expr">string:${folder_url}/++add++Question</property>
   <property name="link_target"></property>
   <property name="immediate_view">view</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
+    <element value="Image"/>
+    <element value="File"/>
+    <element value="Answer"/>
   </property>
   <property name="allow_discussion">False</property>
   <property name="default_view">view</property>
@@ -20,13 +23,13 @@
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
-  <property name="klass">plone.dexterity.content.Item</property>
+<!--  <property name="klass">plone.dexterity.content.Item</property> -->
+  <property name="klass">plone.app.contenttypes.content.Folder</property>
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
-    <element value="plone.app.dexterity.behaviors.metadata.ICategorization"/>
-    <element value="collective.dexteritytextindexer.behavior.IDexterityTextIndexer" />
+    <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes"/>
   </property>
-  <property name="schema">i8d.content.interfaces.IProduct</property>
+  <property name="schema">i8d.content.interfaces.IQuestion</property>
   <property name="model_source"></property>
   <property name="model_file"></property>
   <alias from="(Default)" to="(dynamic view)"/>

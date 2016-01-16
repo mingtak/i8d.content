@@ -5,7 +5,7 @@ from plone import api
 import csv
 import zipfile
 import transaction
-import os
+# import os
 from plone import namedfile
 from plone.app.textfield.value import RichTextValue
 import logging

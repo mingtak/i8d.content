@@ -11,6 +11,7 @@ from plone.app.textfield import RichText
 from plone.autoform import directives as form
 from plone.formwidget.contenttree import ObjPathSourceBinder
 from collective import dexteritytextindexer
+#from zope.interface import invariant, Invalid
 #from DateTime import DateTime
 from datetime import datetime
 class II8DContentLayer(IDefaultBrowserLayer):
@@ -52,6 +53,11 @@ class IProduct(Interface):
     """ 產品 """
     title = schema.TextLine(
         title=_(u"Product Name"),
+        required=True,
+    )
+
+    productId = schema.TextLine(
+        title=_(u"Product Id"),
         required=True,
     )
 
@@ -301,7 +307,6 @@ class IProvider(Interface):
     )
 
     form.write_permission(heroText='cmf.ReviewPortalContent')
-    # 要加驗證，檔名要跟folder id 一致，副檔名要csv
     productsFile = NamedBlobFile(
         title=_(u"Products File"),
         description=_(u"zip file, include a .cvs file and image files"),

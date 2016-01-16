@@ -58,8 +58,8 @@
   <adapter name="maxUsedBonus" factory=".catalog.maxUsedBonus_indexer"/>
   <adapter name="standardShippingCost" factory=".catalog.standardShippingCost_indexer"/>
   <adapter name="lastUpdated" factory=".catalog.lastUpdated_indexer"/>
+  <adapter name="productId" factory=".catalog.productId_indexer"/>
 <!--  <adapter name="" factory=".catalog._indexer"/>
-  <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>

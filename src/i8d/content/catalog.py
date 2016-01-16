@@ -6,6 +6,11 @@ from i8d.content.interfaces import IBrand, IProduct, ICover, IProfile, IPost, IQ
 
 
 @indexer(IProduct)
+def productId_indexer(obj):
+    return obj.productId
+
+
+@indexer(IProduct)
 def lastUpdated_indexer(obj):
     return obj.lastUpdated
 

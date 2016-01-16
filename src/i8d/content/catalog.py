@@ -35,13 +35,14 @@ def listPrice_indexer(obj):
     return obj.listPrice
 
 
+"""
 @indexer(IProduct)
 def categoryTag_indexer(obj):
     result = []
     for item in obj.categoryTag.split(','):
         result.append(item.strip())
     return result
-
+"""
 
 @indexer(IProduct)
 def productUrl_indexer(obj):

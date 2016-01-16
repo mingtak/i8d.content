@@ -79,11 +79,13 @@ class IProduct(Interface):
         required=False,
     )
 
+    """
     categoryTag = schema.TextLine(
         title=_(u"Category Tag"),
         description=_(u"Category tag for product, Provider define. Separated by commas."),
         required=False,
     )
+    """
 
     listPrice = schema.Int(
         title=_(u"List Price"),
@@ -295,6 +297,14 @@ class IProvider(Interface):
     webSite = schema.URI(
         title=_(u"Website"),
         description=_(u"Provider website url, must include http:// or https://"),
+        required=False,
+    )
+
+    form.write_permission(heroText='cmf.ReviewPortalContent')
+    # 要加驗證，檔名要跟folder id 一致，副檔名要csv
+    productsFile = NamedBlobFile(
+        title=_(u"Products File"),
+        description=_(u"zip file, include a .cvs file and image files"),
         required=False,
     )
 

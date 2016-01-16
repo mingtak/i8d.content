@@ -31,10 +31,12 @@
   </index>
   <column value="listPrice"/>
 
+<!--
   <index name="categoryTag" meta_type="KeywordIndex">
     <indexed_attr value="categoryTag" />
   </index>
   <column value="categoryTag"/>
+-->
 
   <index name="brand" meta_type="FieldIndex">
     <indexed_attr value="brand" />

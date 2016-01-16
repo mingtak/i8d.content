@@ -51,7 +51,7 @@
   <adapter name="productUrl" factory=".catalog.productUrl_indexer" />
   <adapter name="inStock" factory=".catalog.inStock_indexer" />
   <adapter name="brand" factory=".catalog.brand_indexer" />
-  <adapter name="categoryTag" factory=".catalog.categoryTag_indexer"/>
+<!--  <adapter name="categoryTag" factory=".catalog.categoryTag_indexer"/> -->
   <adapter name="listPrice" factory=".catalog.listPrice_indexer"/>
   <adapter name="salePrice" factory=".catalog.salePrice_indexer"/>
   <adapter name="bonusPoint" factory=".catalog.bonusPoint_indexer"/>

@@ -12,8 +12,73 @@ import logging
 
 logger = logging.getLogger("i8d.content.event.importProducts")
 
-def modifyItem():
-def crateItem():
+
+def modifyItem(brain, row, zipFolderName):
+    if len(brain) > 1:
+        logger.error('%s: productId:%s, title:%s' % (
+            safe_unicode(_(u"Brain more than 1 item")),
+            safe_unicode(brain[0].productId),
+            safe_unicode(brain[0].title),)
+        )
+
+    item = brain[0].getObject()
+
+    item.title=row['title']
+    item.description=row['description']
+    item.productUrl=row['productUrl']
+    item.inStock=True if row['inStock'].strip().lower() == 'y' else False
+    item.brand=row['brand']
+    item.listPrice=int(row['listPrice'])
+    item.salePrice=int(row['salePrice'])
+    item.standardShippingCost=int(row['standardShippingCost'])
+    item.setSubject(tuple(row['subjects'].split(',')))
+    with open('%s/%s' % (zipFolderName, safe_unicode(row['image_1'].strip()))) as file:
+        item.image_1 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    try:
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_2'].strip()))) as file:
+            item.image_2 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+    try:
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
+            item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+    item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))
+    item.reindexObject()
+    transaction.commit()
+
+
+def creatItem(folder, row, zipFolderName):
+    portal = api.portal.get()
+
+    item = api.content.create(
+        type='Product',
+        title=row['title'],
+        productId=row['productId'],
+        description=row['description'],
+        productUrl=row['productUrl'],
+        inStock=True if row['inStock'].strip().lower() == 'y' else False,
+        brand=row['brand'],
+        listPrice=int(row['listPrice']),
+        salePrice=int(row['salePrice']),
+        standardShippingCost=int(row['standardShippingCost']),
+        container=portal['products'][folder.id],
+    )
+    item.setSubject(tuple(row['subjects'].split(',')))
+    with open('%s/%s' % (zipFolderName, safe_unicode(row['image_1'].strip()))) as file:
+        item.image_1 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    try:
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_2'].strip()))) as file:
+            item.image_2 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+    try:
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
+            item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+    item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))
+    item.reindexObject()
+    transaction.commit()
+
+
 
 def importProducts(folder, event):
     """ Import Products """
@@ -44,39 +109,26 @@ def importProducts(folder, event):
     csvPath = '%s/%s.csv' % (zipFolderName, folder.id)
     with open(csvPath, 'rb') as file:
         for row in csv.DictReader(file):
-            if catalog({'Type':'Product', 'productId':row['productId'], 'path':folder.getPhysicalPath()}):
-                continue
+            brain = catalog({'Type':'Product', 'productId':row['productId'], 'path':folder.getPhysicalPath()})
+            if brain:
+                try:
+                    modifyItem(brain, row, zipFolderName)
+                except:
+                    logger.error('%s: productId:%s, title:%s' % (
+                        safe_unicode(_(u"Import product error")),
+                        safe_unicode(row['productId']),
+                        safe_unicode(row['title']),)
+                    )
+                    continue
             else:
                 try:
-                    item = api.content.create(
-                        type='Product',
-                        title=row['title'],
-                        productId=row['productId'],
-                        description=row['description'],
-                        productUrl=row['productUrl'],
-                        inStock=True if row['inStock'].strip().lower() == 'y' else False,
-                        brand=row['brand'],
-                        listPrice=int(row['listPrice']),
-                        salePrice=int(row['salePrice']),
-                        standardShippingCost=int(row['standardShippingCost']),
-                        container=portal['products'][folder.id],
-                    )
-                    item.setSubject(tuple(row['subjects'].split(',')))
-                    with open('%s/%s' % (zipFolderName, safe_unicode(row['image_1'].strip()))) as file:
-                        item.image_1 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
-                    try:
-                        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_2'].strip()))) as file:
-                            item.image_2 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
-                    except:pass
-                    try:
-                        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
-                            item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
-                    except:pass
-                    item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))
-                    item.reindexObject()
-                    transaction.commit()
+                    creatItem(folder, row, zipFolderName)
                 except:
-                    logger.error('%s: productId:%s, title:%s ' % (_(u"Import product error"), row['productId'], row['title']))
+                    logger.error('%s: productId:%s, title:%s' % (
+                        safe_unicode(_(u"Import product error")),
+                        safe_unicode(row['productId']),
+                        safe_unicode(row['title']),)
+                    )
                     continue
     folder.productsFile = None
     folder.reindexObject()

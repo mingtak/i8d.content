@@ -2,6 +2,6 @@
 from plone.app.layout.viewlets import common as base
 
 
-class TestViewlet(base.ViewletBase):
+class CoverHeroViewlet(base.ViewletBase):
     """ """
 

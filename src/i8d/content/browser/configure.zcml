@@ -19,6 +19,15 @@
 
 
   <!-- browserview -->
+
+  <browser:page
+      name="cover_view"
+      for="i8d.content.interfaces.ICover"
+      class=".views.CoverView"
+      template="template/cover_view.pt"
+      permission="zope2.View"
+      />
+
   <browser:page
       name="testview"
       for="zope.interface.Interface"

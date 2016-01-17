@@ -1,13 +1,16 @@
 # -*- coding: utf-8 -*-
 from plone.indexer.decorator import indexer
 from zope.interface import Interface
+from Products.CMFPlone.utils import safe_unicode
 
 from i8d.content.interfaces import IBrand, IProduct, ICover, IProfile, IPost, IQuestion, IAnswer, IProvider, IOrder
 
 
 @indexer(IProduct)
 def productId_indexer(obj):
-    return obj.productId
+    # index 傳進 unicode 會有 error，改傳 utf-8 正確，此法暫解
+    string = safe_unicode(obj.productId).encode('utf-8')
+    return string
 
 
 @indexer(IProduct)
@@ -61,5 +64,7 @@ def inStock_indexer(obj):
 
 @indexer(IProduct)
 def brand_indexer(obj):
-    return obj.brand
+    # index 傳進 unicode 會有 error，改傳 utf-8 正確，此法暫解
+    string = safe_unicode(obj.brand).encode('utf-8')
+    return string
 

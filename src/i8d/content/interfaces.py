@@ -253,6 +253,13 @@ class IPost(Interface):
         required=True,
     )
 
+    form.write_permission(image='cmf.ReviewPortalContent')
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u"If want to show this page to home page, please upload a image."),
+        required=False,
+    )
+
 
 class IQuestion(Interface):
     """ 專家給問 """
@@ -264,6 +271,13 @@ class IQuestion(Interface):
     description = schema.Text(
         title=_(u"Question Detail"),
         required=True,
+    )
+
+    form.write_permission(image='cmf.ReviewPortalContent')
+    image = NamedBlobImage(
+        title=_(u"Image"),
+        description=_(u"If want to show this page to home page, please upload a image."),
+        required=False,
     )
 
 
@@ -306,7 +320,7 @@ class IProvider(Interface):
         required=False,
     )
 
-    form.write_permission(heroText='cmf.ReviewPortalContent')
+    form.write_permission(productsFile='cmf.ReviewPortalContent')
     productsFile = NamedBlobFile(
         title=_(u"Products File"),
         description=_(u"zip file, include a .cvs file and image files"),

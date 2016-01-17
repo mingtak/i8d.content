@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="i8d.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<h2 i18n:translate="">Website homepage</h2>
+<article i18n:translate="">
+Description: All show in homepage's objects, listing below,
+want to change item, click edit button in toolbar to select.
+If want to edit object, click object, go to that page to edit.
+</article>
+
+
+<h3 i18n:translate="">Heros</h3>
+<ul>
+  <li tal:repeat="item context/heros">
+    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
+  </li>
+</ul>
+<hr/>
+
+<h3 i18n:translate="">New Product</h3>
+<ul>
+  <li tal:repeat="item context/newProduct">
+    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
+  </li>
+</ul>
+<hr/>
+
+<h3 i18n:translate="">Hot Product</h3>
+<ul>
+  <li tal:repeat="item context/hotProduct">
+    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
+  </li>
+</ul>
+<hr/>
+
+<h3 i18n:translate="">Article</h3>
+<ul>
+  <li tal:repeat="item context/article">
+    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
+  </li>
+</ul>
+<hr/>
+
+<h3 i18n:translate="">Question</h3>
+<ul>
+  <li tal:repeat="item context/question">
+    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
+  </li>
+</ul>
+<hr/>
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+

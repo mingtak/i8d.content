@@ -1,6 +1,3 @@
-# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
-# SOME DESCRIPTIVE TITLE.
-# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
@@ -15,510 +12,510 @@ msgstr ""
 "Language-Code: en\n"
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
-"Domain: i8d.content\n"
+"Domain: DOMAIN\n"
 
 #. Default: "Additional Information"
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:100
 msgid " Additional Information"
-msgstr ""
+msgstr "其它資訊"
 
 #: ./browser/template/cover_view.pt:131
 msgid "...Read"
-msgstr ""
+msgstr "...全文"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:83
 msgid ">How to buy"
-msgstr ""
+msgstr "如何購買"
 
 #: ./browser/template/cover_view.pt:201
 msgid "Add to Cart"
-msgstr ""
+msgstr "加入購物車"
 
 #: ./browser/template/cover_view.pt:37
 msgid "Add to cart"
-msgstr ""
+msgstr "加入購物車"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:100
 msgid "Additional Information"
-msgstr ""
+msgstr "其它資訊"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:97
 msgid "Addresses"
-msgstr ""
+msgstr "地址"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:109
 msgid "Advanced Search"
-msgstr ""
+msgstr "進階搜尋"
 
 #: ./browser/template/cover_view.pt:135
 msgid "All Post"
-msgstr ""
+msgstr "所有文章"
 
 #: ./browser/template/cover_view.pt:164
 msgid "All Question"
-msgstr ""
+msgstr "所有問答"
 
 #: ./profiles/default/types/Answer.xml
 msgid "Answer"
-msgstr ""
+msgstr "答覆"
 
 #: ./browser/template/cover_view.pt:295
 #: ./interfaces.py:220
 msgid "Article"
-msgstr ""
+msgstr "文章"
 
 #: ./interfaces.py:135
 msgid "Bonus Point"
-msgstr ""
+msgstr "紅利點數"
 
 #: ./interfaces.py:136
 msgid "Bonus point setting, please filling decimal point. maximum is 0.05 (5%)"
-msgstr ""
+msgstr "紅利點數設定，請以小數點設定百分比，例如以 0.05 表示 5%"
 
 #: ./event/importProducts.py:19
 msgid "Brain more than 1 item"
-msgstr ""
+msgstr "超過一個項目"
 
 #: ./interfaces.py:83
 #: ./profiles/default/types/Brand.xml
 msgid "Brand"
-msgstr ""
+msgstr "品牌"
 
 #: ./interfaces.py:46
 msgid "Brand Logo"
-msgstr ""
+msgstr "品牌商標"
 
 #: ./interfaces.py:40
 msgid "Brand Nickname"
-msgstr ""
+msgstr "品牌暱名"
 
 #: ./browser/coverSetting.py:19
 msgid "Brand Show In Nav"
-msgstr ""
+msgstr "顯示在主選單的品牌"
 
 #: ./interfaces.py:35
 msgid "Brand Title"
-msgstr ""
+msgstr "品牌名稱"
 
 #: ./interfaces.py:47
 msgid "Brand logo image"
-msgstr ""
+msgstr "品牌商標圖檔"
 
 #: ./interfaces.py:84
 msgid "Brand name."
-msgstr ""
+msgstr "品牌名稱."
 
 #: ./profiles/default/types/Collection.xml
 msgid "Collection"
-msgstr ""
+msgstr "集合"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:110
 msgid "Contact Us"
-msgstr ""
+msgstr "聯絡我們"
 
 #: ./profiles/default/types/Cover.xml
 msgid "Cover"
-msgstr ""
+msgstr "網站首頁封面"
 
 #: ./browser/coverSetting.py:42
 msgid "Cover Setting"
-msgstr ""
+msgstr "網站首頁設定"
 
 #: ./profiles/default/controlpanel.xml
 msgid "Cover setup"
-msgstr ""
+msgstr "網站首頁設定"
 
 #: ./interfaces.py:177
 msgid "Date of the most recent update to the product."
-msgstr ""
+msgstr "商品最後更新日期。"
 
 #: ./interfaces.py:65
 msgid "Description"
-msgstr ""
+msgstr "描述"
 
 #: ./browser/template/cover_view.pt:264
 msgid "Description: All show in homepage's objects, listing below, want to change item, click edit button in toolbar to select. If want to edit object, click object, go to that page to edit."
-msgstr ""
+msgstr "說明：所有顯示在首頁的項目，均列表於下方，要改變內容，請直接點選上面的編輯，如果要編輯商品，請先點選商品，再點選編輯選項"
 
 #: ./browser/template/cover_view.pt:200
 msgid "Detail"
-msgstr ""
+msgstr "詳細內容"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:98
 msgid "Discount"
-msgstr ""
+msgstr "紅利積點"
 
 #: ./profiles/default/types/Document.xml
 #: ./profiles/default/types/Event.xml
 #: ./profiles/default/types/File.xml
 msgid "Edit"
-msgstr ""
+msgstr "編輯"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:33
 msgid "Enter your email address"
-msgstr ""
+msgstr "輸入您的 email 信箱"
 
 #: ./profiles/default/types/Event.xml
 msgid "Event"
-msgstr ""
+msgstr "活動"
 
 #: ./profiles/default/types/Event.xml
 msgid "Events can be shown in calendars."
-msgstr ""
+msgstr "活動可以顯示在日曆中"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:84
 msgid "FAQs"
-msgstr ""
+msgstr "本站相關問答"
 
 #: ./browser/template/cover_view.pt:114
 msgid "Featured Article"
-msgstr ""
+msgstr "精選好文"
 
 #: ./profiles/default/types/File.xml
 msgid "File"
-msgstr ""
+msgstr "檔案"
 
 #: ./profiles/default/types/Folder.xml
 msgid "Folder"
-msgstr ""
+msgstr "資料夾"
 
 #: ./browser/coverSetting.py:14
 msgid "Header service explanation"
-msgstr ""
+msgstr "表頭服務說明"
 
 #: ./interfaces.py:163
 msgid "Hero Text"
-msgstr ""
+msgstr "Hero 文字"
 
 #: ./browser/template/cover_view.pt:271
 #: ./interfaces.py:196
 msgid "Heros"
-msgstr ""
+msgstr "Heros (首頁主視覺大圖)"
 
 #: ./browser/template/cover_view.pt:287
 #: ./interfaces.py:212
 msgid "Hot Product"
-msgstr ""
+msgstr "熱門商品"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:83
 msgid "How to buy"
-msgstr ""
+msgstr "如何購買"
 
 #: ./interfaces.py:77
 msgid "If In Stock, Please check it."
-msgstr ""
+msgstr "若有庫存可隨時出貨，請打勾(預設值已打勾)。"
 
 #: ./interfaces.py:259
 msgid "If want to show this page to home page, please upload a image."
-msgstr ""
+msgstr "假如要讓這個項目顯示在首頁，請上傳一張圖檔"
 
 #: ./interfaces.py:258
 #: ./profiles/default/types/Image.xml
 msgid "Image"
-msgstr ""
+msgstr "圖檔"
 
 #: ./profiles/default/types/Image.xml
 msgid "Images can be referenced in pages or displayed in an album."
-msgstr ""
+msgstr "圖檔可以被關連到一個頁面，或顯示在相簿中"
 
 #: ./event/importProducts.py:118
 msgid "Import product error"
-msgstr ""
+msgstr "商品輸入錯誤"
 
 #: ./interfaces.py:76
 msgid "In Stock?"
-msgstr ""
+msgstr "庫存狀況？"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:96
 msgid "Information"
-msgstr ""
+msgstr "相關資訊"
 
 #: ./configure.zcml:22
 msgid "Installs the i8d.content add-on."
-msgstr ""
+msgstr "安裝 i8d.content 模組"
 
 #: ./interfaces.py:176
 msgid "Last Updated"
-msgstr ""
+msgstr "最近更新"
 
 #: ./profiles/default/types/File.xml
 msgid "Lets you upload a file to the site."
-msgstr ""
+msgstr "讓您上傳一個檔案到網站"
 
 #: ./profiles/default/types/Link.xml
 msgid "Link"
-msgstr ""
+msgstr "連結"
 
 #: ./interfaces.py:97
 msgid "List Price"
-msgstr ""
+msgstr "商品定價"
 
 #: ./browser/template/cover_view.pt:213
 msgid "List price:"
-msgstr ""
+msgstr "定價:"
 
 #: ./interfaces.py:145
 msgid "Maximum Used Bonus Points"
-msgstr ""
+msgstr "紅利點數使用上限"
 
 #: ./browser/template/cover_view.pt:279
 #: ./interfaces.py:204
 msgid "New Product"
-msgstr ""
+msgstr "新商品"
 
 #: ./profiles/default/types/News_Item.xml
 msgid "News Item"
-msgstr ""
+msgstr "最新消息"
 
 #: ./interfaces.py:104
 msgid "Optional sale price for the product if different from the list price."
-msgstr ""
+msgstr "選填，若提供優惠價/折扣，或售價與定價不同時，請填本項。"
 
 #: ./profiles/default/types/Order.xml
 msgid "Order"
-msgstr ""
+msgstr "訂單"
 
 #: ./interfaces.py:340
 msgid "Order Title"
-msgstr ""
+msgstr "訂單標題"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:99
 msgid "Orders History"
-msgstr ""
+msgstr "歷史訂單"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:5
 msgid "Our Brand"
-msgstr ""
+msgstr "品牌專區"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:112
 msgid "Our stores"
-msgstr ""
+msgstr "關於本站"
 
 #: ./profiles/default/types/Document.xml
 msgid "Page"
-msgstr ""
+msgstr "頁面"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:85
 msgid "Payment"
-msgstr ""
+msgstr "付款政策說明"
 
 #: ./interfaces.py:41
 msgid "Please listing all nickname that about this brand. For example, Microfost and MS, perline one record."
-msgstr ""
+msgstr "請列出所有品牌慣稱，列如 'seven-eleven', '7-11' 指的是同一個品牌"
 
 #: ./profiles/default/types/Post.xml
 msgid "Post"
-msgstr ""
+msgstr "文章"
 
 #: ./profiles/default/types/Product.xml
 msgid "Product"
-msgstr ""
+msgstr "商品"
 
 #: ./interfaces.py:60
 msgid "Product Id"
-msgstr ""
+msgstr "商品 id"
 
 #: ./interfaces.py:109
 msgid "Product Image."
-msgstr ""
+msgstr "商品圖檔"
 
 #: ./interfaces.py:55
 msgid "Product Name"
-msgstr ""
+msgstr "商品名稱"
 
 #: ./browser/coverSetting.py:31
 msgid "Product Show In Nav"
-msgstr ""
+msgstr "顯示在主選單的商品"
 
 #: ./interfaces.py:110
 msgid "Product image for header."
-msgstr ""
+msgstr "商品圖檔(首圖使用)"
 
 #: ./interfaces.py:116
 msgid "Product image."
-msgstr ""
+msgstr "商品圖檔。"
 
 #: ./interfaces.py:71
 msgid "Product introduction web page include http:// or https://"
-msgstr ""
+msgstr "商品官網網址，本項須包含 http:// 或 https://"
 
 #: ./interfaces.py:331
 msgid "Products File"
-msgstr ""
+msgstr "上傳商品檔案"
 
 #: ./profiles/default/types/Profile.xml
 msgid "Profile"
-msgstr ""
+msgstr "個人頁面"
 
 #: ./interfaces.py:239
 msgid "Profile Name"
-msgstr ""
+msgstr "個人標題"
 
 #: ./interfaces.py:155
 msgid "Promotional Text"
-msgstr ""
+msgstr "促銷文字"
 
 #: ./interfaces.py:164
 msgid "Promotional Text for Hero page"
-msgstr ""
+msgstr "促銷文字(顯示於頁頁)"
 
 #: ./interfaces.py:156
 msgid "Promotional Text, support html format richtext."
-msgstr ""
+msgstr "促銷文字，本項支援 html 語法"
 
 #: ./profiles/default/types/Provider.xml
 msgid "Provider"
-msgstr ""
+msgstr "供應商"
 
 #: ./interfaces.py:318
 msgid "Provider Logo"
-msgstr ""
+msgstr "供應商商標"
 
 #: ./interfaces.py:308
 msgid "Provider Name"
-msgstr ""
+msgstr "供應商名稱"
 
 #: ./browser/coverSetting.py:25
 msgid "Provider Show In Nav"
-msgstr ""
+msgstr "顯示在主選單的供應商"
 
 #: ./interfaces.py:319
 msgid "Provider logo image"
-msgstr ""
+msgstr "供應商商標圖檔"
 
 #: ./interfaces.py:325
 msgid "Provider website url, must include http:// or https://"
-msgstr ""
+msgstr "供應商網址，請含 http:// 或 https://"
 
 #: ./interfaces.py:70
 msgid "Pruduct URL"
-msgstr ""
+msgstr "商品網址"
 
 #: ./browser/template/cover_view.pt:303
 #: ./interfaces.py:228
 #: ./profiles/default/types/Question.xml
 msgid "Question"
-msgstr ""
+msgstr "提問"
 
 #: ./browser/template/cover_view.pt:145
 msgid "Question & Anwser"
-msgstr ""
+msgstr "提問與回應"
 
 #: ./interfaces.py:278
 msgid "Question Detail"
-msgstr ""
+msgstr "提問詳細內容"
 
 #: ./interfaces.py:273
 msgid "Question Title"
-msgstr ""
+msgstr "提問標題"
 
 #: ./interfaces.py:198
 msgid "Related"
-msgstr ""
+msgstr "關連的"
 
 #: ./interfaces.py:300
 msgid "Reply Question"
-msgstr ""
+msgstr "回覆提問"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:88
 msgid "Return policy"
-msgstr ""
+msgstr "退貨政策"
 
 #: ./interfaces.py:197
 msgid "Rleated items for hero section"
-msgstr ""
+msgstr "關連的 hero 項目"
 
 #: ./interfaces.py:221
 msgid "Rleated items for home page article list"
-msgstr ""
+msgstr "關連的文章，顯示於首頁"
 
 #: ./interfaces.py:205
 msgid "Rleated items for home page new product list"
-msgstr ""
+msgstr "關連項目，新商品"
 
 #: ./interfaces.py:213
 msgid "Rleated items for home page not product list"
-msgstr ""
+msgstr "關連項目，熱門商品"
 
 #: ./interfaces.py:229
 msgid "Rleated items for home page question list"
-msgstr ""
+msgstr "關連項目，提問"
 
 #: ./interfaces.py:103
 msgid "Sale price"
-msgstr ""
+msgstr "售價"
 
 #: ./browser/template/cover_view.pt:222
 msgid "Sale price:"
-msgstr ""
+msgstr "售價:"
 
 #: ./browser/template/cover_view.pt:202
 msgid "Search Related"
-msgstr ""
+msgstr "搜尋類似商品"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:108
 msgid "Search Terms"
-msgstr ""
+msgstr "商品搜尋"
 
 #: ./browser/coverSetting.py:13
 msgid "Service Explanation"
-msgstr ""
+msgstr "服務說明"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:86
 msgid "Shipment"
-msgstr ""
+msgstr "訂單查詢"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:81
 msgid "Shopping Guide"
-msgstr ""
+msgstr "網站購買指南"
 
 #: ./interfaces.py:265
 msgid "Short Text"
-msgstr ""
+msgstr "短文描述"
 
 #: ./interfaces.py:266
 msgid "Short Text, show in Cover."
-msgstr ""
+msgstr "知文描述，顯示於首頁"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:33
 msgid "Sign up for our newsletter"
-msgstr ""
+msgstr "訂閱電子報"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:107
 msgid "Site Map"
-msgstr ""
+msgstr "網站地圖"
 
 #: ./interfaces.py:170
 msgid "Standard shipping cost"
-msgstr ""
+msgstr "標準運費"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:93
 msgid "Style Advisor"
-msgstr ""
+msgstr "帳戶資訊"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:37
 msgid "Subscribe"
-msgstr ""
+msgstr "訂閱"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:111
 msgid "Suppliers"
-msgstr ""
+msgstr "合作廠商"
 
 #: ./interfaces.py:98
 msgid "The list price of the product."
-msgstr ""
+msgstr "本項商品訂價"
 
 #: ./interfaces.py:186
 msgid "Title"
-msgstr ""
+msgstr "標頭"
 
 #: ./configure.zcml:37
 msgid "Uninstalls the i8d.content add-on."
-msgstr ""
+msgstr "御載 i8d.content 模組"
 
 #: ./interfaces.py:171
 msgid "Usually is the cost for the typical standard, lowest cost shipping method. This is provided for informational purposes and the actual shipping cost could vary depending on the visitor."
-msgstr ""
+msgstr "請輸入單品標準運費。這是提供給消費者的資訊，實際運費可能會根據消費者購買內容而有所不同。"
 
 #: ./profiles/default/types/Document.xml
 #: ./profiles/default/types/Event.xml
@@ -528,35 +525,35 @@ msgstr ""
 
 #: ./browser/template/cover_view.pt:36
 msgid "View More"
-msgstr ""
+msgstr "點看更多"
 
 #: ./interfaces.py:324
 msgid "Website"
-msgstr ""
+msgstr "網站"
 
 #: ./browser/template/cover_view.pt:263
 msgid "Website homepage"
-msgstr ""
+msgstr "網站首頁"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:87
 msgid "Where is my order?"
-msgstr ""
+msgstr "訂單追蹤"
 
 #: ./interfaces.py:146
 msgid "You can use a maximum bonus points."
-msgstr ""
+msgstr "您可以使用的最大紅利點數"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:95
 msgid "Your Account"
-msgstr ""
+msgstr "我的帳戶"
 
 #: ./event/importProducts.py:88
 msgid "file name must be same as provider id and extension is zip."
-msgstr ""
+msgstr "檔案名稱必須與供應商 id 相同，且副檔名必須為 zip。"
 
 #: ./browser/coverSetting.py:20
 msgid "help_show_in_nav"
-msgstr ""
+msgstr "請填入該項目的 UID, UID 可以在該項目的頁面中看到"
 
 #: ./configure.zcml:22
 msgid "i8d.content"
@@ -564,8 +561,8 @@ msgstr ""
 
 #: ./browser/template/cover_view.pt:181
 msgid "recommend"
-msgstr ""
+msgstr "嚴選商品"
 
 #: ./interfaces.py:332
 msgid "zip file, include a .cvs file and image files"
-msgstr ""
+msgstr "zip 壓縮檔，包含一個 cvs 檔案及相關的圖檔"

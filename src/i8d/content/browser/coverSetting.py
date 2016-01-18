@@ -15,6 +15,24 @@ class ICoverSetting(Form.Schema):
         required=False,
     )
 
+    brandShowInNav = schema.Text(
+        title=_(u"Brand Show In Nav"),
+        description=_(u"help_show_in_nav"),
+        required=False,
+    )
+
+    providerShowInNav = schema.Text(
+        title=_(u"Provider Show In Nav"),
+        description=_(u"help_show_in_nav"),
+        required=False,
+    )
+
+    productShowInNav = schema.Text(
+        title=_(u"Product Show In Nav"),
+        description=_(u"help_show_in_nav"),
+        required=False,
+    )
+
 
 class CoverSettingControlPanelForm(RegistryEditForm):
     form.extends(RegistryEditForm)

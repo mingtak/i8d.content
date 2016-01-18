@@ -173,13 +173,12 @@
   <!-- end offer banner section --> 
 
 
-
-  <!-- recommend slider -->
+  <!-- recommend slider (嚴選商品) -->
   <section class="recommend container">
     <div class="recommend-product-slider small-pr-slider wow bounceInUp">
       <div class="slider-items-products">
         <div class="new_title center">
-          <h2>recommend</h2>
+          <h2 i18n:translate="">recommend</h2>
         </div>
         <div id="recommend-slider" class="product-flexslider hidden-buttons">
           <div class="slider-items slider-width-col3"> 
@@ -210,13 +209,20 @@
                     <!--item-title-->
                     <div class="item-content">
 
-                      <div class="price-box"> <span class="regular-price"> 
+                      <div class="price-box" tal:condition="python:item.to_object.salePrice == item.to_object.listPrice"> <span class="regular-price"> 
                         <span class="price"><span i18n:translate="">List price:</span><span tal:replace="item/to_object/listPrice" /></span> </span>
                       </div>
 
-                      <div class="price-box" tal:condition="python:item.to_object.salePrice < item.to_object.listPrice"> <span class="regular-price">
-                        <span class="price"><span i18n:translate="">Sale price:</span><span tal:replace="item/to_object/salePrice" /></span> </span>
-                      </div>
+                      <tal:saleprice condition="python:item.to_object.salePrice < item.to_object.listPrice">
+                          <span style="Color:red; text-decoration:line-through;">
+                            <span tal:content="python:'原價:%s ' % context.hotProduct[0].to_object.listPrice"
+                                  style="color:grey;"/>
+                          </span><br/>
+                          <div class="price-box"> <span class="regular-price">
+                            <span class="price"><span i18n:translate="">Sale price:</span><span tal:replace="item/to_object/salePrice" /></span> </span>
+                          </div>
+                      </tal:saleprice>
+
                     </div>
                     <!--item-content--> 
                   </div>

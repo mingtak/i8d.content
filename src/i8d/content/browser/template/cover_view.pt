@@ -14,7 +14,7 @@
 
 
 
-
+<tal:check_login condition="context/@@user_is_anonymous">
  <!-- 首頁 Slider -->
  <div id="magik-slideshow" class="magik-slideshow">
   <div class="container">
@@ -174,11 +174,6 @@
 
 
 
-
-
-
-
-
   <!-- recommend slider -->
   <section class="recommend container">
     <div class="recommend-product-slider small-pr-slider wow bounceInUp">
@@ -188,30 +183,46 @@
         </div>
         <div id="recommend-slider" class="product-flexslider hidden-buttons">
           <div class="slider-items slider-width-col3"> 
-
+<tal:getItems define="hot context/hotProduct; 
+                      new context/newProduct;
+                      items python:hot+new;
+                      tmp python:modules['random'].shuffle(items)">
             <!-- Item -->
-            <div class="item">
+            <div class="item" tal:repeat="item items">
               <div class="col-item">
-                <div class="new-label new-top-right">New</div>
-                <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product1.jpg" class="img-responsive" alt="a" /> </a></div>
-                <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="quick_view.html"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
+                <div class="new-label new-top-right" tal:condition="python:item in context.newProduct">New</div>
+                <div class="sale-label sale-top-right" tal:condition="python:item in context.hotProduct">Hot</div>
+                <div class="product-image-area">
+                  <a class="product-image" tal:attributes="href item/to_object/absolute_url; title item/to_object/title">
+                    <img tal:attributes="src string:${item/to_object/absolute_url}/@@images/image_1/mini; alt item/to_object/title" class="img-responsive"/>
+                  </a>
+                </div>
+                <div class="actions-links"><span class="add-to-links">
+                  <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/to_object/absolute_url"><span i18n:translate="">Detail</span></a>
+                  <a title="Add to Cart" class="link-wishlist" i18n:attributes="title" tal:attributes="href item/to_object/absolute_url"><span i18n:translate="">Add to Cart</span></a>
+                  <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/to_object/absolute_url"><span i18n:translate="">Search Related</span></a></span>
+                </div>
                 <div class="info">
                   <div class="info-inner">
-                    <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
+                    <div class="item-title">
+                      <a tal:attributes="title item/to_object/title; href item/to_object/absolute_url" tal:content="item/to_object/title"> Sample Product </a>
+                    </div>
                     <!--item-title-->
                     <div class="item-content">
-                      <div class="ratings">
-                        <div class="rating-box">
-                          <div class="rating"></div>
-                        </div>
+
+                      <div class="price-box"> <span class="regular-price"> 
+                        <span class="price"><span i18n:translate="">List price:</span><span tal:replace="item/to_object/listPrice" /></span> </span>
                       </div>
-                      <div class="price-box"> <span class="regular-price"> <span class="price">$422.00</span> </span> </div>
+
+                      <div class="price-box" tal:condition="python:item.to_object.salePrice < item.to_object.listPrice"> <span class="regular-price">
+                        <span class="price"><span i18n:translate="">Sale price:</span><span tal:replace="item/to_object/salePrice" /></span> </span>
+                      </div>
                     </div>
                     <!--item-content--> 
                   </div>
                   <!--info-inner-->
                   <div class="actions">
-                    <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
+                    <button type="button" title="Add to Cart" class="button btn-cart" i18n:attributes="title"><span i18n:translate="">Add to Cart</span></button>
                   </div>
                   <!--actions-->
                   <div class="clearfix"> </div>
@@ -219,40 +230,7 @@
               </div>
             </div>
             <!-- End Item --> 
-            <!-- Item -->
-            <div class="item">
-              <div class="col-item">
-                <div class="sale-label sale-top-right">Sale</div>
-                <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a></div>
-                <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="quick_view.html"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                <div class="info">
-                  <div class="info-inner">
-                    <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                    <!--item-title-->
-                    <div class="item-content">
-                      <div class="ratings">
-                        <div class="rating-box">
-                          <div class="rating"></div>
-                        </div>
-                      </div>
-                      <div class="price-box">
-                        <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                        <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                      </div>
-                    </div>
-                    <!--item-content--> 
-                  </div>
-                  <!--info-inner-->
-                  <div class="actions">
-                    <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                  </div>
-                  <!--actions-->
-                  <div class="clearfix"> </div>
-                </div>
-              </div>
-            </div>
-            <!-- End Item --> 
-
+</tal:getItems>
           </div>
         </div>
       </div>
@@ -260,17 +238,7 @@
   </section>
   <!-- End Recommend slider --> 
   
-
-
-
-
-
-
-
-
-
-
-
+</tal:check_login>
 
 
 

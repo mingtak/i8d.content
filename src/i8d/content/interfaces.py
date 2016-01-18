@@ -260,6 +260,12 @@ class IPost(Interface):
         required=False,
     )
 
+    form.write_permission(shortText='cmf.ReviewPortalContent')
+    shortText = schema.TextLine(
+        title=_(u"Short Text"),
+        description=_(u"Short Text, show in Cover."),
+        required=False,
+    )
 
 class IQuestion(Interface):
     """ 專家給問 """

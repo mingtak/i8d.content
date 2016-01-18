@@ -4,7 +4,7 @@
 
 
 
-<tal:check_anonymous condition="not:context/@@user_is_anonymous">
+<talcheck_anonymous condition="not:context/@@user_is_anonymous">
 <tal:sections
      xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -50,4 +50,4 @@
   </nav>
 
 </tal:sections>
-</tal:check_anonymous>
+</talcheck_anonymous>

@@ -43,4 +43,12 @@
       permission="zope2.View"
       />
 
+
+  <!-- configlet -->
+  <browser:page
+    name="coverSettingControlPanel"
+    for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+    permission="cmf.ManagePortal"
+    class=".coverSetting.CoverSettingControlPanelView"
+    />
 </configure>

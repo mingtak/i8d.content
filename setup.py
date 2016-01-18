@@ -48,6 +48,7 @@ setup(
         'z3c.jbot',
         'plone.app.dexterity',
         'collective.dexteritytextindexer',
+        'plone.directives.form',
     ],
     extras_require={
         'test': [

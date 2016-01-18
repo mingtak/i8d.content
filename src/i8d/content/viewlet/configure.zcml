@@ -13,5 +13,15 @@
       permission="zope2.View"
       />
 
+    <browser:viewlet
+      name="service_explanation"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IMainNavigation"
+      template="template/service_explanation.pt"
+      class=".viewlet.ServiceExplanation"
+      permission="zope2.View"
+      />
+
+
 </configure>
 

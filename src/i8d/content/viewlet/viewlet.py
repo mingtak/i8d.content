@@ -5,3 +5,5 @@ from plone.app.layout.viewlets import common as base
 class CoverHeroViewlet(base.ViewletBase):
     """ """
 
+class ServiceExplanation(base.ViewletBase):
+    """ """

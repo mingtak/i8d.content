@@ -12,6 +12,199 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
+
+
+
+ <!-- 首頁 Slider -->
+ <div id="magik-slideshow" class="magik-slideshow">
+  <div class="container">
+   <div class="row">
+    <div class="col-lg-8 col-sm-12 col-md-8 wow bounceInUp animated">
+     <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container' >
+      <div id='rev_slider_4' class='rev_slider fullwidthabanner'>
+       <ul>
+<tal:repeat repeat="item context/heros">
+        <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='images/slider_img2.jpg'
+            tal:attributes="data-thumb string:${item/to_object/absolute_url}/@@images/image_1">
+          <img src='images/slide-img2.jpg' data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"
+               tal:attributes="src string:${item/to_object/absolute_url}/@@images/image_1"/>
+          <div class='tp-caption ExtraLargeTitle sft tp-resizeme ' data-x='40' data-y='30' data-endspeed='500' data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'
+               tal:content="item/to_object/brand">Hello hotness!</div>
+          <div class='tp-caption LargeTitle sfl tp-resizeme ' data-x='40' data-y='75' data-endspeed='500' data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'
+               tal:content="item/to_object/title">Sweaters & Blazers</div>
+          <div  class='tp-caption sfb tp-resizeme ' data-x='40' data-y='360' data-endspeed='500' data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>
+            <a href='#' class="view-more" tal:attributes="href item/to_object/absolute_url" i18n:translate="">View More</a>
+            <a href='#' class="buy-btn" i18n:translate="">Add to cart</a>
+          </div>
+          <div class='tp-caption Title sft tp-resizeme ' data-x='40' data-y='150' data-endspeed='500' data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'
+               tal:content="item/to_object/description">可改為支援html</div>
+        </li>
+</tal:repeat>
+       </ul>
+       <div class="tp-bannertimer"></div>
+      </div>
+     </div>
+    </div>
+
+    <aside class="col-xs-12 col-sm-12 col-md-4 wow bounceInUp animated">
+
+     <div class="RHS-banner" style="max-height:231px; height:230px">
+      <div class="add" style="width:50%; float:left">
+        <a href="#" tal:attributes="href python:context.hotProduct[0].to_object.absolute_url()">
+          <img alt="banner-img" src="images/RHS-men-banner.png" style="width:100%"
+               tal:attributes="src python:'%s/@@images/image_3' % context.hotProduct[0].to_object.absolute_url()">
+        </a>
+      </div>
+      <div style="width:50%; text-align:center; float:right">
+        <p><strong tal:content="python:context.hotProduct[0].to_object.title"/></p>
+        <p tal:content="python:context.hotProduct[0].to_object.description"/>
+        <span style="Color:red; text-decoration:line-through;">
+          <span tal:content="python:'原價:%s ' % context.hotProduct[0].to_object.listPrice"
+                style="color:grey;"/>
+        </span><br/>
+        <p style="color:#000" tal:content="python:'促銷:%s' % context.hotProduct[0].to_object.salePrice"/>
+
+
+        <a class="button buy-btn"
+           tal:attributes="href python:context.hotProduct[0].to_object.absolute_url()">
+          <span i18n:translate="">View More</span>
+        </a>
+
+      </div>
+     </div>
+
+     <!-- 首頁 hero 右側-->
+     <div class="RHS-banner" style="max-height:231px; height:230px">
+      <div class="add" style="width:50%; float:right">
+        <a href="#" tal:attributes="href python:context.hotProduct[0].to_object.absolute_url()">
+          <img alt="banner-img" src="images/RHS-men-banner.png" style="width:100%"
+               tal:attributes="src python:'%s/@@images/image_3' % context.hotProduct[1].to_object.absolute_url()">
+        </a>
+      </div>
+      <div style="width:50%; text-align:center; float:left">
+        <p><strong tal:content="python:context.hotProduct[1].to_object.title"/></p>
+        <p tal:content="python:context.hotProduct[1].to_object.description"/>
+        <span style="Color:red; text-decoration:line-through;">
+          <span tal:content="python:'原價:%s ' % context.hotProduct[1].to_object.listPrice"
+                style="color:grey;"/>
+        </span><br/>
+        <p style="color:#000" tal:content="python:'促銷:%s' % context.hotProduct[1].to_object.salePrice"/>
+        <a class="button buy-btn"
+           tal:attributes="href python:context.hotProduct[1].to_object.absolute_url()">
+          <span i18n:translate="">View More</span>
+        </a>
+      </div>
+     </div>
+
+    </aside>
+   </div>
+  </div>
+ </div>
+ <!-- end Slider -->
+
+
+  <!-- offer banner section(精選文章/專家給問) -->
+  <section class="main-container col1-layout home-content-container">
+    <div class="container">
+      <div class="row">
+        <!-- 精選文章 -->
+        <div class="col-lg-4 col-xs-12 col-sm-4 wow bounceInUp animated">
+
+          <div class="new_title center">
+            <h2 i18n:translate="">Featured Article</h2>
+          </div>
+          <p/>
+
+          <div class="category-products">
+            <div class="products small-list">
+
+              <div class="item" tal:repeat="item context/article">
+                <div class="item-area">
+                  <div class="product-image-area" style="width:65px">
+                    <a tal:attributes="href item/to_object/absolute_url" class="product-image">
+                      <img tal:attributes="src string:${item/to_object/absolute_url}/@@images/image/thumb; alt item/to_object/title">
+                    </a>
+                  </div>
+                  <div class="details-area">
+                    <h2 class="product-name"><a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title">Title</a></h2>
+                    <div tal:content="item/to_object/shortText" style="color:grey"/>
+                    <a tal:attributes="href item/to_object/absolute_url"><strong class="price" style="float:right" i18n:translate="">...Read</strong></a>
+                  </div>
+                </div>
+              </div>
+              <a class="button" style="float:right"
+                 tal:attributes="href python:'%s/ishare' % context.getParentNode().absolute_url()"
+                 i18n:translate="">All Post</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 專家給問 -->
+        <div class="col-lg-8 col-xs-12 col-sm-8 wow bounceInUp animated">
+          <div class="new_title center">
+            <h2 i18n:translate="">Question & Anwser</h2>
+          </div>
+          <p/>
+          <div class="category-products">
+            <div class="products small-list">
+              <div class="item" tal:repeat="item context/question">
+                <div class="item-area">
+                  <div class="product-image-area" style="width:65px">
+                    <a tal:attributes="href item/to_object/absolute_url" class="product-image">
+                      <img tal:attributes="src string:${item/to_object/absolute_url}/@@images/image/thumb; alt item/to_object/title">
+                    </a>
+                  </div>
+                  <div class="details-area">
+                    <h2 class="product-name"><a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title">Title</a></h2>
+                    <div tal:content="item/to_object/description" style="color:grey"/>
+                    <a tal:attributes="href item/to_object/absolute_url"><strong class="price" style="float:right" i18n:translate="">...Read</strong></a>
+                  </div>
+                </div>
+              </div>
+              <a class="button" style="float:right"
+                 tal:attributes="href python:'%s/ishare' % context.getParentNode().absolute_url()"
+                 i18n:translate="">All Question</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end offer banner section --> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<tal:check_login condition="not:context/@@user_is_anonymous">
+
 <h2 i18n:translate="">Website homepage</h2>
 <article i18n:translate="">
 Description: All show in homepage's objects, listing below,
@@ -59,6 +252,8 @@ If want to edit object, click object, go to that page to edit.
   </li>
 </ul>
 <hr/>
+
+</tal:check_login>
 
 </metal:content-core>
 </metal:content-core>

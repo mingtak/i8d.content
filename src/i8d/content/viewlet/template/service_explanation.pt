@@ -1,0 +1,5 @@
+<tal:check_login condition="context/@@user_is_anonymous">
+    <div id="service_explanation"
+         tal:define="value python:context.portal_registry['i8d.content.browser.coverSetting.ICoverSetting.serviceExplanation']"
+         tal:content="structure value" />
+</tal:check_login>

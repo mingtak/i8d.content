@@ -22,6 +22,15 @@
       permission="zope2.View"
       />
 
+    <browser:viewlet
+      name="showuid"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"
+      template="template/showuid.pt"
+      class=".viewlet.ShowUID"
+      permission="cmf.ManagePortal"
+      />
+
 
 </configure>
 

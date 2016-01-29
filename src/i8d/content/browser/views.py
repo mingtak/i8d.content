@@ -10,6 +10,11 @@ from plone import api
 #from zc.relation.interfaces import ICatalog
 
 
+class ProductView(BrowserView):
+    """ Product View (default)
+    """
+
+
 class CoverView(BrowserView):
     """ Cover View (default)
     """

@@ -1,4 +1,4 @@
-  <!-- Navbar -->
+<!-- Navbar -->
 <tal:sections
      xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:metal="http://xml.zope.org/namespaces/metal"
@@ -9,7 +9,7 @@
   <nav class="theme-nav" tal:condition="context/@@user_is_anonymous">
     <div class="container">
       <div class="nav-inner"> 
-        <!-- mobile-menu -->
+        <!-- mobile-menu 行動裝置選單 -->
         <div class="hidden-desktop" id="mobile-menu">
           <ul class="navmenu">
             <li>
@@ -42,213 +42,118 @@
         <!--End mobile-menu --> 
 
 
+        <!-- 正常選單 -->
         <a tal:define="portal context/portal_get"
            tal:attributes="href portal/absolute_url;
                            title portal/title" class="logo-small">
           <img tal:attributes="alt portal/absolute_url;
                                src string:${portal/absolute_url}/i8d_logo_white.png"></a>
         <ul id="nav" class="hidden-xs"
-            tal:define="selected_tab python:view.selected_portal_tab">
+            tal:define="selected_tab python:view.selected_portal_tab;
+                        brandShowInNav python:context.portal_registry['i8d.content.browser.coverSetting.ICoverSetting.brandShowInNav'];
+                        providerShowInNav python:context.portal_registry['i8d.content.browser.coverSetting.ICoverSetting.providerShowInNav'];
+                        productShowInNav python:context.portal_registry['i8d.content.browser.coverSetting.ICoverSetting.productShowInNav']">
 <tal:tabs tal:repeat="tab portal_tabs">
-          <li class="level0 nav-5 level-top first"> <a class="level-top" href="grid.html"> <span>Electronics</span> </a>
-            <div class="level0-wrapper dropdown-6col">
+          <li class="level0 nav-5 level-top first"
+              tal:define="tid tab/id"
+              tal:attributes="class python:'level0 nav-5 level-top %s' % (selected_tab==tid and 'active' or nothing)">
+            <a class="level-top"  href="grid.html"
+               tal:attributes="href tab/url;
+                               title tab/description|nothing;
+                               target tab/link_target|nothing;">
+              <span tal:content="tab/name">Tab Name</span>
+            </a>
+            <div class="level0-wrapper dropdown-6col" tal:condition="python:tid in ['Brand', 'category']">
               <div class="level0-wrapper2">
                 <div class="nav-block nav-block-center grid12-8 itemgrid itemgrid-4col"> 
                   <!--mega menu-->
                   <ul class="level3">
-                    <li class="level3 nav-6-1 parent item">
-                      <div class="cat-img"><img src="images/e-img1.jpg" alt="Mobiles"></div>
-                      <a href="grid.html"><span>Mobiles</span></a> 
+                    <li class="level3 nav-6-1 parent item" tal:repeat="uid python:brandShowInNav.split('\n')[1:5]">
+    <tal:uid define="catalog python:context.portal_catalog;
+                     brain python:catalog(UID=uid.strip())">
+        <tal:repeat repeat="item brain">
+                      <div class="cat-img"><img tal:attributes="src string:${item/getURL}/@@images/image_1; alt item/Title"/></div>
+                      <a tal:attributes="href item/getURL; title item/Title"><span tal:content="item/Title">Title</span></a> 
+        </tal:repeat>
+    </tal:uid>
                       <!--sub sub category-->
-                      <ul class="level1">
+<!--                      <ul class="level1">
                         <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Samsung</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Nokia</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>iPhone</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Sony</span></a> </li>
-                        <!--level2 nav-6-1-1-->
                       </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item">
-                      <div class="cat-img"><img src="images/e-img1.jpg" alt="Mobiles Accesories"></div>
-                      <a href="grid.html"><span>Mobiles Accesories</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Mobile Memory Cards</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Cases &amp; Covers</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Mobile Headphones</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Bluetooth Headsets</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-
-                    <!--level1 nav-6-1 parent item-->
-                    <li class="level1 nav-6-1 parent item">
-                      <div class="cat-img"><img src="images/e-img1.jpg" alt="Cameras"></div>
-                      <a href="grid.html"><span>Cameras</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Camcorders</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Point &amp; Shoot</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Digital SLR</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Camera Accesories</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-
-                    <li class="level1 nav-6-1 parent item">
-                      <div class="cat-img"><img src="images/e-img1.jpg" alt="Audio &amp; Video"></div>
-                      <a href="grid.html"><span>Audio &amp; Video</span></a> 
-                      <!--sub sub category-->
-                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>MP3 Players</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="#"><span>IPods</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Speakers</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Video Players</span></a> </li>
-                        <!--level2 nav-6-1-1-->
-                      </ul>
+-->
                       <!--level1--> 
                       <!--sub sub category--> 
                     </li>
                     <!--level1 nav-6-1 parent item-->
                   </ul>
-
                   <!--level0--> 
-
                 </div>
 
                 <!--nav-block nav-block-center-->
-
+<tal:first define="uid python:brandShowInNav.split('\n')[0].strip();
+                   catalog python:context.portal_catalog;
+                   brain python:catalog(UID=uid);
+                   item python:brain[0]">
                 <div class="nav-block nav-block-right std grid12-4">
-
-                  <p><a href="#"><img class="fade-on-hover" src="images/nav-img1.jpg" alt="nav img"></a></p>
-
-                  <h3 class="heading">RESPONSIVE HTML5 THEME</h3>
-
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam fringilla augue nec est tristique auctor.</p>
-
-                  <p><a class="btn-button-st" title="Shop collection now" href="#">Shop collection now</a></p>
-
+                  <p><a tal:attributes="href item/getURL"><img tal:attributes="src string:${item/getURL}/@@images/image_1; alt item/Title" class="fade-on-hover"></a></p>
+                  <h3 class="heading" tal:content="item/Title"></h3>
+                  <p tal:content="item/Description"></p>
+                  <p><a tal:attributes="title item/Title; href item/getURL" class="btn-button-st" i18n:translate="">To see all</a></p>
                 </div>
-
+</tal:first>
                 <!--nav-block nav-block-right std grid12-4--> 
-
               </div>
-
             </div>
-
           </li>
-
 </tal:tabs>
         </ul>
 
+
+        <!-- 購物車 -->
         <div class="top-cart-contain">
-
           <div class="mini-cart">
-
             <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="#">
-
               <div class="cart-box"><span id="cart-total"><strong>2</strong> item </span></div>
-
               </a></div>
-
             <div>
-
               <div class="top-cart-content arrow_box">
-
                 <div class="block-subtitle">Recently added item(s)</div>
-
                 <ul id="cart-sidebar" class="mini-products-list">
-
                   <li class="item even"> <a class="product-image" href="product_detail.html" title="Downloadable Product "><img alt="Downloadable Product " src="products-images/product1.jpg" width="80"></a>
-
                     <div class="detail-item">
-
                       <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
-
                         <p class="product-name"> <a href="product_detail.html" title="Downloadable Product">Sample Product</a> </p>
-
                       </div>
-
                       <div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>
-
                     </div>
-
                   </li>
-
                   <li class="item last odd"> <a class="product-image" href="product_detail.html" title="  Sample Product "><img alt="  Sample Product " src="products-images/product1.jpg" width="80"></a>
-
                     <div class="detail-item">
-
                       <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
-
                         <p class="product-name"> <a href="product_detail.html" title="  Sample Product "> Sample Product </a> </p>
-
                       </div>
-
                       <div class="product-details-bottom"> <span class="price">$320.00</span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>
-
                     </div>
-
                   </li>
                 </ul>
-
                 <div class="top-subtotal">Subtotal: <span class="price">$420.00</span></div>
-
                 <div class="actions">
-
                   <button class="btn-checkout" type="button"><span>Checkout</span></button>
-
                   <button class="view-cart" type="button"><span>View Cart</span></button>
-
                 </div>
-
               </div>
-
             </div>
-
           </div>
-
           <div id="ajaxconfig_info"> <a href="#/"></a>
-
             <input value="" type="hidden">
-
             <input id="enable_module" value="1" type="hidden">
-
             <input class="effect_to_cart" value="1" type="hidden">
-
             <input class="title_shopping_cart" value="Go to shopping cart" type="hidden">
-
           </div>
-
         </div>
-
       </div>
-
     </div>
-
   </nav>
-
 </tal:sections>
   <!-- end nav -->
 
@@ -256,7 +161,9 @@
 
 
 
+
 <tal:check_anonymous condition="not:context/@@user_is_anonymous">
+<!-- 後台選單 -->
 <tal:sections
      xmlns:tal="http://xml.zope.org/namespaces/tal"
      xmlns:metal="http://xml.zope.org/namespaces/metal"

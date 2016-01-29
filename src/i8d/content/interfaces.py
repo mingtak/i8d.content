@@ -96,13 +96,13 @@ class IProduct(Interface):
     listPrice = schema.Int(
         title=_(u"List Price"),
         description=_(u"The list price of the product."),
-        required=False,
+        required=True,
     )
 
     salePrice = schema.Int(
         title=_(u"Sale price"),
-        description=_(u"Optional sale price for the product if different from the list price."),
-        required=False,
+        description=_(u"Sale price for the product if different from the list price, must be <= listPrice."),
+        required=True,
     )
 
     image_1 = NamedBlobImage(

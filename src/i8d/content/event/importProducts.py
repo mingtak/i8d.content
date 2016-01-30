@@ -42,6 +42,15 @@ def modifyItem(brain, row, zipFolderName):
         with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
             item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
+    try:
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_4'].strip()))) as file:
+            item.image_4 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+    try:
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_5'].strip()))) as file:
+            item.image_5 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+
     item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))
     item.reindexObject()
     transaction.commit()
@@ -74,6 +83,15 @@ def creatItem(folder, row, zipFolderName):
         with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
             item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
+    try:
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_4'].strip()))) as file:
+            item.image_4 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+    try:
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_5'].strip()))) as file:
+            item.image_5 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+
     item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))
     item.reindexObject()
     transaction.commit()

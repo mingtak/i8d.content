@@ -123,6 +123,18 @@ class IProduct(Interface):
         required=False,
     )
 
+    image_4 = NamedBlobImage(
+        title=_(u"Product Image."),
+        description=_(u"Product image."),
+        required=False,
+    )
+
+    image_5 = NamedBlobImage(
+        title=_(u"Product Image."),
+        description=_(u"Product image."),
+        required=False,
+    )
+
  
     """    special = schema.TextLine(
         title=_(u"Special"),
@@ -140,7 +152,7 @@ class IProduct(Interface):
         required=True,
     )
 
-    # 使用紅利點數可折抵折扣率，以小數點表示百分比
+    # 今日折扣，使用紅利點數可折抵折扣率，以小數點表示百分比
     maxUsedBonus = schema.Float(
         title=_(u"Maximum Used Bonus Points"),
         description=_(u"You can use a maximum bonus points."),

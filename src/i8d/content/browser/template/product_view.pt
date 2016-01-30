@@ -12,12 +12,39 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
+<?python
+from plone import api
+if api.user.is_anonymous():
+    manageProduct = False
+else:
+    roles = api.user.get_roles()
+    manageProduct = 'Manager' in roles
+?>
+
+<tal:check_roles condition="manageProduct">
+<p><strong>產品網址：</strong><a tal:attributes="href context/productUrl" tal:content="context/productUrl" target="_blank"/></p>
+<p><strong>庫存狀況：</strong><span tal:replace="context/inStock"/></p>
+<p><strong>品牌：</strong><span tal:replace="context/brand"/></p>
+<p><strong>產品定價：</strong><span tal:replace="context/listPrice"/></p>
+<p><strong>產品售價：</strong><span tal:replace="context/salePrice"/></p>
+<p><strong>紅利點數發放率：</strong><span tal:replace="context/bonusPoint"/></p>
+<p><strong>今日折扣：</strong><span tal:replace="context/maxUsedBonus"/></p>
+<p><strong>運費：</strong><span tal:replace="context/standardShippingCost"/></p>
+<p><strong>最近更新：</strong><span tal:replace="context/lastUpdated"/></p>
+<p><strong>首頁促銷文字：</strong><span tal:replace="context/heroText"/></p>
+<p><strong>產品說明：</strong></p><div tal:content="structure context/promotionalText/output"/>
+
+<img tal:replace="structure context/@@images/image_1/thumb" />
+<img tal:replace="structure context/@@images/image_2/thumb" />
+<img tal:replace="structure context/@@images/image_3/thumb" />
+<img tal:replace="structure context/@@images/image_4/thumb" />
+<img tal:replace="structure context/@@images/image_5/thumb" />
+
+</tal:check_roles>
 
 
+<tal:check_roles condition="not:manageProduct">
   <!-- main-container -->
-
-  
-
   <section class="main-container col1-layout">
     <div class="main container">
       <div class="col-main">
@@ -27,26 +54,35 @@
               <!-- 購物車 -->
               <form action="#" method="post" id="product_addtocart_form">
                 <input name="form_key" value="6UbXroakyQlbfQzK" type="hidden">
+
                 <div class="product-img-box col-lg-5 col-sm-5 col-md-5 col-xs-12 wow bounceInRight animated">
 <!--                  <div class="new-label new-top-left" id="detail-new"> New </div> -->
                   <div class="product-image">
                     <div class="large-image">
-                      <a tal:attributes="href string:${context/absolute_url}/@@images/image_1/large;" class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20">
+                      <a tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;" class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20">
                         <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title"> </a> </div>
                     <div class="flexslider flexslider-thumb">
                       <ul class="previews-list slides">
-                        <li><a tal:attributes="href string:${context/absolute_url}/@@images/image_1/large;
+                        <li><a tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_1/preview'"
                                class='cloud-zoom-gallery'>
                               <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title"/></a></li>
-                        <li><a tal:attributes="href string:${context/absolute_url}/@@images/image_2/large;
+                        <li tal:condition="context/image_2"><a tal:attributes="href string:${context/absolute_url}/@@images/image_2/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_2/preview'"
                                class='cloud-zoom-gallery'>
                               <img tal:attributes="src string:${context/absolute_url}/@@images/image_2/preview; alt context/Title"/></a></li>
-                        <li><a tal:attributes="href string:${context/absolute_url}/@@images/image_3/large;
+                        <li tal:condition="context/image_3"><a tal:attributes="href string:${context/absolute_url}/@@images/image_3/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_3/preview'"
                                class='cloud-zoom-gallery'>
                               <img tal:attributes="src string:${context/absolute_url}/@@images/image_3/preview; alt context/Title"/></a></li>
+                        <li tal:condition="context/image_4"><a tal:attributes="href string:${context/absolute_url}/@@images/image_4/zoomin;
+                                               rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_4/preview'"
+                               class='cloud-zoom-gallery'>
+                              <img tal:attributes="src string:${context/absolute_url}/@@images/image_4/preview; alt context/Title"/></a></li>
+                        <li tal:condition="context/image_5"><a tal:attributes="href string:${context/absolute_url}/@@images/image_5/zoomin;
+                                               rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_5/preview'"
+                               class='cloud-zoom-gallery'>
+                              <img tal:attributes="src string:${context/absolute_url}/@@images/image_5/preview; alt context/Title"/></a></li>
                       </ul>
                     </div>
                   </div>
@@ -128,18 +164,40 @@
                 </div>
 
 <!-- sidebar -->
-                <aside class="col-lg-3 col-sm-3 col-xs-12">
-                  <div class="brand-img">
+                <aside class="col-lg-3 col-sm-3 col-xs-12 sidebar_area">
+                  <div class="brand-imgs">
                     <a target="_blank" href="#">
-                      <img src="images/brand-logo.png" alt="">
+                      <img tal:replace="structure context/@@images/image_1/mini" />
                     </a>
                   </div>
+                  <div class="brand-imgs">
+                    <a target="_blank" href="#">
+                      <img tal:replace="structure context/@@images/image_1/mini" />
+                    </a>
+                  </div>
+
+                  <div class="brand-imgs">
+                    <a target="_blank" href="#">
+                      <img tal:replace="structure context/@@images/image_1/mini" />
+                    </a>
+                  </div>
+
+                  <div class="brand-imgs">
+                    <a target="_blank" href="#">
+                      <img tal:replace="structure context/@@images/image_1/mini" />
+                    </a>
+                  </div>
+
+
 	
-                  <div class="product-sibebar-banner">
+<!--                  <div class="product-sibebar-banner">
                     <div class="text-banner">
-                      <a href="#" title="Text Banner"><img id="rhs-img" src="images/RHS-banner-img.jpg" alt=""></a>
+                      <a href="#" title="Text Banner">
+                        <img tal:replace="structure context/@@images/image_2/mini" />
+                      </a>
                     </div>
                   </div>
+-->
                 </aside>
 <!-- sidebar end -->
               </form>
@@ -165,7 +223,7 @@
                     <div class="related-pro wow bounceInUp animated">
                       <div class="slider-items-products">
                         <div class="new_title center">
-                          <h2 i18n:translate="">Related Products</h2>
+                          <h2 i18n:translate="">Same Provider</h2>
                         </div>
                         <div id="related-products-slider" class="product-flexslider hidden-buttons">
                           <div class="slider-items slider-width-col4">
@@ -226,17 +284,9 @@
                 </div>
               </div>
 
-
-
-
-
-
-
-
-
+<!-- 同類型產品 -->
 <tal:brain define="catalog python:context.portal_catalog;
-                   brain python:catalog({'Subject':context.Subject(),
-                                         'Type':'Product'});
+                   brain python:catalog({'Type':'Product', 'Subject':list(context.Subject())});
                    brain python:list(brain);
                    shuffle python:modules['random'].shuffle(brain)">
 
@@ -245,44 +295,51 @@
                   <div class="upsell-pro wow bounceInUp animated">
                     <div class="slider-items-products">
                       <div class="new_title center">
-                        <h2>Upsell Products</h2>
+                        <h2 i18n:translate="">Related Products</h2>
                       </div>
                       <div id="upsell-products-slider" class="product-flexslider hidden-buttons">
                         <div class="slider-items slider-width-col4"> 
                           <!-- Item -->
 <tal:repeat repeat="item python:brain[0:6]">
-                          <div class="item">
-                            <div class="col-item">
-                              <div class="sale-label sale-top-right">Sale</div>
-                              <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product1.jpg" class="img-responsive" alt="a" /> </a></div>
-                              <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="quick_view.html"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                              <div class="info">
-                                <div class="info-inner">
-                                  <div class="item-title"> <a href="product_detail.html" title=" Sample Product"> Sample Product </a> </div>
-                                  <!--item-title-->
-                                  <div class="item-content">
-                                    <div class="ratings">
-                                      <div class="rating-box">
-                                        <div class="rating"></div>
+                            <div class="item">
+                              <div class="col-item">
+                                <div class="product-image-area">
+                                  <a class="product-image" tal:attributes="title item/Title;
+                                                                           href item/getURL">
+                                    <img tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
+                                                         alt item/Title" class="img-responsive"/> </a>
+                                </div>
+                                <div class="actions-links">
+                                  <span class="add-to-links">
+                                    <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Detail</span></a>
+                                    <a title="Add to Cart" class="link-wishlist" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Add to Cart</span></a>
+                                    <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
+                                  </span> </div>
+                                <div class="info">
+                                  <div class="info-inner">
+                                    <div class="item-title">
+                                      <a tal:attributes="href item/getURL; title item/Title" tal:content="item/Title"> Sample Product </a>
+                                    </div>
+                                    <!--item-title-->
+                                    <div class="item-content">
+                                      <div class="price-box">
+                                        <p class="special-price"> <span class="price" tal:content="string:$ ${item/salePrice}"> $45.00 </span> </p>
+                                        <p tal:condition="python:item.listPrice > item.salePrice" class="old-price">
+                                          <span class="price-sep">-</span> <span class="price" tal:content="string:$ ${item/listPrice}"> $50.00 </span>
+                                        </p>
                                       </div>
                                     </div>
-                                    <div class="price-box">
-                                      <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                                      <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                                    </div>
+                                    <!--item-content--> 
                                   </div>
-                                  <!--item-content--> 
+                                  <!--info-inner-->
+                                  <div class="actions">
+                                    <button type="button" title="Add to Cart" class="button btn-cart"><span i18n:translate="">Add to Cart</span></button>
+                                  </div>
+                                  <!--actions-->
+                                  <div class="clearfix"> </div>
                                 </div>
-                                <!--info-inner-->
-                                <div class="actions">
-                                  <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
-                                </div>
-                                <!--actions-->
-                                
-                                <div class="clearfix"> </div>
                               </div>
                             </div>
-                          </div>
 </tal:repeat>
                           <!-- End Item --> 
 
@@ -302,7 +359,7 @@
   </section>
 
   <!--End main-container --> 
-
+</tal:check_roles>
 
 </metal:content-core>
 </metal:content-core>

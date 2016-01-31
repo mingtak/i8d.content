@@ -34,11 +34,11 @@ else:
 <p><strong>首頁促銷文字：</strong><span tal:replace="context/heroText"/></p>
 <p><strong>產品說明：</strong></p><div tal:content="structure context/promotionalText/output"/>
 
-<img tal:replace="structure context/@@images/image_1/thumb" />
-<img tal:replace="structure context/@@images/image_2/thumb" />
-<img tal:replace="structure context/@@images/image_3/thumb" />
-<img tal:replace="structure context/@@images/image_4/thumb" />
-<img tal:replace="structure context/@@images/image_5/thumb" />
+<img tal:replace="structure context/@@images/image_1/thumb | nothing"/>
+<img tal:replace="structure context/@@images/image_2/thumb | nothing" />
+<img tal:replace="structure context/@@images/image_3/thumb | nothing" />
+<img tal:replace="structure context/@@images/image_4/thumb | nothing" />
+<img tal:replace="structure context/@@images/image_5/thumb | nothing" />
 
 </tal:check_roles>
 

@@ -15,13 +15,30 @@
 <?python
 from plone import api
 portal = api.portal.get()
+
+if api.user.is_anonymous():
+    manageBrand = False
+else:
+    roles = api.user.get_roles()
+    manageBrand = 'Manager' in roles
 ?>
 
-  <section class="main-container col2-left-layout">
+
+<tal:check_roles condition="manageBrand">
+  <p><strong>品牌別名：</strong><span tal:replace="context/nickname"/></p>
+  <img tal:replace="structure context/@@images/image/mini | nothing" />
+  <img tal:replace="structure context/@@images/bannerImage/preview | nothing"/><br/>
+</tal:check_roles>
+
+
+<tal:check_roles condition="not:manageBrand">
+
+  <section class="main-container col2-left-layout"
+           tal:define="sortBy python:getattr(request, 'sortBy', 'ProductName');
+                       sortBy python:'sortable_title' if sortBy == 'ProductName' else 'salePrice'">
     <div class="category-description std container">
       <div class="category-image">
-        這裏預計廠商提供(尺寸：1500X350)
-        <img tal:attributes="src python:'%s/@@images/image/banner' % portal['resource']['images']['running_b.png'].absolute_url();
+        <img tal:attributes="src string:${context/absolute_url}/@@images/bannerImage/banner;
                              alt portal/Title; title portal/Title">
       </div>
     </div>
@@ -82,75 +99,53 @@ portal = api.portal.get()
 
             <ul class="products-grid">
 
+  <tal:brain define="catalog python:context.portal_catalog;
+                     brain python:catalog({'brand':context.nickname.encode('utf-8').split(','),
+                                           'Type':'Product'}, sort_on=sortBy)">
+    <tal:repeat repeat="item brain">
               <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-12">
-
-                <div class="col-item">
-
-                  <div class="sale-label sale-top-right">Sale</div>
-
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product1.jpg" class="img-responsive" alt="a" /> </a></div>
-
-                  <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="quick_view.html"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-
-                  <div class="info">
-
-                    <div class="info-inner">
-
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-
-                      <!--item-title-->
-
-                      <div class="item-content">
-
-                        <div class="ratings">
-
-                          <div class="rating-box">
-
-                            <div class="rating"></div>
-
-                          </div>
-
-                        </div>
-
-                        <div class="price-box">
-
-                          <p class="special-price"> <span class="price"> $45.00 </span> </p>
-
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-
-                        </div>
-
-                      </div>
-
-                      <!--item-content--> 
-
-                    </div>
-
-                    <!--info-inner-->
-
-                    <div class="actions">
-
-                      <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
-
-                    </div>
-
-                    <!--actions-->
-
-                    
-
-                    <div class="clearfix"> </div>
-
-                  </div>
-
-                </div>
-
+                              <div class="col-item">
+                                <div class="product-image-area">
+                                  <a class="product-image" tal:attributes="title item/Title;
+                                                                           href item/getURL">
+                                    <img tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
+                                                         alt item/Title" class="img-responsive" style="max-height:200px; min-height:200px"/> </a>
+                                </div>
+                                <div class="actions-links">
+                                  <span class="add-to-links">
+                                    <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Detail</span></a>
+                                    <a title="Add to Cart" class="link-wishlist" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Add to Cart</span></a>
+                                    <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
+                                  </span> </div>
+                                <div class="info">
+                                  <div class="info-inner">
+                                    <div class="item-title">
+                                      <a tal:attributes="href item/getURL; title item/Title" tal:content="item/Title"> Sample Product </a>
+                                    </div>
+                                    <!--item-title-->
+                                    <div class="item-content">
+                                      <div class="price-box">
+                                        <p class="special-price"> <span class="price" tal:content="string:$ ${item/salePrice}"> $45.00 </span> </p>
+                                        <p tal:condition="python:item.listPrice > item.salePrice" class="old-price">
+                                          <span class="price-sep">-</span> <span class="price" tal:content="string:$ ${item/listPrice}"> $50.00 </span>
+                                        </p>
+                                      </div>
+                                    </div>
+                                    <!--item-content--> 
+                                  </div>
+                                  <!--info-inner-->
+                                  <div class="actions">
+                                    <button type="button" title="Add to Cart" class="button btn-cart"><span i18n:translate="">Add to Cart</span></button>
+                                  </div>
+                                  <!--actions-->
+                                  <div class="clearfix"> </div>
+                                </div>
+                              </div>
               </li>
-
-
+    </tal:repeat>
+  </tal:brain>
             </ul>
-
           </div>
-
         </div>
 
 
@@ -158,528 +153,27 @@ portal = api.portal.get()
 
 
         <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
-
           <div class="side-nav-categories">
-
-            <div class="block-title"> Categories </div>
-
+            <div class="block-title" i18n:translate=""> All Brands </div>
             <div class="box-content box-category">
-
-              <ul id="magicat">
-
-                <li class="level0- level0 open"> <span class="magicat-cat"><a href="#fashion.html"><span>Women</span></a></span>
-
-                  <ul>
-
-                    <li class="first level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>New In</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Clothing</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>shoes</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Bags</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Watches</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>formal-wear</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Thorts &amp; Skirts</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Leggings &amp; Jeggings</span></a></span> </li>
-
-                        <li class="level2- level2 "> <span class="magicat-cat"><a href="grid.html"><span>Caps,Scarves &amp; stoles</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Socks &amp; Stockings</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>jackets-blazers</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Sweaters</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Sweat Shirts</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Look Leather</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Denim</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="level1- level1  open"> <span class="magicat-cat"><a href="grid.html"><span>lingerie-sleepwear</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Bridal Lingerie</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Babydolls</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Bustiers</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Panties</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>ETHNIC WEAR</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Suits Sets</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Dress Material</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Sweatshirts</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Gloves</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>New This Week</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Clothing</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Footwear</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Accessories</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Sandals</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>Shop By Size</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Beauty</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Hair &amp; Body-Care</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Brand Stores</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Sisley</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="last level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>Girls Apparel</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Frocks</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Tops &amp; T-shirts</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Bottomwear</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Sweaters</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                  </ul>
-
+              <ul id="magicat" tal:define="brands python:portal['Brand'].getChildNodes()">
+                <li class="level0- level0" tal:repeat="item brands">
+                  <span class="magicat-cat">
+                    <a tal:attributes="href item/absolute_url; title item/title">
+                      <img tal:attributes="src string:${item/absolute_url}/@@images/image/icon; alt item/title"/>
+                      <span tal:content="item/title" style="margin-left:15px;">Brand</span>
+                    </a>
+                  </span>
                 </li>
-
-                <li class="level0- level0"> <span class="magicat-cat"><a href="grid.html"><span>Men</span></a></span> </li>
-
-                <li class="level0- level0  shoes"> <span class="magicat-cat"><a href="grid.html"><span>Shoes</span></a></span> </li>
-
-                <li class="level0- level0  watches open"> <span class="magicat-cat"><a href="grid.html"><span>Watches</span></a></span>
-
-                  <ul>
-
-                    <li class="first level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>Designers</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Calvin Klein</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Emporio Armani</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>French Connection</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Hush Puppies</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="level1- level1 open"> <span class="magicat-cat"><a href="grid.html"><span>Style</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Alba</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Kenneth Cole</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Morellato</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Timex Premium</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="level1- level1  open"> <span class="magicat-cat"><a href="grid.html"><span>Specification</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Just Cavalli</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Pierre Cardin</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Rotary</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Silitalia</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                    <li class="last level1- level1  open"> <span class="magicat-cat"><a href="grid.html"><span>Most Popular Brands</span></a></span>
-
-                      <ul>
-
-                        <li class="first level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Citizen</span></a></span> </li>
-
-                        <li class="level2- level2l"> <span class="magicat-cat"><a href="grid.html"><span>Diesel</span></a></span> </li>
-
-                        <li class="level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>DKNY</span></a></span> </li>
-
-                        <li class="last level2- level2"> <span class="magicat-cat"><a href="grid.html"><span>Esprit</span></a></span> </li>
-
-                      </ul>
-
-                    </li>
-
-                  </ul>
-
-                </li>
-
-                <li class="level0- level0 last"> <span class="magicat-cat"><a href="grid.html"><span>Furniture</span></a></span> </li>
-
               </ul>
-
             </div>
-
           </div>
-
-          <div class="block block-layered-nav">
-
-            <div class="block-title">Shop By</div>
-
-            <div class="block-content">
-
-              <p class="block-subtitle">Shopping Options</p>
-
-              <dl id="narrow-by-list">
-
-                <dt class="odd">Price</dt>
-
-                <dd class="odd">
-
-                  <ol>
-
-                    <li> <a href="#"><span class="price">$0.00</span> - <span class="price">$99.99</span></a> (6) </li>
-
-                    <li> <a href="#"><span class="price">$100.00</span> and above</a> (6) </li>
-
-                  </ol>
-
-                </dd>
-
-                <dt class="even">Manufacturer</dt>
-
-                <dd class="even">
-
-                  <ol>
-
-                    <li> <a href="#">TheBrand</a> (9) </li>
-
-                    <li> <a href="#">Company</a> (4) </li>
-
-                    <li> <a href="#">LogoFashion</a> (1) </li>
-
-                  </ol>
-
-                </dd>
-
-                <dt class="odd">Color</dt>
-
-                <dd class="odd">
-
-                  <ol>
-
-                    <li> <a href="#">Green</a> (1) </li>
-
-                    <li> <a href="#">White</a> (5) </li>
-
-                    <li> <a href="#">Black</a> (5) </li>
-
-                    <li> <a href="#">Gray</a> (4) </li>
-
-                    <li> <a href="#">Dark Gray</a> (3) </li>
-
-                    <li> <a href="#">Blue</a> (1) </li>
-
-                  </ol>
-
-                </dd>
-
-                <dt class="last even">Size</dt>
-
-                <dd class="last even">
-
-                  <ol>
-
-                    <li> <a href="#">S</a> (6) </li>
-
-                    <li> <a href="#">M</a> (6) </li>
-
-                    <li> <a href="#">L</a> (4) </li>
-
-                    <li> <a href="#">XL</a> (4) </li>
-
-                  </ol>
-
-                </dd>
-
-              </dl>
-
-            </div>
-
-          </div>
-
-          <div class="block block-cart">
-
-            <div class="block-title ">My Cart</div>
-
-            <div class="block-content">
-
-              <div class="summary">
-
-                <p class="amount">There are <a href="#">2 items</a> in your cart.</p>
-
-                <p class="subtotal"> <span class="label">Cart Subtotal:</span> <span class="price">$27.99</span> </p>
-
-              </div>
-
-              <div class="ajax-checkout">
-
-                <button type="submit" title="Submit" class="button button-checkout"><span>Checkout</span></button>
-
-              </div>
-
-              <p class="block-subtitle">Recently added item(s) </p>
-
-              <ul>
-
-                <li class="item"> <a class="product-image" title="Fisher-Price Bubble Mower" href="products-images"><img width="80" alt="Fisher-Price Bubble Mower" src="products-images/product1.jpg"></a>
-
-                  <div class="product-details">
-
-                    <div class="access"> <a class="btn-remove1" title="Remove This Item" href="#"> <span class="icon"></span> Remove </a> </div>
-
-                    <p class="product-name"> <a href="product_detail.html">Sample Product</a> </p>
-
-                    <strong>1</strong> x <span class="price">$19.99</span> </div>
-
-                </li>
-
-                <li class="item last"> <a class="product-image" title="Prince Lionheart Jumbo Toy Hammock" href="product_detail.html"><img width="80" alt="Prince Lionheart Jumbo Toy Hammock" src="products-images/product1.jpg"></a>
-
-                  <div class="product-details">
-
-                    <div class="access"> <a class="btn-remove1" title="Remove This Item" href="#"> <span class="icon"></span> Remove </a> </div>
-
-                    <p class="product-name"> <a href="product_detail.html">Sample Product</a> </p>
-
-                    <strong>1</strong> x <span class="price">$8.00</span> 
-
-                    <!--access clearfix--> 
-
-                  </div>
-
-                </li>
-
-              </ul>
-
-            </div>
-
-          </div>
-
-          <div class="block block-compare">
-
-            <div class="block-title ">Compare Products (2)</div>
-
-            <div class="block-content">
-
-              <ol id="compare-items">
-
-                <li class="item odd">
-
-                  <input type="hidden" class="compare-item-id" value="2173">
-
-                  <a href="#" title="Remove This Item" class="btn-remove1"></a> <a class="product-name" href="#"> Sofa with Box-Edge Polyester Wrapped Cushions</a> </li>
-
-                <li class="item last even">
-
-                  <input type="hidden" class="compare-item-id" value="2174">
-
-                  <a href="#" title="Remove This Item" class="btn-remove1"></a> <a class="product-name" href="#"> Sofa with Box-Edge Down-Blend Wrapped Cushions</a> </li>
-
-              </ol>
-
-              <div class="ajax-checkout">
-
-                <button class="button button-compare" title="Submit" type="submit"><span>Compare</span></button>
-
-                <button class="button button-clear" title="Submit" type="submit"><span>Clear</span></button>
-
-              </div>
-
-            </div>
-
-          </div>
-
-          <div class="block block-list block-viewed">
-
-            <div class="block-title"> Recently Viewed </div>
-
-            <div class="block-content">
-
-              <ol id="recently-viewed-items">
-
-                <li class="item odd">
-
-                  <p class="product-name"><a href="#"> Armchair with Box-Edge Upholstered Arm</a></p>
-
-                </li>
-
-                <li class="item even">
-
-                  <p class="product-name"><a href="#"> Pearce Upholstered Slee pere</a></p>
-
-                </li>
-
-                <li class="item last odd">
-
-                  <p class="product-name"><a href="#"> Sofa with Box-Edge Down-Blend Wrapped Cushions</a></p>
-
-                </li>
-
-              </ol>
-
-            </div>
-
-          </div>
-
-          <div class="block block-poll">
-
-            <div class="block-title">Community Poll </div>
-
-            <form onSubmit="return validatePollAnswerIsSelected();" method="post" action="#" id="pollForm">
-
-              <div class="block-content">
-
-                <p class="block-subtitle">What is your favorite Magento feature?</p>
-
-                <ul id="poll-answers">
-
-                  <li class="odd">
-
-                    <input type="radio" value="5" id="vote_5" class="radio poll_vote" name="vote">
-
-                    <span class="label">
-
-                    <label for="vote_5">Layered Navigation</label>
-
-                    </span> </li>
-
-                  <li class="even">
-
-                    <input type="radio" value="6" id="vote_6" class="radio poll_vote" name="vote">
-
-                    <span class="label">
-
-                    <label for="vote_6">Price Rules</label>
-
-                    </span> </li>
-
-                  <li class="odd">
-
-                    <input type="radio" value="7" id="vote_7" class="radio poll_vote" name="vote">
-
-                    <span class="label">
-
-                    <label for="vote_7">Category Management</label>
-
-                    </span> </li>
-
-                  <li class="last even">
-
-                    <input type="radio" value="8" id="vote_8" class="radio poll_vote" name="vote">
-
-                    <span class="label">
-
-                    <label for="vote_8">Compare Products</label>
-
-                    </span> </li>
-
-                </ul>
-
-                <div class="actions">
-
-                  <button class="button button-vote" title="Vote" type="submit"><span>Vote</span></button>
-
-                </div>
-
-              </div>
-
-            </form>
-
-          </div>
-
-          <div class="block block-banner"><a href="#"><img src="images/block-banner.png" alt="block-banner"></a></div>
-
         </aside>
-
       </div>
-
     </div>
-
   </section>
-
   <!-- End Two columns content -->
-
-
-
-
-
-
+</tal:check_roles>
 
 </metal:content-core>
 </metal:content-core>

@@ -14,7 +14,12 @@
 
 <?python
 from plone import api
-from html2text import html2text
+import html2text
+
+html2text = html2text.HTML2Text()
+html2text.ignore_links = True
+html2text.ignore_images = True 
+
 portal = api.portal.get()
 
 if api.user.is_anonymous():
@@ -28,10 +33,12 @@ else:
 <tal:check_roles condition="manageBrand">
   <tal:getChildNodes define="items context/getChildNodes">
     <ul>
-      <li tal:repeat="item items">
+<tal:repeat repeat="item items">
+      <li tal:condition="python:item.Type() == 'Post'">
         <a tal:attributes="href item/absolute_url; title item/title" tal:content="item/title"></a>
-        <p tal:content="python:html2text(item.text.raw)[0:30]"></p>
+        <p tal:content="python:html2text.handle(item.text.raw)[0:30]" tal:on-error="string:None"></p>
       </li>
+</tal:repeat>
     </ul>
   </tal:getChildNodes>
 </tal:check_roles>
@@ -80,7 +87,9 @@ else:
             <ol id="products-list" class="products-list">
   <tal:getChildNodes define="items context/getChildNodes">
     <tal:repeat repeat="item items">
-              <li class="item odd" tal:attributes="class python:'item %s' % ('odd' if repeat['item'].even else 'odd')">
+              <li class="item odd"
+                  tal:condition="python:item.Type() == 'Post'"
+                  tal:attributes="class python:'item %s' % ('odd' if repeat['item'].even else 'odd')">
                 <div class="product-image">
                   <a tal:attributes="href item/absolute_url; title item/title">
                     <img class="small-image" src="/logo.png" alt="HTC Rhyme Sense" width="230"/>
@@ -91,7 +100,7 @@ else:
                     <a tal:attributes="href item/absolute_url; title item/title" tal:content="item/title"> Title </a></h2>
 
                   <div class="desc std">
-                    <p><span tal:content="python:html2text(item.text.raw)[0:50]"/>...</p>
+                    <p><span tal:content="python:html2text.handle(item.text.raw)[0:100]"/>...</p>
                     <a tal:attributes="href item/absolute_url; title item/title" i18n:translate=""
                        class="button buy-btn" style="float:right">Read</a>
                   </div>

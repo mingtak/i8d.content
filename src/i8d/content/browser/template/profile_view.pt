@@ -1,0 +1,104 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="i8d.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+portal = api.portal.get()
+
+if api.user.is_anonymous():
+    manageBrand = False
+else:
+    roles = api.user.get_roles()
+    manageBrand = 'Manager' in roles
+?>
+
+<tal:check_roles condition="manageBrand">
+<p><strong i18n:translate="">Introduction:</strong></p>
+<div tal:content="structure context/text/raw" />
+<img tal:replace="structure context/@@images/image/mini|nothing" />
+</tal:check_roles>
+
+
+<tal:check_roles condition="not:manageBrand">
+
+  <div class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+
+
+        <div class="col-right sidebar col-sm-3 wow bounceInUp animated">
+          <div role="complementary" class="widget_wrapper13" id="secondary">
+            <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
+              <h3 class="widget-title" tal:content="context/title">Image</h3>
+              <div class="widget-content">
+<img tal:attributes="src string:${context/absolute_url}/@@images/image/large" style="width:100%"/>
+              </div>
+              <!--widget-content-->
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-main col-sm-6 wow bounceInUp animated">
+          <div class="page-title">
+            <h2>Member Profile</h2>
+            <h2>Expert Profile</h2>
+          </div>
+          <div class="blog-wrapper" id="main">
+            <div class="site-content" id="primary">
+              <div role="main" id="content">
+                <article class="blog_entry clearfix" >
+                  <header class="blog_entry-header clearfix">
+<!--                    <div class="blog_entry-header-inner">
+                      <h2 class="blog_entry-title" tal:content="context/title"> title </h2>
+                    </div>
+-->
+                    <!--blog_entry-header-inner--> 
+                  </header>
+                  <!--blog_entry-header clearfix-->
+                  <div class="entry-content" tal:content="structure context/text/raw" />
+                </article>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-right sidebar col-sm-3 wow bounceInUp animated">
+          <div role="complementary" class="widget_wrapper13" id="secondary">
+            <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
+              <h3 class="widget-title">這裏放廣告</h3>
+              <div class="widget-content">
+廣告區塊
+              </div>
+              <!--widget-content-->
+            </div>
+          </div>
+        </div>
+
+
+
+      </div>
+    </div>
+  </div>
+
+
+</tal:check_roles>
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

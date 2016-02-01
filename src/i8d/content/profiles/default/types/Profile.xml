@@ -8,7 +8,7 @@
   <property name="factory">Profile</property>
   <property name="add_view_expr">string:${folder_url}/++add++Profile</property>
   <property name="link_target"></property>
-  <property name="immediate_view">view</property>
+  <property name="immediate_view">profile_view</property>
   <property name="global_allow">True</property>
   <property name="filter_content_types">True</property>
   <property name="allowed_content_types">
@@ -17,9 +17,9 @@
     <element value="Post"/>
   </property>
   <property name="allow_discussion">False</property>
-  <property name="default_view">view</property>
+  <property name="default_view">profile_view</property>
   <property name="view_methods">
-    <element value="view"/>
+    <element value="profile_view"/>
   </property>
   <property name="default_view_fallback">False</property>
   <property name="add_permission">cmf.AddPortalContent</property>
@@ -27,6 +27,7 @@
 <!--  <property name="klass">plone.app.contenttypes.content.Folder</property> -->
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
+    <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
     <element value="Products.CMFPlone.interfaces.constrains.ISelectableConstrainTypes"/>
   </property>
   <property name="schema">i8d.content.interfaces.IProfile</property>

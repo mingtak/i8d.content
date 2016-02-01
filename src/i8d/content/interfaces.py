@@ -264,6 +264,12 @@ class IProfile(Interface):
         required=False,
     )
 
+    isExpert = schema.Bool(
+        title=_(u"Is Expert"),
+        default=False,
+        required=True,
+    )
+
     image = NamedBlobImage(
         title=_(u"Expert Image."),
         description=_(u"Expert image."),

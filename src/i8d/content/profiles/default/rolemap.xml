@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<rolemap>
+  <roles>
+    <role name="Expert"/>
+  </roles>
+
+  <permissions>
+    <permission name="i8d.content: Is Expert" acquire="False">
+      <role name="Expert" />
+    </permission>
+  </permissions>
+
+</rolemap>

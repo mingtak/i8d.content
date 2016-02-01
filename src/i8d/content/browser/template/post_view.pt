@@ -70,39 +70,19 @@ else:
         <div class="col-right sidebar col-sm-3 wow bounceInUp animated">
           <div role="complementary" class="widget_wrapper13" id="secondary">
             <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
-              <h3 class="widget-title">Most Popular Post</h3>
+              <h3 class="widget-title" i18n:translate="">Recent iShare Posts</h3>
               <div class="widget-content">
-                <ul class="posts-list unstyled clearfix">
+                <ul class="posts-list unstyled clearfix" tal:define="items python:context.getParentNode().getChildNodes()">
                   <li>
-                    <figure class="featured-thumb"> <a href="#pellentesque-posuere"> <img width="80" height="53" alt="blog image" src="images/blog-img1.jpg"> </a> </figure>
+                    <figure class="featured-thumb">
+                      <a href="#pellentesque-posuere">
+                        <img width="80" height="53" alt="blog image" src="images/blog-img1.jpg">
+                      </a>
+                    </figure>
                     <!--featured-thumb-->
                     <h4><a title="Pellentesque posuere" href="#pellentesque-posuere">Pellentesque posuere</a></h4>
                     <p class="post-meta"><i class="icon-calendar"></i>
                       <time datetime="2014-07-10T07:09:31+00:00" class="entry-date">Jul 10, 2014</time>
-                      .</p>
-                  </li>
-                  <li>
-                    <figure class="featured-thumb"> <a href="#dolor-lorem-ipsum"> <img width="80" height="53" alt="blog image" src="images/blog-img1.jpg"> </a> </figure>
-                    <!--featured-thumb-->
-                    <h4><a title="Dolor lorem ipsum" href="#dolor-lorem-ipsum">Dolor lorem ipsum</a></h4>
-                    <p class="post-meta"><i class="icon-calendar"></i>
-                      <time datetime="2014-07-10T07:01:18+00:00" class="entry-date">Jul 10, 2014</time>
-                      .</p>
-                  </li>
-                  <li>
-                    <figure class="featured-thumb"> <a href="#aliquam-eget-sapien-placerat"> <img width="80" height="53" alt="blog image" src="images/blog-img1.jpg"> </a> </figure>
-                    <!--featured-thumb-->
-                    <h4><a title="Aliquam eget sapien placerat" href="#aliquam-eget-sapien-placerat">Aliquam eget sapien placerat</a></h4>
-                    <p class="post-meta"><i class="icon-calendar"></i>
-                      <time datetime="2014-07-10T06:59:14+00:00" class="entry-date">Jul 10, 2014</time>
-                      .</p>
-                  </li>
-                  <li>
-                    <figure class="featured-thumb"> <a href="#pellentesque-habitant-morbi"> <img width="80" height="53" alt="blog image" src="images/blog-img1.jpg"> </a> </figure>
-                    <!--featured-thumb-->
-                    <h4><a title="Pellentesque habitant morbi" href="#pellentesque-habitant-morbi">Pellentesque habitant morbi</a></h4>
-                    <p class="post-meta"><i class="icon-calendar"></i>
-                      <time datetime="2014-07-10T06:53:43+00:00" class="entry-date">Jul 10, 2014</time>
                       .</p>
                   </li>
                 </ul>

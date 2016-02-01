@@ -1,0 +1,16 @@
+<configure
+  xmlns="http://namespaces.zope.org/zope"
+  xmlns:zcml="http://namespaces.zope.org/zcml"
+  i18n_domain="i8d.content">
+
+  <configure zcml:condition="installed AccessControl.security">
+
+    <permission
+      id="i8d.content.IsExpert"
+      title="i8d.content: Is Expert"
+      />
+
+  </configure>
+
+</configure>
+

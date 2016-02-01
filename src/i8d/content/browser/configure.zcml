@@ -20,6 +20,14 @@
 
   <!-- browserview -->
   <browser:page
+      name="profile_view"
+      for="i8d.content.interfaces.IProfile"
+      class=".views.ProfileView"
+      template="template/profile_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="post_view"
       for="i8d.content.interfaces.IPost"
       class=".views.PostView"

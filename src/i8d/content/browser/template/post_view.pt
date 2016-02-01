@@ -23,10 +23,20 @@ else:
     manageBrand = 'Manager' in roles
 ?>
 
+<tal:check_roles condition="manageBrand">
+<p><strong i18n:translate="">Short Text</strong>: <span tal:replace="context/shortText|nothing"/></p>
+<img tal:replace="structure context/@@images/image/mini|nothing" />
+<p><strong i18n:translate="">Complete Article:</strong></p>
+<div tal:content="structure context/text/raw" />
+</tal:check_roles>
+
+
+<tal:check_roles condition="not:manageBrand">
 
   <div class="main-container col2-right-layout">
     <div class="main container">
       <div class="row">
+
         <div class="col-main col-sm-9 wow bounceInUp animated">
           <div class="page-title">
             <h2 tal:content="python:context.getParentNode().title">Blog</h2>
@@ -56,9 +66,7 @@ else:
           </div>
         </div>
 
-<!--
-<tal:check_roles condition="not:manageBrand">
--->
+
         <div class="col-right sidebar col-sm-3 wow bounceInUp animated">
           <div role="complementary" class="widget_wrapper13" id="secondary">
             <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
@@ -122,13 +130,11 @@ else:
             </div>
           </div>
         </div>
-<!--
-</tal:check_roles>
--->
       </div>
     </div>
   </div>
 
+</tal:check_roles>
 
 </metal:content-core>
 </metal:content-core>

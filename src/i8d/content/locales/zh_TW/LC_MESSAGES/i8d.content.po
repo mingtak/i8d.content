@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-01-30 23:29+0000\n"
+"POT-Creation-Date: 2016-02-01 01:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,6 +27,7 @@ msgstr "...全文"
 msgid ">How to buy"
 msgstr "如何購買"
 
+#: ./browser/template/brand_view.pt:117
 #: ./browser/template/cover_view.pt:201
 #: ./browser/template/product_view.pt:151
 msgid "Add to Cart"
@@ -48,6 +49,10 @@ msgstr "地址"
 msgid "Advanced Search"
 msgstr "進階搜尋"
 
+#: ./browser/template/brand_view.pt:157
+msgid "All Brands"
+msgstr "所有品牌"
+
 #: ./browser/template/cover_view.pt:135
 msgid "All Post"
 msgstr "所有文章"
@@ -61,15 +66,23 @@ msgid "Answer"
 msgstr "答覆"
 
 #: ./browser/template/cover_view.pt:295
-#: ./interfaces.py:232
+#: ./interfaces.py:238
 msgid "Article"
 msgstr "文章"
 
-#: ./interfaces.py:147
+#: ./interfaces.py:46
+msgid "Banner Image"
+msgstr "橫幅圖檔"
+
+#: ./interfaces.py:47
+msgid "Banner image, about 1500X350 around."
+msgstr "橫幅圖檔，建議尺寸，大約 1500X350px 。"
+
+#: ./interfaces.py:153
 msgid "Bonus Point"
 msgstr "紅利點數"
 
-#: ./interfaces.py:148
+#: ./interfaces.py:154
 msgid "Bonus point setting, please filling decimal point. maximum is 0.05 (5%)"
 msgstr "紅利點數設定，請以小數點設定百分比，例如以 0.05 表示 5%"
 
@@ -77,34 +90,34 @@ msgstr "紅利點數設定，請以小數點設定百分比，例如以 0.05 表
 msgid "Brain more than 1 item"
 msgstr "超過一個項目"
 
-#: ./interfaces.py:83
+#: ./interfaces.py:89
 #: ./profiles/default/types/Brand.xml
 msgid "Brand"
 msgstr "品牌"
 
-#: ./interfaces.py:46
-msgid "Brand Logo"
-msgstr "品牌商標"
-
 #: ./interfaces.py:40
-msgid "Brand Nickname"
-msgstr "品牌暱名"
+msgid "Brand Nickname or Category Keywords"
+msgstr "品牌名稱或主題關鍵字列表"
 
 #: ./browser/coverSetting.py:19
 msgid "Brand Show In Nav"
 msgstr "顯示在主選單的品牌"
 
-#: ./interfaces.py:35
-msgid "Brand Title"
-msgstr "品牌名稱"
-
-#: ./interfaces.py:47
-msgid "Brand logo image"
-msgstr "品牌商標圖檔"
-
-#: ./interfaces.py:84
+#: ./interfaces.py:90
 msgid "Brand name."
 msgstr "品牌名稱."
+
+#: ./interfaces.py:52
+msgid "Brand or Category Logo"
+msgstr "品牌或主題圖示"
+
+#: ./interfaces.py:35
+msgid "Brand or Category Title"
+msgstr "品牌或主題標題"
+
+#: ./interfaces.py:53
+msgid "Brand or category logo image"
+msgstr "品牌或主題圖示"
 
 #: ./browser/template/product_view.pt:132
 msgid "Brand:"
@@ -130,11 +143,11 @@ msgstr "網站首頁設定"
 msgid "Cover setup"
 msgstr "網站首頁設定"
 
-#: ./interfaces.py:189
+#: ./interfaces.py:195
 msgid "Date of the most recent update to the product."
 msgstr "商品最後更新日期。"
 
-#: ./interfaces.py:65
+#: ./interfaces.py:71
 msgid "Description"
 msgstr "描述"
 
@@ -146,6 +159,7 @@ msgstr "描述:"
 msgid "Description: All show in homepage's objects, listing below, want to change item, click edit button in toolbar to select. If want to edit object, click object, go to that page to edit."
 msgstr "說明：所有顯示在首頁的項目，均列表於下方，要改變內容，請直接點選上面的編輯，如果要編輯商品，請先點選商品，再點選編輯選項"
 
+#: ./browser/template/brand_view.pt:116
 #: ./browser/template/cover_view.pt:200
 #: ./browser/template/product_view.pt:247
 msgid "Detail"
@@ -173,6 +187,14 @@ msgstr "活動"
 msgid "Events can be shown in calendars."
 msgstr "活動可以顯示在日曆中"
 
+#: ./interfaces.py:267
+msgid "Expert Image."
+msgstr "專家圖檔"
+
+#: ./interfaces.py:268
+msgid "Expert image."
+msgstr "專家圖檔。"
+
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:86
 msgid "FAQs"
 msgstr "本站相關問答"
@@ -193,17 +215,17 @@ msgstr "資料夾"
 msgid "Header service explanation"
 msgstr "表頭服務說明"
 
-#: ./interfaces.py:175
+#: ./interfaces.py:181
 msgid "Hero Text"
 msgstr "Hero 文字"
 
 #: ./browser/template/cover_view.pt:271
-#: ./interfaces.py:208
+#: ./interfaces.py:214
 msgid "Heros"
 msgstr "Heros (首頁主視覺大圖)"
 
 #: ./browser/template/cover_view.pt:287
-#: ./interfaces.py:224
+#: ./interfaces.py:230
 msgid "Hot Product"
 msgstr "熱門商品"
 
@@ -211,15 +233,15 @@ msgstr "熱門商品"
 msgid "How to buy"
 msgstr "如何購買"
 
-#: ./interfaces.py:77
+#: ./interfaces.py:83
 msgid "If In Stock, Please check it."
 msgstr "若有庫存可隨時出貨，請打勾(預設值已打勾)。"
 
-#: ./interfaces.py:271
+#: ./interfaces.py:283
 msgid "If want to show this page to home page, please upload a image."
 msgstr "假如要讓這個項目顯示在首頁，請上傳一張圖檔"
 
-#: ./interfaces.py:270
+#: ./interfaces.py:282
 #: ./profiles/default/types/Image.xml
 msgid "Image"
 msgstr "圖檔"
@@ -236,7 +258,7 @@ msgstr "商品輸入錯誤"
 msgid "In Stock"
 msgstr "有現貨"
 
-#: ./interfaces.py:76
+#: ./interfaces.py:82
 msgid "In Stock?"
 msgstr "庫存狀況？"
 
@@ -248,7 +270,7 @@ msgstr "相關資訊"
 msgid "Installs the i8d.content add-on."
 msgstr "安裝 i8d.content 模組"
 
-#: ./interfaces.py:188
+#: ./interfaces.py:194
 msgid "Last Updated"
 msgstr "最近更新"
 
@@ -260,7 +282,7 @@ msgstr "讓您上傳一個檔案到網站"
 msgid "Link"
 msgstr "連結"
 
-#: ./interfaces.py:97
+#: ./interfaces.py:103
 msgid "List Price"
 msgstr "商品定價"
 
@@ -268,7 +290,7 @@ msgstr "商品定價"
 msgid "List price:"
 msgstr "定價:"
 
-#: ./interfaces.py:157
+#: ./interfaces.py:163
 msgid "Maximum Used Bonus Points"
 msgstr "紅利點數使用上限"
 
@@ -277,7 +299,7 @@ msgid "Menu"
 msgstr ""
 
 #: ./browser/template/cover_view.pt:279
-#: ./interfaces.py:216
+#: ./interfaces.py:222
 msgid "New Product"
 msgstr "新商品"
 
@@ -289,7 +311,7 @@ msgstr "最新消息"
 msgid "Order"
 msgstr "訂單"
 
-#: ./interfaces.py:352
+#: ./interfaces.py:364
 msgid "Order Title"
 msgstr "訂單標題"
 
@@ -318,14 +340,14 @@ msgid "Payment"
 msgstr "付款政策說明"
 
 #: ./interfaces.py:41
-msgid "Please listing all nickname that about this brand. For example, Microfost and MS, perline one record."
-msgstr "請列出所有品牌慣稱，列如 'seven-eleven', '7-11' 指的是同一個品牌"
+msgid "Please listing all nickname that about this brand. For example, Microfost and MS, Separated by commas."
+msgstr "請列出所有可能的關鍵字，例如「微軟,Microfost,MS」，請以半形逗號分隔。
 
 #: ./profiles/default/types/Post.xml
 msgid "Post"
 msgstr "文章"
 
-#: ./browser/template/brand_view.pt:45
+#: ./browser/template/brand_view.pt:62
 msgid "Price"
 msgstr "價格"
 
@@ -337,15 +359,15 @@ msgstr "商品"
 msgid "Product Description"
 msgstr "產品說明"
 
-#: ./interfaces.py:60
+#: ./interfaces.py:66
 msgid "Product Id"
 msgstr "商品 id"
 
-#: ./interfaces.py:109
+#: ./interfaces.py:115
 msgid "Product Image."
 msgstr "商品圖檔"
 
-#: ./interfaces.py:55
+#: ./interfaces.py:61
 msgid "Product Name"
 msgstr "商品名稱"
 
@@ -353,23 +375,23 @@ msgstr "商品名稱"
 msgid "Product Show In Nav"
 msgstr "顯示在主選單的商品"
 
-#: ./interfaces.py:110
+#: ./interfaces.py:116
 msgid "Product image for header."
 msgstr "商品圖檔(首圖使用)"
 
-#: ./interfaces.py:116
+#: ./interfaces.py:122
 msgid "Product image."
 msgstr "商品圖檔。"
 
-#: ./interfaces.py:71
+#: ./interfaces.py:77
 msgid "Product introduction web page include http:// or https://"
 msgstr "商品官網網址，本項須包含 http:// 或 https://"
 
-#: ./browser/template/brand_view.pt:44
+#: ./browser/template/brand_view.pt:61
 msgid "ProductName"
 msgstr "產品名稱"
 
-#: ./interfaces.py:343
+#: ./interfaces.py:355
 msgid "Products File"
 msgstr "上傳商品檔案"
 
@@ -377,19 +399,19 @@ msgstr "上傳商品檔案"
 msgid "Profile"
 msgstr "個人頁面"
 
-#: ./interfaces.py:251
+#: ./interfaces.py:257
 msgid "Profile Name"
 msgstr "個人標題"
 
-#: ./interfaces.py:167
+#: ./interfaces.py:173
 msgid "Promotional Text"
 msgstr "促銷文字"
 
-#: ./interfaces.py:176
+#: ./interfaces.py:182
 msgid "Promotional Text for Hero page"
 msgstr "促銷文字(顯示於頁頁)"
 
-#: ./interfaces.py:168
+#: ./interfaces.py:174
 msgid "Promotional Text, support html format richtext."
 msgstr "促銷文字，本項支援 html 語法"
 
@@ -397,11 +419,11 @@ msgstr "促銷文字，本項支援 html 語法"
 msgid "Provider"
 msgstr "供應商"
 
-#: ./interfaces.py:330
+#: ./interfaces.py:342
 msgid "Provider Logo"
 msgstr "供應商商標"
 
-#: ./interfaces.py:320
+#: ./interfaces.py:332
 msgid "Provider Name"
 msgstr "供應商名稱"
 
@@ -409,11 +431,11 @@ msgstr "供應商名稱"
 msgid "Provider Show In Nav"
 msgstr "顯示在主選單的供應商"
 
-#: ./interfaces.py:331
+#: ./interfaces.py:343
 msgid "Provider logo image"
 msgstr "供應商商標圖檔"
 
-#: ./interfaces.py:337
+#: ./interfaces.py:349
 msgid "Provider website url, must include http:// or https://"
 msgstr "供應商網址，請含 http:// 或 https://"
 
@@ -421,12 +443,12 @@ msgstr "供應商網址，請含 http:// 或 https://"
 msgid "Provider:"
 msgstr "供應商:"
 
-#: ./interfaces.py:70
+#: ./interfaces.py:76
 msgid "Pruduct URL"
 msgstr "商品網址"
 
 #: ./browser/template/cover_view.pt:303
-#: ./interfaces.py:240
+#: ./interfaces.py:246
 #: ./profiles/default/types/Question.xml
 msgid "Question"
 msgstr "提問"
@@ -435,11 +457,11 @@ msgstr "提問"
 msgid "Question & Anwser"
 msgstr "提問與回應"
 
-#: ./interfaces.py:290
+#: ./interfaces.py:302
 msgid "Question Detail"
 msgstr "提問詳細內容"
 
-#: ./interfaces.py:285
+#: ./interfaces.py:297
 msgid "Question Title"
 msgstr "提問標題"
 
@@ -451,7 +473,7 @@ msgstr "產品資訊"
 msgid "Regular Price:"
 msgstr "價格:"
 
-#: ./interfaces.py:210
+#: ./interfaces.py:216
 msgid "Related"
 msgstr "關連的"
 
@@ -459,7 +481,7 @@ msgstr "關連的"
 msgid "Related Products"
 msgstr "相關產品"
 
-#: ./interfaces.py:312
+#: ./interfaces.py:324
 msgid "Reply Question"
 msgstr "回覆提問"
 
@@ -467,31 +489,31 @@ msgstr "回覆提問"
 msgid "Return policy"
 msgstr "退貨政策"
 
-#: ./interfaces.py:209
+#: ./interfaces.py:215
 msgid "Rleated items for hero section"
 msgstr "關連的 hero 項目"
 
-#: ./interfaces.py:233
+#: ./interfaces.py:239
 msgid "Rleated items for home page article list"
 msgstr "關連的文章，顯示於首頁"
 
-#: ./interfaces.py:217
+#: ./interfaces.py:223
 msgid "Rleated items for home page new product list"
 msgstr "關連項目，新商品"
 
-#: ./interfaces.py:225
+#: ./interfaces.py:231
 msgid "Rleated items for home page not product list"
 msgstr "關連項目，熱門商品"
 
-#: ./interfaces.py:241
+#: ./interfaces.py:247
 msgid "Rleated items for home page question list"
 msgstr "關連項目，提問"
 
-#: ./interfaces.py:103
+#: ./interfaces.py:109
 msgid "Sale price"
 msgstr "售價"
 
-#: ./interfaces.py:104
+#: ./interfaces.py:110
 msgid "Sale price for the product if different from the list price, must be <= listPrice."
 msgstr "銷售價格必需小於或等於定價。"
 
@@ -503,6 +525,7 @@ msgstr "售價:"
 msgid "Same Provider"
 msgstr "這個供應商還有..."
 
+#: ./browser/template/brand_view.pt:118
 #: ./browser/template/cover_view.pt:202
 #: ./browser/template/product_view.pt:249
 msgid "Search Related"
@@ -524,11 +547,11 @@ msgstr "訂單查詢"
 msgid "Shopping Guide"
 msgstr "網站購買指南"
 
-#: ./interfaces.py:277
+#: ./interfaces.py:289
 msgid "Short Text"
 msgstr "短文描述"
 
-#: ./interfaces.py:278
+#: ./interfaces.py:290
 msgid "Short Text, show in Cover."
 msgstr "知文描述，顯示於首頁"
 
@@ -540,7 +563,7 @@ msgstr "訂閱電子報"
 msgid "Site Map"
 msgstr "網站地圖"
 
-#: ./browser/template/brand_view.pt:40
+#: ./browser/template/brand_view.pt:57
 msgid "Sort By:"
 msgstr "排序:"
 
@@ -548,7 +571,7 @@ msgstr "排序:"
 msgid "Special Price"
 msgstr "特別折扣價"
 
-#: ./interfaces.py:182
+#: ./interfaces.py:188
 msgid "Standard shipping cost"
 msgstr "標準運費"
 
@@ -564,11 +587,11 @@ msgstr "訂閱"
 msgid "Suppliers"
 msgstr "合作廠商"
 
-#: ./interfaces.py:98
+#: ./interfaces.py:104
 msgid "The list price of the product."
 msgstr "本項商品訂價"
 
-#: ./interfaces.py:198
+#: ./interfaces.py:204
 msgid "Title"
 msgstr "標頭"
 
@@ -580,7 +603,7 @@ msgstr ""
 msgid "Uninstalls the i8d.content add-on."
 msgstr "御載 i8d.content 模組"
 
-#: ./interfaces.py:183
+#: ./interfaces.py:189
 msgid "Usually is the cost for the typical standard, lowest cost shipping method. This is provided for informational purposes and the actual shipping cost could vary depending on the visitor."
 msgstr "請輸入單品標準運費。這是提供給消費者的資訊，實際運費可能會根據消費者購買內容而有所不同。"
 
@@ -594,7 +617,7 @@ msgstr ""
 msgid "View More"
 msgstr "點看更多"
 
-#: ./interfaces.py:336
+#: ./interfaces.py:348
 msgid "Website"
 msgstr "網站"
 
@@ -606,13 +629,21 @@ msgstr "網站首頁"
 msgid "Where is my order?"
 msgstr "訂單追蹤"
 
-#: ./interfaces.py:158
+#: ./interfaces.py:164
 msgid "You can use a maximum bonus points."
 msgstr "您可以使用的最大紅利點數"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:97
 msgid "Your Account"
 msgstr "我的帳戶"
+
+#: ./profiles/default/types/Brand.xml
+msgid "brand_view"
+msgstr "顯示品牌館"
+
+#: ./profiles/default/types/Brand.xml
+msgid "category_view"
+msgstr "顯示主題館"
 
 #: ./event/importProducts.py:106
 msgid "file name must be same as provider id and extension is zip."
@@ -634,6 +665,6 @@ msgstr "電子報"
 msgid "recommend"
 msgstr "嚴選商品"
 
-#: ./interfaces.py:344
+#: ./interfaces.py:356
 msgid "zip file, include a .cvs file and image files"
 msgstr "zip 壓縮檔，包含一個 cvs 檔案及相關的圖檔"

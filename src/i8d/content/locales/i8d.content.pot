@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-01-30 23:29+0000\n"
+"POT-Creation-Date: 2016-02-01 01:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,6 +30,7 @@ msgstr ""
 msgid ">How to buy"
 msgstr ""
 
+#: ./browser/template/brand_view.pt:117
 #: ./browser/template/cover_view.pt:201
 #: ./browser/template/product_view.pt:151
 msgid "Add to Cart"
@@ -51,6 +52,10 @@ msgstr ""
 msgid "Advanced Search"
 msgstr ""
 
+#: ./browser/template/brand_view.pt:157
+msgid "All Brands"
+msgstr ""
+
 #: ./browser/template/cover_view.pt:135
 msgid "All Post"
 msgstr ""
@@ -64,15 +69,23 @@ msgid "Answer"
 msgstr ""
 
 #: ./browser/template/cover_view.pt:295
-#: ./interfaces.py:232
+#: ./interfaces.py:238
 msgid "Article"
 msgstr ""
 
-#: ./interfaces.py:147
+#: ./interfaces.py:46
+msgid "Banner Image"
+msgstr ""
+
+#: ./interfaces.py:47
+msgid "Banner image, about 1500X350 around."
+msgstr ""
+
+#: ./interfaces.py:153
 msgid "Bonus Point"
 msgstr ""
 
-#: ./interfaces.py:148
+#: ./interfaces.py:154
 msgid "Bonus point setting, please filling decimal point. maximum is 0.05 (5%)"
 msgstr ""
 
@@ -80,33 +93,33 @@ msgstr ""
 msgid "Brain more than 1 item"
 msgstr ""
 
-#: ./interfaces.py:83
+#: ./interfaces.py:89
 #: ./profiles/default/types/Brand.xml
 msgid "Brand"
 msgstr ""
 
-#: ./interfaces.py:46
-msgid "Brand Logo"
-msgstr ""
-
 #: ./interfaces.py:40
-msgid "Brand Nickname"
+msgid "Brand Nickname or Category Keywords"
 msgstr ""
 
 #: ./browser/coverSetting.py:19
 msgid "Brand Show In Nav"
 msgstr ""
 
-#: ./interfaces.py:35
-msgid "Brand Title"
-msgstr ""
-
-#: ./interfaces.py:47
-msgid "Brand logo image"
-msgstr ""
-
-#: ./interfaces.py:84
+#: ./interfaces.py:90
 msgid "Brand name."
+msgstr ""
+
+#: ./interfaces.py:52
+msgid "Brand or Category Logo"
+msgstr ""
+
+#: ./interfaces.py:35
+msgid "Brand or Category Title"
+msgstr ""
+
+#: ./interfaces.py:53
+msgid "Brand or category logo image"
 msgstr ""
 
 #: ./browser/template/product_view.pt:132
@@ -133,11 +146,11 @@ msgstr ""
 msgid "Cover setup"
 msgstr ""
 
-#: ./interfaces.py:189
+#: ./interfaces.py:195
 msgid "Date of the most recent update to the product."
 msgstr ""
 
-#: ./interfaces.py:65
+#: ./interfaces.py:71
 msgid "Description"
 msgstr ""
 
@@ -149,6 +162,7 @@ msgstr ""
 msgid "Description: All show in homepage's objects, listing below, want to change item, click edit button in toolbar to select. If want to edit object, click object, go to that page to edit."
 msgstr ""
 
+#: ./browser/template/brand_view.pt:116
 #: ./browser/template/cover_view.pt:200
 #: ./browser/template/product_view.pt:247
 msgid "Detail"
@@ -176,6 +190,14 @@ msgstr ""
 msgid "Events can be shown in calendars."
 msgstr ""
 
+#: ./interfaces.py:267
+msgid "Expert Image."
+msgstr ""
+
+#: ./interfaces.py:268
+msgid "Expert image."
+msgstr ""
+
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:86
 msgid "FAQs"
 msgstr ""
@@ -196,17 +218,17 @@ msgstr ""
 msgid "Header service explanation"
 msgstr ""
 
-#: ./interfaces.py:175
+#: ./interfaces.py:181
 msgid "Hero Text"
 msgstr ""
 
 #: ./browser/template/cover_view.pt:271
-#: ./interfaces.py:208
+#: ./interfaces.py:214
 msgid "Heros"
 msgstr ""
 
 #: ./browser/template/cover_view.pt:287
-#: ./interfaces.py:224
+#: ./interfaces.py:230
 msgid "Hot Product"
 msgstr ""
 
@@ -214,15 +236,15 @@ msgstr ""
 msgid "How to buy"
 msgstr ""
 
-#: ./interfaces.py:77
+#: ./interfaces.py:83
 msgid "If In Stock, Please check it."
 msgstr ""
 
-#: ./interfaces.py:271
+#: ./interfaces.py:283
 msgid "If want to show this page to home page, please upload a image."
 msgstr ""
 
-#: ./interfaces.py:270
+#: ./interfaces.py:282
 #: ./profiles/default/types/Image.xml
 msgid "Image"
 msgstr ""
@@ -239,7 +261,7 @@ msgstr ""
 msgid "In Stock"
 msgstr ""
 
-#: ./interfaces.py:76
+#: ./interfaces.py:82
 msgid "In Stock?"
 msgstr ""
 
@@ -251,7 +273,7 @@ msgstr ""
 msgid "Installs the i8d.content add-on."
 msgstr ""
 
-#: ./interfaces.py:188
+#: ./interfaces.py:194
 msgid "Last Updated"
 msgstr ""
 
@@ -263,7 +285,7 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: ./interfaces.py:97
+#: ./interfaces.py:103
 msgid "List Price"
 msgstr ""
 
@@ -271,7 +293,7 @@ msgstr ""
 msgid "List price:"
 msgstr ""
 
-#: ./interfaces.py:157
+#: ./interfaces.py:163
 msgid "Maximum Used Bonus Points"
 msgstr ""
 
@@ -280,7 +302,7 @@ msgid "Menu"
 msgstr ""
 
 #: ./browser/template/cover_view.pt:279
-#: ./interfaces.py:216
+#: ./interfaces.py:222
 msgid "New Product"
 msgstr ""
 
@@ -292,7 +314,7 @@ msgstr ""
 msgid "Order"
 msgstr ""
 
-#: ./interfaces.py:352
+#: ./interfaces.py:364
 msgid "Order Title"
 msgstr ""
 
@@ -321,14 +343,14 @@ msgid "Payment"
 msgstr ""
 
 #: ./interfaces.py:41
-msgid "Please listing all nickname that about this brand. For example, Microfost and MS, perline one record."
+msgid "Please listing all nickname that about this brand. For example, Microfost and MS, Separated by commas."
 msgstr ""
 
 #: ./profiles/default/types/Post.xml
 msgid "Post"
 msgstr ""
 
-#: ./browser/template/brand_view.pt:45
+#: ./browser/template/brand_view.pt:62
 msgid "Price"
 msgstr ""
 
@@ -340,15 +362,15 @@ msgstr ""
 msgid "Product Description"
 msgstr ""
 
-#: ./interfaces.py:60
+#: ./interfaces.py:66
 msgid "Product Id"
 msgstr ""
 
-#: ./interfaces.py:109
+#: ./interfaces.py:115
 msgid "Product Image."
 msgstr ""
 
-#: ./interfaces.py:55
+#: ./interfaces.py:61
 msgid "Product Name"
 msgstr ""
 
@@ -356,23 +378,23 @@ msgstr ""
 msgid "Product Show In Nav"
 msgstr ""
 
-#: ./interfaces.py:110
+#: ./interfaces.py:116
 msgid "Product image for header."
 msgstr ""
 
-#: ./interfaces.py:116
+#: ./interfaces.py:122
 msgid "Product image."
 msgstr ""
 
-#: ./interfaces.py:71
+#: ./interfaces.py:77
 msgid "Product introduction web page include http:// or https://"
 msgstr ""
 
-#: ./browser/template/brand_view.pt:44
+#: ./browser/template/brand_view.pt:61
 msgid "ProductName"
 msgstr ""
 
-#: ./interfaces.py:343
+#: ./interfaces.py:355
 msgid "Products File"
 msgstr ""
 
@@ -380,19 +402,19 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: ./interfaces.py:251
+#: ./interfaces.py:257
 msgid "Profile Name"
 msgstr ""
 
-#: ./interfaces.py:167
+#: ./interfaces.py:173
 msgid "Promotional Text"
 msgstr ""
 
-#: ./interfaces.py:176
+#: ./interfaces.py:182
 msgid "Promotional Text for Hero page"
 msgstr ""
 
-#: ./interfaces.py:168
+#: ./interfaces.py:174
 msgid "Promotional Text, support html format richtext."
 msgstr ""
 
@@ -400,11 +422,11 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
-#: ./interfaces.py:330
+#: ./interfaces.py:342
 msgid "Provider Logo"
 msgstr ""
 
-#: ./interfaces.py:320
+#: ./interfaces.py:332
 msgid "Provider Name"
 msgstr ""
 
@@ -412,11 +434,11 @@ msgstr ""
 msgid "Provider Show In Nav"
 msgstr ""
 
-#: ./interfaces.py:331
+#: ./interfaces.py:343
 msgid "Provider logo image"
 msgstr ""
 
-#: ./interfaces.py:337
+#: ./interfaces.py:349
 msgid "Provider website url, must include http:// or https://"
 msgstr ""
 
@@ -424,12 +446,12 @@ msgstr ""
 msgid "Provider:"
 msgstr ""
 
-#: ./interfaces.py:70
+#: ./interfaces.py:76
 msgid "Pruduct URL"
 msgstr ""
 
 #: ./browser/template/cover_view.pt:303
-#: ./interfaces.py:240
+#: ./interfaces.py:246
 #: ./profiles/default/types/Question.xml
 msgid "Question"
 msgstr ""
@@ -438,11 +460,11 @@ msgstr ""
 msgid "Question & Anwser"
 msgstr ""
 
-#: ./interfaces.py:290
+#: ./interfaces.py:302
 msgid "Question Detail"
 msgstr ""
 
-#: ./interfaces.py:285
+#: ./interfaces.py:297
 msgid "Question Title"
 msgstr ""
 
@@ -454,7 +476,7 @@ msgstr ""
 msgid "Regular Price:"
 msgstr ""
 
-#: ./interfaces.py:210
+#: ./interfaces.py:216
 msgid "Related"
 msgstr ""
 
@@ -462,7 +484,7 @@ msgstr ""
 msgid "Related Products"
 msgstr ""
 
-#: ./interfaces.py:312
+#: ./interfaces.py:324
 msgid "Reply Question"
 msgstr ""
 
@@ -470,31 +492,31 @@ msgstr ""
 msgid "Return policy"
 msgstr ""
 
-#: ./interfaces.py:209
+#: ./interfaces.py:215
 msgid "Rleated items for hero section"
 msgstr ""
 
-#: ./interfaces.py:233
+#: ./interfaces.py:239
 msgid "Rleated items for home page article list"
 msgstr ""
 
-#: ./interfaces.py:217
+#: ./interfaces.py:223
 msgid "Rleated items for home page new product list"
 msgstr ""
 
-#: ./interfaces.py:225
+#: ./interfaces.py:231
 msgid "Rleated items for home page not product list"
 msgstr ""
 
-#: ./interfaces.py:241
+#: ./interfaces.py:247
 msgid "Rleated items for home page question list"
 msgstr ""
 
-#: ./interfaces.py:103
+#: ./interfaces.py:109
 msgid "Sale price"
 msgstr ""
 
-#: ./interfaces.py:104
+#: ./interfaces.py:110
 msgid "Sale price for the product if different from the list price, must be <= listPrice."
 msgstr ""
 
@@ -506,6 +528,7 @@ msgstr ""
 msgid "Same Provider"
 msgstr ""
 
+#: ./browser/template/brand_view.pt:118
 #: ./browser/template/cover_view.pt:202
 #: ./browser/template/product_view.pt:249
 msgid "Search Related"
@@ -527,11 +550,11 @@ msgstr ""
 msgid "Shopping Guide"
 msgstr ""
 
-#: ./interfaces.py:277
+#: ./interfaces.py:289
 msgid "Short Text"
 msgstr ""
 
-#: ./interfaces.py:278
+#: ./interfaces.py:290
 msgid "Short Text, show in Cover."
 msgstr ""
 
@@ -543,7 +566,7 @@ msgstr ""
 msgid "Site Map"
 msgstr ""
 
-#: ./browser/template/brand_view.pt:40
+#: ./browser/template/brand_view.pt:57
 msgid "Sort By:"
 msgstr ""
 
@@ -551,7 +574,7 @@ msgstr ""
 msgid "Special Price"
 msgstr ""
 
-#: ./interfaces.py:182
+#: ./interfaces.py:188
 msgid "Standard shipping cost"
 msgstr ""
 
@@ -567,11 +590,11 @@ msgstr ""
 msgid "Suppliers"
 msgstr ""
 
-#: ./interfaces.py:98
+#: ./interfaces.py:104
 msgid "The list price of the product."
 msgstr ""
 
-#: ./interfaces.py:198
+#: ./interfaces.py:204
 msgid "Title"
 msgstr ""
 
@@ -583,7 +606,7 @@ msgstr ""
 msgid "Uninstalls the i8d.content add-on."
 msgstr ""
 
-#: ./interfaces.py:183
+#: ./interfaces.py:189
 msgid "Usually is the cost for the typical standard, lowest cost shipping method. This is provided for informational purposes and the actual shipping cost could vary depending on the visitor."
 msgstr ""
 
@@ -597,7 +620,7 @@ msgstr ""
 msgid "View More"
 msgstr ""
 
-#: ./interfaces.py:336
+#: ./interfaces.py:348
 msgid "Website"
 msgstr ""
 
@@ -609,12 +632,20 @@ msgstr ""
 msgid "Where is my order?"
 msgstr ""
 
-#: ./interfaces.py:158
+#: ./interfaces.py:164
 msgid "You can use a maximum bonus points."
 msgstr ""
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:97
 msgid "Your Account"
+msgstr ""
+
+#: ./profiles/default/types/Brand.xml
+msgid "brand_view"
+msgstr ""
+
+#: ./profiles/default/types/Brand.xml
+msgid "category_view"
 msgstr ""
 
 #: ./event/importProducts.py:106
@@ -637,6 +668,6 @@ msgstr ""
 msgid "recommend"
 msgstr ""
 
-#: ./interfaces.py:344
+#: ./interfaces.py:356
 msgid "zip file, include a .cvs file and image files"
 msgstr ""

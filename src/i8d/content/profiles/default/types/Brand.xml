@@ -16,7 +16,8 @@
   <property name="allow_discussion">False</property>
   <property name="default_view">brand_view</property>
   <property name="view_methods">
-    <element value="brand_view"/>
+    <element value="brand_view" i18n:attributes="value"/>
+    <element value="category_view" i18n:attributes="value"/>
     <element value="view"/>
   </property>
   <property name="default_view_fallback">False</property>

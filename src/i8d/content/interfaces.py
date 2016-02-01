@@ -30,15 +30,15 @@ DEFAULT_USED_BONUS_RATE = 0.05
 
 
 class IBrand(Interface):
-    """ 品牌 """
+    """ 品牌 & 主題 """
     title = schema.TextLine(
-        title=_(u"Brand Title"),
+        title=_(u"Brand or Category Title"),
         required=True,
     )
 
     nickname = schema.Text(
-        title=_(u"Brand Nickname"),
-        description=_("Please listing all nickname that about this brand. For example, Microfost and MS, perline one record."),
+        title=_(u"Brand Nickname or Category Keywords"),
+        description=_("Please listing all nickname that about this brand. For example, Microfost and MS, Separated by commas."),
         required=True,
     )
 
@@ -49,8 +49,8 @@ class IBrand(Interface):
     )
 
     image = NamedBlobImage(
-        title=_(u"Brand Logo"),
-        description=_(u"Brand logo image"),
+        title=_(u"Brand or Category Logo"),
+        description=_(u"Brand or category logo image"),
         required=True,
     )
 
@@ -260,6 +260,12 @@ class IProfile(Interface):
 
     description = schema.Text(
         title=_(u"Description"),
+        required=False,
+    )
+
+    image = NamedBlobImage(
+        title=_(u"Expert Image."),
+        description=_(u"Expert image."),
         required=False,
     )
 

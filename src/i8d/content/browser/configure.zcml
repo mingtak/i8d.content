@@ -19,6 +19,29 @@
 
 
   <!-- browserview -->
+  <browser:page
+      name="post_view"
+      for="i8d.content.interfaces.IPost"
+      class=".views.PostView"
+      template="template/post_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="question_list_view"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      class=".views.QuestionListView"
+      template="template/question_list_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="post_list_view"
+      for="plone.app.contenttypes.interfaces.IFolder"
+      class=".views.PostListView"
+      template="template/post_list_view.pt"
+      permission="zope2.View"
+      />
 
   <browser:page
       name="cover_view"

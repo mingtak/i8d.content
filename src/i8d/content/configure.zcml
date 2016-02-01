@@ -12,6 +12,7 @@
   <include package=".browser" />
   <include package=".viewlet" />
   <include package=".event" />
+  <include file="behaviors.zcml" />
 
   <genericsetup:registerProfile
       name="default"

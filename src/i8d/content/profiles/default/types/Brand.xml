@@ -25,6 +25,7 @@
   <property name="klass">plone.dexterity.content.Item</property>
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
+    <element value="i8d.content.behaviors.IBannerImage"/>
   </property>
   <property name="schema">i8d.content.interfaces.IBrand</property>
   <property name="model_source"></property>

@@ -42,11 +42,12 @@ class IBrand(Interface):
         required=True,
     )
 
+    """
     bannerImage = NamedBlobImage(
         title=_(u"Banner Image"),
         description=_(u"Banner image, about 1500X350 around."),
         required=True,
-    )
+    )"""
 
     image = NamedBlobImage(
         title=_(u"Brand or Category Logo"),

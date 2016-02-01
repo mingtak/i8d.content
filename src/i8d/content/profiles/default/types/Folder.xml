@@ -14,6 +14,8 @@
  <property name="allow_discussion">False</property>
  <property name="default_view">listing_view</property>
  <property name="view_methods">
+  <element value="post_list_view"/>
+  <element value="question_list_view"/>
   <element value="listing_view"/>
   <element value="summary_view"/>
   <element value="tabular_view"/>
@@ -31,6 +33,7 @@
  <property name="behaviors" purge="false">
   <element value="plone.app.dexterity.behaviors.metadata.IDublinCore"/>
   <element value="plone.app.content.interfaces.INameFromTitle"/>
+  <element value="i8d.content.behaviors.IBannerImage"/>
 <!--  <element value="plone.app.dexterity.behaviors.discussion.IAllowDiscussion"/> -->
   <element value="plone.app.dexterity.behaviors.exclfromnav.IExcludeFromNavigation"/>
 <!--  <element value="plone.app.dexterity.behaviors.id.IShortName"/> -->

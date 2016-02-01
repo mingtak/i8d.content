@@ -1,0 +1,126 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="i8d.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+from html2text import html2text
+portal = api.portal.get()
+
+if api.user.is_anonymous():
+    manageBrand = False
+else:
+    roles = api.user.get_roles()
+    manageBrand = 'Manager' in roles
+?>
+
+
+<tal:check_roles condition="manageBrand">
+  <tal:getChildNodes define="items context/getChildNodes">
+    <ul>
+      <li tal:repeat="item items">
+        <a tal:attributes="href item/absolute_url; title item/title" tal:content="item/title"></a>
+        <p tal:content="python:html2text(item.text.raw)[0:30]"></p>
+      </li>
+    </ul>
+  </tal:getChildNodes>
+</tal:check_roles>
+
+
+<tal:check_roles condition="not:manageBrand">
+
+  <section class="main-container col2-left-layout"
+           tal:define="sortBy python:getattr(request, 'sortBy', 'ProductName');
+                       sortBy python:'sortable_title' if sortBy == 'ProductName' else 'salePrice'">
+    <div class="category-description std container">
+      <div class="category-image">
+        <img tal:attributes="src string:${context/absolute_url}/@@images/bannerImage/banner;
+                             alt portal/Title; title portal/Title">
+      </div>
+    </div>
+    <div class="main container">
+      <div class="row">
+
+
+        <div class="col-main col-sm-9 col-sm-push-3 wow bounceInUp animated">
+          <div class="category-title">
+            <h1 tal:content="context/Title">Tilte</h1>
+          </div>
+
+          <div class="category-products">
+            <div class="toolbar">
+
+              <div class="pager">
+                <div class="pages">
+                  <label>Page:</label>
+                  <ul class="pagination">
+                    <li><a href="#">&laquo;</a></li>
+                    <li class="active"><a href="#">1</a></li>
+                    <li><a href="#">2</a></li>
+                    <li><a href="#">3</a></li>
+                    <li><a href="#">4</a></li>
+                    <li><a href="#">5</a></li>
+                    <li><a href="#">&raquo;</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+
+            <ol id="products-list" class="products-list">
+  <tal:getChildNodes define="items context/getChildNodes">
+    <tal:repeat repeat="item items">
+              <li class="item odd" tal:attributes="class python:'item %s' % ('odd' if repeat['item'].even else 'odd')">
+                <div class="product-image">
+                  <a tal:attributes="href item/absolute_url; title item/title">
+                    <img class="small-image" src="/logo.png" alt="HTC Rhyme Sense" width="230"/>
+                  </a>
+                </div>
+                <div class="product-shop">
+                  <h2 class="product-name">
+                    <a tal:attributes="href item/absolute_url; title item/title" tal:content="item/title"> Title </a></h2>
+
+                  <div class="desc std">
+                    <p><span tal:content="python:html2text(item.text.raw)[0:50]"/>...</p>
+                    <a tal:attributes="href item/absolute_url; title item/title" i18n:translate=""
+                       class="button buy-btn" style="float:right">Read</a>
+                  </div>
+                </div>
+
+              </li>
+
+    </tal:repeat>
+  </tal:getChildNodes>
+            </ol>
+
+
+
+      </div>
+    </div>
+
+        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
+          <div class="side-nav-categories">廣告
+          </div>
+        </aside>
+
+
+
+  </section>
+  <!-- End Two columns content -->
+</tal:check_roles>
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

@@ -49,6 +49,7 @@ setup(
         'plone.app.dexterity',
         'collective.dexteritytextindexer',
         'plone.directives.form',
+        'html2text',
     ],
     extras_require={
         'test': [

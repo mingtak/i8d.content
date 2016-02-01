@@ -29,6 +29,14 @@
       />
 
   <browser:page
+      name="category_view"
+      for="i8d.content.interfaces.IBrand"
+      class=".views.BrandView"
+      template="template/category_view.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="brand_view"
       for="i8d.content.interfaces.IBrand"
       class=".views.BrandView"

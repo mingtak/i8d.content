@@ -100,7 +100,7 @@ else:
             <ul class="products-grid">
 
   <tal:brain define="catalog python:context.portal_catalog;
-                     brain python:catalog({'brand':context.nickname.encode('utf-8').split(','),
+                     brain python:catalog({'Subject':context.nickname.encode('utf-8').split(','),
                                            'Type':'Product'}, sort_on=sortBy)">
     <tal:repeat repeat="item brain">
               <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-12">
@@ -154,6 +154,20 @@ else:
 
         <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
           <div class="side-nav-categories">
+            <div class="block-title" i18n:translate=""> All Category </div>
+            <div class="box-content box-category">
+              <ul id="magicat" tal:define="brands python:portal['category'].getChildNodes()">
+                <li class="level0- level0" tal:repeat="item brands">
+                  <span class="magicat-cat">
+                    <a tal:attributes="href item/absolute_url; title item/title">
+                      <img tal:attributes="src string:${item/absolute_url}/@@images/image/icon; alt item/title"/>
+                      <span tal:content="item/title" style="margin-left:15px;">Brand</span>
+                    </a>
+                  </span>
+                </li>
+              </ul>
+          </div>
+          <div class="side-nav-categories">
             <div class="block-title" i18n:translate=""> All Brands </div>
             <div class="box-content box-category">
               <ul id="magicat" tal:define="brands python:portal['Brand'].getChildNodes()">
@@ -168,22 +182,6 @@ else:
               </ul>
             </div>
           </div>
-          <div class="side-nav-categories">
-            <div class="block-title" i18n:translate=""> All Category </div>
-            <div class="box-content box-category">
-              <ul id="magicat" tal:define="brands python:portal['category'].getChildNodes()">
-                <li class="level0- level0" tal:repeat="item brands">
-                  <span class="magicat-cat">
-                    <a tal:attributes="href item/absolute_url; title item/title">
-                      <img tal:attributes="src string:${item/absolute_url}/@@images/image/icon; alt item/title"/>
-                      <span tal:content="item/title" style="margin-left:15px;">Brand</span>
-                    </a>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
         </aside>
       </div>
     </div>

@@ -10,6 +10,11 @@ from plone import api
 #from zc.relation.interfaces import ICatalog
 
 
+class MiniCartView(BrowserView):
+    """ Mini Cart View
+    """
+
+
 class ProfileView(BrowserView):
     """ Profile View
     """

@@ -13,6 +13,7 @@
   <include package=".viewlet" />
   <include package=".event" />
   <include file="behaviors.zcml" />
+  <include file="permissions.zcml" />
 
   <genericsetup:registerProfile
       name="default"
@@ -60,9 +61,9 @@
   <adapter name="standardShippingCost" factory=".catalog.standardShippingCost_indexer"/>
   <adapter name="lastUpdated" factory=".catalog.lastUpdated_indexer"/>
   <adapter name="productId" factory=".catalog.productId_indexer"/>
+  <adapter name="isExpert" factory=".catalog.isExpert_indexer"/>
+  <adapter name="parentId" factory=".catalog.parentId_indexer"/>
 <!--  <adapter name="" factory=".catalog._indexer"/>
-  <adapter name="" factory=".catalog._indexer"/>
-  <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>

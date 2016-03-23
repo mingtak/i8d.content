@@ -6,11 +6,20 @@ from Products.CMFPlone.utils import safe_unicode
 from i8d.content.interfaces import IBrand, IProduct, ICover, IProfile, IPost, IQuestion, IAnswer, IProvider, IOrder
 
 
+@indexer(IProfile)
+def isExpert_indexer(obj):
+    return obj.isExpert
+
 @indexer(IProduct)
 def productId_indexer(obj):
     # index 傳進 unicode 會有 error，改傳 utf-8 正確，此法暫解
     string = safe_unicode(obj.productId).encode('utf-8')
     return string
+
+
+@indexer(IProduct)
+def parentId_indexer(obj):
+    return obj.getParentNode().id
 
 
 @indexer(IProduct)

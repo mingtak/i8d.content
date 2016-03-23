@@ -59,6 +59,7 @@ def modifyItem(brain, row, zipFolderName):
 def creatItem(folder, row, zipFolderName):
     portal = api.portal.get()
 
+    logger.info('Begin Create Content, %s' % safe_unicode(row['title']))
     item = api.content.create(
         type='Product',
         title=row['title'],
@@ -72,6 +73,9 @@ def creatItem(folder, row, zipFolderName):
         standardShippingCost=int(row['standardShippingCost']),
         container=portal['products'][folder.id],
     )
+
+    logger.info('Create Content, %s' % safe_unicode(row['title']))
+
     item.setSubject(tuple(row['subjects'].split(',')))
     with open('%s/%s' % (zipFolderName, safe_unicode(row['image_1'].strip()))) as file:
         item.image_1 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
@@ -95,7 +99,7 @@ def creatItem(folder, row, zipFolderName):
     item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))
     item.reindexObject()
     transaction.commit()
-
+    logger.info('Commit OK, %s' % safe_unicode(row['title']))
 
 
 def importProducts(folder, event):
@@ -127,12 +131,13 @@ def importProducts(folder, event):
     csvPath = '%s/%s.csv' % (zipFolderName, folder.id)
     with open(csvPath, 'rb') as file:
         for row in csv.DictReader(file):
-            brain = catalog({'Type':'Product', 'productId':row['productId'], 'path':folder.getPhysicalPath()})
+#            import pdb; pdb.set_trace()
+            brain = catalog({'Type':'Product', 'productId':row['productId'], 'parentId':folder.id})
             if brain:
                 try:
                     modifyItem(brain, row, zipFolderName)
                 except:
-                    logger.error('%s: productId:%s, title:%s' % (
+                    logger.error('%s: productId:position 1, %s, title:%s' % (
                         safe_unicode(_(u"Import product error")),
                         safe_unicode(row['productId']),
                         safe_unicode(row['title']),)
@@ -142,7 +147,7 @@ def importProducts(folder, event):
                 try:
                     creatItem(folder, row, zipFolderName)
                 except:
-                    logger.error('%s: productId:%s, title:%s' % (
+                    logger.error('%s: productId:position 2, %s, title:%s' % (
                         safe_unicode(_(u"Import product error")),
                         safe_unicode(row['productId']),
                         safe_unicode(row['title']),)

@@ -1,28 +1,87 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      i18n:domain="i8d.content">
+
+
 <metal:row define-macro="mini_cart">
+
+<?python
+from plone import api
+context = econtext['context']
+catalog = context.portal_catalog
+request = econtext['request']
+itemInCart = request.cookies.get('itemInCart', '')
+itemInCart_list = itemInCart.split()
+if request.form.has_key('uid') and request.form['update'] == 'add':
+    if request.form['uid'] not in itemInCart_list:
+        itemInCart_list.append(request.form['uid'])
+        itemInCart_list = list(set(itemInCart_list))
+        itemInCart = ''
+        for item in itemInCart_list:
+            itemInCart += '%s ' % item
+        request.response.setCookie('itemInCart', itemInCart)
+
+if request.form.has_key('uid') and request.form['update'] == 'remove':
+    if request.form['uid'] in itemInCart_list:
+        itemInCart_list.remove(request.form['uid'])
+        itemInCart = ''
+        for item in itemInCart_list:
+            itemInCart += '%s ' % item
+        request.response.setCookie('itemInCart', itemInCart)
+
+
+?>
+
 
         <div class="top-cart-contain">
           <div class="mini-cart">
             <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="#">
-              <div class="cart-box"><span id="cart-total"><strong>2</strong> item </span></div>
+              <div class="cart-box"><span id="cart-total"><strong tal:content="python:len(itemInCart_list)">2</strong> <tal:item i18n:translate="">item</tal:item> </span></div>
               </a></div>
             <div>
+
+
               <div class="top-cart-content arrow_box">
-                <div class="block-subtitle">Recently added item(s)</div>
+                <tal:checkCart switch="python:len(itemInCart_list)">
+                  <div class="block-subtitle" tal:case="python:0" i18n:translate="">Nothing in Cart.</div>
+                  <div class="block-subtitle" tal:case="python:default" i18n:translate="">Recently added item(s)</div>
+                </tal:checkCart>
+
+<tal:checkCart define="brain python:catalog({'UID':itemInCart_list})"
+               condition="python:len(itemInCart_list)">
                 <ul id="cart-sidebar" class="mini-products-list">
-                  <li class="item last odd"> <a class="product-image" href="product_detail.html" title="  Sample Product "><img alt="  Sample Product " src="products-images/product1.jpg" width="80"></a>
+                  <li class="item last odd" tal:repeat="item brain">
+                    <a class="product-image"
+                       tal:attributes="href item/getURL;
+                                       title item/Title">
+                      <img tal:attributes="alt item/Title;
+                                           src string:${item/getURL}/@@images/image_1/tile" width="64">
+                    </a>
                     <div class="detail-item">
-                      <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
-                        <p class="product-name"> <a href="product_detail.html" title="  Sample Product "> Sample Product </a> </p>
+                      <div class="product-details">
+                        <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove update_cart"
+                           tal:attributes="data-uid item/UID; data-update string:remove">&nbsp;</a>
+                        <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
+                        <p class="product-name">
+                          <a tal:attributes="href item/getURL; title item/Title" tal:content="python:'%s...' % item.Title[0:20]"> Sample Product </a>
+                        </p>
                       </div>
-                      <div class="product-details-bottom"> <span class="price">$320.00</span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>
+                      <div class="product-details-bottom">
+                        <span class="price" tal:content="string:$${item/salePrice}">$320.00</span>
+                        <!-- <span class="title-desc">Qty:</span> <strong>2</strong> -->
+                      </div>
                     </div>
                   </li>
                 </ul>
-                <div class="top-subtotal">Subtotal: <span class="price">$420.00</span></div>
+
                 <div class="actions">
                   <button class="btn-checkout" type="button"><span>Checkout</span></button>
                   <button class="view-cart" type="button"><span>View Cart</span></button>
                 </div>
+</tal:checkCart>
+
               </div>
             </div>
           </div>
@@ -34,4 +93,19 @@
           </div>
         </div>
 
+
+<script type="text/javascript" async="true" defer="true">
+
+$(function() {
+    $(".update_cart").click(function() {
+        $("div.top-cart-contain").load("/mini_cart", {uid:this.getAttribute("data-uid"), update:this.getAttribute("data-update")});
+    });
+});
+</script>
+
+
 </metal:row>
+
+
+
+</html>

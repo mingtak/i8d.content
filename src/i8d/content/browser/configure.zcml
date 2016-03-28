@@ -20,6 +20,14 @@
 
   <!-- browserview -->
   <browser:page
+      name="shopping_cart"
+      for="*"
+      class=".shopping_cart.ShoppingCart"
+      template="template/shopping_cart.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="profile_view"
       for="i8d.content.interfaces.IProfile"
       class=".views.ProfileView"

@@ -31,7 +31,6 @@ if request.form.has_key('uid') and request.form['update'] == 'remove':
             itemInCart += '%s ' % item
         request.response.setCookie('itemInCart', itemInCart)
 
-
 ?>
 
 
@@ -61,7 +60,7 @@ if request.form.has_key('uid') and request.form['update'] == 'remove':
                     </a>
                     <div class="detail-item">
                       <div class="product-details">
-                        <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove update_cart"
+                        <a title="Remove This Item" onClick="" class="glyphicon glyphicon-remove update_cart"
                            tal:attributes="data-uid item/UID; data-update string:remove">&nbsp;</a>
                         <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
                         <p class="product-name">
@@ -94,12 +93,9 @@ if request.form.has_key('uid') and request.form['update'] == 'remove':
         </div>
 
 
-<script type="text/javascript" async="true" defer="true">
-
-$(function() {
-    $(".update_cart").click(function() {
-        $("div.top-cart-contain").load("/mini_cart", {uid:this.getAttribute("data-uid"), update:this.getAttribute("data-update")});
-    });
+<script type="text/javascript">
+$(document).on('click', '.update_cart', function(event){
+    $("div.top-cart-contain").load("/mini_cart", {uid:this.getAttribute("data-uid"), update:this.getAttribute("data-update")});
 });
 </script>
 

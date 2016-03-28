@@ -139,16 +139,9 @@ else:
                   </div>
                   <div class="add-to-box">
                     <div class="add-to-cart">
-                      <label for="qty">Quantity:</label>
-                      <div class="pull-left">
-                        <div class="custom pull-left">
-                          <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
-                          <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
-                          <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="icon-minus">&nbsp;</i></button>
-                        </div>
-                      </div>
-                      <div class="">
-                        <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> <span i18n:translate="">Add to Cart</span></span></button>
+                      <div class="pull-right">
+                        <button tal:attributes="data-uid context/UID; data-update string:add" i18n:attributes="title"
+                                onClick="productAddToCartForm.submit(this)" class="button btn-cart update_cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> <span i18n:translate="">Add to Cart</span></span></button>
                       </div>
                     </div>
 
@@ -245,7 +238,8 @@ else:
                                 <div class="actions-links">
                                   <span class="add-to-links">
                                     <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Detail</span></a>
-                                    <a title="Add to Cart" class="link-wishlist" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Add to Cart</span></a>
+                                    <a title="Add to Cart" class="link-wishlist update_cart" i18n:attributes="title"
+                                       tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></a>
                                     <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
                                   </span> </div>
                                 <div class="info">
@@ -266,7 +260,8 @@ else:
                                   </div>
                                   <!--info-inner-->
                                   <div class="actions">
-                                    <button type="button" title="Add to Cart" class="button btn-cart"><span i18n:translate="">Add to Cart</span></button>
+                                    <button type="button" title="Add to Cart" class="button btn-cart update_cart" i18n:attributes="title"
+                                            tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></button>
                                   </div>
                                   <!--actions-->
                                   <div class="clearfix"> </div>
@@ -312,7 +307,8 @@ else:
                                 <div class="actions-links">
                                   <span class="add-to-links">
                                     <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Detail</span></a>
-                                    <a title="Add to Cart" class="link-wishlist" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Add to Cart</span></a>
+                                    <a title="Add to Cart" class="link-wishlist update_cart" i18n:attributes="title"
+                                       tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></a>
                                     <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
                                   </span> </div>
                                 <div class="info">
@@ -333,7 +329,8 @@ else:
                                   </div>
                                   <!--info-inner-->
                                   <div class="actions">
-                                    <button type="button" title="Add to Cart" class="button btn-cart"><span i18n:translate="">Add to Cart</span></button>
+                                    <button type="button" title="Add to Cart" class="button btn-cart update_cart" i18n:attributes="title"
+                                            tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></button>
                                   </div>
                                   <!--actions-->
                                   <div class="clearfix"> </div>

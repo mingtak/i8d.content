@@ -143,16 +143,20 @@ else:
                         <button tal:attributes="data-uid context/UID; data-update string:add" i18n:attributes="title"
                                 onClick="productAddToCartForm.submit(this)" class="button btn-cart update_cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> <span i18n:translate="">Add to Cart</span></span></button>
                       </div>
+<div class="pull-left">
+<!-- Go to www.addthis.com/dashboard to generate a new set of sharing buttons -->
+<a href="https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=http%3A%2F%2Fwww.addthis.com&pubid=ra-56fa88ed9f23a8f6&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
+<a href="https://api.addthis.com/oexchange/0.8/forward/lineme/offer?url=http%3A%2F%2Fwww.addthis.com&pubid=ra-56fa88ed9f23a8f6&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/lineme.png" border="0" alt="LINE"/></a>
+<a href="https://api.addthis.com/oexchange/0.8/forward/gmail/offer?url=http%3A%2F%2Fwww.addthis.com&pubid=ra-56fa88ed9f23a8f6&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/gmail.png" border="0" alt="Gmail"/></a>
+<a href="https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=http%3A%2F%2Fwww.addthis.com&pubid=ra-56fa88ed9f23a8f6&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
+<a href="https://api.addthis.com/oexchange/0.8/forward/google_plusone_share/offer?url=http%3A%2F%2Fwww.addthis.com&pubid=ra-56fa88ed9f23a8f6&ct=1&title=AddThis%20-%20Get%20likes%2C%20get%20shares%2C%20get%20followers&pco=tbxnj-1.0" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/google_plusone_share.png" border="0" alt="Google+"/></a>
+
+</div>
+
+
+
                     </div>
 
-                    <div class="email-addto-box">
-這裏改成shareing icon
-                      <ul class="add-to-links">
-                        <li> <a class="link-wishlist" href="#"><span>Add to Wishlist</span></a></li>
-                        <li><span class="separator">|</span> <a class="link-compare" href="#"><span>Add to Compare</span></a></li>
-                      </ul>
-                      <p class="email-friend"><a href="#" class=""><span>Email to Friend</span></a></p>
-                    </div>
                   </div>
                 </div>
 
@@ -208,7 +212,30 @@ else:
                     <div class="std" tal:content="structure context/promotionalText/output" />
                   </div>
                   <div class="tab-pane fade in" id="product_tabs_comments">
-<h1>這裏要放disqus</h1>
+
+<div id="disqus_thread"></div>
+<script>
+/**
+* RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+* LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+*/
+/*
+var disqus_config = function () {
+this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+
+s.src = '//i8dtw.disqus.com/embed.js';
+
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+
                   </div>
 
 

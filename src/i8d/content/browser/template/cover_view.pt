@@ -14,7 +14,7 @@
 
 
 
-<tal:check_login condition="context/@@user_is_anonymous">
+<tal:frontend condition="not:context/@@can_see_backend">
  <!-- 首頁 Slider -->
  <div id="magik-slideshow" class="magik-slideshow">
   <div class="container">
@@ -247,7 +247,7 @@
   </section>
   <!-- End Recommend slider --> 
   
-</tal:check_login>
+</tal:frontend>
 
 
 
@@ -261,7 +261,7 @@
 
 
 
-<tal:check_login condition="not:context/@@user_is_anonymous">
+<tal:backend condition="context/@@can_see_backend">
 
 <h2 i18n:translate="">Website homepage</h2>
 <article i18n:translate="">
@@ -311,7 +311,7 @@ If want to edit object, click object, go to that page to edit.
 </ul>
 <hr/>
 
-</tal:check_login>
+</tal:backend>
 
 </metal:content-core>
 </metal:content-core>

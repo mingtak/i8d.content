@@ -7,6 +7,9 @@
 
 <metal:row define-macro="mini_cart">
 
+<?python
+from plone import api
+?>
 
 <tal:def define="itemInCart python:getattr(view, 'itemInCart', request.cookies.get('itemInCart', ''));
                  itemInCart_list python:itemInCart.split()">
@@ -53,7 +56,9 @@
                 </ul>
 
                 <div class="actions">
-                  <a class="btn-checkout" href="/checkout"><span i18n:translate="">Checkout</span></a>
+                  <a class="btn-checkout" tal:attributes="href python:'/login' if api.user.is_anonymous() else '/checkout'">
+                    <span i18n:translate="">Checkout</span>
+                  </a>
                   <a class="view-cart" href="/shopping_cart"><span i18n:translate="">View Cart</span></a>
                 </div>
 </tal:checkCart>

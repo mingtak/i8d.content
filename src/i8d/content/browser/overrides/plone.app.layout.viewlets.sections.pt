@@ -6,7 +6,7 @@
      tal:define="portal_tabs view/portal_tabs"
      tal:condition="portal_tabs"
      i18n:domain="i8d.content">
-  <nav class="theme-nav" tal:condition="context/@@user_is_anonymous">
+  <nav class="theme-nav" tal:condition="not:context/@@can_see_backend">
     <div class="container">
       <div class="nav-inner"> 
         <!-- mobile-menu 行動裝置選單 -->
@@ -168,7 +168,7 @@
 
 
 
-<tal:check_anonymous condition="not:context/@@user_is_anonymous">
+<tal:check_anonymous condition="context/@@can_see_backend">
 <!-- 後台選單 -->
 <tal:sections
      xmlns:tal="http://xml.zope.org/namespaces/tal"

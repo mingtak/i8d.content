@@ -20,6 +20,13 @@
 
   <!-- browserview -->
   <browser:page
+      name="can_see_backend"
+      for="*"
+      class=".views.CanSeeBackend"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="cart_add"
       for="*"
       class=".shopping_cart.CartAdd"

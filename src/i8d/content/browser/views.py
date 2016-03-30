@@ -45,6 +45,27 @@ class CoverView(BrowserView):
     """
 
 
+class CanSeeBackend(BrowserView):
+    """ Can See Backend
+    """
+
+    def __call__(self):
+
+        canSeeRoles = ['Manager', 'Site Administrator']
+
+        if api.user.is_anonymous():
+            return False
+        else:
+            roles = api.user.get_roles()
+            for role in canSeeRoles:
+                if role in roles:
+                    return True
+            return False
+
+
+
+
+
 class TestView(BrowserView):
     """ """
 

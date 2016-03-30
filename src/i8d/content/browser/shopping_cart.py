@@ -2,44 +2,135 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from zope.component import getMultiAdapter
 from plone import api
+
+
+
+
 import logging
-#from Acquisition import aq_inner
-#from zope.component import getUtility
-#from zope.intid.interfaces import IIntIds
-#from zope.security import checkPermission
-#from zc.relation.interfaces import ICatalog
+
+
+
+
+"""
+itemInCart = request.cookies.get('itemInCart', '')
+itemInCart_list = itemInCart.split()
+if request.form.has_key('uid') and request.form['update'] == 'add':
+    if request.form['uid'] not in itemInCart_list:
+        itemInCart_list.append(request.form['uid'])
+        itemInCart_list = list(set(itemInCart_list))
+        itemInCart = ''
+        for item in itemInCart_list:
+            itemInCart += '%s ' % item
+        request.response.setCookie('itemInCart', itemInCart)
+
+if request.form.has_key('uid') and request.form['update'] == 'remove':
+    if request.form['uid'] in itemInCart_list:
+        itemInCart_list.remove(request.form['uid'])
+        itemInCart = ''
+        for item in itemInCart_list:
+            itemInCart += '%s ' % item
+        request.response.setCookie('itemInCart', itemInCart)
+"""
+
 
 class CartAdd(BrowserView):
-    """ Shopping Cart
+    """ Cart Add
     """
+
+    logger = logging.getLogger('Add Item to Cart.')
+    template = ViewPageTemplateFile("template/cart_state.pt")
+
     def __call__(self):
         context = self.context
         request = self.request
         response = request.response
         catalog = context.portal_catalog
         logger = self.logger
+
+        itemInCart = request.cookies.get('itemInCart', '')
+        itemInCart_list = itemInCart.split()
+
+        uid = request.form.get('uid', None)
+        if not uid:
+            return
+        
+        if request.form['uid'] not in itemInCart_list:
+            itemInCart_list.append(request.form['uid'])
+            itemInCart_list = list(set(itemInCart_list))
+            itemInCart = ''
+            for item in itemInCart_list:
+                itemInCart += '%s ' % item
+            request.response.setCookie('itemInCart', itemInCart)
+            request.response.setCookie(uid, 1)
+            self.itemInCart = itemInCart
+
+        return self.template()
+
+
 
 
 class CartDel(BrowserView):
-    """ Shopping Cart
+    """ Cart Del
     """
+
+    logger = logging.getLogger('Del Item to Cart.')
+    template = ViewPageTemplateFile("template/cart_state.pt")
+
     def __call__(self):
         context = self.context
         request = self.request
         response = request.response
         catalog = context.portal_catalog
         logger = self.logger
+
+        itemInCart = request.cookies.get('itemInCart', '')
+        itemInCart_list = itemInCart.split()
+
+        uid = request.form.get('uid', None)
+
+        if not uid:
+            return
+
+        if request.form['uid'] in itemInCart_list:
+            try:
+                itemInCart_list.remove(request.form['uid'])
+            except:pass
+            itemInCart = ''
+            for item in itemInCart_list:
+                itemInCart += '%s ' % item
+            request.response.setCookie('itemInCart', itemInCart)
+            self.itemInCart = itemInCart
+
+        return self.template()
+
 
 
 class CartUpdate(BrowserView):
     """ Shopping Cart
     """
+
+    logger = logging.getLogger('Update Cart.')
+    template = ViewPageTemplateFile("template/cart_state.pt")
+
     def __call__(self):
         context = self.context
         request = self.request
         response = request.response
         catalog = context.portal_catalog
         logger = self.logger
+
+        itemInCart = request.cookies.get('itemInCart', '')
+        itemInCart_list = itemInCart.split()
+
+        keys = request.form.keys()
+
+        for key in keys:
+            if catalog(UID=key):
+                response.setCookie(key, request.form[key])
+        response.redirect('/shopping_cart')
+        return
+
+
 
 
 class ShoppingCart(BrowserView):
@@ -65,3 +156,15 @@ class ShoppingCart(BrowserView):
                 response.setCookie(key, request.form[key])
                 response.redirect('/shopping_cart')
         return self.template()
+
+
+class MiniCartView(BrowserView):
+    """ Mini Cart View
+    """
+
+    template = ViewPageTemplateFile("template/cart_state.pt")
+
+    def __call__(self):
+        request = self.request
+        self.itemInCart = request.cookies.get('itemInCart', '')
+        return template()

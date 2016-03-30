@@ -35,7 +35,7 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
           <h2 i18n:translate="">My Shopping Cart</h2>
         </div>
                 <div class="table-responsive">
-          <form method="post" action="/shopping_cart">
+          <form method="post" action="/cart_update">
 <!--            <input type="hidden" value="Vwww7itR3zQFe86m" name="form_key"> -->
             <fieldset>
               <table class="data-table cart-table" id="shopping-cart-table">
@@ -76,7 +76,11 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
                     </td>
                     <td class="a-right movewishlist"><span class="cart-price"> <span class="price"
                         tal:content="python:'$%s' % (item.salePrice * qty)">$70.00</span> </span></td>
-                    <td class="a-center last"><a class="button remove-item" title="Remove item" href="#"><span><span>Remove item</span></span></a></td>
+                    <td class="a-center last">
+                      <a class="button remove-item cart_del" title="Remove item" href="#" tal:attributes="data-uid item/UID">
+                        <span>Remove item</span>
+                      </a>
+                    </td>
 </tal:qty>
                   </tr>
                 </tbody>
@@ -89,7 +93,12 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
   </div>
 </section>
 
- 
+<script type="text/javascript">
+$(document).on('click', 'a.cart_del', function(event){
+    $(this).parent().parent("tr").remove();
+});
+</script>
+
 </metal:content-core>
 </metal:content-core>
 

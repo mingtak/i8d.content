@@ -115,8 +115,8 @@
   <browser:page
       name="mini_cart"
       for="*"
-      class=".views.MiniCartView"
-      template="template/mini_cart.pt"
+      class=".shopping_cart.MiniCartView"
+      template="template/cart_state.pt"
       permission="zope2.View"
       />
 

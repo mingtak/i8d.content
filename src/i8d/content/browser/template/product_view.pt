@@ -141,7 +141,9 @@ else:
                     <div class="add-to-cart">
                       <div class="pull-right">
                         <button tal:attributes="data-uid context/UID; data-update string:add" i18n:attributes="title"
-                                onClick="productAddToCartForm.submit(this)" class="button btn-cart update_cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> <span i18n:translate="">Add to Cart</span></span></button>
+                                onClick="productAddToCartForm.submit(this)" class="button btn-cart cart_add" title="Add to Cart" type="button">
+                          <span><i class="icon-basket"></i> <span i18n:translate="">Add to Cart</span></span>
+                        </button>
                       </div>
 <div class="pull-left">
 <!-- Go to www.addthis.com/dashboard to generate a new set of sharing buttons -->

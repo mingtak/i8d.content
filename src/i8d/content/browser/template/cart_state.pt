@@ -7,33 +7,9 @@
 
 <metal:row define-macro="mini_cart">
 
-<?python
-from plone import api
-context = econtext['context']
-catalog = context.portal_catalog
-request = econtext['request']
-itemInCart = request.cookies.get('itemInCart', '')
-itemInCart_list = itemInCart.split()
-if request.form.has_key('uid') and request.form['update'] == 'add':
-    if request.form['uid'] not in itemInCart_list:
-        itemInCart_list.append(request.form['uid'])
-        itemInCart_list = list(set(itemInCart_list))
-        itemInCart = ''
-        for item in itemInCart_list:
-            itemInCart += '%s ' % item
-        request.response.setCookie('itemInCart', itemInCart)
 
-if request.form.has_key('uid') and request.form['update'] == 'remove':
-    if request.form['uid'] in itemInCart_list:
-        itemInCart_list.remove(request.form['uid'])
-        itemInCart = ''
-        for item in itemInCart_list:
-            itemInCart += '%s ' % item
-        request.response.setCookie('itemInCart', itemInCart)
-
-?>
-
-
+<tal:def define="itemInCart python:getattr(view, 'itemInCart', request.cookies.get('itemInCart', ''));
+                 itemInCart_list python:itemInCart.split()">
         <div class="top-cart-contain">
           <div class="mini-cart">
             <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="#">
@@ -48,7 +24,8 @@ if request.form.has_key('uid') and request.form['update'] == 'remove':
                   <div class="block-subtitle" tal:case="python:default" i18n:translate="">Recently added item(s)</div>
                 </tal:checkCart>
 
-<tal:checkCart define="brain python:catalog({'UID':itemInCart_list})"
+<tal:checkCart define="catalog python:context.portal_catalog;
+                       brain python:catalog({'UID':itemInCart_list})"
                condition="python:len(itemInCart_list)">
                 <ul id="cart-sidebar" class="mini-products-list">
                   <li class="item last odd" tal:repeat="item brain">
@@ -60,7 +37,7 @@ if request.form.has_key('uid') and request.form['update'] == 'remove':
                     </a>
                     <div class="detail-item">
                       <div class="product-details">
-                        <a title="Remove This Item" onClick="" class="glyphicon glyphicon-remove update_cart"
+                        <a title="Remove This Item" onClick="" class="glyphicon glyphicon-remove cart_del"
                            tal:attributes="data-uid item/UID; data-update string:remove">&nbsp;</a>
                         <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
                         <p class="product-name">
@@ -94,12 +71,25 @@ if request.form.has_key('uid') and request.form['update'] == 'remove':
 
 
 <script type="text/javascript">
-$(document).on('click', '.update_cart', function(event){
-    $("div.top-cart-contain").load("/mini_cart", {uid:this.getAttribute("data-uid"), update:this.getAttribute("data-update")});
+$(document).on('click', '.cart_update', function(event){
+    $("div.top-cart-contain").load("/cart_update", {uid:this.getAttribute("data-uid")});
+});
+</script>
+
+<script type="text/javascript">
+$(document).on('click', '.cart_add', function(event){
+    $("div.top-cart-contain").load("/cart_add", {uid:this.getAttribute("data-uid")});
+});
+</script>
+
+<script type="text/javascript">
+$(document).on('click', '.cart_del', function(event){
+    $("div.top-cart-contain").load("/cart_del", {uid:this.getAttribute("data-uid")});
 });
 </script>
 
 
+</tal:def>
 </metal:row>
 
 

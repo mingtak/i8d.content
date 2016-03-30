@@ -76,8 +76,8 @@ if request.form.has_key('uid') and request.form['update'] == 'remove':
                 </ul>
 
                 <div class="actions">
-                  <button class="btn-checkout" type="button"><span>Checkout</span></button>
-                  <button class="view-cart" type="button"><span>View Cart</span></button>
+                  <a class="btn-checkout" href="/checkout"><span i18n:translate="">Checkout</span></a>
+                  <a class="view-cart" href="/shopping_cart"><span i18n:translate="">View Cart</span></a>
                 </div>
 </tal:checkCart>
 

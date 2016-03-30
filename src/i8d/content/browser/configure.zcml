@@ -20,6 +20,27 @@
 
   <!-- browserview -->
   <browser:page
+      name="cart_add"
+      for="*"
+      class=".shopping_cart.CartAdd"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="cart_del"
+      for="*"
+      class=".shopping_cart.CartDel"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="cart_update"
+      for="*"
+      class=".shopping_cart.CartUpdate"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="shopping_cart"
       for="*"
       class=".shopping_cart.ShoppingCart"

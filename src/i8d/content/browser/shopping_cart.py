@@ -9,6 +9,38 @@ import logging
 #from zope.security import checkPermission
 #from zc.relation.interfaces import ICatalog
 
+class CartAdd(BrowserView):
+    """ Shopping Cart
+    """
+    def __call__(self):
+        context = self.context
+        request = self.request
+        response = request.response
+        catalog = context.portal_catalog
+        logger = self.logger
+
+
+class CartDel(BrowserView):
+    """ Shopping Cart
+    """
+    def __call__(self):
+        context = self.context
+        request = self.request
+        response = request.response
+        catalog = context.portal_catalog
+        logger = self.logger
+
+
+class CartUpdate(BrowserView):
+    """ Shopping Cart
+    """
+    def __call__(self):
+        context = self.context
+        request = self.request
+        response = request.response
+        catalog = context.portal_catalog
+        logger = self.logger
+
 
 class ShoppingCart(BrowserView):
     """ Shopping Cart

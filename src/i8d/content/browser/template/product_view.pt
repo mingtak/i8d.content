@@ -267,7 +267,7 @@ s.setAttribute('data-timestamp', +new Date());
                                 <div class="actions-links">
                                   <span class="add-to-links">
                                     <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Detail</span></a>
-                                    <a title="Add to Cart" class="link-wishlist update_cart" i18n:attributes="title"
+                                    <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
                                        tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></a>
                                     <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
                                   </span> </div>
@@ -289,7 +289,7 @@ s.setAttribute('data-timestamp', +new Date());
                                   </div>
                                   <!--info-inner-->
                                   <div class="actions">
-                                    <button type="button" title="Add to Cart" class="button btn-cart update_cart" i18n:attributes="title"
+                                    <button type="button" title="Add to Cart" class="button btn-cart cart_add" i18n:attributes="title"
                                             tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></button>
                                   </div>
                                   <!--actions-->
@@ -336,7 +336,7 @@ s.setAttribute('data-timestamp', +new Date());
                                 <div class="actions-links">
                                   <span class="add-to-links">
                                     <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Detail</span></a>
-                                    <a title="Add to Cart" class="link-wishlist update_cart" i18n:attributes="title"
+                                    <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
                                        tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></a>
                                     <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
                                   </span> </div>
@@ -358,7 +358,7 @@ s.setAttribute('data-timestamp', +new Date());
                                   </div>
                                   <!--info-inner-->
                                   <div class="actions">
-                                    <button type="button" title="Add to Cart" class="button btn-cart update_cart" i18n:attributes="title"
+                                    <button type="button" title="Add to Cart" class="button btn-cart cart_add" i18n:attributes="title"
                                             tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></button>
                                   </div>
                                   <!--actions-->

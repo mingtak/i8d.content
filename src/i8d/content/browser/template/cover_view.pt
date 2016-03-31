@@ -34,7 +34,7 @@
                tal:content="item/to_object/title">Sweaters & Blazers</div>
           <div  class='tp-caption sfb tp-resizeme ' data-x='40' data-y='360' data-endspeed='500' data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>
             <a class="view-more" tal:attributes="href item/to_object/absolute_url" i18n:translate="">View More</a>
-            <button class="buy-btn update_cart" type="button" title="Add to Cart" i18n:attributes="title"
+            <button class="buy-btn cart_add" type="button" title="Add to Cart" i18n:attributes="title"
                tal:attributes="data-uid item/to_object/UID; data-update string:add" i18n:translate="">Add to cart</button>
           </div>
           <div class='tp-caption Title sft tp-resizeme ' data-x='40' data-y='150' data-endspeed='500' data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'
@@ -199,7 +199,7 @@
                 </div>
                 <div class="actions-links"><span class="add-to-links">
                   <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/to_object/absolute_url"><span i18n:translate="">Detail</span></a>
-                  <a title="Add to Cart" class="link-wishlist update_cart" i18n:attributes="title"
+                  <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
                      tal:attributes="data-uid item/to_object/UID; data-update string:add" ><span i18n:translate="">Add to Cart</span></a>
                   <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/to_object/absolute_url"><span i18n:translate="">Search Related</span></a></span>
                 </div>
@@ -230,7 +230,7 @@
                   </div>
                   <!--info-inner-->
                   <div class="actions">
-                    <button type="button" title="Add to Cart" class="button btn-cart update_cart" i18n:attributes="title"
+                    <button type="button" title="Add to Cart" class="button btn-cart cart_add" i18n:attributes="title"
                             tal:attributes="data-uid item/to_object/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></button>
                   </div>
                   <!--actions-->

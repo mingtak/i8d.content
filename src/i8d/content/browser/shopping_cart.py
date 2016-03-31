@@ -2,35 +2,7 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from zope.component import getMultiAdapter
 from plone import api
-
-
-
-
 import logging
-
-
-
-
-"""
-itemInCart = request.cookies.get('itemInCart', '')
-itemInCart_list = itemInCart.split()
-if request.form.has_key('uid') and request.form['update'] == 'add':
-    if request.form['uid'] not in itemInCart_list:
-        itemInCart_list.append(request.form['uid'])
-        itemInCart_list = list(set(itemInCart_list))
-        itemInCart = ''
-        for item in itemInCart_list:
-            itemInCart += '%s ' % item
-        request.response.setCookie('itemInCart', itemInCart)
-
-if request.form.has_key('uid') and request.form['update'] == 'remove':
-    if request.form['uid'] in itemInCart_list:
-        itemInCart_list.remove(request.form['uid'])
-        itemInCart = ''
-        for item in itemInCart_list:
-            itemInCart += '%s ' % item
-        request.response.setCookie('itemInCart', itemInCart)
-"""
 
 
 class CartAdd(BrowserView):

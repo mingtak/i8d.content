@@ -369,11 +369,20 @@ class IOrder(Interface):
     """ 訂單 """
     title = schema.TextLine(
         title=_(u"Order Title"),
+        description=_(u"Mapping to allPay's MerchantTradeNo"),
         required=True,
     )
 
     description = schema.Text(
         title=_(u"Description"),
+        description=_(u"Mapping to allPay's ItemName"),
         required=False,
     )
 
+    result = schema.Dict(
+        title=_(u"Trading Results"),
+        description=_(u"Trading Results, feedback from allPay."),
+        key_type=schema.TextLine(title=u"Key"),
+        value_type=schema.TextLine(title=u"Value"),
+        required=False,
+    )

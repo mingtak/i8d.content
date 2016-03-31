@@ -69,6 +69,9 @@ class CanSeeBackend(BrowserView):
 class TestView(BrowserView):
     """ """
 
+    def __call__(self):
+        import pdb; pdb.set_trace()
+
 
 class TestView2(BrowserView):
 

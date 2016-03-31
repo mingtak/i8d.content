@@ -52,8 +52,17 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
                 </thead>
                 <tfoot>
                   <tr class="first last">
-                    <td class="a-right last" colspan="7"> <!-- <button onclick="setLocation('#')" class="button btn-continue" title="Continue Shopping" type="button"><span><span i18n:translate="">Continue Shopping</span></span></button> -->
-                      <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span><span i18n:translate="">Update Cart</span></span></button>
+                    <td class="a-right last" colspan="7">
+<div class="mini-cart">
+<div class="actions">
+<a class="btn btn-checkout" target="_blank" href="/checkout">
+                    <span>Checkout</span>
+                  </a>
+
+</div>
+</div>
+<button class="button btn btn-update" title="Update Cart" value="update_qty"
+ name="update_cart_action" type="submit"><span><span i18n:translate="">Update Cart</span></span></button>
                     </td>
                   </tr>
                 </tfoot>

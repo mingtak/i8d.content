@@ -20,6 +20,34 @@
 
   <!-- browserview -->
   <browser:page
+      name="return_url"
+      for="*"
+      class=".bill.ReturnUrl"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="client_back_url"
+      for="*"
+      class=".bill.ClientBackUrl"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="payment_info_url"
+      for="*"
+      class=".bill.PaymentInfoUrl"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="checkout"
+      for="*"
+      class=".bill.Checkout"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="can_see_backend"
       for="*"
       class=".views.CanSeeBackend"

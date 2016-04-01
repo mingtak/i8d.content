@@ -386,3 +386,20 @@ class IOrder(Interface):
         value_type=schema.TextLine(title=u"Value"),
         required=False,
     )
+
+    logisticsMapResult = schema.Dict(
+        title=_(u"Logistics Map Results"),
+        description=_(u"Logistics map results, feedback from allPay."),
+        key_type=schema.TextLine(title=u"Key"),
+        value_type=schema.TextLine(title=u"Value"),
+        required=False,
+    )
+
+    logisticsExpressResult = schema.Dict(
+        title=_(u"Logistics Express Create Results"),
+        description=_(u"Logistics express create results, feedback from allPay."),
+        key_type=schema.TextLine(title=u"Key"),
+        value_type=schema.TextLine(title=u"Value"),
+        required=False,
+    )
+

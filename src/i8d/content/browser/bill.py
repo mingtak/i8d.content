@@ -10,7 +10,6 @@ import transaction
 
 import logging
 
-PAYMENT_INFO_URL = 'http://www.i8d.com.tw/payment_info_url'
 
 class ReturnUrl(BrowserView):
     """ Return URL
@@ -39,42 +38,14 @@ class ReturnUrl(BrowserView):
                 order.result[key] = request.form[key]
 
             transaction.commit()
-
-
-class PaymentInfoUrl(BrowserView):
-    """ Payment Info URL
-    """
-
-    def __call__(self):
-        context = self.context
-        request = self.request
-        response = request.response
-        catalog = context.portal_catalog
-        itemInCart = request.cookies.get('itemInCart', '')
-        itemInCart_list = itemInCart.split()
-
-        with api.env.adopt_user(username="admin"):
-            if not request.form['MerchantTradeNo']:
-                return
-            try:
-                order = catalog({'Type':'Order', 'Title':request.form['MerchantTradeNo']})[0].getObject()
-            except:
-                return
-
-            if not order.result:
-                order.result = {}
-
-            for key in request.form.keys():
-                order.result[key] = request.form[key]
-
-            transaction.commit()
+            return
 
 
 class ClientBackUrl(BrowserView):
     """ Client back url
     """
 
-    template = ViewPageTemplateFile("template/client_back_url.pt")
+#    template = ViewPageTemplateFile("template/client_back_url.pt")
     def __call__(self):
         context = self.context
         request = self.request
@@ -84,7 +55,8 @@ class ClientBackUrl(BrowserView):
         itemInCart_list = itemInCart.split()
 
         response.setCookie('itemInCart', '')
-        return self.template()
+        response.redirect('/logistics_map?MerchantTradeNo=%s' % request.form['MerchantTradeNo'])
+        return
 
 
 class Checkout(BrowserView):
@@ -124,12 +96,14 @@ class Checkout(BrowserView):
             )
             transaction.commit()
 
-
+        paymentInfoURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.paymentInfoURL')
+        clientBackURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.clientBackURL')
         payment_info = {'TotalAmount': totalAmount,
                         'ChoosePayment': 'ALL',
                         'MerchantTradeNo': merchantTradeNo,
                         'ItemName': itemName,
-                        'PaymentInfoURL': PAYMENT_INFO_URL,
+                        'PaymentInfoURL': paymentInfoURL,
+                        'ClientBackURL': '%s?MerchantTradeNo=%s' % (clientBackURL, merchantTradeNo),  #可以使用 get 帶參數
         }
         ap = AllPay(payment_info)
         # check out, this will return a dictionary containing checkValue...etc.

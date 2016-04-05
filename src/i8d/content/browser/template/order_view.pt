@@ -1,0 +1,79 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="i8d.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+  <div class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+
+<h3><span i18n:translate="">Order No:</span><span tal:replace="context/Title"/></h3>
+
+<h4 i18n:translate="">Product Detail:</h4>
+<tal:item define="items python:context.description.split('||')">
+  <tal:repeat repeat="item items">
+    <p tal:condition="not:repeat/item/end" tal:content="item" i18n:translate=""/>
+  </tal:repeat>
+</tal:item>
+
+<h4><span i18n:translate="">Amount:</span> $ <span tal:replace="context/amount|nothing" /></h4>
+<h4><span i18n:translate="">Order State:</span> <span tal:replace="context/orderState|nothing" i18n:translate="" /></h4>
+
+
+<hr>
+<h4 i18n:translate="">Trading Results</h4>
+<tal:x define="result context/result;
+               keys result/keys | nothing"
+       repeat="key keys">
+  <p>
+    <strong tal:content="string:${key}:"></strong>
+    <span tal:replace="python:context.result[key]" />
+  </p>
+</tal:x>
+
+<hr>
+<h4 i18n:translate="">Logistics Map Results</h4>
+<tal:x define="result context/logisticsMapResult;
+               keys result/keys | nothing" 
+       repeat="key keys">
+  <p>
+    <strong tal:content="string:${key}:"></strong>
+    <span tal:replace="python:context.logisticsMapResult[key]" />
+  </p>
+</tal:x>
+
+<hr>
+<h4 i18n:translate="">Logistics Express Create Results</h4>
+<tal:x define="result context/logisticsExpressResult;
+               keys result/keys | nothing"
+       repeat="key keys">
+  <p>
+    <strong tal:content="string:${key}:"></strong>
+    <span tal:replace="python:context.logisticsExpressResult[key]" />
+  </p>
+</tal:x>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+
+
+
+

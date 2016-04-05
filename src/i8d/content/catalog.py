@@ -6,6 +6,14 @@ from Products.CMFPlone.utils import safe_unicode
 from i8d.content.interfaces import IBrand, IProduct, ICover, IProfile, IPost, IQuestion, IAnswer, IProvider, IOrder
 
 
+@indexer(IOrder)
+def amount_indexer(obj):
+    return obj.amount
+
+@indexer(IProfile)
+def orderState_indexer(obj):
+    return obj.orderState
+
 @indexer(IProfile)
 def isExpert_indexer(obj):
     return obj.isExpert

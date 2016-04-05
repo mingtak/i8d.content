@@ -56,7 +56,7 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
 <div class="mini-cart">
 <div class="actions">
 <a class="btn btn-checkout" target="_blank" href="/checkout">
-                    <span>Checkout</span>
+                    <span i18n:translate="">Checkout</span>
                   </a>
 
 </div>

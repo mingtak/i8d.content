@@ -92,6 +92,7 @@ class Checkout(BrowserView):
                 type='Order',
                 title=merchantTradeNo,
                 description = '%s, Total: $%s' % (itemDescription, totalAmount),
+                amount = totalAmount,
                 container=portal['resource']['order'],
             )
             transaction.commit()

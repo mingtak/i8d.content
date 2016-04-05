@@ -55,7 +55,8 @@ else:
                   <div class="entry-content">
                     <div class="entry-content" tal:content="structure context/text/raw" />
                   </div>
-                  <footer class="entry-meta" style="float:right" i18n:translate=""> This entry was posted on
+                  <footer class="entry-meta" style="float:right">
+                    <span i18n:translate=""> This entry was posted on </span>
                     <time tal:attributes="datetime context/created"
                           tal:content="python:context.created().strftime('%Y/%m/%d %H:%M')"
                           class="entry-date">Jul 10, 2014</time>

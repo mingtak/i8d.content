@@ -21,6 +21,13 @@
   <!-- browserview -->
 
   <browser:page
+      name="my_account"
+      for="*"
+      class=".myaccount.MyAccount"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="logistics_map"
       for="*"
       class=".logistics.LogisticsMap"
@@ -119,6 +126,16 @@
       for="*"
       class=".shopping_cart.ShoppingCart"
       template="template/shopping_cart.pt"
+      permission="zope2.View"
+      />
+
+  <!-- views for content types -->
+
+  <browser:page
+      name="order_view"
+      for="i8d.content.interfaces.IOrder"
+      class=".views.OrderView"
+      template="template/order_view.pt"
       permission="zope2.View"
       />
 

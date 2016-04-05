@@ -1,6 +1,16 @@
 <?xml version="1.0"?>
 <object name="portal_catalog" meta_type="Plone Catalog Tool">
 
+  <index name="amount" meta_type="FieldIndex">
+    <indexed_attr value="amount" />
+  </index>
+  <column value="amount"/>
+
+  <index name="orderState" meta_type="FieldIndex">
+    <indexed_attr value="orderState" />
+  </index>
+  <column value="orderState"/>
+
   <index name="isExpert" meta_type="FieldIndex">
     <indexed_attr value="isExpert" />
   </index>

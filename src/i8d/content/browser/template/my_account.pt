@@ -1,0 +1,153 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="i8d.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+
+
+<?python
+from plone import api
+?>
+
+<div class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+        <section class="col-main col-sm-9 wow bounceInUp animated">
+          <div class="my-account">
+            <div class="page-title">
+              <h2 i18n:translate="">My Account</h2>
+            </div>
+            <div class="dashboard">
+              <div class="welcome-msg"> <strong tal:content="string:您好，${view/myProfile/Title}.">Hello, Name.</strong>
+                <p>在我的帳戶中，您可以查看最近的帳戶活動歷史，包括最近一年內的歷史交易記錄。你可以選擇下面的連接查看或進行相關資訊編輯。</p>
+              </div>
+              <div class="recent-orders">
+                <div class="title-buttons">
+                  <strong i18n:translate="">Recent Orders</strong>
+                  <a tal:attributes="href string:/my_account?show:int=-1" i18n:translate="">View All </a>
+                </div>
+                <div class="table-responsive">
+                  <table class="data-table" id="my-orders-table">
+                    
+                    <thead>
+                      <tr class="first last">
+                        <th i18n:translate="">Order #</th>
+                        <th i18n:translate="">Date</th>
+                        <th i18n:translate="">Description</th>
+                        <th><span class="nobr" i18n:translate="">Order Total</span></th>
+                        <th i18n:translate="">Status</th>
+                        <th>&nbsp;</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr tal:repeat="item view/orders"
+                          tal:attributes="class python:'%s %s %s' % ('first' if repeat['item'].start else '',
+                                                                     'last' if repeat['item'].end else '',
+                                                                     'even' if repeat['item'].odd else 'odd')">
+                        <td tal:content="item/id">Order id</td>
+                        <td tal:content="python:'%s' % item.created.strftime('%Y / %m / %d')">9/9/10 </td>
+                        <td tal:content="python:'%s...' % item.Description[0:20]">pranali d</td>
+                        <td><span class="price" tal:content="string:$ ${item/salePrice}">$5.00</span></td>
+                        <td><em>Pending</em></td>
+                        <td class="a-center last">
+                          <span class="nobr">
+                            <a tal:attributes="href item/getURL" i18n:translate="">View Order</a>
+                              <span class="separator">|</span>
+                            <a tal:attributes="href string:${item/getURL}/edit" i18n:translate="">Edit</a> </span>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="box-account">
+                <div class="page-title">
+                  <h2>Account Information</h2>
+                </div>
+                <div class="col2-set">
+                  <div class="col-1">
+                    <h5>Contact Information</h5>
+                    <a href="#">Edit</a>
+                    <p> pranali deshmukh<br>
+                      pranalid15@gmail.com<br>
+                      <a href="#">Change Password</a> </p>
+                  </div>
+                  <div class="col-2">
+                    <h5>Newsletters</h5>
+                    <a href="#">Edit</a>
+                    <p> You are currently not subscribed to any newsletter. </p>
+                  </div>
+                </div>
+                <div class="col2-set">
+                  <h4>Address Book</h4>
+                  <div class="manage_add"><a href="#">Manage Addresses</a> </div>
+                  <div class="col-1">
+                    <h5>Primary Billing Address</h5>
+                    <address>
+                    pranali d<br>
+                    aundh<br>
+                    tyyrt,  Alabama, 46532<br>
+                    United States<br>
+                    T: 454541 <br>
+                    <a href="#">Edit Address</a>
+                    </address>
+                  </div>
+                  <div class="col-2">
+                    <h5>Primary Shipping Address</h5>
+                    <address>
+                    pranali d<br>
+                    aundh<br>
+                    tyyrt,  Alabama, 46532<br>
+                    United States<br>
+                    T: 454541 <br>
+                    <a href="#">Edit Address</a>
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <aside class="col-right sidebar col-sm-3 wow bounceInUp animated">
+          <div class="block block-account">
+            <div class="block-title">My Account</div>
+            <div class="block-content">
+              <ul>
+                <li class="current"><a>Account Dashboard</a></li>
+                <li><a href="#">Account Information</a></li>
+                <li><a href="#">Address Book</a></li>
+                <li><a href="#">My Orders</a></li>
+                <li><a href="#">Billing Agreements</a></li>
+                <li><a href="#">Recurring Profiles</a></li>
+                <li><a href="#">My Product Reviews</a></li>
+                <li><a href="#">My Tags</a></li>
+                <li><a href="wishlist.html">My Wishlist</a></li>
+                <li><a href="#">My Downloadable</a></li>
+                <li class="last"><a href="#">Newsletter Subscriptions</a></li>
+              </ul>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+
+
+
+

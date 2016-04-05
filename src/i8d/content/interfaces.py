@@ -14,6 +14,8 @@ from collective import dexteritytextindexer
 #from zope.interface import invariant, Invalid
 #from DateTime import DateTime
 from datetime import datetime
+from .config import ORDER_STATE
+
 class II8DContentLayer(IDefaultBrowserLayer):
     """Marker interface that defines a browser layer."""
 
@@ -377,6 +379,22 @@ class IOrder(Interface):
         title=_(u"Description"),
         description=_(u"Mapping to allPay's ItemName"),
         required=False,
+    )
+
+    form.write_permission(amount='cmf.ManagePortal')
+    amount = schema.Int(
+        title=_(u"Amount"),
+        description=_(u"Amount"),
+        required=True,
+    )
+
+    form.write_permission(orderState='cmf.ManagePortal')
+    orderState = schema.Choice(
+        title=_(u"Order State"),
+        description=_(u"Order state."),
+        vocabulary=ORDER_STATE,
+        default=u'ordered',
+        required=True,
     )
 
     result = schema.Dict(

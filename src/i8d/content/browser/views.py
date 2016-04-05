@@ -15,6 +15,11 @@ class ProfileView(BrowserView):
     """
 
 
+class OrderView(BrowserView):
+    """ Order View
+    """
+
+
 class PostView(BrowserView):
     """ Post View
     """

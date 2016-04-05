@@ -59,6 +59,17 @@ class ClientBackUrl(BrowserView):
         return
 
 
+class CheckoutComfirm(BrowserView):
+    """ Checkout
+    """
+
+    logger = logging.getLogger('bill.Checkout')
+    template = ViewPageTemplateFile("template/checkout_comfirm.pt")
+
+    def __call__(self):
+        return self.template()
+
+
 class Checkout(BrowserView):
     """ Checkout
     """

@@ -54,12 +54,13 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
                   <tr class="first last">
                     <td class="a-right last" colspan="7">
 <div class="mini-cart">
-<div class="actions">
-<a class="btn btn-checkout" target="_blank" href="/checkout">
-                    <span i18n:translate="">Checkout</span>
-                  </a>
-
-</div>
+<!--
+  <div class="actions">
+    <a class="btn btn-checkout" target="_blank" href="/checkout">
+      <span i18n:translate="">Checkout</span>
+    </a>
+  </div>
+ -->
 </div>
 <button class="button btn btn-update" title="Update Cart" value="update_qty"
  name="update_cart_action" type="submit"><span><span i18n:translate="">Update Cart</span></span></button>

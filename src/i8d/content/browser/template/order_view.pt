@@ -21,7 +21,7 @@
 <h4 i18n:translate="">Product Detail:</h4>
 <tal:item define="items python:context.description.split('||')">
   <tal:repeat repeat="item items">
-    <p tal:condition="not:repeat/item/end" tal:content="item" i18n:translate=""/>
+    <p tal:condition="not:repeat/item/end" tal:content="item"/>
   </tal:repeat>
 </tal:item>
 

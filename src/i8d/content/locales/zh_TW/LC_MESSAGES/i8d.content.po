@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-05 07:31+0000\n"
+"POT-Creation-Date: 2016-04-05 09:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -149,8 +149,7 @@ msgstr "品牌或主題圖示"
 msgid "Brand:"
 msgstr "品牌:"
 
-#: ./browser/template/cart_state.pt:60
-#: ./browser/template/shopping_cart.pt:59
+#: ./browser/template/checkout_comfirm.pt:58
 msgid "Checkout"
 msgstr "結帳"
 
@@ -247,6 +246,10 @@ msgstr "紅利積點"
 msgid "Edit"
 msgstr "編輯"
 
+#: ./browser/template/checkout_comfirm.pt:65
+msgid "Edit Shopping Item(s)"
+msgstr "變更購物車內容"
+
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:35
 msgid "Enter your email address"
 msgstr "輸入您的 email 信箱"
@@ -270,6 +273,10 @@ msgstr "專家圖檔。"
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:86
 msgid "FAQs"
 msgstr "本站相關問答"
+
+#: ./browser/template/cart_state.pt:60
+msgid "Fast Checkout"
+msgstr "快速結帳"
 
 #: ./browser/template/cover_view.pt:115
 msgid "Featured Article"
@@ -456,6 +463,7 @@ msgstr "特店 ID, 可以在歐付寶後台查到"
 msgid "My Account"
 msgstr "我的帳戶"
 
+#: ./browser/template/checkout_comfirm.pt:35
 #: ./browser/template/shopping_cart.pt:35
 msgid "My Shopping Cart"
 msgstr "我的購物車"
@@ -570,6 +578,7 @@ msgstr "商品 id"
 msgid "Product Image."
 msgstr "商品圖檔"
 
+#: ./browser/template/checkout_comfirm.pt:45
 #: ./browser/template/shopping_cart.pt:45
 #: ./interfaces.py:64
 msgid "Product Name"
@@ -652,6 +661,7 @@ msgstr "供應商:"
 msgid "Pruduct URL"
 msgstr "商品網址"
 
+#: ./browser/template/checkout_comfirm.pt:48
 #: ./browser/template/shopping_cart.pt:48
 msgid "Qty"
 msgstr "數量"
@@ -835,6 +845,7 @@ msgstr "帳戶資訊"
 msgid "Subscribe"
 msgstr "訂閱"
 
+#: ./browser/template/checkout_comfirm.pt:49
 #: ./browser/template/shopping_cart.pt:49
 msgid "Subtotal"
 msgstr "小計"
@@ -872,11 +883,12 @@ msgstr "交易結果，由歐付寶回傳"
 msgid "Uninstalls the i8d.content add-on."
 msgstr "御載 i8d.content 模組"
 
+#: ./browser/template/checkout_comfirm.pt:47
 #: ./browser/template/shopping_cart.pt:47
 msgid "Unit Price"
 msgstr "單價"
 
-#: ./browser/template/shopping_cart.pt:65
+#: ./browser/template/shopping_cart.pt:66
 msgid "Update Cart"
 msgstr "更新購物車"
 

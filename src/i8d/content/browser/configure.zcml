@@ -87,6 +87,13 @@
       />
 
   <browser:page
+      name="checkout_comfirm"
+      for="*"
+      class=".bill.CheckoutComfirm"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="checkout"
       for="*"
       class=".bill.Checkout"

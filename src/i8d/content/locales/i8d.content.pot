@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-05 07:31+0000\n"
+"POT-Creation-Date: 2016-04-05 09:20+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -152,8 +152,7 @@ msgstr ""
 msgid "Brand:"
 msgstr ""
 
-#: ./browser/template/cart_state.pt:60
-#: ./browser/template/shopping_cart.pt:59
+#: ./browser/template/checkout_comfirm.pt:58
 msgid "Checkout"
 msgstr ""
 
@@ -250,6 +249,10 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
+#: ./browser/template/checkout_comfirm.pt:65
+msgid "Edit Shopping Item(s)"
+msgstr ""
+
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:35
 msgid "Enter your email address"
 msgstr ""
@@ -272,6 +275,10 @@ msgstr ""
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:86
 msgid "FAQs"
+msgstr ""
+
+#: ./browser/template/cart_state.pt:60
+msgid "Fast Checkout"
 msgstr ""
 
 #: ./browser/template/cover_view.pt:115
@@ -459,6 +466,7 @@ msgstr ""
 msgid "My Account"
 msgstr ""
 
+#: ./browser/template/checkout_comfirm.pt:35
 #: ./browser/template/shopping_cart.pt:35
 msgid "My Shopping Cart"
 msgstr ""
@@ -573,6 +581,7 @@ msgstr ""
 msgid "Product Image."
 msgstr ""
 
+#: ./browser/template/checkout_comfirm.pt:45
 #: ./browser/template/shopping_cart.pt:45
 #: ./interfaces.py:64
 msgid "Product Name"
@@ -655,6 +664,7 @@ msgstr ""
 msgid "Pruduct URL"
 msgstr ""
 
+#: ./browser/template/checkout_comfirm.pt:48
 #: ./browser/template/shopping_cart.pt:48
 msgid "Qty"
 msgstr ""
@@ -838,6 +848,7 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
+#: ./browser/template/checkout_comfirm.pt:49
 #: ./browser/template/shopping_cart.pt:49
 msgid "Subtotal"
 msgstr ""
@@ -875,11 +886,12 @@ msgstr ""
 msgid "Uninstalls the i8d.content add-on."
 msgstr ""
 
+#: ./browser/template/checkout_comfirm.pt:47
 #: ./browser/template/shopping_cart.pt:47
 msgid "Unit Price"
 msgstr ""
 
-#: ./browser/template/shopping_cart.pt:65
+#: ./browser/template/shopping_cart.pt:66
 msgid "Update Cart"
 msgstr ""
 

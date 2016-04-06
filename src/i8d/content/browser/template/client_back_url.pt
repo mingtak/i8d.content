@@ -68,10 +68,52 @@
                 </tfoot>
               </table>
 
+
+
+
+      <div class="cart wow bounceInUp animated">
+        <div class="page-title">
+          <h2><span i18n:translate="">Logistics info</span></h2>
+
+<!-- 郵寄 -->
+          <ul tal:define="order python:view.order.getObject()"
+              tal:condition="python:not order.logisticsMapResult">
+            <li><strong i18n:translate="">Logistics Method</strong>: <span i18n:translate="">Parcel post</span></li>
+            <li><strong i18n:translate="">Receiver</strong>: <span tal:replace="order/receiver" /></li>
+            <li><strong i18n:translate="">Address</strong>: 
+                <span tal:replace="python:'%s %s %s %s' % (order.addr_city, order.addr_district, order.addr_zip, order.addr_address)" />
+            </li>
+          </ul>
+
+<!-- C2C -->
+          <ul tal:define="order python:view.order.getObject()"
+              tal:condition="python:order.logisticsMapResult">
+            <li><strong i18n:translate="">Logistics Method</strong>: <span i18n:translate="">C2C</span></li>
+            <li><strong i18n:translate="">Receiver</strong>: <span tal:replace="order/receiver" /></li>
+            <li><strong i18n:translate="">Pickup Location</strong>: 
+                <span tal:replace="python:'%s %s' % ('全家便利商店' if order.logisticsMapResult['LogisticsSubType'] == 'FAMIC2C' else '統一超商(7-11)',
+                                                     order.logisticsMapResult['CVSStoreName'])"/>
+            </li>
+            <li><strong i18n:translate="">Address</strong>: 
+                <span tal:replace="python:order.logisticsMapResult['CVSAddress']" />
+            </li>
+          </ul>
+
+
+        </div>
+        <div class="table-responsive">
+        </div>
+      </div>
+
+
+
+
+
+
 <!-- 條件未修正 -->
-        <button tal:condition="python:'logistics' in view.request['HTTP_REFERER']"
+        <button tal:condition="python:'logistics' not in view.request['HTTP_REFERER']"
                 tal:attributes="onclick python:'javascript:location.href=\'/logistics_map?MerchantTradeNo=%s\'' % request.form['MerchantTradeNo']"
-                class="button btn-continue pull-right" 
+                class="button btn-continue pull-left" 
                 title="C2C shipping" type="button"><span i18n:translate="">C2C Shipping</span></button>
 
 

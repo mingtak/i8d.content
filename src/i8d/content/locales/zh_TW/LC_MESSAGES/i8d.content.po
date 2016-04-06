@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-06 04:50+0000\n"
+"POT-Creation-Date: 2016-04-06 12:02+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,8 @@ msgstr "加入購物車"
 msgid "Additional Information"
 msgstr "其它資訊"
 
+#: ./browser/template/checkout_comfirm.pt:77
+#: ./browser/template/client_back_url.pt:83
 #: ./interfaces.py:319
 msgid "Address"
 msgstr "地址"
@@ -75,7 +77,7 @@ msgstr "所有問答"
 msgid "All in one(AIO) Checkout Server URL"
 msgstr "歐付寶 AIO 結帳連結網址"
 
-#: ./interfaces.py:486
+#: ./interfaces.py:499
 msgid "Amount"
 msgstr "總計"
 
@@ -153,6 +155,14 @@ msgstr "品牌或主題圖示"
 msgid "Brand:"
 msgstr "品牌:"
 
+#: ./browser/template/client_back_url.pt:91
+msgid "C2C"
+msgstr "超商取貨"
+
+#: ./browser/template/client_back_url.pt:117
+msgid "C2C Shipping"
+msgstr "超商取貨"
+
 #: ./interfaces.py:289
 msgid "Cell Phone"
 msgstr "手機號碼"
@@ -165,7 +175,7 @@ msgstr "手機號碼"
 msgid "Cell Phone number."
 msgstr "手機號碼"
 
-#: ./browser/template/checkout_comfirm.pt:92
+#: ./browser/template/checkout_comfirm.pt:99
 msgid "Checkout"
 msgstr "結帳"
 
@@ -216,6 +226,11 @@ msgstr "集合"
 #: ./browser/template/checkout_comfirm.pt:35
 msgid "Comfirm Cart / shipping info"
 msgstr "確認購物車 / 配送資訊"
+
+#: ./browser/template/checkout_comfirm.pt:89
+#: ./interfaces.py:483
+msgid "Company Title"
+msgstr "公司抬頭"
 
 #: ./browser/template/post_view.pt:29
 msgid "Complete Article:"
@@ -278,7 +293,7 @@ msgstr "鄉鎮市區"
 msgid "Edit"
 msgstr "編輯"
 
-#: ./browser/template/checkout_comfirm.pt:98
+#: ./browser/template/checkout_comfirm.pt:105
 msgid "Edit Shopping Item(s)"
 msgstr "變更購物車內容"
 
@@ -394,6 +409,10 @@ msgstr "安裝 i8d.content 模組"
 msgid "Introduction:"
 msgstr "簡介:"
 
+#: ./browser/template/checkout_comfirm.pt:85
+msgid "Invoice"
+msgstr "發票"
+
 #: ./interfaces.py:271
 msgid "Is Expert"
 msgstr "是否專家"
@@ -427,7 +446,7 @@ msgid "Logistics C2C Reply URL, for allPay's logistics"
 msgstr "物流 C2C 回覆網址，歐付寶物流使用"
 
 #: ./browser/template/order_view.pt:70
-#: ./interfaces.py:517
+#: ./interfaces.py:530
 msgid "Logistics Express Create Results"
 msgstr "新增物流訂單結果"
 
@@ -452,7 +471,7 @@ msgid "Logistics HashKey, for allPay"
 msgstr "物流 Hash Key, 歐付寶使用"
 
 #: ./browser/template/order_view.pt:59
-#: ./interfaces.py:509
+#: ./interfaces.py:522
 msgid "Logistics Map Results"
 msgstr "物流地圖結果"
 
@@ -460,7 +479,11 @@ msgstr "物流地圖結果"
 msgid "Logistics Map URL"
 msgstr "物流地圖"
 
-#: ./interfaces.py:518
+#: ./browser/template/client_back_url.pt:81
+msgid "Logistics Method"
+msgstr "配送方法"
+
+#: ./interfaces.py:531
 msgid "Logistics express create results, feedback from allPay."
 msgstr "物流新增訂單結果，由歐付寶傳回"
 
@@ -468,7 +491,11 @@ msgstr "物流新增訂單結果，由歐付寶傳回"
 msgid "Logistics express create url."
 msgstr "物流新增訂單網址"
 
-#: ./interfaces.py:510
+#: ./browser/template/client_back_url.pt:76
+msgid "Logistics info"
+msgstr "配送資訊"
+
+#: ./interfaces.py:523
 msgid "Logistics map results, feedback from allPay."
 msgstr "物流地圖結果，由歐付寶回傳"
 
@@ -499,6 +526,10 @@ msgstr "特店 ID"
 #: ./browser/coverSetting.py:39
 msgid "Merchant ID, for allPay"
 msgstr "特店 ID, 可以在歐付寶後台查到"
+
+#: ./browser/template/client_back_url.pt:22
+msgid "Merchant Trade No"
+msgstr "交易單號"
 
 #: ./browser/template/my_account.pt:27
 msgid "My Account"
@@ -533,7 +564,7 @@ msgstr "訂單編號"
 msgid "Order No:"
 msgstr "訂單編號:"
 
-#: ./interfaces.py:493
+#: ./interfaces.py:506
 msgid "Order State"
 msgstr "訂單狀態"
 
@@ -549,7 +580,7 @@ msgstr "訂單標題"
 msgid "Order Total"
 msgstr "訂單總計"
 
-#: ./interfaces.py:494
+#: ./interfaces.py:507
 msgid "Order state."
 msgstr "訂單狀態"
 
@@ -572,6 +603,10 @@ msgstr "已無庫存"
 #: ./profiles/default/types/Document.xml
 msgid "Page"
 msgstr "頁面"
+
+#: ./browser/template/client_back_url.pt:81
+msgid "Parcel post"
+msgstr "郵寄包裹"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:87
 msgid "Payment"
@@ -596,6 +631,10 @@ msgstr "電話號碼"
 #: ./interfaces.py:284
 msgid "Phone Number."
 msgstr "電話號碼"
+
+#: ./browser/template/client_back_url.pt:93
+msgid "Pickup Location"
+msgstr "取貨地點"
 
 #: ./interfaces.py:44
 msgid "Please listing all nickname that about this brand. For example, Microfost and MS, Separated by commas."
@@ -631,8 +670,8 @@ msgid "Product Image."
 msgstr "商品圖檔"
 
 #: ./browser/template/checkout_comfirm.pt:45
+#: ./browser/template/client_back_url.pt:30
 #: ./browser/template/shopping_cart.pt:45
-#: ./interfaces.py:65
 msgid "Product Name"
 msgstr "商品名稱"
 
@@ -640,13 +679,13 @@ msgstr "商品名稱"
 msgid "Product Show In Nav"
 msgstr "顯示在主選單的商品"
 
-#: ./interfaces.py:478
+#: ./interfaces.py:490
 msgid "Product UID(s)"
 msgstr "商品 UID(s)"
 
-#: ./interfaces.py:479
-msgid "Product UID(s) at shopping cart."
-msgstr "購物車商品的 UID(s)"
+#: ./interfaces.py:491
+msgid "Product UID(s) at shopping cart, include qty."
+msgstr "購物車中的商品 UID ，包含數量。"
 
 #: ./interfaces.py:120
 msgid "Product image for header."
@@ -726,6 +765,7 @@ msgid "Pruduct URL"
 msgstr "商品網址"
 
 #: ./browser/template/checkout_comfirm.pt:48
+#: ./browser/template/client_back_url.pt:32
 #: ./browser/template/shopping_cart.pt:48
 msgid "Qty"
 msgstr "數量"
@@ -757,7 +797,8 @@ msgstr "產品資訊"
 msgid "Read"
 msgstr "閱讀"
 
-#: ./browser/template/checkout_comfirm.pt:64
+#: ./browser/template/checkout_comfirm.pt:63
+#: ./browser/template/client_back_url.pt:82
 #: ./interfaces.py:428
 msgid "Receiver"
 msgstr "收件人"
@@ -923,6 +964,7 @@ msgid "Subscribe"
 msgstr "訂閱"
 
 #: ./browser/template/checkout_comfirm.pt:49
+#: ./browser/template/client_back_url.pt:33
 #: ./browser/template/shopping_cart.pt:49
 msgid "Subtotal"
 msgstr "小計"
@@ -930,6 +972,11 @@ msgstr "小計"
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:113
 msgid "Suppliers"
 msgstr "合作廠商"
+
+#: ./browser/template/checkout_comfirm.pt:87
+#: ./interfaces.py:477
+msgid "Tax ID"
+msgstr "統一編號"
 
 #: ./interfaces.py:108
 msgid "The list price of the product."
@@ -947,12 +994,16 @@ msgstr "標頭"
 msgid "To see all"
 msgstr "閱讀全部"
 
+#: ./browser/template/client_back_url.pt:61
+msgid "Total:"
+msgstr "總計"
+
 #: ./browser/template/order_view.pt:48
-#: ./interfaces.py:501
+#: ./interfaces.py:514
 msgid "Trading Results"
 msgstr "交易結果"
 
-#: ./interfaces.py:502
+#: ./interfaces.py:515
 msgid "Trading Results, feedback from allPay."
 msgstr "交易結果，由歐付寶回傳"
 
@@ -961,6 +1012,7 @@ msgid "Uninstalls the i8d.content add-on."
 msgstr "御載 i8d.content 模組"
 
 #: ./browser/template/checkout_comfirm.pt:47
+#: ./browser/template/client_back_url.pt:31
 #: ./browser/template/shopping_cart.pt:47
 msgid "Unit Price"
 msgstr "單價"

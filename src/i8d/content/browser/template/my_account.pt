@@ -56,13 +56,15 @@ from plone import api
                         <td tal:content="item/id">Order id</td>
                         <td tal:content="python:'%s' % item.created.strftime('%Y / %m / %d')">9/9/10 </td>
                         <td tal:content="python:'%s...' % item.Description[0:20]">pranali d</td>
-                        <td><span class="price" tal:content="string:$ ${item/salePrice}">$5.00</span></td>
-                        <td><em>Pending</em></td>
+                        <td><span class="price" tal:content="string:$ ${item/amount}">$5.00</span></td>
+                        <td><em tal:content="item/orderState" i18n:translate="">Pending</em></td>
                         <td class="a-center last">
                           <span class="nobr">
                             <a tal:attributes="href item/getURL" i18n:translate="">View Order</a>
-                              <span class="separator">|</span>
-                            <a tal:attributes="href string:${item/getURL}/edit" i18n:translate="">Edit</a> </span>
+<!--                              <span class="separator">|</span>
+                            <a tal:attributes="href string:${item/getURL}/edit" i18n:translate="">Edit</a>
+-->
+                          </span>
                         </td>
                       </tr>
                     </tbody>
@@ -122,20 +124,33 @@ from plone import api
             <div class="block-title">My Account</div>
             <div class="block-content">
               <ul>
-                <li class="current"><a>Account Dashboard</a></li>
-                <li><a href="#">Account Information</a></li>
-                <li><a href="#">Address Book</a></li>
-                <li><a href="#">My Orders</a></li>
-                <li><a href="#">Billing Agreements</a></li>
-                <li><a href="#">Recurring Profiles</a></li>
-                <li><a href="#">My Product Reviews</a></li>
-                <li><a href="#">My Tags</a></li>
-                <li><a href="wishlist.html">My Wishlist</a></li>
-                <li><a href="#">My Downloadable</a></li>
-                <li class="last"><a href="#">Newsletter Subscriptions</a></li>
+                <li class="current"><a href="/my_account" i18n:translate="">Account Dashboard</a></li>
+                <li><a href="#" i18n:translate="">Account Information</a></li>
+                <li><a href="#" i18n:translate="">My Orders</a></li>
+                <li><a href="#" i18n:translate="">My Ishare Post</a></li>
+                <li class="last"><a href="#" i18n:translate="">My Question List</a></li>
               </ul>
             </div>
           </div>
+
+
+
+          <div class="block block-account">
+            <div class="block-title" i18n:translate="">Related Link</div>
+            <div class="block-content">
+              <ul>
+                <li><a href="#" i18n:translate="">How to buy</a></li>
+                <li><a href="#" i18n:translate="">Post Ishare</a></li>
+                <li><a href="#" i18n:translate="">Have A Question</a></li>
+                <li><a href="#" i18n:translate="">Private</a></li>
+                <li><a href="#" i18n:translate="">Return Policy</a></li>
+                <li><a href="#" i18n:translate="">FAQ</a></li>
+                <li class="last"><a href="#" i18n:translate="">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+
         </aside>
       </div>
     </div>

@@ -12,76 +12,108 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
-  <div class="main-container col2-right-layout">
-    <div class="main container">
-      <div class="row">
 
-<h3><span i18n:translate="">Order No:</span><span tal:replace="context/Title"/></h3>
 
-<h4 i18n:translate="">Product Detail:</h4>
-<tal:item define="items python:context.description.split('||')">
-  <tal:repeat repeat="item items">
-    <p tal:condition="not:repeat/item/end" tal:content="item"/>
-  </tal:repeat>
-</tal:item>
+<section class="main-container col1-layout">
+  <div class="main container">
+    <div class="col-main">
+      <div class="cart wow bounceInUp animated">
+        <div class="page-title">
+          <h2><span i18n:translate="">Merchant Trade No</span>: <span tal:replace="python:context.title" /></h2>
+        </div>
+        <div class="table-responsive">
 
-<h4><span i18n:translate="">Amount:</span> $ <span tal:replace="context/amount|nothing" /></h4>
-<h4><span i18n:translate="">Order State:</span> <span tal:replace="context/orderState|nothing" i18n:translate="" /></h4>
+              <table class="data-table cart-table" id="shopping-cart-table">
+                <thead>
+                  <tr class="first last">
+                    <th rowspan="1">&nbsp;</th>
+                    <th rowspan="1"><span class="nobr" i18n:translate="">Product Name</span></th>
+                    <th colspan="1" class="a-center"><span class="nobr" i18n:translate="">Unit Price</span></th>
+                    <th class="a-center" rowspan="1" i18n:translate="">Qty</th>
+                    <th colspan="1" class="a-center" i18n:translate="">Subtotal</th>
+                  </tr>
+                </thead>
 
-<?python
-from plone import api
-roles = api.user.get_roles()
-?>
+                <tbody tal:define="items python:context.portal_catalog({'Type':'Product', 'UID':context.productUIDs.keys()})">
+                  <tr tal:repeat="item items"
+                      tal:attributes="class python:'%s %s %s' % ('first' if repeat['item'].start else '',
+                                                                 'last' if repeat['item'].end else '',
+                                                                 'odd' if repeat['item'].even else 'even')">
+                    <td class="image">
+                      <a tal:attributes="title item/Title; href item/getURL" class="product-image" target="_blank">
+                        <img tal:attributes="alt item/Title; src string:${item/getURL}/@@images/image_1/thumb" width="75" />
+                      </a>
+                    </td>
+                    <td><h2 class="product-name"> <a tal:attributes="href item/getURL" tal:content="item/Title">Sample Product</a> </h2></td>
+                    <td class="a-right"><span class="price">$ <span tal:replace="item/salePrice"/> </span></td>
+                    <td class="a-center movewishlist" tal:content="python:context.productUIDs[item.UID]"></td>
+                    <td class="a-right movewishlist"><span class="price">$
+                      <span tal:replace="python:item.salePrice * context.productUIDs[item.UID]"/></span>
+                    </td>
+                  </tr>
+                </tbody>
 
-<tal:manager condition="python:'Manager' in roles or 'Site Administrator' in roles">
+                <tfoot>
+                  <tr>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1"><strong i18n:translate="">Total:</strong></td>
+                    <td class="a-right" colspan="7">
+                      $ <span tal:content="context/amount" />
 
-<hr>
-<h4 i18n:translate="">Product(s) Info</h4>
-<tal:x define="uids context/productUIDs" 
-       repeat="uid uids">
-  <p>
-    <a tal:attributes="href string:resolveuid/${uid}" target="_blank"><span tal:replace="uid" /></a>
-  </p>
-</tal:x>
 
-<hr>
-<h4 i18n:translate="">Trading Results</h4>
-<tal:x define="result context/result;
-               keys result/keys | nothing"
-       repeat="key keys">
-  <p>
-    <strong tal:content="string:${key}:"></strong>
-    <span tal:replace="python:context.result[key]" />
-  </p>
-</tal:x>
+                    </td>
+                  </tr>
+                </tfoot>
+              </table>
 
-<hr>
-<h4 i18n:translate="">Logistics Map Results</h4>
-<tal:x define="result context/logisticsMapResult;
-               keys result/keys | nothing" 
-       repeat="key keys">
-  <p>
-    <strong tal:content="string:${key}:"></strong>
-    <span tal:replace="python:context.logisticsMapResult[key]" />
-  </p>
-</tal:x>
 
-<hr>
-<h4 i18n:translate="">Logistics Express Create Results</h4>
-<tal:x define="result context/logisticsExpressResult;
-               keys result/keys | nothing"
-       repeat="key keys">
-  <p>
-    <strong tal:content="string:${key}:"></strong>
-    <span tal:replace="python:context.logisticsExpressResult[key]" />
-  </p>
-</tal:x>
 
-</tal:manager>
 
+      <div class="cart wow bounceInUp animated">
+        <div class="page-title">
+          <h2><span i18n:translate="">Logistics info</span></h2>
+
+<!-- 郵寄 -->
+          <ul tal:condition="python:not context.logisticsMapResult">
+            <li><strong i18n:translate="">Logistics Method</strong>: <span i18n:translate="">Parcel post</span></li>
+            <li><strong i18n:translate="">Receiver</strong>: <span tal:replace="context/receiver" /></li>
+            <li><strong i18n:translate="">Address</strong>: 
+                <span tal:replace="python:'%s %s %s %s' % (context.addr_city, context.addr_district, context.addr_zip, context.addr_address)" />
+            </li>
+          </ul>
+
+<!-- C2C -->
+          <ul tal:condition="python:context.logisticsMapResult">
+            <li><strong i18n:translate="">Logistics Method</strong>: <span i18n:translate="">C2C</span></li>
+            <li><strong i18n:translate="">Receiver</strong>: <span tal:replace="context/receiver" /></li>
+            <li><strong i18n:translate="">Pickup Location</strong>: 
+                <span tal:replace="python:'%s %s' % ('全家便利商店' if context.logisticsMapResult['LogisticsSubType'] == 'FAMIC2C' else '統一超商(7-11)',
+                                                     type(context.logisticsMapResult['CVSStoreName']))"/>
+            </li>
+            <li><strong i18n:translate="">Address</strong>: 
+                <span tal:replace="python:context.logisticsMapResult['CVSAddress']" />
+            </li>
+          </ul>
+
+
+        </div>
+        <div class="table-responsive">
+        </div>
+      </div>
+
+
+        </div>
       </div>
     </div>
   </div>
+
+</section>
+
+
+
+
 
 
 </metal:content-core>
@@ -89,7 +121,3 @@ roles = api.user.get_roles()
 
 </body>
 </html>
-
-
-
-

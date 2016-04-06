@@ -2,6 +2,11 @@
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from zope.component import getMultiAdapter
+
+from z3c.relationfield.relation import RelationValue
+from zope.event import notify
+from zope.lifecycleevent import ObjectModifiedEvent
+
 from plone import api
 from pyallpay import AllPay
 from DateTime import DateTime
@@ -67,6 +72,14 @@ class CheckoutComfirm(BrowserView):
     template = ViewPageTemplateFile("template/checkout_comfirm.pt")
 
     def __call__(self):
+        context = self.context
+        request = self.request
+        response = request.response
+        catalog = context.portal_catalog
+
+        portal = api.portal.get()
+        currentId = api.user.get_current().getId()
+        self.profile = portal['members'][currentId]
         return self.template()
 
 
@@ -89,7 +102,9 @@ class Checkout(BrowserView):
         totalAmount = 0
         itemName = ''
         itemDescription = ''
+        productUIDs = []
         for item in brain:
+            productUIDs.append(item.UID)
             qty = int(request.cookies.get(item.UID, 1))
             totalAmount += item.salePrice * qty
             itemName += '%s $%s X %s#' % (item.Title, item.salePrice, qty)
@@ -99,13 +114,28 @@ class Checkout(BrowserView):
 
         portal = api.portal.get()
         with api.env.adopt_roles(['Manager']):
+#            order =
             api.content.create(
                 type='Order',
                 title=merchantTradeNo,
                 description = '%s, Total: $%s' % (itemDescription, totalAmount),
+                productUIDs = productUIDs,
                 amount = totalAmount,
+                receiver = request.form.get('receiver', ''),
+                phone = request.form.get('phone', ''),
+                cellPhone = request.form.get('cellphone', ''),
+                email = request.form.get('email',''),
+                addr_city = request.form.get('city', ''),
+                addr_district = request.form.get('district', ''),
+                addr_zip = request.form.get('zipcode', ''),
+                addr_address = request.form.get('address', ''),
+                taxId = request.form.get('taxid', ''),
+                companyTitle = request.form.get('companytitle', ''),
                 container=portal['resource']['order'],
             )
+#            order.productUIDs = []
+#            for item in productUIDs:
+#                order.productUIDs.append(item)
             transaction.commit()
 
         paymentInfoURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.paymentInfoURL')

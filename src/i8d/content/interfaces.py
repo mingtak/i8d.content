@@ -14,6 +14,7 @@ from collective import dexteritytextindexer
 #from zope.interface import invariant, Invalid
 #from DateTime import DateTime
 from datetime import datetime
+from plone.app.vocabularies.catalog import CatalogSource
 from .config import ORDER_STATE
 
 class II8DContentLayer(IDefaultBrowserLayer):
@@ -278,6 +279,48 @@ class IProfile(Interface):
         required=False,
     )
 
+    phone = schema.TextLine(
+        title=_(u"Phone"),
+        description=_(u"Phone Number."),
+        required=False,
+    )
+
+    cellPhone = schema.TextLine(
+        title=_(u"Cell Phone"),
+        description=_(u"Cell Phone number."),
+        required=False,
+    )
+
+    email = schema.TextLine(
+        title=_(u"Email"),
+        description=_(u"Email."),
+        required=False,
+    )
+
+    addr_city = schema.TextLine(
+        title=_(u"City"),
+        description=_(u"City name."),
+        required=False,
+    )
+
+    addr_district = schema.TextLine(
+        title=_(u"District"),
+        description=_(u"District"),
+        required=False,
+    )
+
+    addr_zip = schema.TextLine(
+        title=_(u"ZIP Code"),
+        description=_(u"ZIP code"),
+        required=False,
+    )
+
+    addr_address = schema.TextLine(
+        title=_(u"Address"),
+        description=_(u"Address"),
+        required=False,
+    )
+
 
 class IPost(Interface):
     """ 貼文分享 """
@@ -381,6 +424,75 @@ class IOrder(Interface):
         required=False,
     )
 
+    receiver = schema.TextLine(
+        title=_(u"Receiver"),
+        description=_(u"Receiver name."),
+        required=False,
+    )
+
+    phone = schema.TextLine(
+        title=_(u"Phone"),
+        description=_(u"Phone Number."),
+        required=False,
+    )
+
+    cellPhone = schema.TextLine(
+        title=_(u"Cell Phone"),
+        description=_(u"Cell Phone number."),
+        required=False,
+    )
+
+    email = schema.TextLine(
+        title=_(u"Email"),
+        description=_(u"Email."),
+        required=False,
+    )
+
+
+    addr_city = schema.TextLine(
+        title=_(u"City"),
+        description=_(u"City name."),
+        required=False,
+    )
+
+    addr_district = schema.TextLine(
+        title=_(u"District"),
+        description=_(u"District"),
+        required=False,
+    )
+
+    addr_zip = schema.TextLine(
+        title=_(u"ZIP Code"),
+        description=_(u"ZIP code"),
+        required=False,
+    )
+
+    addr_address = schema.TextLine(
+        title=_(u"Address"),
+        description=_(u"Address"),
+        required=False,
+    )
+
+    taxId = schema.TextLine(
+        title=_(u"Tax ID"),
+        description=_(u"Tax ID"),
+        required=False,
+    )
+
+    companyTitle = schema.TextLine(
+        title=_(u"Company Title"),
+        description=_(u"Company Title"),
+        required=False,
+    )
+
+    form.write_permission(productUIDs='cmf.ManagePortal')
+    productUIDs = schema.List(
+        title=_(u"Product UID(s)"),
+        description=_(u"Product UID(s) at shopping cart."),
+        value_type=schema.TextLine(title=u"Value"),
+        required=False,
+    )
+
     form.write_permission(amount='cmf.ManagePortal')
     amount = schema.Int(
         title=_(u"Amount"),
@@ -420,4 +532,3 @@ class IOrder(Interface):
         value_type=schema.TextLine(title=u"Value"),
         required=False,
     )
-

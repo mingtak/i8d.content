@@ -28,6 +28,21 @@
 <h4><span i18n:translate="">Amount:</span> $ <span tal:replace="context/amount|nothing" /></h4>
 <h4><span i18n:translate="">Order State:</span> <span tal:replace="context/orderState|nothing" i18n:translate="" /></h4>
 
+<?python
+from plone import api
+roles = api.user.get_roles()
+?>
+
+<tal:manager condition="python:'Manager' in roles or 'Site Administrator' in roles">
+
+<hr>
+<h4 i18n:translate="">Product(s) Info</h4>
+<tal:x define="uids context/productUIDs" 
+       repeat="uid uids">
+  <p>
+    <a tal:attributes="href string:resolveuid/${uid}" target="_blank"><span tal:replace="uid" /></a>
+  </p>
+</tal:x>
 
 <hr>
 <h4 i18n:translate="">Trading Results</h4>
@@ -62,6 +77,7 @@
   </p>
 </tal:x>
 
+</tal:manager>
 
       </div>
     </div>

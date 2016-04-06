@@ -7,6 +7,10 @@ from i8d.content.interfaces import IBrand, IProduct, ICover, IProfile, IPost, IQ
 
 
 @indexer(IOrder)
+def productUIDs_indexer(obj):
+    return obj.productUIDs
+
+@indexer(IOrder)
 def amount_indexer(obj):
     return obj.amount
 

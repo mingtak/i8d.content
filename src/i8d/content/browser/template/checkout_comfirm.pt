@@ -32,10 +32,10 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
     <div class="col-main">
       <div class="cart wow bounceInUp animated">
         <div class="page-title">
-          <h2 i18n:translate="">My Shopping Cart</h2>
+          <h2 i18n:translate="">Comfirm Cart / shipping info</h2>
         </div>
                 <div class="table-responsive">
-          <form method="post" action="/cart_update">
+          <form method="post" action="/checkout">
 <!--            <input type="hidden" value="Vwww7itR3zQFe86m" name="form_key"> -->
             <fieldset>
               <table class="data-table cart-table" id="shopping-cart-table">
@@ -52,11 +52,51 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
                 <tfoot>
                   <tr class="first last">
                     <td class="a-right last" colspan="7">
+
+
+
+<div class="mini-cart">
+  <div class="actions">
+
+    <h3 i18n:translate="">Shipping info</h3>
+
+    <h4 i18n:translate="">Receiver</h4>
+        <span i18n:translate="">Receiver</span>:
+        <input class="receiver input-text" name="receiver" value="" type="text" placeholder="Receiver" autocomplete="off"
+               tal:attributes="value view/profile/title" i18n:attributes="placeholder">
+        <span i18n:translate="">Phone Number</span>:
+        <input class="phone input-text" name="phone" value="" type="text" placeholder="Phone Number" autocomplete="off"
+               tal:attributes="value view/profile/phone" i18n:attributes="placeholder">
+        <span i18n:translate="">Cell Phone Number</span>:
+        <input class="cellphone input-text" name="cellphone" value="" type="text" placeholder="Cell Phone Number" autocomplete="off"
+               tal:attributes="value view/profile/cellPhone" i18n:attributes="placeholder">
+        <span i18n:translate="">Email</span>:
+        <input class="email input-text" name="email" value="" type="text" placeholder="Email" autocomplete="off"
+               tal:attributes="value view/profile/email" i18n:attributes="placeholder">
+
+    <h4 i18n:translate="">Address</h4>
+    <p i18n:translate="">You can fill below fields to select shipping to door, or select C2C shipping later.
+                         (if you want to using C2C, please ignore below fields.)</p>
+        <select class="city selectcity" name="city" tal:attributes="data-selected view/profile/addr_city"></select>
+        <select class="district selectdistrict" name="district" tal:attributes="data-selected view/profile/addr_district"></select>
+        <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
+        <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" tal:attributes="value view/profile/addr_address" autocomplete="off">
+
+    <h4 i18n:translate="">Invoice</h4>
+    <p>若您需要開立三聯式發票，請填寫統一編號及抬頭。</p>
+        <span i18n:translate="">Tax ID</span>:
+        <input class="taxid input-text" name="taxid" value="" type="text" autocomplete="off">
+        <span i18n:translate="">Company Title</span>:
+        <input class="companytitle input-text" name="companytitle" value="" type="text" autocomplete="off">
+
+  </div>
+</div>
+<br>
+
 <div class="mini-cart">
 <div class="actions">
-<a class="btn btn-checkout" target="_blank" href="/checkout">
-                    <span i18n:translate="">Checkout</span>
-                  </a>
+
+<button class="btn btn-checkout" title="Checkout" type="submit" i18n:translate="">Checkout</button>
 
 </div>
 </div>
@@ -64,9 +104,6 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
 <button onclick="javascript:location.href='/shopping_cart'" class="button btn-continue"
         title="Edit Item" type="button"><span i18n:translate="">Edit Shopping Item(s)</span></button>
 
-<!-- <button class="button btn btn-update" title="Update Cart" value="update_qty"
- name="update_cart_action" type="submit"><span><span i18n:translate="">Update Cart</span></span></button>
--->
                     </td>
                   </tr>
                 </tfoot>
@@ -100,10 +137,19 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
   </div>
 </section>
 
+
+<script src="/++theme++barceloneta/js/dk-tw-citySelector.min.js"></script>
+<script>
+  $(function() {
+  $('form').dk_tw_citySelector('.city', '.district', '.zipcode');
+  });
+</script>
+
+
 <script type="text/javascript">
-$(document).on('click', 'a.cart_del', function(event){
+  $(document).on('click', 'a.cart_del', function(event){
     $(this).parent().parent("tr").remove();
-});
+  });
 </script>
 
 </metal:content-core>

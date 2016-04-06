@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-05 09:20+0000\n"
+"POT-Creation-Date: 2016-04-06 04:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -41,6 +41,10 @@ msgstr "加入購物車"
 msgid "Additional Information"
 msgstr "其它資訊"
 
+#: ./interfaces.py:319
+msgid "Address"
+msgstr "地址"
+
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:99
 msgid "Addresses"
 msgstr "地址"
@@ -71,7 +75,7 @@ msgstr "所有問答"
 msgid "All in one(AIO) Checkout Server URL"
 msgstr "歐付寶 AIO 結帳連結網址"
 
-#: ./interfaces.py:386
+#: ./interfaces.py:486
 msgid "Amount"
 msgstr "總計"
 
@@ -84,7 +88,7 @@ msgid "Answer"
 msgstr "答覆"
 
 #: ./browser/template/cover_view.pt:298
-#: ./interfaces.py:241
+#: ./interfaces.py:242
 msgid "Article"
 msgstr "文章"
 
@@ -104,11 +108,11 @@ msgstr "橫幅圖檔，建議尺寸，大約 1500X350px 。"
 msgid "BannerImage"
 msgstr "橫幅圖檔"
 
-#: ./interfaces.py:156
+#: ./interfaces.py:157
 msgid "Bonus Point"
 msgstr "紅利點數"
 
-#: ./interfaces.py:157
+#: ./interfaces.py:158
 msgid "Bonus point setting, please filling decimal point. maximum is 0.05 (5%)"
 msgstr "紅利點數設定，請以小數點設定百分比，例如以 0.05 表示 5%"
 
@@ -116,12 +120,12 @@ msgstr "紅利點數設定，請以小數點設定百分比，例如以 0.05 表
 msgid "Brain more than 1 item"
 msgstr "超過一個項目"
 
-#: ./interfaces.py:92
+#: ./interfaces.py:93
 #: ./profiles/default/types/Brand.xml
 msgid "Brand"
 msgstr "品牌"
 
-#: ./interfaces.py:42
+#: ./interfaces.py:43
 msgid "Brand Nickname or Category Keywords"
 msgstr "品牌名稱或主題關鍵字列表"
 
@@ -129,19 +133,19 @@ msgstr "品牌名稱或主題關鍵字列表"
 msgid "Brand Show In Nav"
 msgstr "顯示在主選單的品牌"
 
-#: ./interfaces.py:93
+#: ./interfaces.py:94
 msgid "Brand name."
 msgstr "品牌名稱."
 
-#: ./interfaces.py:55
+#: ./interfaces.py:56
 msgid "Brand or Category Logo"
 msgstr "品牌或主題圖示"
 
-#: ./interfaces.py:37
+#: ./interfaces.py:38
 msgid "Brand or Category Title"
 msgstr "品牌或主題標題"
 
-#: ./interfaces.py:56
+#: ./interfaces.py:57
 msgid "Brand or category logo image"
 msgstr "品牌或主題圖示"
 
@@ -149,7 +153,19 @@ msgstr "品牌或主題圖示"
 msgid "Brand:"
 msgstr "品牌:"
 
-#: ./browser/template/checkout_comfirm.pt:58
+#: ./interfaces.py:289
+msgid "Cell Phone"
+msgstr "手機號碼"
+
+#: ./browser/template/checkout_comfirm.pt:70
+msgid "Cell Phone Number"
+msgstr "手機號碼"
+
+#: ./interfaces.py:290
+msgid "Cell Phone number."
+msgstr "手機號碼"
+
+#: ./browser/template/checkout_comfirm.pt:92
 msgid "Checkout"
 msgstr "結帳"
 
@@ -168,6 +184,14 @@ msgstr "結帳 Hash Key"
 #: ./browser/coverSetting.py:46
 msgid "Checkout HashKey, for allPay"
 msgstr "結帳 Hash Key, 歐付寶認證用"
+
+#: ./interfaces.py:301
+msgid "City"
+msgstr "縣市"
+
+#: ./interfaces.py:302
+msgid "City name."
+msgstr "縣市名稱"
 
 #: ./browser/coverSetting.py:69
 msgid "Client Back URL"
@@ -188,6 +212,10 @@ msgstr "客戶端回覆網址，物流使用"
 #: ./profiles/default/types/Collection.xml
 msgid "Collection"
 msgstr "集合"
+
+#: ./browser/template/checkout_comfirm.pt:35
+msgid "Comfirm Cart / shipping info"
+msgstr "確認購物車 / 配送資訊"
 
 #: ./browser/template/post_view.pt:29
 msgid "Complete Article:"
@@ -213,12 +241,12 @@ msgstr "網站首頁設定"
 msgid "Date"
 msgstr "日期"
 
-#: ./interfaces.py:198
+#: ./interfaces.py:199
 msgid "Date of the most recent update to the product."
 msgstr "商品最後更新日期。"
 
 #: ./browser/template/my_account.pt:45
-#: ./interfaces.py:74
+#: ./interfaces.py:75
 msgid "Description"
 msgstr "描述"
 
@@ -240,15 +268,28 @@ msgstr "詳細內容"
 msgid "Discount"
 msgstr "紅利積點"
 
+#: ./interfaces.py:307
+msgid "District"
+msgstr "鄉鎮市區"
+
 #: ./browser/template/my_account.pt:65
 #: ./profiles/default/types/Document.xml
 #: ./profiles/default/types/Event.xml
 msgid "Edit"
 msgstr "編輯"
 
-#: ./browser/template/checkout_comfirm.pt:65
+#: ./browser/template/checkout_comfirm.pt:98
 msgid "Edit Shopping Item(s)"
 msgstr "變更購物車內容"
+
+#: ./browser/template/checkout_comfirm.pt:73
+#: ./interfaces.py:295
+msgid "Email"
+msgstr ""
+
+#: ./interfaces.py:296
+msgid "Email."
+msgstr ""
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:35
 msgid "Enter your email address"
@@ -262,11 +303,11 @@ msgstr "活動"
 msgid "Events can be shown in calendars."
 msgstr "活動可以顯示在日曆中"
 
-#: ./interfaces.py:276
+#: ./interfaces.py:277
 msgid "Expert Image."
 msgstr "專家圖檔"
 
-#: ./interfaces.py:277
+#: ./interfaces.py:278
 msgid "Expert image."
 msgstr "專家圖檔。"
 
@@ -294,17 +335,17 @@ msgstr "資料夾"
 msgid "Header service explanation"
 msgstr "表頭服務說明"
 
-#: ./interfaces.py:184
+#: ./interfaces.py:185
 msgid "Hero Text"
 msgstr "Hero 文字"
 
 #: ./browser/template/cover_view.pt:274
-#: ./interfaces.py:217
+#: ./interfaces.py:218
 msgid "Heros"
 msgstr "Heros (首頁主視覺大圖)"
 
 #: ./browser/template/cover_view.pt:290
-#: ./interfaces.py:233
+#: ./interfaces.py:234
 msgid "Hot Product"
 msgstr "熱門商品"
 
@@ -312,15 +353,15 @@ msgstr "熱門商品"
 msgid "How to buy"
 msgstr "如何購買"
 
-#: ./interfaces.py:86
+#: ./interfaces.py:87
 msgid "If In Stock, Please check it."
 msgstr "若有庫存可隨時出貨，請打勾(預設值已打勾)。"
 
-#: ./interfaces.py:292
+#: ./interfaces.py:335
 msgid "If want to show this page to home page, please upload a image."
 msgstr "假如要讓這個項目顯示在首頁，請上傳一張圖檔"
 
-#: ./interfaces.py:291
+#: ./interfaces.py:334
 #: ./profiles/default/types/Image.xml
 msgid "Image"
 msgstr "圖檔"
@@ -337,7 +378,7 @@ msgstr "商品輸入錯誤"
 msgid "In Stock"
 msgstr "有現貨"
 
-#: ./interfaces.py:85
+#: ./interfaces.py:86
 msgid "In Stock?"
 msgstr "庫存狀況？"
 
@@ -353,11 +394,11 @@ msgstr "安裝 i8d.content 模組"
 msgid "Introduction:"
 msgstr "簡介:"
 
-#: ./interfaces.py:270
+#: ./interfaces.py:271
 msgid "Is Expert"
 msgstr "是否專家"
 
-#: ./interfaces.py:197
+#: ./interfaces.py:198
 msgid "Last Updated"
 msgstr "最近更新"
 
@@ -369,7 +410,7 @@ msgstr "讓您上傳一個檔案到網站"
 msgid "Link"
 msgstr "連結"
 
-#: ./interfaces.py:106
+#: ./interfaces.py:107
 msgid "List Price"
 msgstr "商品定價"
 
@@ -385,8 +426,8 @@ msgstr "物流 C2C 回覆網址"
 msgid "Logistics C2C Reply URL, for allPay's logistics"
 msgstr "物流 C2C 回覆網址，歐付寶物流使用"
 
-#: ./browser/template/order_view.pt:55
-#: ./interfaces.py:417
+#: ./browser/template/order_view.pt:70
+#: ./interfaces.py:517
 msgid "Logistics Express Create Results"
 msgstr "新增物流訂單結果"
 
@@ -410,8 +451,8 @@ msgstr "物流 Hash Key"
 msgid "Logistics HashKey, for allPay"
 msgstr "物流 Hash Key, 歐付寶使用"
 
-#: ./browser/template/order_view.pt:44
-#: ./interfaces.py:409
+#: ./browser/template/order_view.pt:59
+#: ./interfaces.py:509
 msgid "Logistics Map Results"
 msgstr "物流地圖結果"
 
@@ -419,7 +460,7 @@ msgstr "物流地圖結果"
 msgid "Logistics Map URL"
 msgstr "物流地圖"
 
-#: ./interfaces.py:418
+#: ./interfaces.py:518
 msgid "Logistics express create results, feedback from allPay."
 msgstr "物流新增訂單結果，由歐付寶傳回"
 
@@ -427,7 +468,7 @@ msgstr "物流新增訂單結果，由歐付寶傳回"
 msgid "Logistics express create url."
 msgstr "物流新增訂單網址"
 
-#: ./interfaces.py:410
+#: ./interfaces.py:510
 msgid "Logistics map results, feedback from allPay."
 msgstr "物流地圖結果，由歐付寶回傳"
 
@@ -435,15 +476,15 @@ msgstr "物流地圖結果，由歐付寶回傳"
 msgid "Logistics map url"
 msgstr "物流地圖網址"
 
-#: ./interfaces.py:380
+#: ./interfaces.py:423
 msgid "Mapping to allPay's ItemName"
 msgstr "對映到歐付寶的 ItemName"
 
-#: ./interfaces.py:374
+#: ./interfaces.py:417
 msgid "Mapping to allPay's MerchantTradeNo"
 msgstr "對映到歐付寶的 MerchantTradeNo"
 
-#: ./interfaces.py:166
+#: ./interfaces.py:167
 msgid "Maximum Used Bonus Points"
 msgstr "紅利點數使用上限"
 
@@ -463,13 +504,12 @@ msgstr "特店 ID, 可以在歐付寶後台查到"
 msgid "My Account"
 msgstr "我的帳戶"
 
-#: ./browser/template/checkout_comfirm.pt:35
 #: ./browser/template/shopping_cart.pt:35
 msgid "My Shopping Cart"
 msgstr "我的購物車"
 
 #: ./browser/template/cover_view.pt:282
-#: ./interfaces.py:225
+#: ./interfaces.py:226
 msgid "New Product"
 msgstr "新商品"
 
@@ -493,7 +533,7 @@ msgstr "訂單編號"
 msgid "Order No:"
 msgstr "訂單編號:"
 
-#: ./interfaces.py:393
+#: ./interfaces.py:493
 msgid "Order State"
 msgstr "訂單狀態"
 
@@ -501,7 +541,7 @@ msgstr "訂單狀態"
 msgid "Order State:"
 msgstr "訂單狀態:"
 
-#: ./interfaces.py:373
+#: ./interfaces.py:416
 msgid "Order Title"
 msgstr "訂單標題"
 
@@ -509,7 +549,7 @@ msgstr "訂單標題"
 msgid "Order Total"
 msgstr "訂單總計"
 
-#: ./interfaces.py:394
+#: ./interfaces.py:494
 msgid "Order state."
 msgstr "訂單狀態"
 
@@ -545,7 +585,19 @@ msgstr "付費資訊網址"
 msgid "Payment info url."
 msgstr "付費資訊網址"
 
-#: ./interfaces.py:43
+#: ./interfaces.py:283
+msgid "Phone"
+msgstr "電話"
+
+#: ./browser/template/checkout_comfirm.pt:67
+msgid "Phone Number"
+msgstr "電話號碼"
+
+#: ./interfaces.py:284
+msgid "Phone Number."
+msgstr "電話號碼"
+
+#: ./interfaces.py:44
 msgid "Please listing all nickname that about this brand. For example, Microfost and MS, Separated by commas."
 msgstr "請列出所有這個品牌的所有可能唸法，例如: Microsoft, MS, 微軟...，請以半型逗號分隔."
 
@@ -570,17 +622,17 @@ msgstr "產品說明"
 msgid "Product Detail:"
 msgstr "商品描述"
 
-#: ./interfaces.py:69
+#: ./interfaces.py:70
 msgid "Product Id"
 msgstr "商品 id"
 
-#: ./interfaces.py:118
+#: ./interfaces.py:119
 msgid "Product Image."
 msgstr "商品圖檔"
 
 #: ./browser/template/checkout_comfirm.pt:45
 #: ./browser/template/shopping_cart.pt:45
-#: ./interfaces.py:64
+#: ./interfaces.py:65
 msgid "Product Name"
 msgstr "商品名稱"
 
@@ -588,24 +640,36 @@ msgstr "商品名稱"
 msgid "Product Show In Nav"
 msgstr "顯示在主選單的商品"
 
-#: ./interfaces.py:119
+#: ./interfaces.py:478
+msgid "Product UID(s)"
+msgstr "商品 UID(s)"
+
+#: ./interfaces.py:479
+msgid "Product UID(s) at shopping cart."
+msgstr "購物車商品的 UID(s)"
+
+#: ./interfaces.py:120
 msgid "Product image for header."
 msgstr "商品圖檔(首圖使用)"
 
-#: ./interfaces.py:125
+#: ./interfaces.py:126
 msgid "Product image."
 msgstr "商品圖檔。"
 
-#: ./interfaces.py:80
+#: ./interfaces.py:81
 msgid "Product introduction web page include http:// or https://"
 msgstr "商品官網網址，本項須包含 http:// 或 https://"
+
+#: ./browser/template/order_view.pt:39
+msgid "Product(s) Info"
+msgstr "商品資訊"
 
 #: ./browser/template/brand_view.pt:61
 #: ./browser/template/category_view.pt:61
 msgid "ProductName"
 msgstr "產品名稱"
 
-#: ./interfaces.py:364
+#: ./interfaces.py:407
 msgid "Products File"
 msgstr "上傳商品檔案"
 
@@ -613,19 +677,19 @@ msgstr "上傳商品檔案"
 msgid "Profile"
 msgstr "個人頁面"
 
-#: ./interfaces.py:260
+#: ./interfaces.py:261
 msgid "Profile Name"
 msgstr "個人標題"
 
-#: ./interfaces.py:176
+#: ./interfaces.py:177
 msgid "Promotional Text"
 msgstr "促銷文字"
 
-#: ./interfaces.py:185
+#: ./interfaces.py:186
 msgid "Promotional Text for Hero page"
 msgstr "促銷文字(顯示於頁頁)"
 
-#: ./interfaces.py:177
+#: ./interfaces.py:178
 msgid "Promotional Text, support html format richtext."
 msgstr "促銷文字，本項支援 html 語法"
 
@@ -633,11 +697,11 @@ msgstr "促銷文字，本項支援 html 語法"
 msgid "Provider"
 msgstr "供應商"
 
-#: ./interfaces.py:351
+#: ./interfaces.py:394
 msgid "Provider Logo"
 msgstr "供應商商標"
 
-#: ./interfaces.py:341
+#: ./interfaces.py:384
 msgid "Provider Name"
 msgstr "供應商名稱"
 
@@ -645,11 +709,11 @@ msgstr "供應商名稱"
 msgid "Provider Show In Nav"
 msgstr "顯示在主選單的供應商"
 
-#: ./interfaces.py:352
+#: ./interfaces.py:395
 msgid "Provider logo image"
 msgstr "供應商商標圖檔"
 
-#: ./interfaces.py:358
+#: ./interfaces.py:401
 msgid "Provider website url, must include http:// or https://"
 msgstr "供應商網址，請含 http:// 或 https://"
 
@@ -657,7 +721,7 @@ msgstr "供應商網址，請含 http:// 或 https://"
 msgid "Provider:"
 msgstr "供應商:"
 
-#: ./interfaces.py:79
+#: ./interfaces.py:80
 msgid "Pruduct URL"
 msgstr "商品網址"
 
@@ -667,7 +731,7 @@ msgid "Qty"
 msgstr "數量"
 
 #: ./browser/template/cover_view.pt:306
-#: ./interfaces.py:249
+#: ./interfaces.py:250
 #: ./profiles/default/types/Question.xml
 msgid "Question"
 msgstr "提問"
@@ -676,11 +740,11 @@ msgstr "提問"
 msgid "Question & Anwser"
 msgstr "提問與回應"
 
-#: ./interfaces.py:311
+#: ./interfaces.py:354
 msgid "Question Detail"
 msgstr "提問詳細內容"
 
-#: ./interfaces.py:306
+#: ./interfaces.py:349
 msgid "Question Title"
 msgstr "提問標題"
 
@@ -692,6 +756,15 @@ msgstr "產品資訊"
 #: ./browser/template/question_list_view.pt:95
 msgid "Read"
 msgstr "閱讀"
+
+#: ./browser/template/checkout_comfirm.pt:64
+#: ./interfaces.py:428
+msgid "Receiver"
+msgstr "收件人"
+
+#: ./interfaces.py:429
+msgid "Receiver name."
+msgstr "收件人姓名"
 
 #: ./browser/template/my_account.pt:35
 msgid "Recent Orders"
@@ -709,7 +782,7 @@ msgstr "最新新增項目"
 msgid "Regular Price:"
 msgstr "價格:"
 
-#: ./interfaces.py:219
+#: ./interfaces.py:220
 msgid "Related"
 msgstr "關連的"
 
@@ -717,7 +790,7 @@ msgstr "關連的"
 msgid "Related Products"
 msgstr "相關產品"
 
-#: ./interfaces.py:333
+#: ./interfaces.py:376
 msgid "Reply Question"
 msgstr "回覆提問"
 
@@ -733,31 +806,31 @@ msgstr "退貨政策"
 msgid "Return url, for checkout."
 msgstr "網回網址，結帳程序用"
 
-#: ./interfaces.py:218
+#: ./interfaces.py:219
 msgid "Rleated items for hero section"
 msgstr "關連的 hero 項目"
 
-#: ./interfaces.py:242
+#: ./interfaces.py:243
 msgid "Rleated items for home page article list"
 msgstr "關連的文章，顯示於首頁"
 
-#: ./interfaces.py:226
+#: ./interfaces.py:227
 msgid "Rleated items for home page new product list"
 msgstr "關連項目，新商品"
 
-#: ./interfaces.py:234
+#: ./interfaces.py:235
 msgid "Rleated items for home page not product list"
 msgstr "關連項目，熱門商品"
 
-#: ./interfaces.py:250
+#: ./interfaces.py:251
 msgid "Rleated items for home page question list"
 msgstr "關連項目，提問"
 
-#: ./interfaces.py:112
+#: ./interfaces.py:113
 msgid "Sale price"
 msgstr "售價"
 
-#: ./interfaces.py:113
+#: ./interfaces.py:114
 msgid "Sale price for the product if different from the list price, must be <= listPrice."
 msgstr "銷售價格必需小於或等於定價。"
 
@@ -799,16 +872,20 @@ msgstr "服務說明"
 msgid "Shipment"
 msgstr "訂單查詢"
 
+#: ./browser/template/checkout_comfirm.pt:61
+msgid "Shipping info"
+msgstr "配送資訊"
+
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:83
 msgid "Shopping Guide"
 msgstr "網站購買指南"
 
 #: ./browser/template/post_view.pt:27
-#: ./interfaces.py:298
+#: ./interfaces.py:341
 msgid "Short Text"
 msgstr "短文描述"
 
-#: ./interfaces.py:299
+#: ./interfaces.py:342
 msgid "Short Text, show in Cover."
 msgstr "知文描述，顯示於首頁"
 
@@ -829,7 +906,7 @@ msgstr "排序:"
 msgid "Special Price"
 msgstr "特別折扣價"
 
-#: ./interfaces.py:191
+#: ./interfaces.py:192
 msgid "Standard shipping cost"
 msgstr "標準運費"
 
@@ -854,7 +931,7 @@ msgstr "小計"
 msgid "Suppliers"
 msgstr "合作廠商"
 
-#: ./interfaces.py:107
+#: ./interfaces.py:108
 msgid "The list price of the product."
 msgstr "本項商品訂價"
 
@@ -862,7 +939,7 @@ msgstr "本項商品訂價"
 msgid "This entry was posted on"
 msgstr "本文發表時間:"
 
-#: ./interfaces.py:207
+#: ./interfaces.py:208
 msgid "Title"
 msgstr "標頭"
 
@@ -870,12 +947,12 @@ msgstr "標頭"
 msgid "To see all"
 msgstr "閱讀全部"
 
-#: ./browser/template/order_view.pt:33
-#: ./interfaces.py:401
+#: ./browser/template/order_view.pt:48
+#: ./interfaces.py:501
 msgid "Trading Results"
 msgstr "交易結果"
 
-#: ./interfaces.py:402
+#: ./interfaces.py:502
 msgid "Trading Results, feedback from allPay."
 msgstr "交易結果，由歐付寶回傳"
 
@@ -890,9 +967,9 @@ msgstr "單價"
 
 #: ./browser/template/shopping_cart.pt:66
 msgid "Update Cart"
-msgstr "更新購物車"
+msgstr "確認變更"
 
-#: ./interfaces.py:192
+#: ./interfaces.py:193
 msgid "Usually is the cost for the typical standard, lowest cost shipping method. This is provided for informational purposes and the actual shipping cost could vary depending on the visitor."
 msgstr "請輸入單品標準運費。這是提供給消費者的資訊，實際運費可能會根據消費者購買內容而有所不同。"
 
@@ -918,7 +995,7 @@ msgstr "點看更多"
 msgid "View Order"
 msgstr "查看訂單"
 
-#: ./interfaces.py:357
+#: ./interfaces.py:400
 msgid "Website"
 msgstr "網站"
 
@@ -930,13 +1007,25 @@ msgstr "網站首頁"
 msgid "Where is my order?"
 msgstr "訂單追蹤"
 
-#: ./interfaces.py:167
+#: ./browser/template/checkout_comfirm.pt:78
+msgid "You can fill below fields to select shipping to door, or select C2C shipping later. (if you want to using C2C, please ignore below fields.)"
+msgstr "若您選擇寄送方式，請填寫以下資料，或者您也可以稍後選擇便利商店取貨服務(若您要選擇便利商店取貨服務，請忽略以下地址欄位)。"
+
+#: ./interfaces.py:168
 msgid "You can use a maximum bonus points."
 msgstr "您可以使用的最大紅利點數"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:97
 msgid "Your Account"
 msgstr "我的帳戶"
+
+#: ./interfaces.py:313
+msgid "ZIP Code"
+msgstr "郵遞區號"
+
+#: ./interfaces.py:314
+msgid "ZIP code"
+msgstr "郵遞區號"
 
 #: ./browser/coverSetting.py:58
 msgid "aio server url, mapping to allpay aio server url"
@@ -1002,6 +1091,6 @@ msgstr "已退貨"
 msgid "shipped"
 msgstr "已出貨"
 
-#: ./interfaces.py:365
+#: ./interfaces.py:408
 msgid "zip file, include a .cvs file and image files"
 msgstr "zip 壓縮檔，包含一個 cvs 檔案及相關的圖檔"

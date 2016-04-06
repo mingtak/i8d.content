@@ -56,7 +56,7 @@ from plone import api
                 </ul>
 
                 <div class="actions">
-                  <a class="btn-checkout" target="_blank" tal:attributes="href python:'/login' if api.user.is_anonymous() else '/checkout'">
+                  <a class="btn-checkout" target="_blank" tal:attributes="href python:'/login' if api.user.is_anonymous() else '/checkout_comfirm'">
                     <span i18n:translate="">Fast Checkout</span>
                   </a>
                   <a class="view-cart" href="/shopping_cart"><span i18n:translate="">View Cart</span></a>

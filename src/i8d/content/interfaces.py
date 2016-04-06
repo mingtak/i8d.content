@@ -486,10 +486,11 @@ class IOrder(Interface):
     )
 
     form.write_permission(productUIDs='cmf.ManagePortal')
-    productUIDs = schema.List(
+    productUIDs = schema.Dict(
         title=_(u"Product UID(s)"),
-        description=_(u"Product UID(s) at shopping cart."),
-        value_type=schema.TextLine(title=u"Value"),
+        description=_(u"Product UID(s) at shopping cart, include qty."),
+        key_type=schema.TextLine(title=u"Key"),
+        value_type=schema.Int(title=u"Value"),
         required=False,
     )
 

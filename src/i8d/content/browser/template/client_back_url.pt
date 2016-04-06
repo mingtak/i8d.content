@@ -19,46 +19,63 @@
     <div class="col-main">
       <div class="cart wow bounceInUp animated">
         <div class="page-title">
-          <h2 i18n:translate="">Merchant Trade No</h2>
+          <h2><span i18n:translate="">Merchant Trade No</span>: <span tal:replace="python:request.form['MerchantTradeNo']" /></h2>
         </div>
         <div class="table-responsive">
-          <form method="post" action="#updatePost/">
-            <input type="hidden" value="Vwww7itR3zQFe86m" name="form_key">
-            <fieldset>
+
               <table class="data-table cart-table" id="shopping-cart-table">
-                
                 <thead>
                   <tr class="first last">
                     <th rowspan="1">&nbsp;</th>
-                    <th rowspan="1"><span class="nobr">Product Name</span></th>
-                    <th rowspan="1"></th>
-                    <th colspan="1" class="a-center"><span class="nobr">Unit Price</span></th>
-                    <th class="a-center" rowspan="1">Qty</th>
-                    <th colspan="1" class="a-center">Subtotal</th>
-                    <th class="a-center" rowspan="1">&nbsp;</th>
+                    <th rowspan="1"><span class="nobr" i18n:translate="">Product Name</span></th>
+                    <th colspan="1" class="a-center"><span class="nobr" i18n:translate="">Unit Price</span></th>
+                    <th class="a-center" rowspan="1" i18n:translate="">Qty</th>
+                    <th colspan="1" class="a-center" i18n:translate="">Subtotal</th>
                   </tr>
                 </thead>
-                <tfoot>
-                  <tr class="first last">
-                    <td class="a-right last" colspan="7"><button onclick="setLocation('#')" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Continue Shopping</span></span></button>
-                      <button class="button btn-update" title="Update Cart" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Cart</span></span></button>
-                      <button id="empty_cart_button" class="button btn-empty" title="Clear Cart" value="empty_cart" name="update_cart_action" type="submit"><span><span>Clear Cart</span></span></button></td>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  <tr class="first odd">
-                    <td class="image"><a class="product-image" title="Sample Product" href="product_detail.html"><img width="75" alt="Sample Product" src="products-images/product1.jpg"></a></td>
-                    <td><h2 class="product-name"> <a href="product_detail.html">Sample Product</a> </h2></td>
-                    <td class="a-center"><a title="Edit item parameters" class="edit-bnt" href="#configure/id/15945/"></a></td>
-                    <td class="a-right"><span class="cart-price"> <span class="price">$70.00</span> </span></td>
-                    <td class="a-center movewishlist"><input maxlength="12" class="input-text qty" title="Qty" size="4" value="1" name="cart[15945][qty]"></td>
-                    <td class="a-right movewishlist"><span class="cart-price"> <span class="price">$70.00</span> </span></td>
-                    <td class="a-center last"><a class="button remove-item" title="Remove item" href="#"><span><span>Remove item</span></span></a></td>
+
+                <tbody tal:define="items view/products">
+                  <tr tal:repeat="item items"
+                      tal:attributes="class python:'%s %s %s' % ('first' if repeat['item'].start else '',
+                                                                 'last' if repeat['item'].end else '',
+                                                                 'odd' if repeat['item'].even else 'even')">
+                    <td class="image">
+                      <a tal:attributes="title item/Title; href item/getURL" class="product-image" target="_blank">
+                        <img tal:attributes="alt item/Title; src string:${item/getURL}/@@images/image_1/thumb" width="75" />
+                      </a>
+                    </td>
+                    <td><h2 class="product-name"> <a tal:attributes="href item/getURL" tal:content="item/Title">Sample Product</a> </h2></td>
+                    <td class="a-right"><span class="price">$ <span tal:replace="item/salePrice"/> </span></td>
+                    <td class="a-center movewishlist" tal:content="python:view.order.productUIDs[item.UID]"></td>
+                    <td class="a-right movewishlist"><span class="price">$
+                      <span tal:replace="python:item.salePrice * view.order.productUIDs[item.UID]"/></span>
+                    </td>
                   </tr>
                 </tbody>
+
+                <tfoot>
+                  <tr>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1"><strong i18n:translate="">Total:</strong></td>
+                    <td class="a-right" colspan="7">
+                      $ <span tal:content="view/order/amount" />
+
+
+                    </td>
+                  </tr>
+                </tfoot>
               </table>
-            </fieldset>
-          </form>
+
+<!-- 條件未修正 -->
+        <button tal:condition="python:'logistics' in view.request['HTTP_REFERER']"
+                tal:attributes="onclick python:'javascript:location.href=\'/logistics_map?MerchantTradeNo=%s\'' % request.form['MerchantTradeNo']"
+                class="button btn-continue pull-right" 
+                title="C2C shipping" type="button"><span i18n:translate="">C2C Shipping</span></button>
+
+
+
         </div>
       </div>
     </div>
@@ -67,22 +84,6 @@
 </section>
 
 
-
-
-
-<ul>
-  <li>
-    <strong i18n:translate="">Merchant Trade No</strong>:
-    <span tal:replace="view/order/Title" />
-  </li>
-
-  <li>
-    <strong i18n:translate="">Item(s)</strong>:
-    <span tal:replace="view/order/Description" />
-  </li>
-
-
-</ul>
 
 
 

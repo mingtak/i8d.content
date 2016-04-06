@@ -50,18 +50,21 @@ class ClientBackUrl(BrowserView):
     """ Client back url
     """
 
-#    template = ViewPageTemplateFile("template/client_back_url.pt")
+    template = ViewPageTemplateFile("template/client_back_url.pt")
     def __call__(self):
         context = self.context
         request = self.request
         response = request.response
         catalog = context.portal_catalog
-        itemInCart = request.cookies.get('itemInCart', '')
-        itemInCart_list = itemInCart.split()
+#        itemInCart = request.cookies.get('itemInCart', '')
+#        itemInCart_list = itemInCart.split()
 
         response.setCookie('itemInCart', '')
-        response.redirect('/logistics_map?MerchantTradeNo=%s' % request.form['MerchantTradeNo'])
-        return
+#        response.redirect('/logistics_map?MerchantTradeNo=%s' % request.form['MerchantTradeNo'])
+
+        self.order = catalog({'Type':'Order', 'id':request.form['MerchantTradeNo']})[0]
+        self.products = catalog({'Type':'Product', 'UID':self.order.productUIDs.keys()})
+        return self.template()
 
 
 class CheckoutComfirm(BrowserView):
@@ -102,10 +105,10 @@ class Checkout(BrowserView):
         totalAmount = 0
         itemName = ''
         itemDescription = ''
-        productUIDs = []
+        productUIDs = {}
         for item in brain:
-            productUIDs.append(item.UID)
             qty = int(request.cookies.get(item.UID, 1))
+            productUIDs[item.UID] = qty
             totalAmount += item.salePrice * qty
             itemName += '%s $%s X %s#' % (item.Title, item.salePrice, qty)
             itemDescription += '%s: $%s X %s || ' % (item.Title, item.salePrice, qty)
@@ -150,7 +153,7 @@ class Checkout(BrowserView):
         ap = AllPay(payment_info)
         # check out, this will return a dictionary containing checkValue...etc.
         dict_url = ap.check_out()
-        # generate the submit form html
+        # generate the submit form html.
         form_html = ap.gen_check_out_form(dict_url)
 
         return form_html

@@ -131,8 +131,28 @@ else:
                         <tr>
                           <td width="25%" i18n:translate="">Brand:</td><td width="75%" tal:content="context/brand"></td>
                         </tr>
+
+                        <tr>
+                          <td width="25%">最高折扣:</td>
+                          <td width="75%" tal:content="python:'%s 元' % int(context.salePrice*context.maxUsedBonus)"></td>
+                        </tr>
+
+                        <tr>
+                          <td width="25%">消費紅利:</td>
+                          <td width="75%" tal:content="python:'%s 點' % int(context.salePrice*context.bonusPoint)"></td>
+                        </tr>
+
                         <tr>
                           <td width="25%" i18n:translate="">Provider:</td><td width="75%" tal:content="python:context.getParentNode().title"></td>
+                        </tr>
+                        <tr>
+                          <td width="25%">
+                            <span i18n:translate="">Standard shipping cost</span>:
+                          </td>
+                          <td width="75%">
+                            <span tal:replace="context/standardShippingCost" /><br/>
+                            (購買多項商品時，運費將合併計算)
+                          </td>
                         </tr>
                       </table>
                     </div>

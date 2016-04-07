@@ -128,6 +128,14 @@ class ICoverSetting(Form.Schema):
 
     """ Logistics setting for AllPay """
 
+    initialBonus = schema.Int(
+        title=_(u"Initial Bonus Setting"),
+        description=_(u"Initial Bonus Setting"),
+        default=0,
+        min=0,
+    )
+
+
 class CoverSettingControlPanelForm(RegistryEditForm):
     form.extends(RegistryEditForm)
     schema = ICoverSetting

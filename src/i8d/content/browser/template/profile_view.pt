@@ -25,7 +25,7 @@ else:
 
 <tal:check_roles condition="manageBrand">
 <p><strong i18n:translate="">Introduction:</strong></p>
-<div tal:content="structure context/text/raw" />
+<div tal:content="structure context/text/raw | nothing" />
 <img tal:replace="structure context/@@images/image/mini|nothing" />
 </tal:check_roles>
 

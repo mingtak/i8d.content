@@ -80,9 +80,27 @@ class CheckoutComfirm(BrowserView):
         response = request.response
         catalog = context.portal_catalog
 
+        if api.user.is_anonymous():
+            response.redirect('/')
+            return
+
         portal = api.portal.get()
         currentId = api.user.get_current().getId()
         self.profile = portal['members'][currentId]
+
+        self.itemInCart = request.cookies.get('itemInCart', '')
+        self.itemInCart_list = self.itemInCart.split()
+        self.brain = catalog({'UID':self.itemInCart_list})
+
+        self.shippingFee = 0
+        self.discount = 0
+        for item in self.brain:
+            self.shippingFee += item.standardShippingCost            
+            self.discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
+
+        if self.discount > self.profile.bonus:
+            self.discount = self.profile.bonus
+
         return self.template()
 
 
@@ -101,17 +119,37 @@ class Checkout(BrowserView):
         itemInCart = request.cookies.get('itemInCart', '')
         itemInCart_list = itemInCart.split()
 
+        portal = api.portal.get()
+        currentId = api.user.get_current().getId()
+        profile = portal['members'][currentId]
+
         brain = catalog({'UID':itemInCart_list})
         totalAmount = 0
         itemName = ''
         itemDescription = ''
         productUIDs = {}
+        shippingFee = 0
+        discount = 0
+
         for item in brain:
             qty = int(request.cookies.get(item.UID, 1))
             productUIDs[item.UID] = qty
             totalAmount += item.salePrice * qty
             itemName += '%s $%s X %s#' % (item.Title, item.salePrice, qty)
             itemDescription += '%s: $%s X %s || ' % (item.Title, item.salePrice, qty)
+
+            shippingFee += item.standardShippingCost
+            discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
+
+        totalAmount += shippingFee
+
+        if request.form['usingbonus'] == 'n':
+            discount = 0
+        if discount > profile.bonus:
+            discount = profile.bonus
+        totalAmount -= discount
+        itemName += 'shipping Fee: %s, discount: %s' % (shippingFee, discount)
+        itemDescription += 'shipping Fee: %s, discount: %s' % (shippingFee, discount)
 
         merchantTradeNo = '%s%s' % (DateTime().strftime('%Y%m%d%H%M%S'), random.randint(10000,99999))
 
@@ -136,9 +174,9 @@ class Checkout(BrowserView):
                 companyTitle = request.form.get('companytitle', ''),
                 container=portal['resource']['order'],
             )
-#            order.productUIDs = []
-#            for item in productUIDs:
-#                order.productUIDs.append(item)
+
+            profile.bonus -= discount
+
             transaction.commit()
 
         paymentInfoURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.paymentInfoURL')

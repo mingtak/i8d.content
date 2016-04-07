@@ -12,21 +12,6 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
-
-
-<?python
-from plone import api
-context = econtext['context']
-catalog = context.portal_catalog
-request = econtext['request']
-itemInCart = request.cookies.get('itemInCart', '')
-itemInCart_list = itemInCart.split()
-brain = catalog({'UID':itemInCart_list})
-onClick_inc = "var result = document.getElementById('UID'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;"
-onClick_dec = "var result = document.getElementById('UID'); var qty = result.value; if( !isNaN( qty ) && qty > 1 ) result.value--;return false;"
-?>
-
-
 <section class="main-container col1-layout">
   <div class="main container">
     <div class="col-main">
@@ -36,14 +21,12 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
         </div>
                 <div class="table-responsive">
           <form method="post" action="/checkout">
-<!--            <input type="hidden" value="Vwww7itR3zQFe86m" name="form_key"> -->
             <fieldset>
               <table class="data-table cart-table" id="shopping-cart-table">
                 <thead>
                   <tr class="first last">
                     <th rowspan="1">&nbsp;</th>
                     <th rowspan="1"><span class="nobr" i18n:translate="">Product Name</span></th>
-<!--                    <th rowspan="1"></th> -->
                     <th colspan="1" class="a-center"><span class="nobr" i18n:translate="">Unit Price</span></th>
                     <th class="a-center" rowspan="1" i18n:translate="">Qty</th>
                     <th colspan="1" class="a-center" i18n:translate="">Subtotal</th>
@@ -80,7 +63,8 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
         <select class="city selectcity" name="city" tal:attributes="data-selected view/profile/addr_city"></select>
         <select class="district selectdistrict" name="district" tal:attributes="data-selected view/profile/addr_district"></select>
         <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
-        <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" tal:attributes="value view/profile/addr_address" autocomplete="off">
+        <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址"
+               tal:attributes="value view/profile/addr_address" autocomplete="off">
 
     <h4 i18n:translate="">Invoice</h4>
     <p>若您需要開立三聯式發票，請填寫統一編號及抬頭。</p>
@@ -108,8 +92,8 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
                   </tr>
                 </tfoot>
                 <tbody>
-                  <tr class="first odd" tal:repeat="item brain">
-<tal:qty define="qty python:int(request.cookies.get(item.UID, 2))">
+                  <tr class="first odd" tal:repeat="item view/brain">
+<tal:qty define="qty python:int(request.cookies.get(item.UID, 1))">
                     <td class="image">
                       <a class="product-image" tal:attributes="title item/Title; href item/getURL">
                         <img width="75" tal:attributes="alt item/Title; src string:${item/getURL}/@@images/image_1/thumb" />
@@ -127,6 +111,28 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
                         tal:content="python:'$%s' % (item.salePrice * qty)">$70.00</span> </span></td>
 </tal:qty>
                   </tr>
+
+<tr>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1" class="right">運費:</td>
+<td rowspan="1">$ <span tal:replace="view/shippingFee"/></td>
+</tr>
+
+<tr>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1" style="color:blue">
+  是否使用紅利：
+  <input type="radio" name="usingbonus" value="y" checked>是</input>    
+  <input type="radio" name="usingbonus" value="n">不使用</input> 
+</td>
+<td rowspan="1" tal:content="string:您持有紅利 ${view/profile/bonus} 點"></td>
+<td rowspan="1" class="right">本次可使用紅利折抵:</td>
+<td rowspan="1" style="color:red">$ <span tal:replace="view/discount"/></td>
+</tr>
+
+
                 </tbody>
               </table>
             </fieldset>

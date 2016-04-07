@@ -56,6 +56,7 @@ class CanSeeBackend(BrowserView):
 
     def __call__(self):
 
+        request = self.request
         canSeeRoles = ['Manager', 'Site Administrator']
 
         if api.user.is_anonymous():
@@ -65,6 +66,8 @@ class CanSeeBackend(BrowserView):
             for role in canSeeRoles:
                 if role in roles:
                     return True
+            if 'ishare/++add++Post' in request.getURL() or 'question/++add++Question' in request.getURL():
+                return True
             return False
 
 

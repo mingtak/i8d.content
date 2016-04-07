@@ -24,16 +24,16 @@ from plone import api
         <section class="col-main col-sm-9 wow bounceInUp animated">
           <div class="my-account">
             <div class="page-title">
-              <h2 i18n:translate="">My Account</h2>
+              <h2 i18n:translate="">My Order</h2>
             </div>
             <div class="dashboard">
               <div class="welcome-msg"> <strong tal:content="string:您好，${view/myProfile/title}.">Hello, Name.</strong>
-                <p>在我的帳戶中，您可以查看最近的帳戶活動歷史，包括最近一年內的歷史交易記錄。你可以選擇下面的連接查看或進行相關資訊編輯。</p>
+                <p>在歷史訂單中，您可以查看你所有的帳戶訂單，包括最近一年內的歷史交易記錄。你可以選擇下面的連接查看細節。</p>
               </div>
               <div class="recent-orders">
                 <div class="title-buttons">
-                  <strong i18n:translate="">Recent Orders</strong>
-                  <a tal:attributes="href string:/my_account?show:int=-1" i18n:translate="">View All </a>
+                  <strong i18n:translate="">All Orders</strong>
+                  <br/>
                 </div>
                 <div class="table-responsive">
                   <table class="data-table" id="my-orders-table">
@@ -74,82 +74,6 @@ from plone import api
 
 
 
-              <div class="box-account">
-<!--                <div class="page-title">
-                  <h2 i18n:translate="">Account Information</h2>
-                </div>
--->
-                <div class="col2-set">
-                  <div class="col-1">
-                    <strong i18n:translate="">Account Information</strong> <br/>
-
-
-                  <table class="data-table accountinfo">
-                    
-                    <tbody>
-                      <tr class="first odd">
-                        <td i18n:translate="" class="fieldtitle">Name</td>
-                        <td tal:content="view/myProfile/title" />
-                      </tr>
-                      <tr class="even">
-                        <td i18n:translate="" class="fieldtitle">Introduction</td>
-                        <td tal:content="view/myProfile/description" />
-                      </tr>
-                      <tr class="odd">
-                        <td i18n:translate="" class="fieldtitle">Phone</td>
-                        <td tal:content="view/myProfile/phone" />
-                      </tr>
-                      <tr class="even">
-                        <td i18n:translate="" class="fieldtitle">Cell Phone</td>
-                        <td tal:content="view/myProfile/cellPhone" />
-                      </tr>
-                      <tr class="odd">
-                        <td i18n:translate="" class="fieldtitle">Email</td>
-                        <td tal:content="view/myProfile/email" />
-                      </tr>
-                      <tr class="even">
-                        <td i18n:translate="" class="fieldtitle">Address</td>
-                        <td tal:content="python:'%s %s %s %s' % (view.myProfile.addr_city,
-                                                                 view.myProfile.addr_district,
-                                                                 view.myProfile.addr_zip,
-                                                                 view.myProfile.addr_address)" />
-                      </tr>
-                      <tr class="last odd">
-                        <td i18n:translate="" class="fieldtitle">Bonus</td>
-                        <td> 
-                          <span tal:replace="view/myProfile/bonus"/> <span i18n:translate="">point(s)</span>
-                        </td> 
-                      </tr>
-
-                    </tbody>
-                  </table>
-                 </div>
-
-                  <div class="col-2">
-                    <strong i18n:translate="">Recent Ishare</strong>
-                    <p tal:condition="not:view/ishareBrain" i18n:translate="">No any ishare post</p>
-                    <ul tal:define="items view/ishareBrain">
-                      <li tal:repeat="item items">
-                        <a tal:attributes="href item/getURL" tal:content="item/Title" />
-                      </li>
-                    </ul>
-                  </div>
-
-                  <hr />
-
-                  <div class="col-2">
-                    <strong i18n:translate="">Recent Question</strong>
-                    <p tal:condition="not:view/questionBrain" i18n:translate="">No any question post</p>
-                    <ul tal:define="items view/questionBrain">
-                      <li tal:repeat="item items">
-                        <a tal:attributes="href item/getURL" tal:content="item/Title" />
-                      </li>
-                    </ul>
-                  </div>
-
-                </div>
-
-              </div>
             </div>
           </div>
         </section>
@@ -162,9 +86,9 @@ from plone import api
             <div class="block-title" i18n:translate="">My Account</div>
             <div class="block-content">
               <ul>
-                <li class="current"><a href="/@@my_account" i18n:translate="">Account Dashboard</a></li>
+                <li><a href="/@@my_account" i18n:translate="">Account Dashboard</a></li>
                 <li><a href="/@@account_info" i18n:translate="">Account Information</a></li>
-                <li><a href="/@@my_order" i18n:translate="">My Orders</a></li>
+                <li class="current"><a href="/@@my_order" i18n:translate="">My Orders</a></li>
                 <li><a href="/ishare/++add++Post" i18n:translate="">Post Ishare</a></li>
                 <li><a href="/question/++add++Question" i18n:translate="">Have A Question</a></li>
                 <li><a href="/@@my_isare" i18n:translate="">My Ishare Post</a></li>
@@ -190,6 +114,7 @@ from plone import api
 
 
         </aside>
+
       </div>
     </div>
   </div>

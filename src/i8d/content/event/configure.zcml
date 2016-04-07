@@ -4,6 +4,11 @@
     i18n_domain="i8d.content">
 
 <subscriber
+    for="Products.PluggableAuthService.interfaces.events.IUserLoggedInEvent"
+    handler=".userevent.checkProfile"
+    />
+
+<subscriber
     for="i8d.content.interfaces.IProvider zope.lifecycleevent.interfaces.IObjectModifiedEvent"
     handler=".importProducts.importProducts"
     />

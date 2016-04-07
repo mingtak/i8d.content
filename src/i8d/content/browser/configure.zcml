@@ -21,6 +21,20 @@
   <!-- browserview -->
 
   <browser:page
+      name="my_order"
+      for="*"
+      class=".myaccount.MyOrder"
+      permission="zope2.View"
+      />
+
+  <browser:page
+      name="account_info"
+      for="*"
+      class=".myaccount.AccountInfo"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="my_account"
       for="*"
       class=".myaccount.MyAccount"

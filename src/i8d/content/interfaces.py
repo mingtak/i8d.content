@@ -24,7 +24,7 @@ class II8DContentLayer(IDefaultBrowserLayer):
 # 紅利點數發放比率，預設為1%(0.01)，基於防笨最高設定不得超過5%(0.05)
 MIN_BONUS_RATE = 0.0
 MAX_BONUS_RATE = 0.05
-DEFAULT_BONUS_RATE = 0.01
+DEFAULT_BONUS_RATE = 0.0
 
 # 使用紅利點數可折抵折扣率，以小數點表示百分比, 最小不打折，最多85折(15% off), 預設95折(5% off)
 MIN_USED_BONUS_RATE = 0.0
@@ -321,6 +321,14 @@ class IProfile(Interface):
         required=False,
     )
 
+    bonus = schema.Int(
+        title=_(u"Bonus"),
+        description=_(u"Bonus"),
+        default=0,
+        min=0,
+        required=False,
+    )
+
 
 class IPost(Interface):
     """ 貼文分享 """
@@ -342,6 +350,7 @@ class IPost(Interface):
         description=_(u"Short Text, show in Cover."),
         required=False,
     )
+
 
 class IQuestion(Interface):
     """ 專家給問 """

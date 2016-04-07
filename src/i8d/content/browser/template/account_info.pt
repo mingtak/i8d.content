@@ -1,0 +1,169 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="i8d.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+
+
+<?python
+from plone import api
+?>
+
+<div class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+        <section class="col-main col-sm-9 wow bounceInUp animated">
+          <div class="my-account">
+            <div class="page-title">
+              <h2 i18n:translate="">Account Information</h2>
+            </div>
+            <div class="dashboard">
+              <div class="welcome-msg"> <strong tal:content="string:您好，${view/myProfile/title}.">Hello, Name.</strong>
+                <p>以下是您的個人資料，如需更新，請直接填寫後按「確認」，即完成更新。</p>
+              </div>
+              <div class="recent-orders">
+                <div class="table-responsive">
+
+<form action="/account_info" method="post">
+                  <input style="display:none" class="accountinfo input-text" name="currentid" value="" type="hidden" autocomplete="off"
+                         tal:attributes="value view/currentId">
+
+                  <table class="data-table accountinfo">
+                    
+                    <tbody>
+                      <tr class="first odd">
+                        <td i18n:translate="" class="fieldtitle">Name</td>
+                        <td>
+                          <input class="accountinfo input-text" name="name" value="" type="text" autocomplete="off"
+                                 tal:attributes="value view/myProfile/title">
+                        </td>
+                      </tr>
+
+                      <tr class="even">
+                        <td i18n:translate="" class="fieldtitle">Introduction</td>
+                        <td>
+                          <input class="accountinfo input-text" name="description" value="" type="text" autocomplete="off"
+                                 tal:attributes="value view/myProfile/description">
+                        </td>
+                      </tr>
+
+                      <tr class="odd">
+                        <td i18n:translate="" class="fieldtitle">Phone</td>
+                        <td>
+                          <input class="accountinfo input-text" name="phone" value="" type="text" autocomplete="off"
+                                 tal:attributes="value view/myProfile/phone">
+                        </td>
+                      </tr>
+
+                      <tr class="even">
+                        <td i18n:translate="" class="fieldtitle">Cell Phone</td>
+                        <td>
+                          <input class="accountinfo input-text" name="cellphone" value="" type="text" autocomplete="off"
+                                 tal:attributes="value view/myProfile/cellPhone">
+                        </td>
+                      </tr>
+
+                      <tr class="odd">
+                        <td i18n:translate="" class="fieldtitle">Email</td>
+                        <td>
+                          <input class="accountinfo input-text" name="email" value="" type="text" autocomplete="off"
+                                 tal:attributes="value view/myProfile/email">
+                        </td>
+                      </tr>
+
+                      <tr class="even">
+                        <td i18n:translate="" class="fieldtitle">Address</td>
+                        <td>
+                          <select class="city selectcity" name="city" tal:attributes="data-selected view/myProfile/addr_city"></select>
+                          <select class="district selectdistrict" name="district" tal:attributes="data-selected view/myProfile/addr_district"></select>
+                          <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
+                          <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" 
+                                 tal:attributes="value view/myProfile/addr_address" autocomplete="off">
+                        </td>
+                      </tr>
+
+                      <tr class="last odd">
+                        <td i18n:translate="" class="fieldtitle">Bonus</td>
+                        <td>
+                          <span tal:replace="view/myProfile/bonus"/> <span i18n:translate="">point(s)</span>
+                        </td>
+                      </tr>
+
+                    </tbody>
+                  </table>
+                  <br/>
+                  <button class="btn right btn-lg btn-info" title="update" type="submit" i18n:translate="">Comfirm</button>
+</form>
+
+<script src="/++theme++barceloneta/js/dk-tw-citySelector.min.js"></script>
+<script>
+  $(function() {
+  $('form').dk_tw_citySelector('.city', '.district', '.zipcode');
+  });
+</script>
+
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+
+        <aside class="col-right sidebar col-sm-3 wow bounceInUp animated">
+          <div class="block block-account">
+            <div class="block-title" i18n:translate="">My Account</div>
+            <div class="block-content">
+              <ul>
+                <li><a href="/@@my_account" i18n:translate="">Account Dashboard</a></li>
+                <li class="current"><a href="/@@account_info" i18n:translate="">Account Information</a></li>
+                <li><a href="/@@my_order" i18n:translate="">My Orders</a></li>
+                <li><a href="/ishare/++add++Post" i18n:translate="">Post Ishare</a></li>
+                <li><a href="/question/++add++Question" i18n:translate="">Have A Question</a></li>
+                <li><a href="/@@my_isare" i18n:translate="">My Ishare Post</a></li>
+                <li class="last"><a href="/@@my_question" i18n:translate="">My Question List</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+
+          <div class="block block-account">
+            <div class="block-title" i18n:translate="">Related Link</div>
+            <div class="block-content">
+              <ul>
+                <li><a href="/resource/how-to-buy" i18n:translate="">How to buy</a></li>
+                <li><a href="/resource/private" i18n:translate="">Private</a></li>
+                <li><a href="/resource/return-policy" i18n:translate="">Return Policy</a></li>
+                <li><a href="/resource/faq" i18n:translate="">FAQ</a></li>
+                <li class="last"><a href="#" i18n:translate="">Contact Us</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+        </aside>
+
+
+      </div>
+    </div>
+  </div>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>
+
+
+
+

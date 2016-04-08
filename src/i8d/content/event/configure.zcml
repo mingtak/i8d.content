@@ -3,10 +3,18 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="i8d.content">
 
+<!--
 <subscriber
-    for="Products.PluggableAuthService.interfaces.events.IUserLoggedInEvent"
+    for="Products.PluggableAuthService.events.PASEvent"
     handler=".userevent.checkProfile"
     />
+-->
+
+<subscriber
+    for="Products.PlonePAS.events.UserLoggedInEvent"
+    handler=".userevent.checkProfile"
+    />
+
 
 <subscriber
     for="i8d.content.interfaces.IProvider zope.lifecycleevent.interfaces.IObjectModifiedEvent"

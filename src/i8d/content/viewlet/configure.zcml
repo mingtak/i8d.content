@@ -5,6 +5,15 @@
     i18n_domain="i8d.content">
 
     <browser:viewlet
+      name="header_container"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IMainNavigation"
+      template="template/header_container.pt"
+      class=".viewlet.HeaderContainer"
+      permission="zope2.View"
+      />
+
+    <browser:viewlet
       name="cover_hero"
       for="i8d.content.interfaces.ICover"
       manager="plone.app.layout.viewlets.interfaces.IAboveContentTitle"

@@ -1,0 +1,89 @@
+<?python
+from plone import api
+canSee = api.user.is_anonymous()
+if not canSee:
+    canSee = not ('Manager' in api.user.get_roles() or 'Site Administrator' in api.user.get_roles())
+?>
+
+<tal:check condition="canSee">
+<!-- Header -->
+  <header class="header-container">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <!-- Header Language -->
+          <div class="col-xs-6">
+          </div>
+          <div class="col-xs-6">
+            <!-- Header Top Links -->
+            <div class="toplinks">
+              <div class="links">
+                <div class="myaccount"><a title="我的帳戶" href="/my_account"><span class="hidden-xs">我的帳戶</span></a></div>
+                <div class="shoppingcart"><a title="購物車"  href="/shopping_cart"><span class="hidden-xs">購物車</span></a></div>
+                <div class="orderquery"><a title="訂單查詢" href="/"><span class="hidden-xs">訂單查詢</span></a></div>
+              </div>
+            </div>
+            <!-- End Header Top Links -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="header container">
+      <div class="row">
+        <div class="col-lg-2 col-sm-3 col-md-2 col-xs-12">
+          <!-- Header Logo -->
+          <a class="logo" title="iBody健康商城" href="/"><img alt="iBody健康商城" src="/logo.png"></a>
+          <!-- End Header Logo -->
+        </div>
+        <div class="col-lg-6 col-sm-5 col-md-6 col-xs-12">
+          <!-- Search-col -->
+          <div class="search-box">
+            <form action="/@@search_result" method="POST" id="search_mini_form" name="Categories">
+<!--              <select name="category_id" class="cate-dropdown hidden-xs">
+                <option value="0">All Categories</option>
+                <option value="36">Camera</option>
+              </select> -->
+              <input i18n:attributes="placeholder""
+                     type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
+              <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
+            </form>
+          </div>
+          <!-- End Search-col -->
+        </div>
+        <!-- Top Cart -->
+        <div class="col-lg-4 col-sm-4 col-md-4 col-xs-12">
+
+<tal:login switch="context/@@user_is_anonymous">
+    <tal:f case="False">
+          <span class="or"> Hello,
+            <span tal:replace="python:modules['plone'].api.user.get_current().getProperty('fullname')"/>
+            <a href="/logout"> (登出)</a>
+          </span>
+          <div class="signup">
+<!--            <a title="Hello" href=""> -->
+              <img src="http://www.i8d.com.tw/resource/images/hello.png/@@images/image/hello" alt="hello"/>
+<!--            </a> -->
+          </div>
+    </tal:f>
+    <tal:t case="True">
+          <div class="signup">
+            <a onclick="window.open('/@@googleLogin', 'Google', config='height=500, width=500');" title="Google登入" href="#">
+              <img src="http://www.i8d.com.tw/resource/images/googlelogin.png/@@images/image/hello" alt="google登入"/>
+            </a>
+          </div>
+          <div class="signup">
+            <a href="#" onclick="window.open('/@@facebookLogin', 'Facebook', config='height=500, width=500');" title="臉書登入" href="#">
+              <img src="http://www.i8d.com.tw/resource/images/fblogin.png/@@images/image/hello" alt="臉書登入"/>
+            </a>
+          </div>
+          <span class="or"> 加入會員 </span>
+    </tal:t>
+</tal:login>
+        </div>
+        <!-- End Top Cart -->
+      </div>
+    </div>
+  </header>
+  <!-- end header -->
+
+</tal:check>

@@ -198,7 +198,10 @@
                   </a>
                 </div>
                 <div class="actions-links"><span class="add-to-links">
-                  <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/to_object/absolute_url"><span i18n:translate="">Detail</span></a>
+                  <a title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                     tal:attributes="href string:${item/to_object/absolute_url}/@@images/image_1/colorbox.png">
+                    <span i18n:translate="">Detail</span>
+                  </a>
                   <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
                      tal:attributes="data-uid item/to_object/UID; data-update string:add" ><span i18n:translate="">Add to Cart</span></a>
                   <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/to_object/absolute_url"><span i18n:translate="">Search Related</span></a></span>

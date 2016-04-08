@@ -6,16 +6,17 @@ from plone import api
 def checkProfile(event):
     """ Check Profile for User Loggedin event """
     portal = api.portal.get()
-    currentUser = api.user.get_current()
-    currentId = currentUser.getId()
+    currentId = event.principal.getId()
     if portal['members'].has_key(currentId):
         return
     else:
+        currentUser = api.user.get(userid=currentId)
         with api.env.adopt_roles(['Manager']):
             api.content.create(
                 type='Profile',
                 id=currentId,
                 title=currentUser.getProperty('fullname'),
+                email=currentUser.getProperty('email'),
                 bonus=api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.initialBonus'),
                 container=portal['members']
             )

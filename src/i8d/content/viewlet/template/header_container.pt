@@ -44,7 +44,7 @@ if not canSee:
                 <option value="36">Camera</option>
               </select> -->
               <input i18n:attributes="placeholder""
-                     type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
+                     type="text" placeholder="Search here..." value="" maxlength="70" class="" name="key" id="search">
               <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
             </form>
           </div>
@@ -60,19 +60,19 @@ if not canSee:
             <a href="/logout"> (登出)</a>
           </span>
           <div class="signup">
-<!--            <a title="Hello" href=""> -->
+<!--            <a title="Hello" href="#helper" class="inline"> -->
               <img src="http://www.i8d.com.tw/resource/images/hello.png/@@images/image/hello" alt="hello"/>
 <!--            </a> -->
           </div>
     </tal:f>
     <tal:t case="True">
           <div class="signup">
-            <a onclick="window.open('/@@googleLogin', 'Google', config='height=500, width=500');" title="Google登入" href="#">
+            <a title="Google登入" href="/@@googleLogin">
               <img src="http://www.i8d.com.tw/resource/images/googlelogin.png/@@images/image/hello" alt="google登入"/>
             </a>
           </div>
           <div class="signup">
-            <a href="#" onclick="window.open('/@@facebookLogin', 'Facebook', config='height=500, width=500');" title="臉書登入" href="#">
+            <a title="臉書登入" href="/@@facebookLogin">
               <img src="http://www.i8d.com.tw/resource/images/fblogin.png/@@images/image/hello" alt="臉書登入"/>
             </a>
           </div>

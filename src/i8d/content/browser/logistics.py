@@ -34,7 +34,7 @@ class LogisticsMap(BrowserView):
             'MerchantID': merchantId,
             'MerchantTradeNo': request.form['MerchantTradeNo'],
             'LogisticsType': 'CVS',
-            'LogisticsSubType': 'FAMIC2C', # 待處理
+            'LogisticsSubType': 'FAMI', # 待處理
             'IsCollection': 'Y', # 待處理
             'ServerReplyURL': serverReplyURL,
             'Device': 1, # 待處理

@@ -21,6 +21,13 @@
   <!-- browserview -->
 
   <browser:page
+      name="search_result"
+      for="*"
+      class=".search.SearchResult"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="my_order"
       for="*"
       class=".myaccount.MyOrder"

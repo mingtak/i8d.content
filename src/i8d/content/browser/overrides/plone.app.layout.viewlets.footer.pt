@@ -67,7 +67,7 @@
           </a>
         </div>
 
-        <p>There is a slogen and below is payment/security icon.</p>
+        <p>I-Body, Care our body.</p>
 
         <div class="payment-accept">
           <div>
@@ -83,10 +83,10 @@
         <h4 i18n:translate="">Shopping Guide</h4>
         <ul class="links">
           <li class="first"><a href="#" title="How to buy" i18n:attributes="title" i18n:translate="">>How to buy</a></li>
-          <li><a href="faq.html" title="FAQs" i18n:attributes="title" i18n:translate="">FAQs</a></li>
+<!--          <li><a href="faq.html" title="FAQs" i18n:attributes="title" i18n:translate="">FAQs</a></li> -->
           <li><a href="#" title="Payment" i18n:attributes="title" i18n:translate="">Payment</a></li>
-          <li><a href="#" title="Shipment" i18n:attributes="title" i18n:translate="">Shipment</a></li>
-          <li><a href="#" title="Where is my order?" i18n:attributes="title" i18n:translate="">Where is my order?</a></li>
+<!--          <li><a href="#" title="Shipment" i18n:attributes="title" i18n:translate="">Shipment</a></li> -->
+<!--          <li><a href="#" title="Where is my order?" i18n:attributes="title" i18n:translate="">Where is my order?</a></li> -->
           <li class="last"><a href="#" title="Return policy" i18n:attributes="title" i18n:translate="">Return policy</a></li>
         </ul>
       </div>
@@ -96,10 +96,10 @@
         <ul class="links">
           <li class="first"><a title="Your Account" href="login.html" i18n:attributes="title" i18n:translate="">Your Account</a></li>
           <li><a title="Information" href="#" i18n:attributes="title" i18n:translate="">Information</a></li>
-          <li><a title="Addresses" href="#" i18n:attributes="title" i18n:translate="">Addresses</a></li>
-          <li><a title="Addresses" href="#" i18n:attributes="title" i18n:translate="">Discount</a></li>
+<!--          <li><a title="Addresses" href="#" i18n:attributes="title" i18n:translate="">Addresses</a></li> -->
+<!--          <li><a title="Addresses" href="#" i18n:attributes="title" i18n:translate="">Discount</a></li> -->
           <li><a title="Orders History" href="#" i18n:attributes="title" i18n:translate="">Orders History</a></li>
-          <li class="last"><a title=" Additional Information" href="#" i18n:attributes="title" i18n:translate="">Additional Information</a></li>
+<!--          <li class="last"><a title=" Additional Information" href="#" i18n:attributes="title" i18n:translate="">Additional Information</a></li> -->
         </ul>
       </div>
 
@@ -107,11 +107,13 @@
         <h4 i18n:translate="">Information</h4>
         <ul class="links">
           <li class="first"><a href="#" title="Site Map" i18n:attributes="title" i18n:translate="">Site Map</a></li>
-          <li><a href="#/" title="Search Terms" i18n:attributes="title" i18n:translate="">Search Terms</a></li>
-          <li><a href="#" title="Advanced Search" i18n:attributes="title" i18n:translate="">Advanced Search</a></li>
-          <li><a href="contact_us.html" title="Contact Us" i18n:attributes="title" i18n:translate="">Contact Us</a></li>
-          <li><a href="#" title="Suppliers" i18n:attributes="title" i18n:translate="">Suppliers</a></li>
-          <li class=" last"><a href="#" title="Our stores" class="link-rss" i18n:attributes="title" i18n:translate="">Our stores</a></li>
+<!--          <li><a href="#/" title="Search Terms" i18n:attributes="title" i18n:translate="">Search Terms</a></li> -->
+          <li><a href="faq.html" title="FAQs" i18n:attributes="title" i18n:translate="">FAQs</a></li>
+          <li><a href="#/" title="Private Policy" i18n:attributes="title" i18n:translate="">Private Policy</a></li>
+<!--          <li><a href="#" title="Advanced Search" i18n:attributes="title" i18n:translate="">Advanced Search</a></li> -->
+<!--          <li><a href="contact_us.html" title="Contact Us" i18n:attributes="title" i18n:translate="">Contact Us</a></li> -->
+<!--          <li><a href="#" title="Suppliers" i18n:attributes="title" i18n:translate="">Suppliers</a></li> -->
+<!--          <li class=" last"><a href="#" title="Our stores" class="link-rss" i18n:attributes="title" i18n:translate="">Our stores</a></li> -->
         </ul>
       </div>
 

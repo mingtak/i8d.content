@@ -15,9 +15,17 @@
 <section class="main-container col1-layout">
   <div class="main container">
     <div class="col-main">
-      <div class="cart wow bounceInUp animated">
+      <div class="cart wow_ bounceInUp_ animated_">
         <div class="page-title">
-          <h2 i18n:translate="">Comfirm Cart / shipping info</h2>
+          <h2>
+            <a href="/resource/help_for_anon/@@without_pt" tal:condition="context/@@user_is_anonymous" class="iframe">
+              <img src="/resource/images/helper_3.png/@@images/image/help" class="wow bounceInLeft" data-wow-duration="1s"/>
+            </a>
+            <span style="vertical-align:bottom" i18n:translate="">Comfirm Cart / shipping info</span>
+          </h2>
+
+
+
         </div>
                 <div class="table-responsive">
           <form method="post" action="/checkout">
@@ -44,6 +52,8 @@
     <h3 i18n:translate="">Shipping info</h3>
 
     <h4 i18n:translate="">Receiver</h4>
+<tal:anon tal:switch="python:bool(view.profile)">
+    <tal:t case="python:True">
         <span i18n:translate="">Receiver</span>:
         <input class="receiver input-text" name="receiver" value="" type="text" placeholder="Receiver" autocomplete="off"
                tal:attributes="value view/profile/title" i18n:attributes="placeholder">
@@ -56,15 +66,32 @@
         <span i18n:translate="">Email</span>:
         <input class="email input-text" name="email" value="" type="text" placeholder="Email" autocomplete="off"
                tal:attributes="value view/profile/email" i18n:attributes="placeholder">
+    </tal:t>
+
+    <tal:t case="python:False">
+        <span i18n:translate="">Receiver</span>:
+        <input class="receiver input-text" name="receiver" value="" type="text" placeholder="Receiver" autocomplete="off"
+               i18n:attributes="placeholder">
+        <span i18n:translate="">Phone Number</span>:
+        <input class="phone input-text" name="phone" value="" type="text" placeholder="Phone Number" autocomplete="off"
+               i18n:attributes="placeholder">
+        <span i18n:translate="">Cell Phone Number</span>:
+        <input class="cellphone input-text" name="cellphone" value="" type="text" placeholder="Cell Phone Number" autocomplete="off"
+               i18n:attributes="placeholder">
+        <span i18n:translate="">Email</span>:
+        <input class="email input-text" name="email" value="" type="text" placeholder="Email" autocomplete="off"
+               i18n:attributes="placeholder">
+    </tal:t>
+</tal:anon>
 
     <h4 i18n:translate="">Address</h4>
     <p i18n:translate="">You can fill below fields to select shipping to door, or select C2C shipping later.
                          (if you want to using C2C, please ignore below fields.)</p>
-        <select class="city selectcity" name="city" tal:attributes="data-selected view/profile/addr_city"></select>
-        <select class="district selectdistrict" name="district" tal:attributes="data-selected view/profile/addr_district"></select>
+        <select class="city selectcity" name="city" tal:attributes="data-selected view/profile/addr_city | nothing"></select>
+        <select class="district selectdistrict" name="district" tal:attributes="data-selected view/profile/addr_district | nothing"></select>
         <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
         <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址"
-               tal:attributes="value view/profile/addr_address" autocomplete="off">
+               tal:attributes="value view/profile/addr_address | nothing" autocomplete="off">
 
     <h4 i18n:translate="">Invoice</h4>
     <p>若您需要開立三聯式發票，請填寫統一編號及抬頭。</p>
@@ -120,12 +147,12 @@
 <td rowspan="1">$ <span tal:replace="view/shippingFee"/></td>
 </tr>
 
-<tr>
+<tr tal:condition="python:view.profile">
 <td rowspan="1">&nbsp;</td>
 <td rowspan="1" style="color:blue">
   是否使用紅利：
-  <input type="radio" name="usingbonus" value="y" checked>是</input>    
-  <input type="radio" name="usingbonus" value="n">不使用</input> 
+  <input type="radio" name="usingbonus" value="y" checked>是
+  <input type="radio" name="usingbonus" value="n">不使用
 </td>
 <td rowspan="1" tal:content="string:您持有紅利 ${view/profile/bonus} 點"></td>
 <td rowspan="1" class="right">本次可使用紅利折抵:</td>

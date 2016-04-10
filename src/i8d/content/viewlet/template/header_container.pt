@@ -60,9 +60,9 @@ if not canSee:
             <a href="/logout"> (登出)</a>
           </span>
           <div class="signup">
-<!--            <a title="Hello" href="#helper" class="inline"> -->
+            <a title="您好，我是您的小幫手" href="/resource/helper/@@without_pt" class="iframe">
               <img src="http://www.i8d.com.tw/resource/images/hello.png/@@images/image/hello" alt="hello"/>
-<!--            </a> -->
+            </a>
           </div>
     </tal:f>
     <tal:t case="True">

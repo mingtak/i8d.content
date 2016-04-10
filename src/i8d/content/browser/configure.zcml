@@ -21,6 +21,14 @@
   <!-- browserview -->
 
   <browser:page
+      name="without_pt"
+      for="plone.app.contenttypes.interfaces.IDocument"
+      class=".views.WithoutPT"
+      template="template/without_pt.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="search_result"
       for="*"
       class=".search.SearchResult"

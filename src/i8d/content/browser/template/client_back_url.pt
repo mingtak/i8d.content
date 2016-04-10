@@ -17,7 +17,7 @@
 <section class="main-container col1-layout">
   <div class="main container">
     <div class="col-main">
-      <div class="cart wow bounceInUp animated">
+      <div class="cart 1wow bounceInUp 1animated">
         <div class="page-title">
           <h2><span i18n:translate="">Merchant Trade No</span>: <span tal:replace="python:request.form['MerchantTradeNo']" /></h2>
         </div>
@@ -71,7 +71,7 @@
 
 
 
-      <div class="cart wow bounceInUp animated">
+      <div class="cart 1wow bounceInUp 1animated">
         <div class="page-title">
           <h2><span i18n:translate="">Logistics info</span></h2>
 
@@ -113,8 +113,8 @@
 <!-- 條件未修正 -->
         <button tal:condition="python:'logistics' not in view.request['HTTP_REFERER']"
                 tal:attributes="onclick python:'javascript:location.href=\'/logistics_map?MerchantTradeNo=%s\'' % request.form['MerchantTradeNo']"
-                class="button btn-continue pull-left" 
-                title="C2C shipping" type="button"><span i18n:translate="">C2C Shipping</span></button>
+                class="button btn-continue pull-left wow flip"  data-wow-iteration="3" data-wow-duration="0.25s"
+                title="C2C shipping" type="button"><span i18n:translate="">Change to C2C Shipping</span></button>
 
 
 

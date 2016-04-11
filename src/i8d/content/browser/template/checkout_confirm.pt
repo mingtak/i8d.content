@@ -167,13 +167,20 @@
 <!-- 驗證配送資訊 -->
 <script type="text/javascript">
  var frmvalidator = new Validator("checkout_confirm");
- frmvalidator.addValidation("receiver","req","請輸入收件人姓名");
+ frmvalidator.addValidation("receiver", "req", "請輸入收件人姓名");
+
+ frmvalidator.addValidation("phone", "req", "請輸入電話號碼");
+ frmvalidator.addValidation("phone", "maxlen=12", "請輸入電話號碼");
+ frmvalidator.addValidation("phone", "minlen=8", "請輸入電話號碼");
+ frmvalidator.addValidation("phone", "num", "電話號碼請勿輸入數字以外字元");
+
+ frmvalidator.addValidation("cellphone", "maxlen=10", "請輸入手機號碼");
+ frmvalidator.addValidation("cellphone", "minlen=10", "請輸入手機號碼");
+ frmvalidator.addValidation("cellphone", "num", "手機碼請勿輸入數字以外字元");
+
+ frmvalidator.addValidation("email", "req", "請輸入email信箱");
+ frmvalidator.addValidation("email", "email", "請輸入正確的email格式");
 </script>
-
-
-
-
-
 
 
         </div>

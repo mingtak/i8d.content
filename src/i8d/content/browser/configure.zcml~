@@ -192,14 +192,6 @@
       />
 
   <browser:page
-      name="question_view"
-      for="i8d.content.interfaces.IQuestion"
-      class=".views.QuestionView"
-      template="template/question_view.pt"
-      permission="zope2.View"
-      />
-
-  <browser:page
       name="question_list_view"
       for="plone.app.contenttypes.interfaces.IFolder"
       class=".views.QuestionListView"

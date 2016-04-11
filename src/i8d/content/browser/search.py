@@ -14,9 +14,14 @@ class SearchResult(BrowserView):
         catalog = context.portal_catalog
         self.portal = api.portal.get()
 
-        self.brain = catalog({'Type':'Product',
-                              'SearchableText':request.form['key'],
-                              'review_state':'published',})
+        if type(request.form.get('key')) == type(''):
+            self.brain = catalog({'Type':'Product',
+                                  'SearchableText':request.form['key'],
+                                  'review_state':'published',})
+        elif type(request.form.get('key')) == type([]):
+            self.brain = catalog({'Type':'Product',
+                                  'brand':request.form['key'],
+                                  'review_state':'published',})
 
         return self.template()
 

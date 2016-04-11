@@ -32,23 +32,30 @@ def modifyItem(brain, row, zipFolderName):
     item.salePrice=int(row['salePrice'])
     item.standardShippingCost=int(row['standardShippingCost'])
     item.setSubject(tuple(row['subjects'].split(',')))
-    with open('%s/%s' % (zipFolderName, safe_unicode(row['image_1'].strip()))) as file:
-        item.image_1 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     try:
-        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_2'].strip()))) as file:
-            item.image_2 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+        if row['image_1'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_1'].strip()))) as file:
+                item.image_1 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
     try:
-        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
-            item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+        if row['image_2'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_2'].strip()))) as file:
+                item.image_2 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
     try:
-        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_4'].strip()))) as file:
-            item.image_4 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+        if row['image_3'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
+                item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
     try:
-        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_5'].strip()))) as file:
-            item.image_5 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+        if row['image_4'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_4'].strip()))) as file:
+                item.image_4 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    except:pass
+    try:
+        if row['image_5'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_5'].strip()))) as file:
+                item.image_5 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
 
     item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))
@@ -77,23 +84,28 @@ def creatItem(folder, row, zipFolderName):
     logger.info('Create Content, %s' % safe_unicode(row['title']))
 
     item.setSubject(tuple(row['subjects'].split(',')))
-    with open('%s/%s' % (zipFolderName, safe_unicode(row['image_1'].strip()))) as file:
-        item.image_1 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+    if row['image_1'].strip():
+        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_1'].strip()))) as file:
+            item.image_1 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     try:
-        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_2'].strip()))) as file:
-            item.image_2 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+        if row['image_2'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_2'].strip()))) as file:
+                item.image_2 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
     try:
-        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
-            item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+        if row['image_3'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
+                item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
     try:
-        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_4'].strip()))) as file:
-            item.image_4 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+        if row['image_4'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_4'].strip()))) as file:
+                item.image_4 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
     try:
-        with open('%s/%s' % (zipFolderName, safe_unicode(row['image_5'].strip()))) as file:
-            item.image_5 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
+        if row['image_5'].strip():
+            with open('%s/%s' % (zipFolderName, safe_unicode(row['image_5'].strip()))) as file:
+                item.image_5 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
     except:pass
 
     item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))

@@ -23,7 +23,7 @@
   <property name="klass">plone.dexterity.content.Item</property>
   <property name="behaviors">
     <element value="plone.app.content.interfaces.INameFromTitle"/>
-    <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/>
+<!--    <element value="plone.app.contenttypes.behaviors.richtext.IRichText"/> -->
   </property>
   <property name="schema">i8d.content.interfaces.IPost</property>
   <property name="model_source"></property>

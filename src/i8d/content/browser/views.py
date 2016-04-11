@@ -2,12 +2,8 @@ from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from zope.component import getMultiAdapter
 from plone import api
-
-#from Acquisition import aq_inner
-#from zope.component import getUtility
-#from zope.intid.interfaces import IIntIds
-#from zope.security import checkPermission
-#from zc.relation.interfaces import ICatalog
+from DateTime import DateTime
+import transaction
 
 
 class WithoutPT(BrowserView):
@@ -27,6 +23,11 @@ class OrderView(BrowserView):
 
 class PostView(BrowserView):
     """ Post View
+    """
+
+
+class QuestionView(BrowserView):
+    """ Question View
     """
 
 

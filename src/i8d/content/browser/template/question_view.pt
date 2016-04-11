@@ -1,0 +1,164 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="i8d.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<?python
+from plone import api
+portal = api.portal.get()
+
+if api.user.is_anonymous():
+    manageBrand = False
+else:
+    roles = api.user.get_roles()
+    manageBrand = 'Manager' in roles
+?>
+
+<tal:check_roles condition="manageBrand">
+<p><strong i18n:translate="">Short Text</strong>: <span tal:replace="context/shortText|nothing"/></p>
+<img tal:replace="structure context/@@images/image/mini|nothing" />
+<p><strong i18n:translate="">Complete Article:</strong></p>
+<div tal:content="structure context/question/output | nothing" />
+
+                <article class="blog_entry clearfix" >
+                  <header class="blog_entry-header clearfix">
+                    <div class="blog_entry-header-inner">
+                      <h2 class="blog_entry-title">網友回覆</h2>
+                    </div>
+                  </header>
+
+<div id="disqus_thread"></div>
+
+
+</tal:check_roles>
+
+
+<tal:check_roles condition="not:manageBrand">
+
+  <div class="main-container col2-right-layout">
+    <div class="main container">
+      <div class="row">
+
+        <div class="col-main col-sm-9 wow bounceInUp animated">
+          <div class="page-title">
+            <h2 tal:content="python:context.getParentNode().title">question/answer</h2>
+          </div>
+          <div class="blog-wrapper" id="main">
+            <div class="site-content" id="primary">
+              <div role="main" id="content">
+                <article class="blog_entry clearfix" >
+                  <header class="blog_entry-header clearfix">
+                    <div class="blog_entry-header-inner">
+                      <h2 class="blog_entry-title" tal:content="context/title"> Pellentesque habitant morbi </h2>
+                    </div>
+                    <!--blog_entry-header-inner--> 
+                  </header>
+                  <!--blog_entry-header clearfix-->
+                  <div class="entry-content">
+                    <div class="entry-content" tal:content="context/description" />
+                    <div tal:content="structure context/question/output | nothing" />
+                  </div>
+                  <footer class="entry-meta" style="float:right">
+                    <span i18n:translate=""> This entry was posted on </span>
+                    <time tal:attributes="datetime context/created"
+                          tal:content="python:context.created().strftime('%Y/%m/%d %H:%M')"
+                          class="entry-date">Jul 10, 2014</time>
+                  </footer>
+
+                </article>
+
+
+
+                <article class="blog_entry clearfix" >
+                  <header class="blog_entry-header clearfix">
+                    <div class="blog_entry-header-inner">
+                      <h2 class="blog_entry-title">網友回覆</h2>
+                    </div>
+                  </header>
+
+<div id="disqus_thread"></div>
+
+
+                </article>
+<!--
+<form method="get" enctype="text/plain" target="_parent"
+      tal:attributes="action context/absolute_url">
+<textarea name="answer" rows="5" style="width:100%"></textarea>
+<div class="right">
+<button name="submit" type="submit" class="btn btn-primary">Submitss</button>
+<button name="reset" type="reset" class="btn btn-info">Reset</button>
+</div>
+</form>
+<br/><br/> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+
+
+        <div class="col-right sidebar col-sm-3 wow bounceInUp animated">
+          <div role="complementary" class="widget_wrapper13" id="secondary">
+            <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
+              <h3 class="widget-title" i18n:translate="">Recent iShare Posts</h3>
+              <div class="widget-content">
+                <ul class="posts-list unstyled clearfix" tal:define="items python:context.getParentNode().getChildNodes()">
+                  <li>
+                    <figure class="featured-thumb">
+                      <a href="#pellentesque-posuere">
+                        <img width="80" height="53" alt="blog image" src="images/blog-img1.jpg">
+                      </a>
+                    </figure>
+                    <!--featured-thumb-->
+                    <h4><a title="Pellentesque posuere" href="#pellentesque-posuere">Pellentesque posuere</a></h4>
+                    <p class="post-meta"><i class="icon-calendar"></i>
+                      <time datetime="2014-07-10T07:09:31+00:00" class="entry-date">Jul 10, 2014</time>
+                      .</p>
+                  </li>
+                </ul>
+              </div>
+              <!--widget-content--> 
+            </div>
+            <div class="popular-posts widget widget_categories" id="categories-2">
+              <h3 class="widget-title">Categories</h3>
+              <ul>
+                <li class="cat-item cat-item-19599"><a href="#first-category">First Category</a></li>
+                <li class="cat-item cat-item-19599"><a href="#second-category">Second Category</a></li>
+              </ul>
+            </div>
+            <!-- Banner Ad Block -->
+            <div class="ad-spots widget widget__sidebar">
+              <h3 class="widget-title">Ad Spots</h3>
+              <div class="widget-content"><a target="_self" href="#" title=""><img class="ad-spot" alt="offer banner" src="images/offer-banner1.jpg"></a></div>
+            </div>
+            <!-- Banner Text Block -->
+            <div class="text-widget widget widget__sidebar">
+              <h3 class="widget-title">Text Widget</h3>
+              <div class="widget-content">Mauris at blandit erat. Nam vel tortor non quam scelerisque cursus. Praesent nunc vitae magna pellentesque auctor. Quisque id lectus.<br>
+                <br>
+                Massa, eget eleifend tellus. Proin nec ante leo ssim nunc sit amet velit malesuada pharetra. Nulla neque sapien, sollicitudin non ornare quis, malesuada.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</tal:check_roles>
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

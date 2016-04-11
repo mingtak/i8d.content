@@ -351,6 +351,13 @@ class IPost(Interface):
         required=False,
     )
 
+    text = RichText(
+        title=_(u"Text"),
+        default_mime_type='text/html',
+        allowed_mime_types=['text/html', 'text/plain'],
+        required=True,
+    )
+
 
 class IQuestion(Interface):
     """ 專家給問 """
@@ -359,8 +366,16 @@ class IQuestion(Interface):
         required=True,
     )
 
+    form.mode(description='hidden')
     description = schema.Text(
         title=_(u"Question Detail"),
+        required=False,
+    )
+
+    question = RichText(
+        title=_(u"Question Detail"),
+        default_mime_type='text/plain',
+        allowed_mime_types=['text/plain', 'text/plain'],
         required=True,
     )
 
@@ -383,6 +398,8 @@ class IAnswer(Interface):
 
     text = RichText(
         title=_(u"Reply Question"),
+        default_mime_type='text/plain',
+        allowed_mime_types=['text/plain', 'text/plain'],
         required=True,
     )
 

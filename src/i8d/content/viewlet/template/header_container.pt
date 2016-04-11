@@ -2,7 +2,7 @@
 from plone import api
 canSee = api.user.is_anonymous()
 if not canSee:
-    canSee = not ('Manager' in api.user.get_roles() or 'Site Administrator' in api.user.get_roles())
+    canSee = not ('Manager' in api.user.get_roles() or 'Site Administrator' in api.user.get_roles()) and ('++add++' not in econtext['request'].getURL())
 ?>
 
 <tal:check condition="canSee">

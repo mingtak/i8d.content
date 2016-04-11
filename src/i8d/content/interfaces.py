@@ -218,7 +218,7 @@ class ICover(Interface):
         title=_(u"Heros"),
         description=_(u"Rleated items for hero section"),
         value_type=RelationChoice(title=_(u"Related"),
-                       vocabulary="plone.app.vocabularies.Catalog",),
+                                  source=CatalogSource(portal_type='Product'),),
         required=True,
     )
 
@@ -226,7 +226,7 @@ class ICover(Interface):
         title=_(u"New Product"),
         description=_(u"Rleated items for home page new product list"),
         value_type=RelationChoice(title=_(u"Related"),
-                       vocabulary="plone.app.vocabularies.Catalog",),
+                                  source=CatalogSource(portal_type='Product'),),
         required=True,
     )
 
@@ -234,7 +234,7 @@ class ICover(Interface):
         title=_(u"Hot Product"),
         description=_(u"Rleated items for home page not product list"),
         value_type=RelationChoice(title=_(u"Related"),
-                       vocabulary="plone.app.vocabularies.Catalog",),
+                                  source=CatalogSource(portal_type='Product'),),
         required=True,
     )
 
@@ -242,7 +242,7 @@ class ICover(Interface):
         title=_(u"Article"),
         description=_(u"Rleated items for home page article list"),
         value_type=RelationChoice(title=_(u"Related"),
-                       vocabulary="plone.app.vocabularies.Catalog",),
+                                  source=CatalogSource(portal_type='Post'),),
         required=True,
     )
 
@@ -250,7 +250,7 @@ class ICover(Interface):
         title=_(u"Question"),
         description=_(u"Rleated items for home page question list"),
         value_type=RelationChoice(title=_(u"Related"),
-                       vocabulary="plone.app.vocabularies.Catalog",),
+                                  source=CatalogSource(portal_type='Question'),),
         required=True,
     )
 

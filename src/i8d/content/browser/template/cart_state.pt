@@ -56,7 +56,7 @@ from plone import api
                 </ul>
 
                 <div class="actions">
-                  <a class="btn-checkout" target="_blank" href="/checkout_comfirm">
+                  <a class="btn-checkout" target="_blank" href="/checkout_confirm">
                     <span i18n:translate="">Fast Checkout</span>
                   </a>
                   <a class="view-cart" href="/shopping_cart"><span i18n:translate="">View Cart</span></a>

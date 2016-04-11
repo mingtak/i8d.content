@@ -116,9 +116,9 @@
       />
 
   <browser:page
-      name="checkout_comfirm"
+      name="checkout_confirm"
       for="*"
-      class=".bill.CheckoutComfirm"
+      class=".bill.CheckoutConfirm"
       permission="zope2.View"
       />
 

@@ -57,7 +57,7 @@ msgid "Additional Information"
 msgstr ""
 
 #: ./browser/template/account_info.pt:84
-#: ./browser/template/checkout_comfirm.pt:79
+#: ./browser/template/checkout_confirm.pt:79
 #: ./browser/template/client_back_url.pt:83
 msgid "Address"
 msgstr ""
@@ -189,7 +189,7 @@ msgstr ""
 msgid "Cell Phone"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:55
+#: ./browser/template/checkout_confirm.pt:55
 msgid "Cell Phone Number"
 msgstr ""
 
@@ -201,7 +201,7 @@ msgstr ""
 msgid "Change to C2C Shipping"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:102
+#: ./browser/template/checkout_confirm.pt:102
 msgid "Checkout"
 msgstr ""
 
@@ -250,18 +250,18 @@ msgid "Collection"
 msgstr ""
 
 #: ./browser/template/account_info.pt:104
-msgid "Comfirm"
+msgid "Confirm"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:20
-msgid "Comfirm Cart / shipping info"
+#: ./browser/template/checkout_confirm.pt:20
+msgid "Confirm Cart / shipping info"
 msgstr ""
 
 #: ./browser/template/product_view.pt:229
 msgid "Comments"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:92
+#: ./browser/template/checkout_confirm.pt:92
 #: ./interfaces.py:492
 msgid "Company Title"
 msgstr ""
@@ -331,12 +331,12 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:108
+#: ./browser/template/checkout_confirm.pt:108
 msgid "Edit Shopping Item(s)"
 msgstr ""
 
 #: ./browser/template/account_info.pt:76
-#: ./browser/template/checkout_comfirm.pt:58
+#: ./browser/template/checkout_confirm.pt:58
 #: ./browser/template/my_account.pt:107
 msgid "Email"
 msgstr ""
@@ -471,7 +471,7 @@ msgstr ""
 msgid "Introduction:"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:88
+#: ./browser/template/checkout_confirm.pt:88
 msgid "Invoice"
 msgstr ""
 
@@ -721,7 +721,7 @@ msgstr ""
 msgid "Phone"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:52
+#: ./browser/template/checkout_confirm.pt:52
 msgid "Phone Number"
 msgstr ""
 
@@ -776,7 +776,7 @@ msgstr ""
 msgid "Product Image."
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:29
+#: ./browser/template/checkout_confirm.pt:29
 #: ./browser/template/client_back_url.pt:30
 #: ./browser/template/order_view.pt:30
 msgid "Product Name"
@@ -868,7 +868,7 @@ msgstr ""
 msgid "Pruduct URL"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:31
+#: ./browser/template/checkout_confirm.pt:31
 #: ./browser/template/client_back_url.pt:32
 #: ./browser/template/order_view.pt:32
 msgid "Qty"
@@ -901,7 +901,7 @@ msgstr ""
 msgid "Read"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:46
+#: ./browser/template/checkout_confirm.pt:46
 #: ./browser/template/client_back_url.pt:82
 #: ./browser/template/order_view.pt:81
 msgid "Receiver"
@@ -1045,7 +1045,7 @@ msgstr ""
 msgid "Shipment"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:44
+#: ./browser/template/checkout_confirm.pt:44
 msgid "Shipping info"
 msgstr ""
 
@@ -1098,7 +1098,7 @@ msgstr ""
 msgid "Subscribe"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:32
+#: ./browser/template/checkout_confirm.pt:32
 #: ./browser/template/client_back_url.pt:33
 #: ./browser/template/order_view.pt:33
 msgid "Subtotal"
@@ -1108,7 +1108,7 @@ msgstr ""
 msgid "Suppliers"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:90
+#: ./browser/template/checkout_confirm.pt:90
 #: ./interfaces.py:486
 msgid "Tax ID"
 msgstr ""
@@ -1146,7 +1146,7 @@ msgstr ""
 msgid "Uninstalls the i8d.content add-on."
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:30
+#: ./browser/template/checkout_confirm.pt:30
 #: ./browser/template/client_back_url.pt:31
 #: ./browser/template/order_view.pt:31
 msgid "Unit Price"
@@ -1195,7 +1195,7 @@ msgstr ""
 msgid "Where is my order?"
 msgstr ""
 
-#: ./browser/template/checkout_comfirm.pt:80
+#: ./browser/template/checkout_confirm.pt:80
 msgid "You can fill below fields to select shipping to door, or select C2C shipping later. (if you want to using C2C, please ignore below fields.)"
 msgstr ""
 

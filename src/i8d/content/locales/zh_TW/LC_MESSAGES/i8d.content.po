@@ -54,7 +54,7 @@ msgid "Additional Information"
 msgstr "其它資訊"
 
 #: ./browser/template/account_info.pt:84
-#: ./browser/template/checkout_comfirm.pt:79
+#: ./browser/template/checkout_confirm.pt:79
 #: ./browser/template/client_back_url.pt:83
 msgid "Address"
 msgstr "地址"
@@ -186,7 +186,7 @@ msgstr "超商取貨"
 msgid "Cell Phone"
 msgstr "手機號碼"
 
-#: ./browser/template/checkout_comfirm.pt:55
+#: ./browser/template/checkout_confirm.pt:55
 msgid "Cell Phone Number"
 msgstr "手機號碼"
 
@@ -198,7 +198,7 @@ msgstr "手機號碼"
 msgid "Change to C2C Shipping"
 msgstr "改由超商取貨"
 
-#: ./browser/template/checkout_comfirm.pt:102
+#: ./browser/template/checkout_confirm.pt:102
 msgid "Checkout"
 msgstr "結帳"
 
@@ -247,18 +247,18 @@ msgid "Collection"
 msgstr "集合"
 
 #: ./browser/template/account_info.pt:104
-msgid "Comfirm"
+msgid "Confirm"
 msgstr "確認"
 
-#: ./browser/template/checkout_comfirm.pt:20
-msgid "Comfirm Cart / shipping info"
+#: ./browser/template/checkout_confirm.pt:20
+msgid "Confirm Cart / shipping info"
 msgstr "確認購物車 / 配送資訊"
 
 #: ./browser/template/product_view.pt:229
 msgid "Comments"
 msgstr "相關留言"
 
-#: ./browser/template/checkout_comfirm.pt:92
+#: ./browser/template/checkout_confirm.pt:92
 #: ./interfaces.py:492
 msgid "Company Title"
 msgstr "公司抬頭"
@@ -328,12 +328,12 @@ msgstr "鄉鎮市區"
 msgid "Edit"
 msgstr "編輯"
 
-#: ./browser/template/checkout_comfirm.pt:108
+#: ./browser/template/checkout_confirm.pt:108
 msgid "Edit Shopping Item(s)"
 msgstr "變更購物車內容"
 
 #: ./browser/template/account_info.pt:76
-#: ./browser/template/checkout_comfirm.pt:58
+#: ./browser/template/checkout_confirm.pt:58
 #: ./browser/template/my_account.pt:107
 msgid "Email"
 msgstr ""
@@ -468,7 +468,7 @@ msgstr "自我介紹"
 msgid "Introduction:"
 msgstr "簡介:"
 
-#: ./browser/template/checkout_comfirm.pt:88
+#: ./browser/template/checkout_confirm.pt:88
 msgid "Invoice"
 msgstr "發票"
 
@@ -718,7 +718,7 @@ msgstr "付費資訊網址"
 msgid "Phone"
 msgstr "電話"
 
-#: ./browser/template/checkout_comfirm.pt:52
+#: ./browser/template/checkout_confirm.pt:52
 msgid "Phone Number"
 msgstr "電話號碼"
 
@@ -773,7 +773,7 @@ msgstr "商品 id"
 msgid "Product Image."
 msgstr "商品圖檔"
 
-#: ./browser/template/checkout_comfirm.pt:29
+#: ./browser/template/checkout_confirm.pt:29
 #: ./browser/template/client_back_url.pt:30
 #: ./browser/template/order_view.pt:30
 msgid "Product Name"
@@ -865,7 +865,7 @@ msgstr "供應商:"
 msgid "Pruduct URL"
 msgstr "商品網址"
 
-#: ./browser/template/checkout_comfirm.pt:31
+#: ./browser/template/checkout_confirm.pt:31
 #: ./browser/template/client_back_url.pt:32
 #: ./browser/template/order_view.pt:32
 msgid "Qty"
@@ -898,7 +898,7 @@ msgstr "產品資訊"
 msgid "Read"
 msgstr "閱讀"
 
-#: ./browser/template/checkout_comfirm.pt:46
+#: ./browser/template/checkout_confirm.pt:46
 #: ./browser/template/client_back_url.pt:82
 #: ./browser/template/order_view.pt:81
 msgid "Receiver"
@@ -1042,7 +1042,7 @@ msgstr "服務說明"
 msgid "Shipment"
 msgstr "訂單查詢"
 
-#: ./browser/template/checkout_comfirm.pt:44
+#: ./browser/template/checkout_confirm.pt:44
 msgid "Shipping info"
 msgstr "配送資訊"
 
@@ -1095,7 +1095,7 @@ msgstr "帳戶資訊"
 msgid "Subscribe"
 msgstr "訂閱"
 
-#: ./browser/template/checkout_comfirm.pt:32
+#: ./browser/template/checkout_confirm.pt:32
 #: ./browser/template/client_back_url.pt:33
 #: ./browser/template/order_view.pt:33
 msgid "Subtotal"
@@ -1105,7 +1105,7 @@ msgstr "小計"
 msgid "Suppliers"
 msgstr "合作廠商"
 
-#: ./browser/template/checkout_comfirm.pt:90
+#: ./browser/template/checkout_confirm.pt:90
 #: ./interfaces.py:486
 msgid "Tax ID"
 msgstr "統一編號"
@@ -1143,7 +1143,7 @@ msgstr "交易結果，由歐付寶回傳"
 msgid "Uninstalls the i8d.content add-on."
 msgstr "御載 i8d.content 模組"
 
-#: ./browser/template/checkout_comfirm.pt:30
+#: ./browser/template/checkout_confirm.pt:30
 #: ./browser/template/client_back_url.pt:31
 #: ./browser/template/order_view.pt:31
 msgid "Unit Price"
@@ -1192,7 +1192,7 @@ msgstr "網站首頁"
 msgid "Where is my order?"
 msgstr "訂單追蹤"
 
-#: ./browser/template/checkout_comfirm.pt:80
+#: ./browser/template/checkout_confirm.pt:80
 msgid "You can fill below fields to select shipping to door, or select C2C shipping later. (if you want to using C2C, please ignore below fields.)"
 msgstr "若您選擇寄送方式，請填寫以下資料，或者您也可以稍後選擇便利商店取貨服務(若您要選擇便利商店取貨服務，請忽略以下地址欄位)。"
 

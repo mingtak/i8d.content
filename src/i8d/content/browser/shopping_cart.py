@@ -99,7 +99,7 @@ class CartUpdate(BrowserView):
         for key in keys:
             if catalog(UID=key):
                 response.setCookie(key, request.form[key])
-        response.redirect('/checkout_comfirm')
+        response.redirect('/checkout_confirm')
         return
 
 

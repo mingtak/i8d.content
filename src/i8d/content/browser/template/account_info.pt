@@ -101,7 +101,7 @@ from plone import api
                     </tbody>
                   </table>
                   <br/>
-                  <button class="btn right btn-lg btn-info" title="update" type="submit" i18n:translate="">Comfirm</button>
+                  <button class="btn right btn-lg btn-info" title="update" type="submit" i18n:translate="">Confirm</button>
 </form>
 
 <script src="/++theme++barceloneta/js/dk-tw-citySelector.min.js"></script>

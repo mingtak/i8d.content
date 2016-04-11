@@ -21,14 +21,14 @@
             <a href="/resource/help_for_anon/@@without_pt" tal:condition="context/@@user_is_anonymous" class="iframe">
               <img src="/resource/images/helper_3.png/@@images/image/help" class="wow bounceInLeft" data-wow-duration="1s"/>
             </a>
-            <span style="vertical-align:bottom" i18n:translate="">Comfirm Cart / shipping info</span>
+            <span style="vertical-align:bottom" i18n:translate="">Confirm Cart / shipping info</span>
           </h2>
 
 
 
         </div>
                 <div class="table-responsive">
-          <form method="post" action="/checkout">
+          <form method="post" action="/checkout" name="checkout_confirm">
             <fieldset>
               <table class="data-table cart-table" id="shopping-cart-table">
                 <thead>
@@ -164,6 +164,18 @@
               </table>
             </fieldset>
           </form>
+<!-- 驗證配送資訊 -->
+<script type="text/javascript">
+ var frmvalidator = new Validator("checkout_confirm");
+ frmvalidator.addValidation("receiver","req","請輸入收件人姓名");
+</script>
+
+
+
+
+
+
+
         </div>
       </div>
     </div>

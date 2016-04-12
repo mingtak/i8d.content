@@ -63,7 +63,7 @@ class CanSeeBackend(BrowserView):
     def __call__(self):
 
         request = self.request
-        canSeeRoles = ['Manager', 'Site Administrator']
+        canSeeRoles = ['Manager', 'Site Administrator', 'Reader']
 
         if api.user.is_anonymous():
             return False

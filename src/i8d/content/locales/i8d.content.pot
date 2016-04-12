@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-11 15:49+0000\n"
+"POT-Creation-Date: 2016-04-12 00:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -545,6 +545,10 @@ msgstr ""
 msgid "Logistics map url"
 msgstr ""
 
+#: ./viewlet/template/manage_products.pt:1
+msgid "Manage Products"
+msgstr ""
+
 #: ./interfaces.py:449
 msgid "Mapping to allPay's ItemName"
 msgstr ""
@@ -1000,6 +1004,10 @@ msgstr ""
 
 #: ./browser/template/search_result.pt:35
 msgid "Search Result(s)"
+msgstr ""
+
+#: ./viewlet/template/header_container.pt:48
+msgid "Search here..."
 msgstr ""
 
 #: ./browser/coverSetting.py:112

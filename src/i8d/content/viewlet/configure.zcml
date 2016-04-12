@@ -4,6 +4,14 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="i8d.content">
 
+    <browser:viewlet
+      name="manage_products"
+      for="i8d.content.interfaces.IProvider"
+      manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"
+      template="template/manage_products.pt"
+      class=".viewlet.ManageProducts"
+      permission="zope2.View"
+      />
 
     <browser:viewlet
       name="header_container"

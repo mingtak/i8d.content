@@ -1,0 +1,4 @@
+<a target="_blank"
+   tal:attributes="href string:/products/${context/id}"
+   i18n:domain="i8d.content"
+   i18n:translate="">Manage Products</a>

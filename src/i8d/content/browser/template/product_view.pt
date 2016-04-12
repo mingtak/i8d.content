@@ -186,24 +186,24 @@ else:
                 <aside class="col-lg-3 col-sm-3 col-xs-12 sidebar_area hidden-xs">
                   <div class="brand-imgs">
                     <a target="_blank" href="#">
-                      <img tal:replace="structure context/@@images/image_1/mini" />
+                      <img tal:replace="structure context/@@images/image_1/mini | nothing" />
                     </a>
                   </div>
                   <div class="brand-imgs">
                     <a target="_blank" href="#">
-                      <img tal:replace="structure context/@@images/image_1/mini" />
-                    </a>
-                  </div>
-
-                  <div class="brand-imgs">
-                    <a target="_blank" href="#">
-                      <img tal:replace="structure context/@@images/image_1/mini" />
+                      <img tal:replace="structure context/@@images/image_1/mini | nothing" />
                     </a>
                   </div>
 
                   <div class="brand-imgs">
                     <a target="_blank" href="#">
-                      <img tal:replace="structure context/@@images/image_1/mini" />
+                      <img tal:replace="structure context/@@images/image_1/mini | nothing" />
+                    </a>
+                  </div>
+
+                  <div class="brand-imgs">
+                    <a target="_blank" href="#">
+                      <img tal:replace="structure context/@@images/image_1/mini | nothing" />
                     </a>
                   </div>
 

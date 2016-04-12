@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-11 15:49+0000\n"
+"POT-Creation-Date: 2016-04-12 00:29+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -542,6 +542,10 @@ msgstr "物流地圖結果，由歐付寶回傳"
 msgid "Logistics map url"
 msgstr "物流地圖網址"
 
+#: ./viewlet/template/manage_products.pt:1
+msgid "Manage Products"
+msgstr "管理商品"
+
 #: ./interfaces.py:449
 msgid "Mapping to allPay's ItemName"
 msgstr "對映到歐付寶的 ItemName"
@@ -998,6 +1002,10 @@ msgstr "搜尋類似商品"
 #: ./browser/template/search_result.pt:35
 msgid "Search Result(s)"
 msgstr "搜尋結果"
+
+#: ./viewlet/template/header_container.pt:48
+msgid "Search here..."
+msgstr "搜尋商品..."
 
 #: ./browser/coverSetting.py:112
 msgid "Server Reply URL, for Express Create"

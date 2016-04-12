@@ -2,10 +2,12 @@
 from plone import api
 canSee = api.user.is_anonymous()
 if not canSee:
-    canSee = not ('Manager' in api.user.get_roles() or 'Site Administrator' in api.user.get_roles()) and ('++add++' not in econtext['request'].getURL())
+    canSee = '++add++' not in econtext['request'].getURL()
 ?>
 
-<tal:check condition="canSee">
+<tal:check define="canSeeBackend not:context/@@can_see_backend"
+           condition="python:canSeeBackend and canSee"
+           i18n:domain="i8d.content">
 <!-- Header -->
   <header class="header-container">
     <div class="header-top">

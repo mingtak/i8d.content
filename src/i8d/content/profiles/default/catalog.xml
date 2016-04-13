@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <object name="portal_catalog" meta_type="Plone Catalog Tool">
 
+  <index name="hasImage1" meta_type="BooleanIndex">
+    <indexed_attr value="hasImage1" />
+  </index>
+  <column value="hasImage1"/>
+
   <index name="productUIDs" meta_type="KeywordIndex">
     <indexed_attr value="productUIDs" />
   </index>

@@ -21,7 +21,7 @@ from plone import api
 <div class="main-container col2-right-layout">
     <div class="main container">
       <div class="row">
-        <section class="col-main col-sm-9 wow bounceInUp animated">
+        <section class="col-main col-sm-9 wow1 bounceInUp1 animated1">
           <div class="my-account">
             <div class="page-title">
               <h2 i18n:translate="">Account Information</h2>
@@ -33,7 +33,7 @@ from plone import api
               <div class="recent-orders">
                 <div class="table-responsive">
 
-<form action="/account_info" method="post">
+<form action="/account_info" method="post" name="account_info">
                   <input style="display:none" class="accountinfo input-text" name="currentid" value="" type="hidden" autocomplete="off"
                          tal:attributes="value view/currentId">
 
@@ -60,6 +60,7 @@ from plone import api
                         <td i18n:translate="" class="fieldtitle">Phone</td>
                         <td>
                           <input class="accountinfo input-text" name="phone" value="" type="text" autocomplete="off"
+                                 placeholder="請只輸入數字，如0223456789"
                                  tal:attributes="value view/myProfile/phone">
                         </td>
                       </tr>
@@ -68,6 +69,7 @@ from plone import api
                         <td i18n:translate="" class="fieldtitle">Cell Phone</td>
                         <td>
                           <input class="accountinfo input-text" name="cellphone" value="" type="text" autocomplete="off"
+                                 placeholder="請只輸入數字，如0912345678"
                                  tal:attributes="value view/myProfile/cellPhone">
                         </td>
                       </tr>
@@ -76,6 +78,7 @@ from plone import api
                         <td i18n:translate="" class="fieldtitle">Email</td>
                         <td>
                           <input class="accountinfo input-text" name="email" value="" type="text" autocomplete="off"
+                                 placeholder="請輸入您的email地址"
                                  tal:attributes="value view/myProfile/email">
                         </td>
                       </tr>
@@ -103,6 +106,24 @@ from plone import api
                   <br/>
                   <button class="btn right btn-lg btn-info" title="update" type="submit" i18n:translate="">Confirm</button>
 </form>
+
+<!-- 驗證格式 -->
+<script type="text/javascript">
+ var frmvalidator = new Validator("account_info");
+ frmvalidator.addValidation("name", "req", "請輸入您的大名");
+
+ frmvalidator.addValidation("phone", "req", "請輸入電話號碼");
+ frmvalidator.addValidation("phone", "maxlen=12", "請輸入電話號碼");
+ frmvalidator.addValidation("phone", "minlen=8", "請輸入電話號碼");
+ frmvalidator.addValidation("phone", "num", "請只輸入數字，如0223456789");
+
+ frmvalidator.addValidation("cellphone", "maxlen=10", "請輸入手機號碼");
+ frmvalidator.addValidation("cellphone", "minlen=10", "請輸入手機號碼");
+ frmvalidator.addValidation("cellphone", "num", "請只輸入數字，如0912345678");
+
+ frmvalidator.addValidation("email", "req", "請輸入email信箱");
+ frmvalidator.addValidation("email", "email", "請輸入正確的email格式");
+</script>
 
 <script src="/++theme++barceloneta/js/dk-tw-citySelector.min.js"></script>
 <script>

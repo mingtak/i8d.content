@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-12 00:29+0000\n"
+"POT-Creation-Date: 2016-04-13 05:58+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,7 +17,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: i8d.content\n"
 
-#: ./browser/template/cover_view.pt:132
+#: ./browser/template/cover_view.pt:159
 msgid "...Read"
 msgstr ""
 
@@ -25,7 +25,7 @@ msgstr ""
 msgid ">How to buy"
 msgstr ""
 
-#: ./browser/template/account_info.pt:126
+#: ./browser/template/account_info.pt:147
 #: ./browser/template/my_account.pt:165
 #: ./browser/template/my_order.pt:89
 msgid "Account Dashboard"
@@ -37,31 +37,31 @@ msgstr ""
 msgid "Account Information"
 msgstr ""
 
-#: ./browser/template/brand_view.pt:117
-#: ./browser/template/category_view.pt:117
-#: ./browser/template/cover_view.pt:37
+#: ./browser/template/brand_view.pt:122
+#: ./browser/template/category_view.pt:122
+#: ./browser/template/cover_view.pt:38
 msgid "Add to Cart"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:37
+#: ./browser/template/cover_view.pt:38
 msgid "Add to cart"
 msgstr ""
 
-#: ./browser/template/account_info.pt:84
+#: ./browser/template/account_info.pt:87
 #: ./browser/template/checkout_confirm.pt:87
-#: ./browser/template/client_back_url.pt:83
+#: ./browser/template/client_back_url.pt:86
 msgid "Address"
 msgstr ""
 
-#: ./browser/template/brand_view.pt:157
-#: ./browser/template/category_view.pt:171
-#: ./browser/template/search_result.pt:137
+#: ./browser/template/brand_view.pt:162
+#: ./browser/template/category_view.pt:176
+#: ./browser/template/search_result.pt:142
 msgid "All Brands"
 msgstr ""
 
-#: ./browser/template/brand_view.pt:172
-#: ./browser/template/category_view.pt:157
-#: ./browser/template/search_result.pt:152
+#: ./browser/template/brand_view.pt:177
+#: ./browser/template/category_view.pt:162
+#: ./browser/template/search_result.pt:157
 msgid "All Category"
 msgstr ""
 
@@ -69,11 +69,11 @@ msgstr ""
 msgid "All Orders"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:136
+#: ./browser/template/cover_view.pt:163
 msgid "All Post"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:165
+#: ./browser/template/cover_view.pt:192
 msgid "All Question"
 msgstr ""
 
@@ -89,7 +89,7 @@ msgstr ""
 msgid "Answer"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:303
+#: ./browser/template/cover_view.pt:339
 #: ./interfaces.py:242
 msgid "Article"
 msgstr ""
@@ -110,7 +110,7 @@ msgstr ""
 msgid "BannerImage"
 msgstr ""
 
-#: ./browser/template/account_info.pt:95
+#: ./browser/template/account_info.pt:98
 #: ./browser/template/my_account.pt:118
 #: ./interfaces.py:325
 msgid "Bonus"
@@ -157,16 +157,16 @@ msgstr ""
 msgid "Brand or category logo image"
 msgstr ""
 
-#: ./browser/template/product_view.pt:132
+#: ./browser/template/product_view.pt:159
 msgid "Brand:"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:91
-#: ./browser/template/order_view.pt:89
+#: ./browser/template/client_back_url.pt:94
+#: ./browser/template/order_view.pt:93
 msgid "C2C"
 msgstr ""
 
-#: ./browser/template/account_info.pt:68
+#: ./browser/template/account_info.pt:69
 #: ./browser/template/my_account.pt:103
 #: ./interfaces.py:289
 msgid "Cell Phone"
@@ -180,7 +180,7 @@ msgstr ""
 msgid "Cell Phone number."
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:117
+#: ./browser/template/client_back_url.pt:120
 msgid "Change to C2C Shipping"
 msgstr ""
 
@@ -232,7 +232,7 @@ msgstr ""
 msgid "Collection"
 msgstr ""
 
-#: ./browser/template/product_view.pt:229
+#: ./browser/template/product_view.pt:256
 msgid "Comments"
 msgstr ""
 
@@ -246,7 +246,7 @@ msgstr ""
 msgid "Complete Article:"
 msgstr ""
 
-#: ./browser/template/account_info.pt:104
+#: ./browser/template/account_info.pt:107
 msgid "Confirm"
 msgstr ""
 
@@ -254,7 +254,7 @@ msgstr ""
 msgid "Confirm Cart / shipping info"
 msgstr ""
 
-#: ./browser/template/account_info.pt:147
+#: ./browser/template/account_info.pt:168
 #: ./browser/template/my_account.pt:186
 #: ./browser/template/my_order.pt:110
 msgid "Contact Us"
@@ -287,17 +287,17 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ./browser/template/product_view.pt:129
+#: ./browser/template/product_view.pt:156
 msgid "Description:"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:272
+#: ./browser/template/cover_view.pt:308
 msgid "Description: All show in homepage's objects, listing below, want to change item, click edit button in toolbar to select. If want to edit object, click object, go to that page to edit."
 msgstr ""
 
-#: ./browser/template/brand_view.pt:116
-#: ./browser/template/category_view.pt:116
-#: ./browser/template/cover_view.pt:201
+#: ./browser/template/brand_view.pt:121
+#: ./browser/template/category_view.pt:121
+#: ./browser/template/cover_view.pt:232
 msgid "Detail"
 msgstr ""
 
@@ -315,7 +315,7 @@ msgstr ""
 msgid "Edit Shopping Item(s)"
 msgstr ""
 
-#: ./browser/template/account_info.pt:76
+#: ./browser/template/account_info.pt:78
 #: ./browser/template/checkout_confirm.pt:66
 #: ./browser/template/my_account.pt:107
 msgid "Email"
@@ -345,7 +345,7 @@ msgstr ""
 msgid "Expert image."
 msgstr ""
 
-#: ./browser/template/account_info.pt:146
+#: ./browser/template/account_info.pt:167
 #: ./browser/template/my_account.pt:185
 #: ./browser/template/my_order.pt:109
 msgid "FAQ"
@@ -355,11 +355,11 @@ msgstr ""
 msgid "FAQs"
 msgstr ""
 
-#: ./browser/template/cart_state.pt:60
+#: ./browser/template/cart_state.pt:64
 msgid "Fast Checkout"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:115
+#: ./browser/template/cover_view.pt:142
 msgid "Featured Article"
 msgstr ""
 
@@ -371,7 +371,7 @@ msgstr ""
 msgid "Folder"
 msgstr ""
 
-#: ./browser/template/account_info.pt:130
+#: ./browser/template/account_info.pt:151
 #: ./browser/template/my_account.pt:169
 #: ./browser/template/my_order.pt:93
 msgid "Have A Question"
@@ -385,18 +385,18 @@ msgstr ""
 msgid "Hero Text"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:279
+#: ./browser/template/cover_view.pt:315
 #: ./interfaces.py:218
 msgid "Heros"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:295
+#: ./browser/template/cover_view.pt:331
 #: ./interfaces.py:234
 msgid "Hot Product"
 msgstr ""
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:92
-#: ./browser/template/account_info.pt:143
+#: ./browser/template/account_info.pt:164
 #: ./browser/template/my_account.pt:182
 msgid "How to buy"
 msgstr ""
@@ -422,7 +422,7 @@ msgstr ""
 msgid "Import product error"
 msgstr ""
 
-#: ./browser/template/product_view.pt:109
+#: ./browser/template/product_view.pt:136
 msgid "In Stock"
 msgstr ""
 
@@ -475,7 +475,7 @@ msgstr ""
 msgid "List Price"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:220
+#: ./browser/template/cover_view.pt:256
 msgid "List price:"
 msgstr ""
 
@@ -519,8 +519,8 @@ msgstr ""
 msgid "Logistics Map URL"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:81
-#: ./browser/template/order_view.pt:80
+#: ./browser/template/client_back_url.pt:84
+#: ./browser/template/order_view.pt:84
 msgid "Logistics Method"
 msgstr ""
 
@@ -532,8 +532,8 @@ msgstr ""
 msgid "Logistics express create url."
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:76
-#: ./browser/template/order_view.pt:76
+#: ./browser/template/client_back_url.pt:79
+#: ./browser/template/order_view.pt:80
 msgid "Logistics info"
 msgstr ""
 
@@ -578,13 +578,13 @@ msgstr ""
 msgid "Merchant Trade No"
 msgstr ""
 
-#: ./browser/template/account_info.pt:123
+#: ./browser/template/account_info.pt:144
 #: ./browser/template/my_account.pt:27
 #: ./browser/template/my_order.pt:86
 msgid "My Account"
 msgstr ""
 
-#: ./browser/template/account_info.pt:131
+#: ./browser/template/account_info.pt:152
 #: ./browser/template/my_account.pt:170
 #: ./browser/template/my_order.pt:94
 msgid "My Ishare Post"
@@ -594,13 +594,13 @@ msgstr ""
 msgid "My Order"
 msgstr ""
 
-#: ./browser/template/account_info.pt:128
+#: ./browser/template/account_info.pt:149
 #: ./browser/template/my_account.pt:167
 #: ./browser/template/my_order.pt:91
 msgid "My Orders"
 msgstr ""
 
-#: ./browser/template/account_info.pt:132
+#: ./browser/template/account_info.pt:153
 #: ./browser/template/my_account.pt:171
 #: ./browser/template/my_order.pt:95
 msgid "My Question List"
@@ -615,7 +615,7 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:287
+#: ./browser/template/cover_view.pt:323
 #: ./interfaces.py:226
 msgid "New Product"
 msgstr ""
@@ -670,7 +670,7 @@ msgstr ""
 msgid "Our Brand"
 msgstr ""
 
-#: ./browser/template/product_view.pt:110
+#: ./browser/template/product_view.pt:137
 msgid "Out of Stock"
 msgstr ""
 
@@ -678,8 +678,8 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:81
-#: ./browser/template/order_view.pt:80
+#: ./browser/template/client_back_url.pt:84
+#: ./browser/template/order_view.pt:84
 msgid "Parcel post"
 msgstr ""
 
@@ -709,8 +709,8 @@ msgstr ""
 msgid "Phone Number."
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:93
-#: ./browser/template/order_view.pt:91
+#: ./browser/template/client_back_url.pt:96
+#: ./browser/template/order_view.pt:95
 msgid "Pickup Location"
 msgstr ""
 
@@ -722,7 +722,7 @@ msgstr ""
 msgid "Post"
 msgstr ""
 
-#: ./browser/template/account_info.pt:129
+#: ./browser/template/account_info.pt:150
 #: ./browser/template/my_account.pt:168
 #: ./browser/template/my_order.pt:92
 msgid "Post Ishare"
@@ -734,7 +734,7 @@ msgstr ""
 msgid "Price"
 msgstr ""
 
-#: ./browser/template/account_info.pt:144
+#: ./browser/template/account_info.pt:165
 #: ./browser/template/my_account.pt:183
 #: ./browser/template/my_order.pt:107
 msgid "Private"
@@ -748,7 +748,7 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: ./browser/template/product_view.pt:228
+#: ./browser/template/product_view.pt:255
 msgid "Product Description"
 msgstr ""
 
@@ -844,7 +844,7 @@ msgstr ""
 msgid "Provider website url, must include http:// or https://"
 msgstr ""
 
-#: ./browser/template/product_view.pt:146
+#: ./browser/template/product_view.pt:173
 msgid "Provider:"
 msgstr ""
 
@@ -858,13 +858,13 @@ msgstr ""
 msgid "Qty"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:311
+#: ./browser/template/cover_view.pt:347
 #: ./interfaces.py:250
 #: ./profiles/default/types/Question.xml
 msgid "Question"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:146
+#: ./browser/template/cover_view.pt:173
 msgid "Question & Anwser"
 msgstr ""
 
@@ -876,7 +876,7 @@ msgstr ""
 msgid "Question Title"
 msgstr ""
 
-#: ./browser/template/product_view.pt:125
+#: ./browser/template/product_view.pt:152
 msgid "Quick Overview"
 msgstr ""
 
@@ -886,8 +886,8 @@ msgid "Read"
 msgstr ""
 
 #: ./browser/template/checkout_confirm.pt:54
-#: ./browser/template/client_back_url.pt:82
-#: ./browser/template/order_view.pt:81
+#: ./browser/template/client_back_url.pt:85
+#: ./browser/template/order_view.pt:85
 msgid "Receiver"
 msgstr ""
 
@@ -916,7 +916,7 @@ msgstr ""
 msgid "Recently added item(s)"
 msgstr ""
 
-#: ./browser/template/product_view.pt:115
+#: ./browser/template/product_view.pt:142
 msgid "Regular Price:"
 msgstr ""
 
@@ -924,17 +924,17 @@ msgstr ""
 msgid "Related"
 msgstr ""
 
-#: ./browser/template/account_info.pt:140
+#: ./browser/template/account_info.pt:161
 #: ./browser/template/my_account.pt:179
 #: ./browser/template/my_order.pt:103
 msgid "Related Link"
 msgstr ""
 
-#: ./browser/template/product_view.pt:322
+#: ./browser/template/product_view.pt:362
 msgid "Related Products"
 msgstr ""
 
-#: ./browser/template/product_view.pt:230
+#: ./browser/template/product_view.pt:257
 msgid "Related products"
 msgstr ""
 
@@ -942,7 +942,7 @@ msgstr ""
 msgid "Reply Question"
 msgstr ""
 
-#: ./browser/template/account_info.pt:145
+#: ./browser/template/account_info.pt:166
 #: ./browser/template/my_account.pt:184
 #: ./browser/template/my_order.pt:108
 msgid "Return Policy"
@@ -988,17 +988,21 @@ msgstr ""
 msgid "Sale price for the product if different from the list price, must be <= listPrice."
 msgstr ""
 
-#: ./browser/template/cover_view.pt:229
+#: ./browser/template/cover_view.pt:265
 msgid "Sale price:"
 msgstr ""
 
-#: ./browser/template/product_view.pt:247
+#: ./browser/template/product_view.pt:274
 msgid "Same Provider"
 msgstr ""
 
-#: ./browser/template/brand_view.pt:118
-#: ./browser/template/category_view.pt:118
-#: ./browser/template/cover_view.pt:207
+#: ./viewlet/template/header_container.pt:50
+msgid "Search"
+msgstr ""
+
+#: ./browser/template/brand_view.pt:123
+#: ./browser/template/category_view.pt:123
+#: ./browser/template/cover_view.pt:243
 msgid "Search Related"
 msgstr ""
 
@@ -1058,11 +1062,11 @@ msgstr ""
 msgid "Sort By:"
 msgstr ""
 
-#: ./browser/template/product_view.pt:119
+#: ./browser/template/product_view.pt:146
 msgid "Special Price"
 msgstr ""
 
-#: ./browser/template/product_view.pt:150
+#: ./browser/template/product_view.pt:177
 #: ./interfaces.py:192
 msgid "Standard shipping cost"
 msgstr ""
@@ -1112,8 +1116,8 @@ msgstr ""
 msgid "To see all"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:61
-#: ./browser/template/order_view.pt:61
+#: ./browser/template/client_back_url.pt:64
+#: ./browser/template/order_view.pt:65
 msgid "Total:"
 msgstr ""
 
@@ -1153,11 +1157,11 @@ msgstr ""
 msgid "View All"
 msgstr ""
 
-#: ./browser/template/cart_state.pt:62
+#: ./browser/template/cart_state.pt:66
 msgid "View Cart"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:36
+#: ./browser/template/cover_view.pt:37
 msgid "View More"
 msgstr ""
 
@@ -1170,7 +1174,7 @@ msgstr ""
 msgid "Website"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:271
+#: ./browser/template/cover_view.pt:307
 msgid "Website homepage"
 msgstr ""
 
@@ -1246,12 +1250,12 @@ msgstr ""
 msgid "paid"
 msgstr ""
 
-#: ./browser/template/account_info.pt:97
+#: ./browser/template/account_info.pt:100
 #: ./browser/template/my_account.pt:120
 msgid "point(s)"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:182
+#: ./browser/template/cover_view.pt:209
 msgid "recommend"
 msgstr ""
 

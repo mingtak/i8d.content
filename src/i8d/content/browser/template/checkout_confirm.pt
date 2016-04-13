@@ -123,7 +123,11 @@
 <tal:qty define="qty python:int(request.cookies.get(item.UID, 1))">
                     <td class="image">
                       <a class="product-image" tal:attributes="title item/Title; href item/getURL">
-                        <img width="75" tal:attributes="alt item/Title; src string:${item/getURL}/@@images/image_1/thumb" />
+                        <tal:img switch="item/hasImage1">
+                          <img tal:case="True" width="75" tal:attributes="alt item/Title; src string:${item/getURL}/@@images/image_1/thumb" />
+                          <img tal:case="default" width="75" tal:attributes="alt item/Title;
+                                                                             src string:/resource/images/nopicture.png/@@images/image/thumb" />
+                        </tal:img>
                       </a>
                     </td>
                     <td><h2 class="product-name">

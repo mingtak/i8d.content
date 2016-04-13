@@ -41,7 +41,11 @@
                                                                  'odd' if repeat['item'].even else 'even')">
                     <td class="image">
                       <a tal:attributes="title item/Title; href item/getURL" class="product-image" target="_blank">
-                        <img tal:attributes="alt item/Title; src string:${item/getURL}/@@images/image_1/thumb" width="75" />
+                        <tal:img switch="item/hasImage1">
+                          <img tal:case="True" tal:attributes="alt item/Title; src string:${item/getURL}/@@images/image_1/thumb" width="75" />
+                          <img tal:case="default"
+                               tal:attributes="alt item/Title;src string:/resource/images/nopicture.png/@@images/image/thumb" width="75" />
+                        </tal:img>
                       </a>
                     </td>
                     <td><h2 class="product-name"> <a tal:attributes="href item/getURL" tal:content="item/Title">Sample Product</a> </h2></td>

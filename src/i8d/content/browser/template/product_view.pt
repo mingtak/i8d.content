@@ -59,26 +59,53 @@ else:
 <!--                  <div class="new-label new-top-left" id="detail-new"> New </div> -->
                   <div class="product-image">
                     <div class="large-image">
-                      <a tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;" class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20">
-                        <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title"> </a> </div>
+                      <tal:img switch="python:bool(context.image_1)">
+                        <a tal:case="python:True" tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;"
+                           class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20">
+                          <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title">
+                        </a>
+                        <a tal:case="default" tal:attributes="href string:/resource/images/nopicture.png/@@images/image/zoomin;"
+                           class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20">
+                          <img tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview; alt context/Title"> 
+                        </a>
+                      </tal:img>
+                    </div>
+
+
                     <div class="flexslider flexslider-thumb">
                       <ul class="previews-list slides">
-                        <li><a tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;
+                        <li>
+                          <tal:img switch="python:bool(context.image_1)">
+                            <a tal:case="True"
+                               tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_1/preview'"
                                class='cloud-zoom-gallery'>
-                              <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title"/></a></li>
+                              <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title"/>
+                            </a>
+                            <a tal:case="default"
+                               tal:attributes="href string:/resource/images/nopicture.png/@@images/image/zoomin;
+                                               rel string:useZoom: 'zoom1', smallImage: '/resource/images/nopicture.png/@@images/image/preview'"
+                               class='cloud-zoom-gallery'>
+                              <img tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview; alt context/Title"/>
+                            </a>
+                          </tal:img>
+                        </li>
+
                         <li tal:condition="context/image_2"><a tal:attributes="href string:${context/absolute_url}/@@images/image_2/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_2/preview'"
                                class='cloud-zoom-gallery'>
                               <img tal:attributes="src string:${context/absolute_url}/@@images/image_2/preview; alt context/Title"/></a></li>
+
                         <li tal:condition="context/image_3"><a tal:attributes="href string:${context/absolute_url}/@@images/image_3/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_3/preview'"
                                class='cloud-zoom-gallery'>
                               <img tal:attributes="src string:${context/absolute_url}/@@images/image_3/preview; alt context/Title"/></a></li>
+
                         <li tal:condition="context/image_4"><a tal:attributes="href string:${context/absolute_url}/@@images/image_4/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_4/preview'"
                                class='cloud-zoom-gallery'>
                               <img tal:attributes="src string:${context/absolute_url}/@@images/image_4/preview; alt context/Title"/></a></li>
+
                         <li tal:condition="context/image_5"><a tal:attributes="href string:${context/absolute_url}/@@images/image_5/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_5/preview'"
                                class='cloud-zoom-gallery'>
@@ -241,7 +268,7 @@ else:
 
 
                   <div class="tab-pane fade in" id="product_tabs_related">
-                    <div class="related-pro wow bounceInUp animated">
+                    <div class="related-pro wow1 bounceInUp1 animated1">
                       <div class="slider-items-products">
                         <div class="new_title center">
                           <h2 i18n:translate="">Same Provider</h2>
@@ -260,13 +287,26 @@ else:
                                 <div class="product-image-area">
                                   <a class="product-image" tal:attributes="title item/Title;
                                                                            href item/getURL">
-                                    <img tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
-                                                         alt item/Title" class="img-responsive"/> </a>
+                                    <tal:img switch="item/hasImage1">
+                                      <img tal:case="True" tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
+                                                                           alt item/Title" class="img-responsive"/>
+                                      <img tal:case="default" tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview;
+                                                                           alt item/Title" class="img-responsive"/>
+                                    </tal:img>
+                                  </a>
                                 </div>
                                 <div class="actions-links">
                                   <span class="add-to-links">
-                                    <a title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
-                                       tal:attributes="href string:${item/getURL}/@@images/image_1/colorbox.png"><span i18n:translate="">Detail</span></a>
+                                    <tal:img switch="item/hasImage1">
+                                      <a tal:case="True" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                                         tal:attributes="href string:${item/getURL}/@@images/image_1/colorbox.png">
+                                        <span i18n:translate="">Detail</span>
+                                      </a>
+                                      <a tal:case="default" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                                         tal:attributes="href string:/resource/images/nopicture.png/@@images/image/colorbox.png">
+                                        <span i18n:translate="">Detail</span>
+                                      </a>
+                                    </tal:img>
                                     <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
                                        tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></a>
                                     <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
@@ -330,13 +370,26 @@ else:
                                 <div class="product-image-area">
                                   <a class="product-image" tal:attributes="title item/Title;
                                                                            href item/getURL">
-                                    <img tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
-                                                         alt item/Title" class="img-responsive"/> </a>
+                                    <tal:img switch="item/hasImage1">
+                                      <img tal:case="True" tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
+                                                                           alt item/Title" class="img-responsive"/>
+                                      <img tal:case="default" tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview;
+                                                                              alt item/Title" class="img-responsive"/>
+                                    </tal:img>
+                                  </a>
                                 </div>
                                 <div class="actions-links">
                                   <span class="add-to-links">
-                                    <a title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
-                                       tal:attributes="href string:${item/getURL}/@@images/image_1/colorbox.png"><span i18n:translate="">Detail</span></a>
+                                    <tal:img switch="item/hasImage1">
+                                      <a tal:case="True" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                                         tal:attributes="href string:${item/getURL}/@@images/image_1/colorbox.png">
+                                        <span i18n:translate="">Detail</span>
+                                      </a>
+                                      <a tal:case="default" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                                         tal:attributes="href string:/resource/images/nopicture.png/@@images/image/colorbox.png">
+                                        <span i18n:translate="">Detail</span>
+                                      </a>
+                                    </tal:img>
                                     <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
                                        tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></a>
                                     <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>

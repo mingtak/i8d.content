@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-04-12 00:29+0000\n"
+"POT-Creation-Date: 2016-04-13 06:03+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./browser/template/cover_view.pt:132
+#: ./browser/template/cover_view.pt:159
 msgid "...Read"
 msgstr "...全文"
 
@@ -22,7 +22,7 @@ msgstr "...全文"
 msgid ">How to buy"
 msgstr "如何購買"
 
-#: ./browser/template/account_info.pt:126
+#: ./browser/template/account_info.pt:147
 #: ./browser/template/my_account.pt:165
 #: ./browser/template/my_order.pt:89
 msgid "Account Dashboard"
@@ -34,31 +34,31 @@ msgstr "帳號總覽"
 msgid "Account Information"
 msgstr "基本資料"
 
-#: ./browser/template/brand_view.pt:117
-#: ./browser/template/category_view.pt:117
-#: ./browser/template/cover_view.pt:37
+#: ./browser/template/brand_view.pt:122
+#: ./browser/template/category_view.pt:122
+#: ./browser/template/cover_view.pt:38
 msgid "Add to Cart"
 msgstr "加入購物車"
 
-#: ./browser/template/cover_view.pt:37
+#: ./browser/template/cover_view.pt:38
 msgid "Add to cart"
 msgstr "加入購物車"
 
-#: ./browser/template/account_info.pt:84
+#: ./browser/template/account_info.pt:87
 #: ./browser/template/checkout_confirm.pt:87
-#: ./browser/template/client_back_url.pt:83
+#: ./browser/template/client_back_url.pt:86
 msgid "Address"
 msgstr "地址"
 
-#: ./browser/template/brand_view.pt:157
-#: ./browser/template/category_view.pt:171
-#: ./browser/template/search_result.pt:137
+#: ./browser/template/brand_view.pt:162
+#: ./browser/template/category_view.pt:176
+#: ./browser/template/search_result.pt:142
 msgid "All Brands"
 msgstr "所有品牌"
 
-#: ./browser/template/brand_view.pt:172
-#: ./browser/template/category_view.pt:157
-#: ./browser/template/search_result.pt:152
+#: ./browser/template/brand_view.pt:177
+#: ./browser/template/category_view.pt:162
+#: ./browser/template/search_result.pt:157
 msgid "All Category"
 msgstr "所有分類"
 
@@ -66,11 +66,11 @@ msgstr "所有分類"
 msgid "All Orders"
 msgstr "全部訂單"
 
-#: ./browser/template/cover_view.pt:136
+#: ./browser/template/cover_view.pt:163
 msgid "All Post"
 msgstr "所有文章"
 
-#: ./browser/template/cover_view.pt:165
+#: ./browser/template/cover_view.pt:192
 msgid "All Question"
 msgstr "所有問答"
 
@@ -86,7 +86,7 @@ msgstr "總計"
 msgid "Answer"
 msgstr "答覆"
 
-#: ./browser/template/cover_view.pt:303
+#: ./browser/template/cover_view.pt:339
 #: ./interfaces.py:242
 msgid "Article"
 msgstr "文章"
@@ -107,7 +107,7 @@ msgstr "橫幅圖檔，建議尺寸，大約 1500X350px 。"
 msgid "BannerImage"
 msgstr "橫幅圖檔"
 
-#: ./browser/template/account_info.pt:95
+#: ./browser/template/account_info.pt:98
 #: ./browser/template/my_account.pt:118
 #: ./interfaces.py:325
 msgid "Bonus"
@@ -154,16 +154,16 @@ msgstr "品牌或主題標題"
 msgid "Brand or category logo image"
 msgstr "品牌或主題圖示"
 
-#: ./browser/template/product_view.pt:132
+#: ./browser/template/product_view.pt:159
 msgid "Brand:"
 msgstr "品牌:"
 
-#: ./browser/template/client_back_url.pt:91
-#: ./browser/template/order_view.pt:89
+#: ./browser/template/client_back_url.pt:94
+#: ./browser/template/order_view.pt:93
 msgid "C2C"
 msgstr "超商取貨"
 
-#: ./browser/template/account_info.pt:68
+#: ./browser/template/account_info.pt:69
 #: ./browser/template/my_account.pt:103
 #: ./interfaces.py:289
 msgid "Cell Phone"
@@ -177,7 +177,7 @@ msgstr "手機號碼"
 msgid "Cell Phone number."
 msgstr "手機號碼"
 
-#: ./browser/template/client_back_url.pt:117
+#: ./browser/template/client_back_url.pt:120
 msgid "Change to C2C Shipping"
 msgstr "改由超商取貨"
 
@@ -229,7 +229,7 @@ msgstr "客戶端回覆網址，物流使用"
 msgid "Collection"
 msgstr "集合"
 
-#: ./browser/template/product_view.pt:229
+#: ./browser/template/product_view.pt:256
 msgid "Comments"
 msgstr "相關留言"
 
@@ -243,7 +243,7 @@ msgstr "公司抬頭"
 msgid "Complete Article:"
 msgstr "完整文章:"
 
-#: ./browser/template/account_info.pt:104
+#: ./browser/template/account_info.pt:107
 msgid "Confirm"
 msgstr "確認"
 
@@ -251,7 +251,7 @@ msgstr "確認"
 msgid "Confirm Cart / shipping info"
 msgstr "確認購物車 / 配送資訊"
 
-#: ./browser/template/account_info.pt:147
+#: ./browser/template/account_info.pt:168
 #: ./browser/template/my_account.pt:186
 #: ./browser/template/my_order.pt:110
 msgid "Contact Us"
@@ -284,17 +284,17 @@ msgstr "商品最後更新日期。"
 msgid "Description"
 msgstr "描述"
 
-#: ./browser/template/product_view.pt:129
+#: ./browser/template/product_view.pt:156
 msgid "Description:"
 msgstr "描述:"
 
-#: ./browser/template/cover_view.pt:272
+#: ./browser/template/cover_view.pt:308
 msgid "Description: All show in homepage's objects, listing below, want to change item, click edit button in toolbar to select. If want to edit object, click object, go to that page to edit."
 msgstr "說明：所有顯示在首頁的項目，均列表於下方，要改變內容，請直接點選上面的編輯，如果要編輯商品，請先點選商品，再點選編輯選項"
 
-#: ./browser/template/brand_view.pt:116
-#: ./browser/template/category_view.pt:116
-#: ./browser/template/cover_view.pt:201
+#: ./browser/template/brand_view.pt:121
+#: ./browser/template/category_view.pt:121
+#: ./browser/template/cover_view.pt:232
 msgid "Detail"
 msgstr "詳細內容"
 
@@ -312,7 +312,7 @@ msgstr "編輯"
 msgid "Edit Shopping Item(s)"
 msgstr "變更購物車內容"
 
-#: ./browser/template/account_info.pt:76
+#: ./browser/template/account_info.pt:78
 #: ./browser/template/checkout_confirm.pt:66
 #: ./browser/template/my_account.pt:107
 msgid "Email"
@@ -342,7 +342,7 @@ msgstr "專家圖檔"
 msgid "Expert image."
 msgstr "專家圖檔。"
 
-#: ./browser/template/account_info.pt:146
+#: ./browser/template/account_info.pt:167
 #: ./browser/template/my_account.pt:185
 #: ./browser/template/my_order.pt:109
 msgid "FAQ"
@@ -352,11 +352,11 @@ msgstr "問與答"
 msgid "FAQs"
 msgstr "本站相關問答"
 
-#: ./browser/template/cart_state.pt:60
+#: ./browser/template/cart_state.pt:64
 msgid "Fast Checkout"
 msgstr "快速結帳"
 
-#: ./browser/template/cover_view.pt:115
+#: ./browser/template/cover_view.pt:142
 msgid "Featured Article"
 msgstr "精選好文"
 
@@ -368,7 +368,7 @@ msgstr "檔案"
 msgid "Folder"
 msgstr "資料夾"
 
-#: ./browser/template/account_info.pt:130
+#: ./browser/template/account_info.pt:151
 #: ./browser/template/my_account.pt:169
 #: ./browser/template/my_order.pt:93
 msgid "Have A Question"
@@ -382,18 +382,18 @@ msgstr "表頭服務說明"
 msgid "Hero Text"
 msgstr "Hero 文字"
 
-#: ./browser/template/cover_view.pt:279
+#: ./browser/template/cover_view.pt:315
 #: ./interfaces.py:218
 msgid "Heros"
 msgstr "Heros (首頁主視覺大圖)"
 
-#: ./browser/template/cover_view.pt:295
+#: ./browser/template/cover_view.pt:331
 #: ./interfaces.py:234
 msgid "Hot Product"
 msgstr "熱門商品"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:92
-#: ./browser/template/account_info.pt:143
+#: ./browser/template/account_info.pt:164
 #: ./browser/template/my_account.pt:182
 msgid "How to buy"
 msgstr "如何購買"
@@ -419,7 +419,7 @@ msgstr "圖檔可以被關連到一個頁面，或顯示在相簿中"
 msgid "Import product error"
 msgstr "商品輸入錯誤"
 
-#: ./browser/template/product_view.pt:109
+#: ./browser/template/product_view.pt:136
 msgid "In Stock"
 msgstr "有現貨"
 
@@ -472,7 +472,7 @@ msgstr "連結"
 msgid "List Price"
 msgstr "商品定價"
 
-#: ./browser/template/cover_view.pt:220
+#: ./browser/template/cover_view.pt:256
 msgid "List price:"
 msgstr "定價:"
 
@@ -516,8 +516,8 @@ msgstr "物流地圖結果"
 msgid "Logistics Map URL"
 msgstr "物流地圖"
 
-#: ./browser/template/client_back_url.pt:81
-#: ./browser/template/order_view.pt:80
+#: ./browser/template/client_back_url.pt:84
+#: ./browser/template/order_view.pt:84
 msgid "Logistics Method"
 msgstr "配送方法"
 
@@ -529,8 +529,8 @@ msgstr "物流新增訂單結果，由歐付寶傳回"
 msgid "Logistics express create url."
 msgstr "物流新增訂單網址"
 
-#: ./browser/template/client_back_url.pt:76
-#: ./browser/template/order_view.pt:76
+#: ./browser/template/client_back_url.pt:79
+#: ./browser/template/order_view.pt:80
 msgid "Logistics info"
 msgstr "配送資訊"
 
@@ -575,13 +575,13 @@ msgstr "特店 ID, 可以在歐付寶後台查到"
 msgid "Merchant Trade No"
 msgstr "交易單號"
 
-#: ./browser/template/account_info.pt:123
+#: ./browser/template/account_info.pt:144
 #: ./browser/template/my_account.pt:27
 #: ./browser/template/my_order.pt:86
 msgid "My Account"
 msgstr "我的帳號"
 
-#: ./browser/template/account_info.pt:131
+#: ./browser/template/account_info.pt:152
 #: ./browser/template/my_account.pt:170
 #: ./browser/template/my_order.pt:94
 msgid "My Ishare Post"
@@ -591,13 +591,13 @@ msgstr "發表過的愛分享"
 msgid "My Order"
 msgstr "歷史訂單"
 
-#: ./browser/template/account_info.pt:128
+#: ./browser/template/account_info.pt:149
 #: ./browser/template/my_account.pt:167
 #: ./browser/template/my_order.pt:91
 msgid "My Orders"
 msgstr "歷史訂單"
 
-#: ./browser/template/account_info.pt:132
+#: ./browser/template/account_info.pt:153
 #: ./browser/template/my_account.pt:171
 #: ./browser/template/my_order.pt:95
 msgid "My Question List"
@@ -612,7 +612,7 @@ msgstr "我的購物車"
 msgid "Name"
 msgstr "姓名"
 
-#: ./browser/template/cover_view.pt:287
+#: ./browser/template/cover_view.pt:323
 #: ./interfaces.py:226
 msgid "New Product"
 msgstr "新商品"
@@ -667,7 +667,7 @@ msgstr "歷史訂單"
 msgid "Our Brand"
 msgstr "品牌專區"
 
-#: ./browser/template/product_view.pt:110
+#: ./browser/template/product_view.pt:137
 msgid "Out of Stock"
 msgstr "已無庫存"
 
@@ -675,8 +675,8 @@ msgstr "已無庫存"
 msgid "Page"
 msgstr "頁面"
 
-#: ./browser/template/client_back_url.pt:81
-#: ./browser/template/order_view.pt:80
+#: ./browser/template/client_back_url.pt:84
+#: ./browser/template/order_view.pt:84
 msgid "Parcel post"
 msgstr "郵寄包裹"
 
@@ -706,8 +706,8 @@ msgstr "電話號碼"
 msgid "Phone Number."
 msgstr "電話號碼"
 
-#: ./browser/template/client_back_url.pt:93
-#: ./browser/template/order_view.pt:91
+#: ./browser/template/client_back_url.pt:96
+#: ./browser/template/order_view.pt:95
 msgid "Pickup Location"
 msgstr "取貨地點"
 
@@ -719,7 +719,7 @@ msgstr "請列出所有這個品牌的所有可能唸法，例如: Microsoft, MS
 msgid "Post"
 msgstr "文章"
 
-#: ./browser/template/account_info.pt:129
+#: ./browser/template/account_info.pt:150
 #: ./browser/template/my_account.pt:168
 #: ./browser/template/my_order.pt:92
 msgid "Post Ishare"
@@ -731,7 +731,7 @@ msgstr "發表愛分享"
 msgid "Price"
 msgstr "價格"
 
-#: ./browser/template/account_info.pt:144
+#: ./browser/template/account_info.pt:165
 #: ./browser/template/my_account.pt:183
 #: ./browser/template/my_order.pt:107
 msgid "Private"
@@ -745,7 +745,7 @@ msgstr "隱私權政策"
 msgid "Product"
 msgstr "商品"
 
-#: ./browser/template/product_view.pt:228
+#: ./browser/template/product_view.pt:255
 msgid "Product Description"
 msgstr "產品說明"
 
@@ -841,7 +841,7 @@ msgstr "供應商商標圖檔"
 msgid "Provider website url, must include http:// or https://"
 msgstr "供應商網址，請含 http:// 或 https://"
 
-#: ./browser/template/product_view.pt:146
+#: ./browser/template/product_view.pt:173
 msgid "Provider:"
 msgstr "供應商:"
 
@@ -855,13 +855,13 @@ msgstr "商品網址"
 msgid "Qty"
 msgstr "數量"
 
-#: ./browser/template/cover_view.pt:311
+#: ./browser/template/cover_view.pt:347
 #: ./interfaces.py:250
 #: ./profiles/default/types/Question.xml
 msgid "Question"
 msgstr "提問"
 
-#: ./browser/template/cover_view.pt:146
+#: ./browser/template/cover_view.pt:173
 msgid "Question & Anwser"
 msgstr "提問與回應"
 
@@ -873,7 +873,7 @@ msgstr "提問詳細內容"
 msgid "Question Title"
 msgstr "提問標題"
 
-#: ./browser/template/product_view.pt:125
+#: ./browser/template/product_view.pt:152
 msgid "Quick Overview"
 msgstr "產品資訊"
 
@@ -883,8 +883,8 @@ msgid "Read"
 msgstr "閱讀"
 
 #: ./browser/template/checkout_confirm.pt:54
-#: ./browser/template/client_back_url.pt:82
-#: ./browser/template/order_view.pt:81
+#: ./browser/template/client_back_url.pt:85
+#: ./browser/template/order_view.pt:85
 msgid "Receiver"
 msgstr "收件人"
 
@@ -913,7 +913,7 @@ msgstr "近期愛分享"
 msgid "Recently added item(s)"
 msgstr "最新新增項目"
 
-#: ./browser/template/product_view.pt:115
+#: ./browser/template/product_view.pt:142
 msgid "Regular Price:"
 msgstr "價格:"
 
@@ -921,17 +921,17 @@ msgstr "價格:"
 msgid "Related"
 msgstr "關連的"
 
-#: ./browser/template/account_info.pt:140
+#: ./browser/template/account_info.pt:161
 #: ./browser/template/my_account.pt:179
 #: ./browser/template/my_order.pt:103
 msgid "Related Link"
 msgstr "相關連結"
 
-#: ./browser/template/product_view.pt:322
+#: ./browser/template/product_view.pt:362
 msgid "Related Products"
 msgstr "相關產品"
 
-#: ./browser/template/product_view.pt:230
+#: ./browser/template/product_view.pt:257
 msgid "Related products"
 msgstr "相關產品"
 
@@ -939,7 +939,7 @@ msgstr "相關產品"
 msgid "Reply Question"
 msgstr "回覆提問"
 
-#: ./browser/template/account_info.pt:145
+#: ./browser/template/account_info.pt:166
 #: ./browser/template/my_account.pt:184
 #: ./browser/template/my_order.pt:108
 msgid "Return Policy"
@@ -985,17 +985,21 @@ msgstr "售價"
 msgid "Sale price for the product if different from the list price, must be <= listPrice."
 msgstr "銷售價格必需小於或等於定價。"
 
-#: ./browser/template/cover_view.pt:229
+#: ./browser/template/cover_view.pt:265
 msgid "Sale price:"
 msgstr "售價:"
 
-#: ./browser/template/product_view.pt:247
+#: ./browser/template/product_view.pt:274
 msgid "Same Provider"
 msgstr "這個供應商還有..."
 
-#: ./browser/template/brand_view.pt:118
-#: ./browser/template/category_view.pt:118
-#: ./browser/template/cover_view.pt:207
+#: ./viewlet/template/header_container.pt:50
+msgid "Search"
+msgstr "搜尋"
+
+#: ./browser/template/brand_view.pt:123
+#: ./browser/template/category_view.pt:123
+#: ./browser/template/cover_view.pt:243
 msgid "Search Related"
 msgstr "搜尋類似商品"
 
@@ -1055,11 +1059,11 @@ msgstr "網站地圖"
 msgid "Sort By:"
 msgstr "排序:"
 
-#: ./browser/template/product_view.pt:119
+#: ./browser/template/product_view.pt:146
 msgid "Special Price"
 msgstr "特別折扣價"
 
-#: ./browser/template/product_view.pt:150
+#: ./browser/template/product_view.pt:177
 #: ./interfaces.py:192
 msgid "Standard shipping cost"
 msgstr "標準運費"
@@ -1109,8 +1113,8 @@ msgstr "標頭"
 msgid "To see all"
 msgstr "閱讀全部"
 
-#: ./browser/template/client_back_url.pt:61
-#: ./browser/template/order_view.pt:61
+#: ./browser/template/client_back_url.pt:64
+#: ./browser/template/order_view.pt:65
 msgid "Total:"
 msgstr "總計"
 
@@ -1150,11 +1154,11 @@ msgstr ""
 msgid "View All"
 msgstr "展開全部"
 
-#: ./browser/template/cart_state.pt:62
+#: ./browser/template/cart_state.pt:66
 msgid "View Cart"
 msgstr "查看購物車"
 
-#: ./browser/template/cover_view.pt:36
+#: ./browser/template/cover_view.pt:37
 msgid "View More"
 msgstr "點看更多"
 
@@ -1167,7 +1171,7 @@ msgstr "查看訂單"
 msgid "Website"
 msgstr "網站"
 
-#: ./browser/template/cover_view.pt:271
+#: ./browser/template/cover_view.pt:307
 msgid "Website homepage"
 msgstr "網站首頁"
 
@@ -1243,12 +1247,12 @@ msgstr "逾期未付款"
 msgid "paid"
 msgstr "已付款"
 
-#: ./browser/template/account_info.pt:97
+#: ./browser/template/account_info.pt:100
 #: ./browser/template/my_account.pt:120
 msgid "point(s)"
 msgstr "點"
 
-#: ./browser/template/cover_view.pt:182
+#: ./browser/template/cover_view.pt:209
 msgid "recommend"
 msgstr "嚴選商品"
 

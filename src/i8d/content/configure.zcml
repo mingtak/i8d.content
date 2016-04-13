@@ -66,8 +66,8 @@
   <adapter name="amount" factory=".catalog.amount_indexer"/>
   <adapter name="orderState" factory=".catalog.orderState_indexer"/>
   <adapter name="productUIDs" factory=".catalog.productUIDs_indexer"/>
+  <adapter name="hasImage1" factory=".catalog.hasImage1_indexer"/>
 <!--  <adapter name="" factory=".catalog._indexer"/>
-  <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>

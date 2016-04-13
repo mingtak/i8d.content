@@ -35,8 +35,12 @@ from plone import api
                     <a class="product-image"
                        tal:attributes="href item/getURL;
                                        title item/Title">
-                      <img tal:attributes="alt item/Title;
-                                           src string:${item/getURL}/@@images/image_1/tile" width="64">
+                      <tal:img switch="item/hasImage1">
+                        <img tal:case="True" tal:attributes="alt item/Title;
+                                                             src string:${item/getURL}/@@images/image_1/tile" width="64">
+                        <img tal:case="default" tal:attributes="alt item/Title;
+                                                             src string:/resource/images/nopicture.png/@@images/image/tile" width="64">
+                      </tal:img>
                     </a>
                     <div class="detail-item">
                       <div class="product-details">

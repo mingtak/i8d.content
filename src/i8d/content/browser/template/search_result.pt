@@ -89,8 +89,13 @@
                                 <div class="product-image-area">
                                   <a class="product-image" tal:attributes="title item/Title;
                                                                            href item/getURL">
-                                    <img tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
-                                                         alt item/Title" class="img-responsive" style="max-height:200px; min-height:200px"/> </a>
+                                    <tal:img switch="item/hasImage1">
+                                      <img tal:case="True" tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
+                                                           alt item/Title" class="img-responsive" style="max-height:200px; min-height:200px"/>
+                                      <img tal:case="default" tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview;
+                                                              alt item/Title" class="img-responsive" style="max-height:200px; min-height:200px"/>
+                                    </tal:img>
+                                  </a>
                                 </div>
                                 <div class="actions-links">
                                   <span class="add-to-links">

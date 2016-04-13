@@ -100,13 +100,9 @@
      <!-- 首頁 hero 右側-->
      <div class="RHS-banner" style="max-height:231px; height:230px">
       <div class="add" style="width:50%; float:right">
-        <a href="#" tal:attributes="href python:context.hotProduct[1].to_object.absolute_url()">
-          <tal:img switch="python:bool(context.hotProduct[0].to_object.image_1)">
-            <img tal:case="True" alt="banner-img" src="images/RHS-men-banner.png" style="width:100%"
-                     tal:attributes="src python:'%s/@@images/image_1/preview' % context.hotProduct[1].to_object.absolute_url()">
-            <img tal:case="default" alt="banner-img" src="images/RHS-men-banner.png" style="width:100%"
-                     tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview">
-          </tal:img>
+        <a href="#" tal:attributes="href python:context.hotProduct[0].to_object.absolute_url()">
+          <img alt="banner-img" src="images/RHS-men-banner.png" style="width:100%"
+               tal:attributes="src python:'%s/@@images/image_3/preview' % context.hotProduct[1].to_object.absolute_url()">
         </a>
       </div>
       <div style="width:50%; text-align:center; float:left">

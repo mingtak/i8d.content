@@ -6,6 +6,13 @@ from Products.CMFPlone.utils import safe_unicode
 from i8d.content.interfaces import IBrand, IProduct, ICover, IProfile, IPost, IQuestion, IAnswer, IProvider, IOrder
 
 
+@indexer(IProduct)
+def hasImage1_indexer(obj):
+    if obj.image_1:
+        return True
+    else:
+        return False
+
 @indexer(IOrder)
 def productUIDs_indexer(obj):
     return obj.productUIDs

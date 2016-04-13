@@ -116,7 +116,7 @@
           <li class="first"><a href="#" title="Site Map" i18n:attributes="title" i18n:translate="">Site Map</a></li>
 <!--          <li><a href="#/" title="Search Terms" i18n:attributes="title" i18n:translate="">Search Terms</a></li> -->
           <li><a href="faq.html" title="FAQs" i18n:attributes="title" i18n:translate="">FAQs</a></li>
-          <li><a href="#/" title="Private Policy" i18n:attributes="title" i18n:translate="">Private Policy</a></li>
+          <li><a href="/resource/private" title="Private Policy" i18n:attributes="title" i18n:translate="">Private Policy</a></li>
 <!--          <li><a href="#" title="Advanced Search" i18n:attributes="title" i18n:translate="">Advanced Search</a></li> -->
 <!--          <li><a href="contact_us.html" title="Contact Us" i18n:attributes="title" i18n:translate="">Contact Us</a></li> -->
 <!--          <li><a href="#" title="Suppliers" i18n:attributes="title" i18n:translate="">Suppliers</a></li> -->

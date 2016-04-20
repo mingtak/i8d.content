@@ -63,19 +63,19 @@ if not canSee:
           </span>
           <div class="signup">
             <a title="您好，我是您的小幫手" href="/resource/helper/@@without_pt" class="iframe">
-              <img src="http://www.i8d.com.tw/resource/images/hello.png/@@images/image/hello" alt="hello"/>
+              <img src="https://www.i8d.com.tw/resource/images/hello.png/@@images/image/hello" alt="hello"/>
             </a>
           </div>
     </tal:f>
     <tal:t case="True">
           <div class="signup">
             <a title="Google登入" href="/@@googleLogin">
-              <img src="http://www.i8d.com.tw/resource/images/googlelogin.png/@@images/image/hello" alt="google登入"/>
+              <img src="https://www.i8d.com.tw/resource/images/googlelogin.png/@@images/image/hello" alt="google登入"/>
             </a>
           </div>
           <div class="signup">
             <a title="臉書登入" href="/@@facebookLogin">
-              <img src="http://www.i8d.com.tw/resource/images/fblogin.png/@@images/image/hello" alt="臉書登入"/>
+              <img src="https://www.i8d.com.tw/resource/images/fblogin.png/@@images/image/hello" alt="臉書登入"/>
             </a>
           </div>
           <span class="or"> 加入會員 </span>

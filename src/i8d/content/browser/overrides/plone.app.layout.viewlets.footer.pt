@@ -73,15 +73,16 @@
             <img tal:attributes="src string:${portal/absolute_url}/logo.png" alt="logo" />
           </a>
         </div>
-
         <p>I-Body, Care our body.</p>
 
         <div class="payment-accept">
           <div>
-            <img src="http://htmldemo.magikcommerce.com/ecommerce/accent-html-template/green/images/payment-1.png" alt="payment">
+
+<!--            <img src="http://htmldemo.magikcommerce.com/ecommerce/accent-html-template/green/images/payment-1.png" alt="payment">
             <img src="http://htmldemo.magikcommerce.com/ecommerce/accent-html-template/green/images/payment-2.png" alt="payment">
             <img src="http://htmldemo.magikcommerce.com/ecommerce/accent-html-template/green/images/payment-3.png" alt="payment">
             <img src="http://htmldemo.magikcommerce.com/ecommerce/accent-html-template/green/images/payment-4.png" alt="payment">
+-->
           </div>
         </div>
       </div>
@@ -128,6 +129,7 @@
 
     <div class="footer-bottom container">
       <div class="col-sm-7 col-xs-12 copyright" >
+<span class="pull-left" id="siteseal"><script type="text/javascript" src="https://seal.godaddy.com/getSeal?sealID=nHvY6hJ74ra3bAgK1JWe1DkRKhVO3gMMeUmbBYuK19KR3mo5p0EP20TkfFNO"></script></span>
 艾巴廸股份有限公司 台北市 112 北投區大興街9巷13號<br/> 
 版權所有 copyright © <i tal:replace="view/year"/> i8d.com.tw All Rights Reserved.
       </div>

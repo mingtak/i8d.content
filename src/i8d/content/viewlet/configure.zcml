@@ -5,6 +5,15 @@
     i18n_domain="i8d.content">
 
     <browser:viewlet
+      name="effective_date_range"
+      for="i8d.content.interfaces.IProduct"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      template="template/effective_date_range.pt"
+      class=".viewlet.EffectiveDateRange"
+      permission="zope2.View"
+      />
+
+    <browser:viewlet
       name="manage_products"
       for="i8d.content.interfaces.IProvider"
       manager="plone.app.layout.viewlets.interfaces.IAboveContentBody"

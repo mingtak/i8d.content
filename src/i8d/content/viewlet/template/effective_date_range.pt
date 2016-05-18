@@ -1,0 +1,1 @@
+<script tal:condition="not:context/@@can_see_with_date_range">document.location.href="/";</script>

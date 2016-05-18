@@ -16,6 +16,7 @@
 
 <?python
 from plone import api
+portal = api.portal.get()
 context = econtext['context']
 catalog = context.portal_catalog
 request = econtext['request']
@@ -38,10 +39,10 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
             </a>
             <span style="vertical-align:bottom" i18n:translate="">My Shopping Cart</span>
           </h2>
+<button class="pull-right button btn btn-continue" onclick="javascript:location.href='https://www.i8d.com.tw'" style="background:#bde">返回賣場</button>
         </div>
                 <div class="table-responsive">
           <form method="post" action="/cart_update">
-<!--            <input type="hidden" value="Vwww7itR3zQFe86m" name="form_key"> -->
             <fieldset>
               <table class="data-table cart-table" id="shopping-cart-table">
                 <thead>
@@ -58,15 +59,15 @@ onClick_dec = "var result = document.getElementById('UID'); var qty = result.val
                 <tfoot>
                   <tr class="first last">
                     <td class="a-right last" colspan="7">
-<div class="mini-cart">
 <!--
+<div class="mini-cart">
   <div class="actions">
     <a class="btn btn-checkout" target="_blank" href="/checkout">
       <span i18n:translate="">Checkout</span>
     </a>
   </div>
- -->
 </div>
+-->
 <button class="button btn btn-update" title="Update Cart" value="update_qty"
  name="update_cart_action" type="submit"><span><span i18n:translate="">Update Cart</span></span></button>
                     </td>

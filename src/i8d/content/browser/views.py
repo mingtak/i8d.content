@@ -6,6 +6,23 @@ from DateTime import DateTime
 import transaction
 
 
+class CanSeeWithDateRange(BrowserView):
+    """ Can See With Date Range """
+
+    def __call__(self):
+        context = self.context
+
+        now = DateTime()
+        effective = DateTime(context.EffectiveDate())
+        expiration = DateTime() if context.ExpirationDate()=='None' else DateTime(context.ExpirationDate())
+        if not api.user.is_anonymous() and set(api.user.get_roles()) & set(['Manager', 'Site Administrator']):
+            return True
+        if now >= effective and now <= expiration:
+            return True
+        else:
+            return False
+
+
 class WithoutPT(BrowserView):
     """ Without PT View
     """

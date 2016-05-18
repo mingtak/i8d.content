@@ -135,6 +135,12 @@ class ICoverSetting(Form.Schema):
         min=0,
     )
 
+    bayesFilter = schema.Text(
+        title=_(u"Bayes Filter"),
+        description=_(u"Keywords filter, using bayes."),
+        required=False,
+    )
+
 
 class CoverSettingControlPanelForm(RegistryEditForm):
     form.extends(RegistryEditForm)

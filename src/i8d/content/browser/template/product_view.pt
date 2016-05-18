@@ -12,6 +12,7 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
+
 <?python
 from plone import api
 if api.user.is_anonymous():

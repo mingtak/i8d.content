@@ -50,6 +50,7 @@ setup(
         'collective.dexteritytextindexer',
         'plone.directives.form',
         'html2text',
+        'naiveBayesClassifier',
     ],
     extras_require={
         'test': [

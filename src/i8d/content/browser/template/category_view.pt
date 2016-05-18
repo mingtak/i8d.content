@@ -46,7 +46,7 @@ else:
       <div class="row">
 
 
-        <div class="col-main col-sm-9 col-sm-push-3 wow bounceInUp animated">
+        <div class="col-main col-sm-9 col-sm-push-3">
           <div class="category-title">
             <h1 tal:content="context/Title">Tilte</h1>
           </div>
@@ -157,7 +157,7 @@ else:
 
 
 
-        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
+        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
           <div class="side-nav-categories">
             <div class="block-title" i18n:translate=""> All Category </div>
             <div class="box-content box-category">

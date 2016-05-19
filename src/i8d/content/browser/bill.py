@@ -144,7 +144,8 @@ class Checkout(BrowserView):
             itemDescription += '%s: $%s X %s || ' % (item.Title, item.salePrice, qty)
 
             shippingFee += item.standardShippingCost
-            discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
+            if not api.user.is_anonymous():
+                discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
 
         totalAmount += shippingFee
 

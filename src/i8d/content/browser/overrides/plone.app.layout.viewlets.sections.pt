@@ -6,7 +6,7 @@
      tal:define="portal_tabs view/portal_tabs"
      tal:condition="portal_tabs"
      i18n:domain="i8d.content">
-  <nav class="theme-nav" tal:condition="not:context/@@can_see_backend">
+  <nav class="theme-nav" tal:condition="not:context/@@can_see_backend" style="z-index: 1000">
     <div class="container">
       <div class="nav-inner"> 
         <!-- mobile-menu 行動裝置選單 -->
@@ -17,7 +17,7 @@
                 <div class="toggle"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></div>
                 <h2 i18n:translate="">Menu</h2>
               </div>
-              <ul style="display:none;" class="submenu">
+              <ul style="display:none" class="submenu">
                 <li>
                   <ul class="topnav" tal:define="selected_tab python:view.selected_portal_tab">
 <tal:tabs tal:repeat="tab portal_tabs">

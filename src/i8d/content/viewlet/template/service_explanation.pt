@@ -1,4 +1,12 @@
-<tal:check_login condition="context/@@user_is_anonymous">
+<?python
+from plone import api
+if api.user.is_anonymous():
+    can_see_roles = True
+else:
+    can_see_roles = not (set(api.user.get_roles()) & set(['Manager', 'Site Administrator']))
+?>
+
+<tal:check_login condition="can_see_roles">
     <div id="service_explanation"
          tal:define="value python:context.portal_registry['i8d.content.browser.coverSetting.ICoverSetting.serviceExplanation']"
          tal:content="structure value" />

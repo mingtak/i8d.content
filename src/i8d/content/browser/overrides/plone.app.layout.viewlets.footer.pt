@@ -67,7 +67,7 @@
     </div>
 
     <div class="footer-middle container">
-      <div class="col-md-3 col-sm-4">
+      <div class="col-md-3 col-sm-4 col-xs-6">
         <div class="footer-logo" tal:define="portal context/@@portal_get">
           <a tal:attributes="href portal/absolute_url" title="Logo">
             <img tal:attributes="src string:${portal/absolute_url}/logo.png" alt="logo" />
@@ -87,7 +87,7 @@
         </div>
       </div>
 
-      <div class="col-md-3 col-sm-4">
+      <div class="col-md-3 col-sm-4 col-xs-6">
         <h4 i18n:translate="">Shopping Guide</h4>
         <ul class="links">
           <li class="first"><a href="#" title="How to buy" i18n:attributes="title" i18n:translate="">>How to buy</a></li>
@@ -99,7 +99,7 @@
         </ul>
       </div>
 
-      <div class="col-md-3 col-sm-4">
+      <div class="col-md-3 col-sm-4 col-xs-6">
         <h4 i18n:translate="">Style Advisor</h4>
         <ul class="links">
           <li class="first"><a title="Your Account" href="login.html" i18n:attributes="title" i18n:translate="">Your Account</a></li>
@@ -111,7 +111,7 @@
         </ul>
       </div>
 
-      <div class="col-md-3 col-sm-4">
+      <div class="col-md-3 col-sm-4 col-xs-6">
         <h4 i18n:translate="">Information</h4>
         <ul class="links">
           <li class="first"><a href="/resource/about-us" title="About Us" i18n:attributes="title" i18n:translate="">About Us</a></li>

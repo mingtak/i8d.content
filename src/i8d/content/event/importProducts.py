@@ -80,8 +80,7 @@ def creatItem(folder, row, zipFolderName):
         standardShippingCost=int(row['standardShippingCost']),
         container=portal['products'][folder.id],
     )
-
-    logger.info('Create Content, %s' % safe_unicode(row['title']))
+    logger.info('Content Created, %s' % safe_unicode(row['title']))
 
     item.setSubject(tuple(row['subjects'].split(',')))
     if row['image_1'].strip():

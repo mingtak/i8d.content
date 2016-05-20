@@ -65,88 +65,13 @@
             </a>
 
 
+<!--
             <div class="level0-wrapper dropdown-6col" tal:condition="python:tid in ['Brand', 'category']">
               <div class="level0-wrapper2">
                 <div class="nav-block nav-block-center grid12-8 itemgrid itemgrid-4col"> 
-                  <!--mega menu-->
-                  <ul class="level3" tal:condition="python:tid == 'Brand'">
-                    <li class="level3 nav-6-1 parent item" tal:repeat="uid python:brandShowInNav.split('\n')[1:5]">
-    <tal:uid define="catalog python:context.portal_catalog;
-                     brain python:catalog(UID=uid.strip())">
-        <tal:repeat repeat="item brain">
-                      <div class="cat-img"><img tal:attributes="src string:${item/getURL}/@@images/image; alt item/Title"/></div>
-                      <a tal:attributes="href item/getURL; title item/Title"><span tal:content="item/Title">Title</span></a> 
-        </tal:repeat>
-    </tal:uid>
-                      <!--sub sub category-->
-<!--                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Samsung</span></a> </li>
-                      </ul>
--->
-                      <!--level1--> 
-                      <!--sub sub category--> 
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                  </ul>
-
-                  <ul class="level3" tal:condition="python:tid == 'category'">
-                    <li class="level3 nav-6-1 parent item" tal:repeat="uid python:productShowInNav.split('\n')[1:5]">
-    <tal:uid define="catalog python:context.portal_catalog;
-                     brain python:catalog(UID=uid.strip())">
-        <tal:repeat repeat="item brain">
-                      <div class="cat-img"><img tal:attributes="src string:${item/getURL}/@@images/image; alt item/Title"/></div>
-                      <a tal:attributes="href item/getURL; title item/Title"><span tal:content="item/Title">Title</span></a>
-        </tal:repeat>
-    </tal:uid>
-                      <!--sub sub category-->
-<!--                      <ul class="level1">
-                        <li class="level2 nav-6-1-1"> <a href="grid.html"><span>Samsung</span></a> </li>
-                      </ul>
--->
-                      <!--level1-->
-                      <!--sub sub category-->
-                    </li>
-                    <!--level1 nav-6-1 parent item-->
-                  </ul>
-
-
-
-
-
-                  <!--level0--> 
                 </div>
-
-                <!--nav-block nav-block-center-->
-<tal:first define="uid python:brandShowInNav.split('\n')[0].strip();
-                   catalog python:context.portal_catalog;
-                   brain python:catalog(UID=uid);
-                   item python:brain[0]"
-           condition="python:tid == 'Brand'">
-                <div class="nav-block nav-block-right std grid12-4">
-                  <p><a tal:attributes="href item/getURL"><img tal:attributes="src string:${item/getURL}/@@images/image; alt item/Title" class="fade-on-hover"></a></p>
-                  <h3 class="heading" tal:content="item/Title"></h3>
-                  <p tal:content="item/Description"></p>
-                  <p><a tal:attributes="title item/Title; href item/getURL" class="btn-button-st" i18n:translate="">To see all</a></p>
-                </div>
-</tal:first>
-
-<tal:first define="uid python:productShowInNav.split('\n')[0].strip();
-                   catalog python:context.portal_catalog;
-                   brain python:catalog(UID=uid);
-                   item python:brain[0]" 
-           condition="python:tid == 'category'">
-                <div class="nav-block nav-block-right std grid12-4">
-                  <p><a tal:attributes="href item/getURL"><img tal:attributes="src string:${item/getURL}/@@images/image; alt item/Title" class="fade-on-hover"></a></p>
-                  <h3 class="heading" tal:content="item/Title"></h3>
-                  <p tal:content="item/Description"></p>
-                  <p><a tal:attributes="title item/Title; href item/getURL" class="btn-button-st" i18n:translate="">To see all</a></p>
-                </div>
-</tal:first>
-
-
-                <!--nav-block nav-block-right std grid12-4--> 
               </div>
-            </div>
+            </div> -->
           </li>
 </tal:tabs>
         </ul>

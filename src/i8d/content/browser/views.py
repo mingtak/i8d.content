@@ -23,6 +23,11 @@ class CanSeeWithDateRange(BrowserView):
             return False
 
 
+class InvoiceMethod(BrowserView):
+    """ Invoice Method
+    """
+
+
 class WithoutPT(BrowserView):
     """ Without PT View
     """

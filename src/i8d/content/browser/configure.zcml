@@ -28,6 +28,14 @@
       />
 
   <browser:page
+      name="shipping_method"
+      for="*"
+      class=".views.ShippingMethod"
+      template="template/shipping_method.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="invoice_method"
       for="*"
       class=".views.InvoiceMethod"

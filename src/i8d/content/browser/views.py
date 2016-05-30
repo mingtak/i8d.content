@@ -23,6 +23,11 @@ class CanSeeWithDateRange(BrowserView):
             return False
 
 
+class ShippingMethod(BrowserView):
+    """ Shipping Method
+    """
+
+
 class InvoiceMethod(BrowserView):
     """ Invoice Method
     """

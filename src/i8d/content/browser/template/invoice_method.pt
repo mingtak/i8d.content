@@ -1,9 +1,7 @@
 <div xmlns:tal="http://xml.zope.org/namespaces/tal"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="i8d.content"
-    class="invoice_method wow bounceInLeft"
-    data-wow-duration="1s">
-
+    class="invoice_method">
 
     <h4 i18n:translate="">Invoice</h4>
 
@@ -16,9 +14,11 @@
 <tal:case case="string:triplex">
     <p>開立三聯式發票，請填寫統一編號及抬頭。</p>
         <span i18n:translate="">Tax ID</span>:
-        <input class="taxid input-text" name="taxid" value="" type="text" autocomplete="on" required>
+        <input class="taxid input-text" name="taxid" value=""
+               type="text" pattern="[0-9]{8}" autocomplete="on" required>
         <span i18n:translate="">Invoice Title</span>:
-        <input class="invoice_title input-text" name="invoice_title" value="" type="text" autocomplete="on" required>
+        <input class="invoice_title input-text" name="invoice_title" value=""
+               type="text" autocomplete="on" required>
 </tal:case>
 </tal:switch>
 

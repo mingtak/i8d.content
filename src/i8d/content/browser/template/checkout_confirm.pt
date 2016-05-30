@@ -52,7 +52,7 @@
     <h3 i18n:translate="">Shipping info</h3>
 
     <!-- 收件人 -->
-    <h4 i18n:translate="">Receiver</h4>
+    <h4 style="color:#08d" i18n:translate="">Receiver</h4>
     <span i18n:translate="">Receiver</span>:
     <input class="receiver input-text" name="receiver" type="text" placeholder="Receiver" autocomplete="on"
            i18n:attributes="placeholder" required
@@ -71,24 +71,21 @@
     <input class="email input-text" name="email" type="email" placeholder="Email" autocomplete="on" required
            tal:attributes="value python:view.profile.email if view.profile else ''"
            i18n:attributes="placeholder">
+    <br/><br/>
 
     <!-- 配送方式 / 地址 -->
-<h4>請選擇配送方式</h4>
-<input type="radio" name="shipping_method" value="store" title="選擇便利商店取貨服務，稍候選擇取貨商店" checked>店到店(7-11/全家)</input>
-<input type="radio" name="shipping_method" value="todoor" title="選擇宅配，請填寫收件人資訊">宅配到府</input>
+<h4 style="color:#08d">請選擇配送方式</h4>
+<input type="radio" name="shipping_method" class="shipping_method" value="store" title="選擇便利商店取貨服務，稍候選擇取貨商店" checked>店到店(7-11/全家)</input>
+<input type="radio" name="shipping_method" class="shipping_method" value="todoor" title="選擇宅配，請填寫收件人資訊">宅配到府</input>
 <br>
 
-    <h4 i18n:translate="">Address</h4>
-    <p i18n:translate="">You can fill below fields to select shipping to door, or select C2C shipping later.
-                         (if you want to using C2C, please ignore below fields.)</p>
-        <select class="city selectcity" name="city" required tal:attributes="data-selected view/profile/addr_city | nothing" title="Please select a city" i18n:translate="title"></select>
-        <select class="district selectdistrict" name="district" required tal:attributes="data-selected view/profile/addr_district | nothing"></select>
-        <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
-        <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" required
-               tal:attributes="value view/profile/addr_address | nothing" autocomplete="on">
+<div class="shipping_method">
+<h5>選擇便利商店取貨服務，稍候選擇取貨商店</h5>
+<br/>
+</div>
 
     <!-- 發票 -->
-    <h4>請選擇發票開立方式</h4>
+    <h4 style="color:#08d">請選擇發票開立方式</h4>
     <input type="radio" name="invoice_method" class="invoice_method" value="duplex" title="二聯式發票" checked>二聯式發票</input>
     <input type="radio" name="invoice_method" class="invoice_method" value="triplex" title="三聯式發票">三聯式發票</input>
     <br>
@@ -192,7 +189,7 @@
 
 <script type="text/javascript">
 $(function() {
-    $('.invoice_method').on('change', function() {
+    $('input.invoice_method').on('change', function() {
         var value=this.value;
         $("div.invoice_method").slideUp(function(){
             $("div.invoice_method").load('/@@invoice_method?value='+value, function(){
@@ -201,7 +198,21 @@ $(function() {
         });
     });
 });
+
+$(function() {
+    $('input.shipping_method').on('change', function() {
+        var value=this.value;
+        $("div.shipping_method").slideUp(function(){
+            $("div.shipping_method").load('/@@shipping_method?value='+value, function(){
+                $("div.shipping_method").slideDown();
+                $(this).dk_tw_citySelector('.city', '.district', '.zipcode');
+            });
+        });
+    });
+});
 </script>
+
+
 
 
 </metal:content-core>

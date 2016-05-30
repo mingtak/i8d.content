@@ -52,11 +52,11 @@
     <h3 i18n:translate="">Shipping info</h3>
 
     <h4 i18n:translate="">Receiver</h4>
-<tal:anon tal:switch="python:bool(view.profile)">
+<tal:anon tal:define="anon python:bool(view.profile)">
     <tal:t case="python:True">
         <span i18n:translate="">Receiver</span>:
         <input class="receiver input-text" name="receiver" value="" type="text" placeholder="Receiver" autocomplete="off"
-               tal:attributes="value view/profile/title" i18n:attributes="placeholder">
+               tal:attributes="value view/profile/title" i18n:attributes="placeholder" required>
         <span i18n:translate="">Phone Number</span>:
         <input class="phone input-text" name="phone" value="" type="text" placeholder="Phone Number" autocomplete="off"
                tal:attributes="value view/profile/phone" i18n:attributes="placeholder">
@@ -70,16 +70,19 @@
 
     <tal:t case="python:False">
         <span i18n:translate="">Receiver</span>:
-        <input class="receiver input-text" name="receiver" value="" type="text" placeholder="Receiver" autocomplete="off"
-               i18n:attributes="placeholder">
+        <input class="receiver input-text" name="receiver" type="text" placeholder="Receiver" autocomplete="on"
+               i18n:attributes="placeholder" required
+               tal:attributes="value python:'' if anon else view.profile.title">
         <span i18n:translate="">Phone Number</span>:
-        <input class="phone input-text" name="phone" value="" type="text" placeholder="Phone Number" autocomplete="off"
-               i18n:attributes="placeholder">
+        <input class="phone input-text" name="phone" value="" type="text" placeholder="Phone Number" autocomplete="on"
+               pattern="[0-9, -]{8,12}" required title="Please fill phone number include zip code, ex: 0223456789"
+               i18n:attributes="title; placeholder">
         <span i18n:translate="">Cell Phone Number</span>:
-        <input class="cellphone input-text" name="cellphone" value="" type="text" placeholder="Cell Phone Number" autocomplete="off"
-               i18n:attributes="placeholder">
+        <input class="cellphone input-text" name="cellphone" value="" type="text" placeholder="Cell Phone Number" autocomplete="on"
+               pattern="[0-9, -]{10,12}" required title="Please fill cell phone number, ex: 0912345678"
+               i18n:attributes="placeholder; title">
         <span i18n:translate="">Email</span>:
-        <input class="email input-text" name="email" value="" type="text" placeholder="Email" autocomplete="off"
+        <input class="email input-text" name="email" value="" type="email" placeholder="Email" autocomplete="on"
                i18n:attributes="placeholder">
     </tal:t>
 </tal:anon>
@@ -87,18 +90,18 @@
     <h4 i18n:translate="">Address</h4>
     <p i18n:translate="">You can fill below fields to select shipping to door, or select C2C shipping later.
                          (if you want to using C2C, please ignore below fields.)</p>
-        <select class="city selectcity" name="city" tal:attributes="data-selected view/profile/addr_city | nothing"></select>
-        <select class="district selectdistrict" name="district" tal:attributes="data-selected view/profile/addr_district | nothing"></select>
+        <select class="city selectcity" name="city" required tal:attributes="data-selected view/profile/addr_city | nothing" title="Please select a city" i18n:translate="title"></select>
+        <select class="district selectdistrict" name="district" required tal:attributes="data-selected view/profile/addr_district | nothing"></select>
         <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
-        <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址"
-               tal:attributes="value view/profile/addr_address | nothing" autocomplete="off">
+        <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" required
+               tal:attributes="value view/profile/addr_address | nothing" autocomplete="on">
 
     <h4 i18n:translate="">Invoice</h4>
     <p>若您需要開立三聯式發票，請填寫統一編號及抬頭。</p>
         <span i18n:translate="">Tax ID</span>:
-        <input class="taxid input-text" name="taxid" value="" type="text" autocomplete="off">
+        <input class="taxid input-text" name="taxid" value="" type="text" autocomplete="on" >
         <span i18n:translate="">Company Title</span>:
-        <input class="companytitle input-text" name="companytitle" value="" type="text" autocomplete="off">
+        <input class="companytitle input-text" name="companytitle" value="" type="text" autocomplete="on">
 
   </div>
 </div>
@@ -168,25 +171,6 @@
               </table>
             </fieldset>
           </form>
-<!-- 驗證配送資訊 -->
-<script type="text/javascript">
- var frmvalidator = new Validator("checkout_confirm");
- frmvalidator.addValidation("receiver", "req", "請輸入收件人姓名");
-
- frmvalidator.addValidation("phone", "req", "請輸入電話號碼");
- frmvalidator.addValidation("phone", "maxlen=12", "請輸入電話號碼");
- frmvalidator.addValidation("phone", "minlen=8", "請輸入電話號碼");
- frmvalidator.addValidation("phone", "num", "電話號碼請勿輸入數字以外字元");
-
- frmvalidator.addValidation("cellphone", "maxlen=10", "請輸入手機號碼");
- frmvalidator.addValidation("cellphone", "minlen=10", "請輸入手機號碼");
- frmvalidator.addValidation("cellphone", "num", "手機碼請勿輸入數字以外字元");
-
- frmvalidator.addValidation("email", "req", "請輸入email信箱");
- frmvalidator.addValidation("email", "email", "請輸入正確的email格式");
-</script>
-
-
         </div>
       </div>
     </div>
@@ -213,7 +197,3 @@
 
 </body>
 </html>
-
-
-
-

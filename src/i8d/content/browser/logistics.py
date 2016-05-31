@@ -34,10 +34,10 @@ class LogisticsMap(BrowserView):
             'MerchantID': merchantId,
             'MerchantTradeNo': request.form.get('MerchantTradeNo'),
             'LogisticsType': 'CVS',
-            'LogisticsSubType': request.form.get('LogisticsSubType'), # 待處理
+            'LogisticsSubType': request.form.get('LogisticsSubType'),
             'IsCollection': 'N', # 代收貨款，待處理
             'ServerReplyURL': serverReplyURL,
-#            'Device': 1, # 待處理
+#            'Device': 1, # 上網設備，待處理（可以不處理）
         }
         self.keys = self.logistics_form.keys()
 
@@ -77,25 +77,31 @@ class LogisticsExpressCreate(BrowserView):
         merchantID = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.merchantID')
         merchantTradeNo = request.form['merchantTradeNo']
         merchantTradeDate = DateTime().strftime('%Y/%m/%d %H:%M:%S')
-        logisticsType = 'CVS' # 待處理
-        logisticsSubType = 'FAMI' # 待處理
+
+#        import pdb; pdb.set_trace()
+        logisticsType = 'CVS' # 待處理(店到店），或是可以不處理？
+        logisticsSubType = order.logisticsMapResult.get('LogisticsSubType')
         goodsAmount = order.result['TradeAmt']
-        collectionAmount = order.result['TradeAmt'] # 待處理
-        isCollection = 'Y' # 待處理
+        collectionAmount = order.result['TradeAmt'] # 待處理（代收金額）
+        isCollection = 'N' # 待處理(是否代收）
         goodsName = order.description[0:12]
         senderName = 'i8d.tw'
         senderPhone = '02-28973942'
         senderCellPhone = '0939-586835'
-        receiverName = '王大明' # 待處理
-        receiverPhone = '02-25586354' # 待處理
-        receiverCellPhone = '0936-594874' # 待處理
-        receiverEmail = 'andyfang51@gmail.com' # 待處理
+        receiverName = order.receiver
+        receiverPhone = order.phone
+        receiverCellPhone = order.cellPhone
+        receiverEmail = order.email
         tradeDesc = order.description[0:100]
         serverReplyURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.serverReplyURL')
         clientReplyURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.clientReplyURL')
         logisticsC2CReplyURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.logisticsC2CReplyURL')
         receiverStoreID = order.logisticsMapResult['CVSStoreID']
-        returnStoreID = order.logisticsMapResult['CVSStoreID'] # 不對？，應該是要北投這家店？
+        if logisticsSubType == 'UNIMART':
+            returnStoreID = '146403' # 7-11 西安店
+        elif logisticsSubType == 'FAMI':
+            returnStoreID = '11030' # 全家大業店
+
 
         self.formDict = {
             'MerchantId': merchantID,

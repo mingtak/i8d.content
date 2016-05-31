@@ -32,12 +32,12 @@ class LogisticsMap(BrowserView):
         self.actionURL = logisticsMapURL
         self.logistics_form = {
             'MerchantID': merchantId,
-            'MerchantTradeNo': request.form['MerchantTradeNo'],
+            'MerchantTradeNo': request.form.get('MerchantTradeNo'),
             'LogisticsType': 'CVS',
-            'LogisticsSubType': 'FAMI', # 待處理
-            'IsCollection': 'Y', # 待處理
+            'LogisticsSubType': request.form.get('LogisticsSubType'), # 待處理
+            'IsCollection': 'N', # 代收貨款，待處理
             'ServerReplyURL': serverReplyURL,
-            'Device': 1, # 待處理
+#            'Device': 1, # 待處理
         }
         self.keys = self.logistics_form.keys()
 
@@ -202,7 +202,6 @@ class LogisticsServerReply(BrowserView):
         response = request.response
         catalog = context.portal_catalog
 
-        import pdb; pdb.set_trace()
 
         brain = catalog({'Type': 'Order', 'id': request.form['MerchantTradeNo']})
         if not brain:

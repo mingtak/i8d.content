@@ -56,6 +56,7 @@ class ClientBackUrl(BrowserView):
         request = self.request
         response = request.response
         catalog = context.portal_catalog
+        portal = api.portal.get()
 #        itemInCart = request.cookies.get('itemInCart', '')
 #        itemInCart_list = itemInCart.split()
 
@@ -64,6 +65,12 @@ class ClientBackUrl(BrowserView):
 
         self.order = catalog({'Type':'Order', 'id':request.form['MerchantTradeNo']})[0]
         self.products = catalog({'Type':'Product', 'UID':self.order.productUIDs.keys()})
+        if request.form.get('LogisticsType') == 'cvs':
+            response.redirect('%s/logistics_map?MerchantTradeNo=%s&LogisticsType=%s&LogisticsSubType=%s' %
+                (portal.absolute_url(), request.form.get('MerchantTradeNo'), request.form.get('LogisticsType'), request.form.get('LogisticsSubType'))
+            )
+            return
+
         return self.template()
 
 
@@ -198,8 +205,8 @@ class Checkout(BrowserView):
                         'MerchantTradeNo': merchantTradeNo,
                         'ItemName': itemName,
                         'PaymentInfoURL': paymentInfoURL,
-                        'ClientBackURL': '%s?MerchantTradeNo=%s&LogisticsType=%s' %
-                            (clientBackURL, merchantTradeNo, request.form.get('LogisticsType', 'cvs')),  #可以使用 get 帶參數
+                        'ClientBackURL': '%s?MerchantTradeNo=%s&LogisticsType=%s&LogisticsSubType=%s' %
+                            (clientBackURL, merchantTradeNo, request.form.get('LogisticsType', 'cvs'), request.form.get('LogisticsSubType', 'UNIMART')),  #可以使用 get 帶參數
         }
         ap = AllPay(payment_info)
         # check out, this will return a dictionary containing checkValue...etc.

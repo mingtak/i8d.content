@@ -68,7 +68,7 @@ class ClientBackUrl(BrowserView):
 
 
 class CheckoutConfirm(BrowserView):
-    """ Checkout
+    """ Checkout Confirm
     """
 
     logger = logging.getLogger('bill.Checkout')
@@ -198,7 +198,8 @@ class Checkout(BrowserView):
                         'MerchantTradeNo': merchantTradeNo,
                         'ItemName': itemName,
                         'PaymentInfoURL': paymentInfoURL,
-                        'ClientBackURL': '%s?MerchantTradeNo=%s' % (clientBackURL, merchantTradeNo),  #可以使用 get 帶參數
+                        'ClientBackURL': '%s?MerchantTradeNo=%s&LogisticsType=%s' %
+                            (clientBackURL, merchantTradeNo, request.form.get('LogisticsType', 'cvs')),  #可以使用 get 帶參數
         }
         ap = AllPay(payment_info)
         # check out, this will return a dictionary containing checkValue...etc.

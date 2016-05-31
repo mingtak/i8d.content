@@ -75,11 +75,11 @@
 
     <!-- 配送方式 / 地址 -->
 <h4 style="color:#08d">請選擇配送方式</h4>
-<input type="radio" name="shipping_method" class="shipping_method" value="store" title="選擇便利商店取貨服務，稍候選擇取貨商店" checked>店到店(7-11/全家)</input>
-<input type="radio" name="shipping_method" class="shipping_method" value="todoor" title="選擇宅配，請填寫收件人資訊">宅配到府</input>
+<input type="radio" name="LogisticsType" class="LogisticsType" value="cvs" title="選擇便利商店取貨服務，稍候選擇取貨商店" checked>店到店(7-11/全家)</input>
+<input type="radio" name="LogisticsType" class="LogisticsType" value="home" title="選擇宅配，請填寫收件人資訊">宅配到府</input>
 <br>
 
-<div class="shipping_method">
+<div class="LogisticsType">
 <h5>選擇便利商店取貨服務，稍候選擇取貨商店</h5>
 <br/>
 </div>
@@ -200,11 +200,11 @@ $(function() {
 });
 
 $(function() {
-    $('input.shipping_method').on('change', function() {
+    $('input.LogisticsType').on('change', function() {
         var value=this.value;
-        $("div.shipping_method").slideUp(function(){
-            $("div.shipping_method").load('/@@shipping_method?value='+value, function(){
-                $("div.shipping_method").slideDown();
+        $("div.LogisticsType").slideUp(function(){
+            $("div.LogisticsType").load('/@@shipping_method?value='+value, function(){
+                $("div.LogisticsType").slideDown();
                 $(this).dk_tw_citySelector('.city', '.district', '.zipcode');
             });
         });

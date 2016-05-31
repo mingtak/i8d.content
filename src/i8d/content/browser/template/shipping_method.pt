@@ -1,18 +1,17 @@
 <div xmlns:tal="http://xml.zope.org/namespaces/tal"
     xmlns:i18n="http://xml.zope.org/namespaces/i18n"
     i18n:domain="i8d.content"
-    class="shipping_method">
+    class="LogisticsType">
 
 
 
 <tal:switch switch="view/request/form/value">
-<tal:case case="string:store">
-<h5>選擇便利商店取貨服務，稍候選擇取貨商店</h5>
-<br/><br/>
+<tal:case case="string:cvs">
+  <h5>選擇便利商店取貨服務，稍候選擇取貨商店</h5>
+  <br/><br/>
 </tal:case>
 
-<tal:case case="string:todoor">
-
+<tal:case case="string:home">
     <h4 i18n:translate="">Address</h4>
     <p i18n:translate="">You can fill below fields to select shipping to door, or select C2C shipping later.
                          (if you want to using C2C, please ignore below fields.)</p>
@@ -21,7 +20,6 @@
         <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
         <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" required
                tal:attributes="value view/profile/addr_address | nothing" autocomplete="on">
-
 <br/><br/>
 
 </tal:case>

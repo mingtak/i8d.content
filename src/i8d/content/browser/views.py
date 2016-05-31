@@ -104,7 +104,9 @@ class CanSeeBackend(BrowserView):
             return False
 
 
-
+class I8dSitemap(BrowserView):
+    """ i8d sitemap
+    """
 
 
 class TestView(BrowserView):

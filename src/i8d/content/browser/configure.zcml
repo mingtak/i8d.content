@@ -286,6 +286,14 @@
       />
 
   <browser:page
+      name="i8d_sitemap"
+      for="*"
+      class=".views.I8dSitemap"
+      template="template/i8d_sitemap.pt"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="testview"
       for="zope.interface.Interface"
       class=".views.TestView"

@@ -97,10 +97,13 @@ class LogisticsExpressCreate(BrowserView):
         clientReplyURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.clientReplyURL')
         logisticsC2CReplyURL = api.portal.get_registry_record('i8d.content.browser.coverSetting.ICoverSetting.logisticsC2CReplyURL')
         receiverStoreID = order.logisticsMapResult['CVSStoreID']
-        if logisticsSubType == 'UNIMART':
-            returnStoreID = '146403' # 7-11 西安店
-        elif logisticsSubType == 'FAMI':
-            returnStoreID = '11030' # 全家大業店
+
+# 全家的resutnstoreid會有錯，先跳過不處理
+#        import pdb; pdb.set_trace()
+#        if logisticsSubType == 'UNIMARTC2C':
+#            returnStoreID = '146403' # 7-11 西安店
+#        elif logisticsSubType == 'FAMIC2C':
+#            returnStoreID = '14441' # 全家大同店
 
 
         self.formDict = {
@@ -125,7 +128,7 @@ class LogisticsExpressCreate(BrowserView):
             'ClientReplyURL': clientReplyURL,
             'LogisticsC2CReplyURL': logisticsC2CReplyURL,
             'ReceiverStoreID': receiverStoreID,
-            'ReturnStoreID': returnStoreID,
+#            'ReturnStoreID': returnStoreID,
         }
 
         self.formDict = self.encoded_dict(self.formDict)

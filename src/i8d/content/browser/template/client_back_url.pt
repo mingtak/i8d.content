@@ -94,8 +94,7 @@
             <li><strong i18n:translate="">Logistics Method</strong>: <span i18n:translate="">C2C</span></li>
             <li><strong i18n:translate="">Receiver</strong>: <span tal:replace="order/receiver" /></li>
             <li><strong i18n:translate="">Pickup Location</strong>: 
-                <span tal:replace="python:'%s %s' % ('全家便利商店' if order.logisticsMapResult['LogisticsSubType'] == 'FAMIC2C' else '統一超商(7-11)',
-                                                     order.logisticsMapResult['CVSStoreName'])"/>
+                <span tal:replace="python:'%s %s' % ('全家便利商店' if order.logisticsMapResult['LogisticsSubType'] == 'FAMIC2C' else '統一超商(7-11)', order.logisticsMapResult['CVSStoreName'])"/>
             </li>
             <li><strong i18n:translate="">Address</strong>: 
                 <span tal:replace="python:order.logisticsMapResult['CVSAddress']" />
@@ -108,16 +107,6 @@
         </div>
       </div>
 
-
-
-
-
-
-<!-- 條件未修正 -->
-        <button tal:condition="python:'logistics' not in view.request['HTTP_REFERER']"
-                tal:attributes="onclick python:'javascript:location.href=\'/logistics_map?MerchantTradeNo=%s\'' % request.form['MerchantTradeNo']"
-                class="button btn-continue pull-left wow flip"  data-wow-iteration="3" data-wow-duration="0.25s"
-                title="C2C shipping" type="button"><span i18n:translate="">Change to C2C Shipping</span></button>
 
 
 

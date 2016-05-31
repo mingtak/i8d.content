@@ -93,8 +93,7 @@
             <li><strong i18n:translate="">Logistics Method</strong>: <span i18n:translate="">C2C</span></li>
             <li><strong i18n:translate="">Receiver</strong>: <span tal:replace="context/receiver" /></li>
             <li><strong i18n:translate="">Pickup Location</strong>: 
-                <span tal:replace="python:'%s %s' % ('全家便利商店' if context.logisticsMapResult['LogisticsSubType'] == 'FAMIC2C' else '統一超商(7-11)',
-                                                     type(context.logisticsMapResult['CVSStoreName']))"/>
+                <span tal:replace="python:'%s %s' % ('全家便利商店' if context.logisticsMapResult['LogisticsSubType'] == 'FAMIC2C' else '統一超商(7-11)', context.logisticsMapResult['CVSStoreName'])"/>
             </li>
             <li><strong i18n:translate="">Address</strong>: 
                 <span tal:replace="python:context.logisticsMapResult['CVSAddress']" />

@@ -5,6 +5,15 @@
     i18n_domain="i8d.content">
 
     <browser:viewlet
+      name="googleAD"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      template="template/googleAD.pt"
+      class=".viewlet.GoogleAD"
+      permission="zope2.View"
+      />
+
+    <browser:viewlet
       name="effective_date_range"
       for="i8d.content.interfaces.IProduct"
       manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"

@@ -212,6 +212,20 @@ else:
 
 <!-- sidebar -->
                 <aside class="col-lg-3 col-sm-3 col-xs-12 sidebar_area hidden-xs">
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- i8d_rwd -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-9621066722313042"
+     data-ad-slot="4162673477"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+<!--
                   <div class="brand-imgs">
                     <a target="_blank" href="#">
                       <img tal:replace="structure context/@@images/image_1/mini | nothing" />
@@ -234,7 +248,7 @@ else:
                       <img tal:replace="structure context/@@images/image_1/mini | nothing" />
                     </a>
                   </div>
-
+-->
 
 	
 <!--                  <div class="product-sibebar-banner">

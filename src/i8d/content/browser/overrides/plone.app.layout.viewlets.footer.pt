@@ -95,7 +95,8 @@
           <li><a href="#" title="Payment" i18n:attributes="title" i18n:translate="">Payment</a></li>
 <!--          <li><a href="#" title="Shipment" i18n:attributes="title" i18n:translate="">Shipment</a></li> -->
 <!--          <li><a href="#" title="Where is my order?" i18n:attributes="title" i18n:translate="">Where is my order?</a></li> -->
-          <li class="last"><a href="#" title="Return policy" i18n:attributes="title" i18n:translate="">Return policy</a></li>
+          <li><a href="#" title="Return policy" i18n:attributes="title" i18n:translate="">Return policy</a></li>
+          <li class="last"><a href="mailto:service@i8d.com.tw" title="客服信箱">客服信箱</a></li>
         </ul>
       </div>
 

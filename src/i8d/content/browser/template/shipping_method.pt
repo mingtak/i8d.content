@@ -20,7 +20,7 @@
     <h4 i18n:translate="">Address</h4>
     <p i18n:translate="">You can fill below fields to select shipping to door, or select C2C shipping later.
                          (if you want to using C2C, please ignore below fields.)</p>
-        <select class="city selectcity" name="city" required tal:attributes="data-selected view/profile/addr_city | nothing" title="Please select a city" i18n:translate="title"></select>
+        <select class="city selectcity" name="city" required tal:attributes="data-selected view/profile/addr_city | nothing" title="Please select a city" i18n:attributes="title"></select>
         <select class="district selectdistrict" name="district" required tal:attributes="data-selected view/profile/addr_district | nothing"></select>
         <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
         <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" required

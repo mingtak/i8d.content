@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-05-18 01:19+0000\n"
+"POT-Creation-Date: 2016-06-01 03:21+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -14,15 +14,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: DOMAIN\n"
 
-#: ./browser/template/cover_view.pt:159
-msgid "...Read"
-msgstr "...全文"
-
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:93
 msgid ">How to buy"
 msgstr "如何購買"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:117
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:118
 msgid "About Us"
 msgstr "關於艾巴廸"
 
@@ -40,27 +36,27 @@ msgstr "基本資料"
 
 #: ./browser/template/brand_view.pt:122
 #: ./browser/template/category_view.pt:122
-#: ./browser/template/cover_view.pt:38
+#: ./browser/template/cover_view.pt:40
 msgid "Add to Cart"
 msgstr "加入購物車"
 
-#: ./browser/template/cover_view.pt:38
+#: ./browser/template/cover_view.pt:40
 msgid "Add to cart"
 msgstr "加入購物車"
 
 #: ./browser/template/account_info.pt:87
-#: ./browser/template/checkout_confirm.pt:87
 #: ./browser/template/client_back_url.pt:86
+#: ./browser/template/my_account.pt:111
 msgid "Address"
 msgstr "地址"
 
-#: ./browser/template/brand_view.pt:162
+#: ./browser/template/brand_view.pt:159
 #: ./browser/template/category_view.pt:176
 #: ./browser/template/search_result.pt:142
 msgid "All Brands"
 msgstr "所有品牌"
 
-#: ./browser/template/brand_view.pt:177
+#: ./browser/template/brand_view.pt:174
 #: ./browser/template/category_view.pt:162
 #: ./browser/template/search_result.pt:157
 msgid "All Category"
@@ -69,14 +65,6 @@ msgstr "所有分類"
 #: ./browser/template/my_order.pt:35
 msgid "All Orders"
 msgstr "全部訂單"
-
-#: ./browser/template/cover_view.pt:163
-msgid "All Post"
-msgstr "所有文章"
-
-#: ./browser/template/cover_view.pt:192
-msgid "All Question"
-msgstr "所有問答"
 
 #: ./browser/coverSetting.py:57
 msgid "All in one(AIO) Checkout Server URL"
@@ -90,7 +78,7 @@ msgstr "總計"
 msgid "Answer"
 msgstr "答覆"
 
-#: ./browser/template/cover_view.pt:339
+#: ./browser/template/cover_view.pt:285
 #: ./interfaces.py:242
 msgid "Article"
 msgstr "文章"
@@ -177,7 +165,7 @@ msgstr "超商取貨"
 msgid "Cell Phone"
 msgstr "手機號碼"
 
-#: ./browser/template/checkout_confirm.pt:63
+#: ./browser/template/checkout_confirm.pt:65
 msgid "Cell Phone Number"
 msgstr "手機號碼"
 
@@ -185,11 +173,7 @@ msgstr "手機號碼"
 msgid "Cell Phone number."
 msgstr "手機號碼"
 
-#: ./browser/template/client_back_url.pt:120
-msgid "Change to C2C Shipping"
-msgstr "改由超商取貨"
-
-#: ./browser/template/checkout_confirm.pt:110
+#: ./browser/template/checkout_confirm.pt:111
 msgid "Checkout"
 msgstr "結帳"
 
@@ -237,11 +221,10 @@ msgstr "客戶端回覆網址，物流使用"
 msgid "Collection"
 msgstr "集合"
 
-#: ./browser/template/product_view.pt:257
+#: ./browser/template/product_view.pt:271
 msgid "Comments"
 msgstr "相關留言"
 
-#: ./browser/template/checkout_confirm.pt:100
 #: ./interfaces.py:509
 msgid "Company Title"
 msgstr "公司抬頭"
@@ -296,13 +279,13 @@ msgstr "描述"
 msgid "Description:"
 msgstr "描述:"
 
-#: ./browser/template/cover_view.pt:308
+#: ./browser/template/cover_view.pt:254
 msgid "Description: All show in homepage's objects, listing below, want to change item, click edit button in toolbar to select. If want to edit object, click object, go to that page to edit."
 msgstr "說明：所有顯示在首頁的項目，均列表於下方，要改變內容，請直接點選上面的編輯，如果要編輯商品，請先點選商品，再點選編輯選項"
 
 #: ./browser/template/brand_view.pt:121
 #: ./browser/template/category_view.pt:121
-#: ./browser/template/cover_view.pt:232
+#: ./browser/template/cover_view.pt:182
 msgid "Detail"
 msgstr "詳細內容"
 
@@ -316,12 +299,12 @@ msgstr "鄉鎮市區"
 msgid "Edit"
 msgstr "編輯"
 
-#: ./browser/template/checkout_confirm.pt:116
+#: ./browser/template/checkout_confirm.pt:117
 msgid "Edit Shopping Item(s)"
 msgstr "變更購物車內容"
 
 #: ./browser/template/account_info.pt:78
-#: ./browser/template/checkout_confirm.pt:66
+#: ./browser/template/checkout_confirm.pt:70
 #: ./browser/template/my_account.pt:107
 msgid "Email"
 msgstr ""
@@ -356,17 +339,13 @@ msgstr "專家圖檔。"
 msgid "FAQ"
 msgstr "問與答"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:120
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:121
 msgid "FAQs"
 msgstr "本站相關問答"
 
 #: ./browser/template/cart_state.pt:64
 msgid "Fast Checkout"
 msgstr "快速結帳"
-
-#: ./browser/template/cover_view.pt:142
-msgid "Featured Article"
-msgstr "精選好文"
 
 #: ./profiles/default/types/File.xml
 msgid "File"
@@ -390,12 +369,12 @@ msgstr "表頭服務說明"
 msgid "Hero Text"
 msgstr "Hero 文字"
 
-#: ./browser/template/cover_view.pt:315
+#: ./browser/template/cover_view.pt:261
 #: ./interfaces.py:218
 msgid "Heros"
 msgstr "Heros (首頁主視覺大圖)"
 
-#: ./browser/template/cover_view.pt:331
+#: ./browser/template/cover_view.pt:277
 #: ./interfaces.py:234
 msgid "Hot Product"
 msgstr "熱門商品"
@@ -423,7 +402,7 @@ msgstr "圖檔"
 msgid "Images can be referenced in pages or displayed in an album."
 msgstr "圖檔可以被關連到一個頁面，或顯示在相簿中"
 
-#: ./event/importProducts.py:153
+#: ./event/importProducts.py:152
 msgid "Import product error"
 msgstr "商品輸入錯誤"
 
@@ -435,7 +414,7 @@ msgstr "有現貨"
 msgid "In Stock?"
 msgstr "庫存狀況？"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:106
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:107
 msgid "Information"
 msgstr "相關資訊"
 
@@ -456,9 +435,15 @@ msgstr "自我介紹"
 msgid "Introduction:"
 msgstr "簡介:"
 
-#: ./browser/template/checkout_confirm.pt:96
+#: ./browser/template/checkout_confirm.pt:98
+#: ./browser/template/invoice_method.pt:6
 msgid "Invoice"
 msgstr "發票"
+
+#: ./browser/template/checkout_confirm.pt:100
+#: ./browser/template/invoice_method.pt:11
+msgid "Invoice Title"
+msgstr "發票抬頭"
 
 #: ./interfaces.py:271
 msgid "Is Expert"
@@ -483,10 +468,6 @@ msgstr "連結"
 #: ./interfaces.py:107
 msgid "List Price"
 msgstr "商品定價"
-
-#: ./browser/template/cover_view.pt:256
-msgid "List price:"
-msgstr "定價:"
 
 #: ./browser/coverSetting.py:124
 msgid "Logistics C2C Reply URL"
@@ -624,7 +605,7 @@ msgstr "我的購物車"
 msgid "Name"
 msgstr "姓名"
 
-#: ./browser/template/cover_view.pt:323
+#: ./browser/template/cover_view.pt:269
 #: ./interfaces.py:226
 msgid "New Product"
 msgstr "新商品"
@@ -671,7 +652,7 @@ msgstr "訂單總計"
 msgid "Order state."
 msgstr "訂單狀態"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:109
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:110
 msgid "Orders History"
 msgstr "歷史訂單"
 
@@ -723,9 +704,21 @@ msgstr "電話號碼"
 msgid "Pickup Location"
 msgstr "取貨地點"
 
+#: ./browser/template/checkout_confirm.pt:66
+msgid "Please fill cell phone number, ex: 0912345678"
+msgstr "請填寫手機號碼，如: 0912345678"
+
+#: ./browser/template/checkout_confirm.pt:61
+msgid "Please fill phone number include zip code, ex: 0223456789"
+msgstr "請填寫室內電話號碼，如: 0223456789"
+
 #: ./interfaces.py:44
 msgid "Please listing all nickname that about this brand. For example, Microfost and MS, Separated by commas."
 msgstr "請列出所有這個品牌的所有可能唸法，例如: Microsoft, MS, 微軟...，請以半型逗號分隔."
+
+#: ./browser/template/shipping_method.pt:23
+msgid "Please select a city"
+msgstr "請選擇城市"
 
 #: ./profiles/default/types/Post.xml
 msgid "Post"
@@ -749,7 +742,7 @@ msgstr "價格"
 msgid "Private"
 msgstr "隱私權政策"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:121
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:122
 msgid "Private Policy"
 msgstr "隱私權政策"
 
@@ -757,7 +750,7 @@ msgstr "隱私權政策"
 msgid "Product"
 msgstr "商品"
 
-#: ./browser/template/product_view.pt:256
+#: ./browser/template/product_view.pt:270
 msgid "Product Description"
 msgstr "產品說明"
 
@@ -867,15 +860,11 @@ msgstr "商品網址"
 msgid "Qty"
 msgstr "數量"
 
-#: ./browser/template/cover_view.pt:347
+#: ./browser/template/cover_view.pt:293
 #: ./interfaces.py:250
 #: ./profiles/default/types/Question.xml
 msgid "Question"
 msgstr "提問"
-
-#: ./browser/template/cover_view.pt:173
-msgid "Question & Anwser"
-msgstr "提問與回應"
 
 #: ./interfaces.py:371
 msgid "Question Detail"
@@ -894,7 +883,7 @@ msgstr "產品資訊"
 msgid "Read"
 msgstr "閱讀"
 
-#: ./browser/template/checkout_confirm.pt:54
+#: ./browser/template/checkout_confirm.pt:55
 #: ./browser/template/client_back_url.pt:85
 #: ./browser/template/order_view.pt:85
 msgid "Receiver"
@@ -939,11 +928,11 @@ msgstr "關連的"
 msgid "Related Link"
 msgstr "相關連結"
 
-#: ./browser/template/product_view.pt:363
+#: ./browser/template/product_view.pt:377
 msgid "Related Products"
 msgstr "相關產品"
 
-#: ./browser/template/product_view.pt:258
+#: ./browser/template/product_view.pt:272
 msgid "Related products"
 msgstr "相關產品"
 
@@ -997,11 +986,11 @@ msgstr "售價"
 msgid "Sale price for the product if different from the list price, must be <= listPrice."
 msgstr "銷售價格必需小於或等於定價。"
 
-#: ./browser/template/cover_view.pt:265
+#: ./browser/template/cover_view.pt:206
 msgid "Sale price:"
 msgstr "售價:"
 
-#: ./browser/template/product_view.pt:275
+#: ./browser/template/product_view.pt:289
 msgid "Same Provider"
 msgstr "這個供應商還有..."
 
@@ -1011,7 +1000,7 @@ msgstr "搜尋"
 
 #: ./browser/template/brand_view.pt:123
 #: ./browser/template/category_view.pt:123
-#: ./browser/template/cover_view.pt:243
+#: ./browser/template/cover_view.pt:193
 msgid "Search Related"
 msgstr "搜尋類似商品"
 
@@ -1061,7 +1050,7 @@ msgstr "知文描述，顯示於首頁"
 msgid "Sign up for our newsletter"
 msgstr "訂閱電子報"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:118
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:119
 msgid "Site Map"
 msgstr "網站地圖"
 
@@ -1085,7 +1074,7 @@ msgstr "標準運費"
 msgid "Status"
 msgstr "狀態"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:103
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:104
 msgid "Style Advisor"
 msgstr "帳戶資訊"
 
@@ -1099,7 +1088,7 @@ msgstr "訂閱"
 msgid "Subtotal"
 msgstr "小計"
 
-#: ./browser/template/checkout_confirm.pt:98
+#: ./browser/template/invoice_method.pt:16
 #: ./interfaces.py:503
 msgid "Tax ID"
 msgstr "統一編號"
@@ -1120,10 +1109,6 @@ msgstr "本文發表時間:"
 #: ./interfaces.py:208
 msgid "Title"
 msgstr "標頭"
-
-#: ./browser/overrides/plone.app.layout.viewlets.sections.pt:129
-msgid "To see all"
-msgstr "閱讀全部"
 
 #: ./browser/template/client_back_url.pt:64
 #: ./browser/template/order_view.pt:65
@@ -1170,7 +1155,7 @@ msgstr "展開全部"
 msgid "View Cart"
 msgstr "查看購物車"
 
-#: ./browser/template/cover_view.pt:37
+#: ./browser/template/cover_view.pt:39
 msgid "View More"
 msgstr "點看更多"
 
@@ -1183,11 +1168,11 @@ msgstr "查看訂單"
 msgid "Website"
 msgstr "網站"
 
-#: ./browser/template/cover_view.pt:307
+#: ./browser/template/cover_view.pt:253
 msgid "Website homepage"
 msgstr "網站首頁"
 
-#: ./browser/template/checkout_confirm.pt:88
+#: ./browser/template/shipping_method.pt:21
 msgid "You can fill below fields to select shipping to door, or select C2C shipping later. (if you want to using C2C, please ignore below fields.)"
 msgstr "若您選擇寄送方式，請填寫以下資料，或者您也可以稍後選擇便利商店取貨服務(若您要選擇便利商店取貨服務，請忽略以下地址欄位)。"
 
@@ -1195,7 +1180,7 @@ msgstr "若您選擇寄送方式，請填寫以下資料，或者您也可以稍
 msgid "You can use a maximum bonus points."
 msgstr "您可以使用的最大紅利點數"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:105
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:106
 msgid "Your Account"
 msgstr "我的帳戶"
 
@@ -1223,7 +1208,7 @@ msgstr "顯示品牌館"
 msgid "category_view"
 msgstr "顯示主題館"
 
-#: ./event/importProducts.py:122
+#: ./event/importProducts.py:121
 msgid "file name must be same as provider id and extension is zip."
 msgstr "檔案名稱必須與供應商 id 相同，且副檔名必須為 zip。"
 
@@ -1264,7 +1249,7 @@ msgstr "已付款"
 msgid "point(s)"
 msgstr "點"
 
-#: ./browser/template/cover_view.pt:209
+#: ./browser/template/cover_view.pt:158
 msgid "recommend"
 msgstr "嚴選商品"
 

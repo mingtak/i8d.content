@@ -76,7 +76,7 @@
         <p>I-Body, Care our body.</p>
 
         <div tal:define="portal context/@@portal_get">
-          <a tal:attributes="href portal/absolute_url" title="本站採用歐付寶第三方支付機制">
+          <a href="https://www.allpay.com.tw" target="_blank" title="本站採用歐付寶第三方支付機制">
             <img tal:attributes="src string:${portal/absolute_url}/resource/images/all_pay_logo123.png/@@images/image/tile" alt="本站採用歐付寶" />
           </a>
         </div>

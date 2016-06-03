@@ -1,0 +1,42 @@
+<?python
+from plone import api
+isAnonymous = api.user.is_anonymous()
+if not isAnonymous:
+    roles = api.user.get_roles()
+else:
+    roles = []
+?>
+
+<tal:statusmsg tal:define="messages view/messages"
+    tal:repeat="message messages" tal:condition="python:not isAnonymous and set(roles) & set(['Manager', 'Site Administrator'])">
+
+    <div tal:define="mtype message/type | nothing;"
+        tal:attributes="class string:portalMessage ${mtype};">
+        <strong
+            i18n:translate="" tal:content="python:mtype.capitalize()">Info</strong>
+        <span class="content"
+            tal:replace="message/message | nothing" i18n:translate="">
+            The status message.
+        </span>
+    </div>
+
+</tal:statusmsg>
+
+
+<tal:statusmsg tal:define="messages view/messages"
+    tal:repeat="message messages" tal:condition="python:not (set(roles) & set(['Manager', 'Site Administrator']))">
+
+<section class="container">
+    <h4 tal:define="mtype message/type | nothing;"
+        tal:attributes="class string:portalMessage ${mtype};" style="background-color:#CCC">
+        <strong i18n:domain="plone"
+            i18n:translate="" tal:content="python:'%s: ' % mtype.capitalize()">Info</strong>
+        <span class="content" style="color:#000"
+            tal:content="message/message | nothing" i18n:translate="">
+            The status message.
+        </span>
+    </h4>
+</section>
+
+</tal:statusmsg>
+

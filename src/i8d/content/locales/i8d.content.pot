@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-01 03:21+0000\n"
+"POT-Creation-Date: 2016-06-03 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,7 +21,7 @@ msgstr ""
 msgid ">How to buy"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:118
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:133
 msgid "About Us"
 msgstr ""
 
@@ -342,10 +342,6 @@ msgstr ""
 msgid "FAQ"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:121
-msgid "FAQs"
-msgstr ""
-
 #: ./browser/template/cart_state.pt:64
 msgid "Fast Checkout"
 msgstr ""
@@ -417,7 +413,7 @@ msgstr ""
 msgid "In Stock?"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:107
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:113
 msgid "Information"
 msgstr ""
 
@@ -655,7 +651,7 @@ msgstr ""
 msgid "Order state."
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:110
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:121
 msgid "Orders History"
 msgstr ""
 
@@ -711,6 +707,10 @@ msgstr ""
 msgid "Please fill cell phone number, ex: 0912345678"
 msgstr ""
 
+#: ./browser/bill.py:135
+msgid "Please fill full address information"
+msgstr ""
+
 #: ./browser/template/checkout_confirm.pt:61
 msgid "Please fill phone number include zip code, ex: 0223456789"
 msgstr ""
@@ -745,7 +745,7 @@ msgstr ""
 msgid "Private"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:122
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:138
 msgid "Private Policy"
 msgstr ""
 
@@ -1027,6 +1027,10 @@ msgstr ""
 msgid "ServerReplyURL, for allPay's logistics"
 msgstr ""
 
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:135
+msgid "Service Explain"
+msgstr ""
+
 #: ./browser/coverSetting.py:13
 msgid "Service Explanation"
 msgstr ""
@@ -1051,10 +1055,6 @@ msgstr ""
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:35
 msgid "Sign up for our newsletter"
-msgstr ""
-
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:119
-msgid "Site Map"
 msgstr ""
 
 #: ./browser/template/brand_view.pt:57
@@ -1183,7 +1183,7 @@ msgstr ""
 msgid "You can use a maximum bonus points."
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:106
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:107
 msgid "Your Account"
 msgstr ""
 

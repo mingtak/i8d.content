@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-01 03:21+0000\n"
+"POT-Creation-Date: 2016-06-03 06:07+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 msgid ">How to buy"
 msgstr "如何購買"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:118
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:133
 msgid "About Us"
 msgstr "關於艾巴廸"
 
@@ -339,10 +339,6 @@ msgstr "專家圖檔。"
 msgid "FAQ"
 msgstr "問與答"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:121
-msgid "FAQs"
-msgstr "本站相關問答"
-
 #: ./browser/template/cart_state.pt:64
 msgid "Fast Checkout"
 msgstr "快速結帳"
@@ -414,7 +410,7 @@ msgstr "有現貨"
 msgid "In Stock?"
 msgstr "庫存狀況？"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:107
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:113
 msgid "Information"
 msgstr "相關資訊"
 
@@ -652,7 +648,7 @@ msgstr "訂單總計"
 msgid "Order state."
 msgstr "訂單狀態"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:110
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:121
 msgid "Orders History"
 msgstr "歷史訂單"
 
@@ -708,6 +704,10 @@ msgstr "取貨地點"
 msgid "Please fill cell phone number, ex: 0912345678"
 msgstr "請填寫手機號碼，如: 0912345678"
 
+#: ./browser/bill.py:135
+msgid "Please fill full address information"
+msgstr "請填寫完整地址資訊"
+
 #: ./browser/template/checkout_confirm.pt:61
 msgid "Please fill phone number include zip code, ex: 0223456789"
 msgstr "請填寫室內電話號碼，如: 0223456789"
@@ -742,7 +742,7 @@ msgstr "價格"
 msgid "Private"
 msgstr "隱私權政策"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:122
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:138
 msgid "Private Policy"
 msgstr "隱私權政策"
 
@@ -1024,6 +1024,10 @@ msgstr "伺服器回傳網址，物流地圖用"
 msgid "ServerReplyURL, for allPay's logistics"
 msgstr "伺服器回傳網址，歐付寶物流用"
 
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:135
+msgid "Service Explain"
+msgstr "服務條款"
+
 #: ./browser/coverSetting.py:13
 msgid "Service Explanation"
 msgstr "服務說明"
@@ -1049,10 +1053,6 @@ msgstr "知文描述，顯示於首頁"
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:35
 msgid "Sign up for our newsletter"
 msgstr "訂閱電子報"
-
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:119
-msgid "Site Map"
-msgstr "網站地圖"
 
 #: ./browser/template/brand_view.pt:57
 #: ./browser/template/category_view.pt:57
@@ -1180,7 +1180,7 @@ msgstr "若您選擇寄送方式，請填寫以下資料，或者您也可以稍
 msgid "You can use a maximum bonus points."
 msgstr "您可以使用的最大紅利點數"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:106
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:107
 msgid "Your Account"
 msgstr "我的帳戶"
 

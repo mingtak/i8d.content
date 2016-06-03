@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -* 
+from i8d.content import _
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from zope.component import getMultiAdapter
@@ -129,6 +130,12 @@ class Checkout(BrowserView):
 
         portal = api.portal.get()
 
+
+        if request.form.get('LogisticsType') == 'home' and not request.form.get('address'):
+            api.portal.show_message(message=_(u'Please fill full address information'), request=request, type='error')
+            response.redirect('%s/@@checkout_confirm' % portal.absolute_url())
+            return
+
         if api.user.is_anonymous():
             profile = None
         else:
@@ -142,6 +149,8 @@ class Checkout(BrowserView):
         productUIDs = {}
         shippingFee = 0
         discount = 0
+        # specialDiscount , 滿3000折520
+        specialDiscount = 0
 
         for item in brain:
             qty = int(request.cookies.get(item.UID, 1))
@@ -154,6 +163,10 @@ class Checkout(BrowserView):
             if not api.user.is_anonymous():
                 discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
 
+        # 計算是否滿3000，是就折520
+        if totalAmount >= 3000:
+            specialDiscount = 520
+
         totalAmount += shippingFee
 
         if profile:
@@ -162,11 +175,31 @@ class Checkout(BrowserView):
             if discount > profile.bonus:
                 discount = profile.bonus
             totalAmount -= discount
-            itemName += 'shipping Fee: %s' % (shippingFee)
-            itemDescription += 'shipping Fee: %s' % (shippingFee)
-        else:
+
+            # 折抵 Special Discount
+            totalAmount -= specialDiscount
+
             itemName += 'shipping Fee: %s, discount: %s' % (shippingFee, discount)
             itemDescription += 'shipping Fee: %s, discount: %s' % (shippingFee, discount)
+
+
+            # Special Discount資訊
+            if specialDiscount > 0:
+                itemName += ', Special Discount: %s' % (specialDiscount)
+                itemDescription += ', Special Discount: %s' % (specialDiscount)
+        else:
+            itemName += 'shipping Fee: %s' % (shippingFee)
+            itemDescription += 'shipping Fee: %s' % (shippingFee)
+
+
+            # 折抵 Special Discount
+            totalAmount -= specialDiscount
+            # Special Discount資訊
+            if specialDiscount > 0:
+                itemName += ', Special Discount: %s' % (specialDiscount)
+                itemDescription += ', Special Discount: %s' % (specialDiscount)
+
+
 
         merchantTradeNo = '%s%s' % (DateTime().strftime('%Y%m%d%H%M%S'), random.randint(10000,99999))
 

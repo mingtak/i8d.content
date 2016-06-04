@@ -61,6 +61,7 @@ class IBrand(Interface):
 
 class IProduct(Interface):
     """ 產品 """
+    dexteritytextindexer.searchable('title')
     title = schema.TextLine(
         title=_(u"Product Name"),
         required=True,

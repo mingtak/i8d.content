@@ -20,10 +20,12 @@
 
     <div class="main container">
       <div class="row">
-
         <div class="col-main col-sm-9 col-sm-push-3">
-          <div class="category-title">
-            <h1 tal:content="context/Title">Tilte</h1>
+          <div class="category-title" tal:switch="template/getId">
+            <h1 tal:case="string:search_result.pt"
+                i18n:translate="">Search Result(s)</h1>
+            <h1 tal:case="default"
+                tal:content="context/Title">Tilte</h1>
           </div>
 
           <div class="category-products">
@@ -88,12 +90,29 @@
                                     </tal:img>
                                   </a>
                                 </div>
-                                <div class="actions-links">
-                                  <span class="add-to-links">
-                                    <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Detail</span></a>
-                                    <a title="Add to Cart" class="link-wishlist" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Add to Cart</span></a>
-                                    <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
-                                  </span> </div>
+
+                <!-- 行動連結 -->
+                <div class="actions-links"><span class="add-to-links">
+                  <tal:img switch="python:bool(item.getObject().image_1)">
+                    <a tal:case="True" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                         tal:attributes="href string:${item/getURL}/@@images/image_1/colorbox.png">
+                      <span i18n:translate="">Detail</span>
+                    </a>
+                    <a tal:case="default" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                         tal:attributes="href string:/resource/images/nopicture.png/@@images/image/colorbox.png">
+                      <span i18n:translate="">Detail</span>
+                    </a>
+                  </tal:img>
+                  <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
+                     tal:attributes="data-uid item/UID; data-update string:add" ><span i18n:translate="">Add to Cart</span></a>
+                  <a title="Search Related" class="link-compare" i18n:attributes="title"
+                     tal:define="key_string python:'key:list=%s' % item.getObject().brand"
+                     tal:attributes="href string:/search_result?${key_string}"><span i18n:translate="">Search Related</span></a></span>
+                </div>
+                <!-- 行動連結end -->
+
+
+
                                 <div class="info">
                                   <div class="info-inner">
                                     <div class="item-title">
@@ -112,7 +131,8 @@
                                   </div>
                                   <!--info-inner-->
                                   <div class="actions">
-                                    <button type="button" title="Add to Cart" class="button btn-cart"><span i18n:translate="">Add to Cart</span></button>
+                                    <button type="button" title="Add to Cart" class="button btn-cart cart_add" i18n:attributes="title"
+                                      tal:attributes="data-uid item/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></button>
                                   </div>
                                   <!--actions-->
                                   <div class="clearfix"> </div>
@@ -126,8 +146,8 @@
 
 
         <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9"
-               tal:switch="context_state/view_template_id" >
-            <tal:brand case="string:category_view">
+               tal:switch="template/getId" >
+            <tal:brand case="string:category_view.pt">
               <metal:macro use-macro="context/@@i8d_macro/macros/aside_category" />
               <metal:macro use-macro="context/@@i8d_macro/macros/aside_brand" />
             </tal:brand>

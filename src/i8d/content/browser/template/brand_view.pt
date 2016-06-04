@@ -23,7 +23,6 @@ else:
     manageBrand = 'Manager' in roles
 ?>
 
-
 <tal:check_roles condition="manageBrand">
   <p><strong>品牌別名：</strong><span tal:replace="context/nickname"/></p>
   <img tal:replace="structure context/@@images/image/mini | nothing" />
@@ -36,161 +35,15 @@ else:
   <section class="main-container col2-left-layout"
            tal:define="sortBy python:getattr(request, 'sortBy', 'ProductName');
                        sortBy python:'sortable_title' if sortBy == 'ProductName' else 'salePrice'">
-    <div class="category-description std container">
-      <div class="category-image">
-        <img tal:attributes="src string:${context/absolute_url}/@@images/bannerImage/banner;
-                             alt portal/Title; title portal/Title">
-      </div>
-    </div>
-    <div class="main container">
-      <div class="row">
+    <tal:brain define="catalog python:context.portal_catalog;
+                       brain python:catalog({'brand':context.nickname.encode('utf-8').split(','),
+                                             'Type':'Product'}, sort_on=sortBy)">
 
+      <metal:macro use-macro="context/@@i8d_macro/macros/productList" />
 
-        <div class="col-main col-sm-9 col-sm-push-3">
-          <div class="category-title">
-            <h1 tal:content="context/Title">Tilte</h1>
-          </div>
-
-          <div class="category-products">
-            <div class="toolbar">
-              <div id="sort-by">
-                <label class="left" i18n:translate="">Sort By: </label>
-                <ul>
-                  <li><span tal:replace="python:getattr(request, 'sortBy', 'ProductName')" i18n:translate=""/><span class="right-arrow"></span>
-                    <ul>
-                      <li><a tal:attributes="href string:${context/absolute_url}?sortBy=ProductName" i18n:translate="">ProductName</a></li>
-                      <li><a tal:attributes="href string:${context/absolute_url}?sortBy=Price" i18n:translate="">Price</a></li>
-                    </ul>
-                  </li>
-                </ul>
-<!--                <a class="button-asc left" href="#" title="Set Descending Direction"><span class="glyphicon glyphicon-arrow-up"></span></a> -->
-              </div>
-
-              <div class="pager">
-<!--
-                <div id="limiter">
-                  <label>View: </label>
-                  <ul>
-                    <li><a href="#">15<span class="right-arrow"></span></a>
-                      <ul>
-                        <li><a href="#">20</a></li>
-                        <li><a href="#">30</a></li>
-                        <li><a href="#">35</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
--->
-                <div class="pages">
-                  <label>Page:</label>
-                  <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-
-
-            <ul class="products-grid">
-
-  <tal:brain define="catalog python:context.portal_catalog;
-                     brain python:catalog({'brand':context.nickname.encode('utf-8').split(','),
-                                           'Type':'Product'}, sort_on=sortBy)">
-    <tal:repeat repeat="item brain">
-              <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-12">
-                              <div class="col-item">
-                                <div class="product-image-area">
-                                  <a class="product-image" tal:attributes="title item/Title;
-                                                                           href item/getURL">
-                                    <tal:img switch="item/hasImage1">
-                                      <img tal:case="True" tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
-                                                           alt item/Title" class="img-responsive" style="max-height:200px; min-height:200px"/>
-                                      <img tal:case="default" tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview;
-                                                              alt item/Title" class="img-responsive" style="max-height:200px; min-height:200px"/>
-                                    </tal:img>
-                                  </a>
-                                </div>
-                                <div class="actions-links">
-                                  <span class="add-to-links">
-                                    <a title="Detail" class="magik-btn-quickview" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Detail</span></a>
-                                    <a title="Add to Cart" class="link-wishlist" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Add to Cart</span></a>
-                                    <a title="Search Related" class="link-compare" i18n:attributes="title" tal:attributes="href item/getURL"><span i18n:translate="">Search Related</span></a>
-                                  </span> </div>
-                                <div class="info">
-                                  <div class="info-inner">
-                                    <div class="item-title">
-                                      <a tal:attributes="href item/getURL; title item/Title" tal:content="item/Title"> Sample Product </a>
-                                    </div>
-                                    <!--item-title-->
-                                    <div class="item-content">
-                                      <div class="price-box">
-                                        <p class="special-price"> <span class="price" tal:content="string:$ ${item/salePrice}"> $45.00 </span> </p>
-                                        <p tal:condition="python:item.listPrice > item.salePrice" class="old-price">
-                                          <span class="price-sep">-</span> <span class="price" tal:content="string:$ ${item/listPrice}"> $50.00 </span>
-                                        </p>
-                                      </div>
-                                    </div>
-                                    <!--item-content--> 
-                                  </div>
-                                  <!--info-inner-->
-                                  <div class="actions">
-                                    <button type="button" title="Add to Cart" class="button btn-cart"><span i18n:translate="">Add to Cart</span></button>
-                                  </div>
-                                  <!--actions-->
-                                  <div class="clearfix"> </div>
-                                </div>
-                              </div>
-              </li>
-    </tal:repeat>
-  </tal:brain>
-            </ul>
-          </div>
-        </div>
-
-
-        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
-          <div class="side-nav-categories">
-            <div class="block-title" i18n:translate=""> All Brands </div>
-            <div class="box-content box-category">
-              <ul id="magicat" tal:define="brands python:portal['Brand'].getChildNodes()">
-                <li class="level0- level0" tal:repeat="item brands">
-                  <span class="magicat-cat">
-                    <a tal:attributes="href item/absolute_url; title item/title">
-                      <img tal:attributes="src string:${item/absolute_url}/@@images/image/icon; alt item/title"/>
-                      <span tal:content="item/title" style="margin-left:15px;">Brand</span>
-                    </a>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="side-nav-categories">
-            <div class="block-title" i18n:translate=""> All Category </div>
-            <div class="box-content box-category">
-              <ul id="magicat" tal:define="brands python:portal['category'].getChildNodes()">
-                <li class="level0- level0" tal:repeat="item brands">
-                  <span class="magicat-cat">
-                    <a tal:attributes="href item/absolute_url; title item/title">
-                      <img tal:attributes="src string:${item/absolute_url}/@@images/image/icon; alt item/title"/>
-                      <span tal:content="item/title" style="margin-left:15px;">Brand</span>
-                    </a>
-                  </span>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-        </aside>
-      </div>
-    </div>
+    </tal:brain>
   </section>
-  <!-- End Two columns content -->
+
 </tal:check_roles>
 
 </metal:content-core>

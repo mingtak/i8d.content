@@ -9,17 +9,17 @@
 
   <metal:row define-macro="productList">
 
-
-
-    <div class="category-description std container">
+    <!-- Banner -->
+    <div class="category-description std container"
+         tal:condition="python:hasattr(context, 'bannerImage')">
       <div class="category-image">
         <img tal:attributes="src string:${context/absolute_url}/@@images/bannerImage/banner;
                              alt portal/Title; title portal/Title">
       </div>
     </div>
+
     <div class="main container">
       <div class="row">
-
 
         <div class="col-main col-sm-9 col-sm-push-3">
           <div class="category-title">
@@ -125,7 +125,25 @@
         </div>
 
 
-        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
+        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9"
+               tal:switch="context_state/view_template_id" >
+            <tal:brand case="string:category_view">
+              <metal:macro use-macro="context/@@i8d_macro/macros/aside_category" />
+              <metal:macro use-macro="context/@@i8d_macro/macros/aside_brand" />
+            </tal:brand>
+            <tal:brand case="default">
+              <metal:macro use-macro="context/@@i8d_macro/macros/aside_brand" />
+              <metal:macro use-macro="context/@@i8d_macro/macros/aside_category" />
+            </tal:brand>
+        </aside>
+      </div>
+    </div>
+  <!-- End Two columns content -->
+  </metal:row>
+
+
+
+  <metal:row define-macro="aside_brand">
           <div class="side-nav-categories">
             <div class="block-title" i18n:translate=""> All Brands </div>
             <div class="box-content box-category">
@@ -141,6 +159,8 @@
               </ul>
             </div>
           </div>
+  </metal:row>
+  <metal:row define-macro="aside_category">
           <div class="side-nav-categories">
             <div class="block-title" i18n:translate=""> All Category </div>
             <div class="box-content box-category">
@@ -156,29 +176,7 @@
               </ul>
             </div>
           </div>
-
-        </aside>
-      </div>
-    </div>
-
-
-  <!-- End Two columns content -->
-
-
-
-
-
-
-
-
   </metal:row>
-
-
-
-
-
-
-
 
 
 

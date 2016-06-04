@@ -40,7 +40,7 @@ if not canSee:
         <div class="col-lg-6 col-sm-5 col-md-6 col-xs-12">
           <!-- Search-col -->
           <div class="search-box">
-            <form action="/@@search_result" method="POST" id="search_mini_form" name="Categories">
+            <form action="/@@search_result" method="GET" id="search_mini_form" name="Categories">
 <!--              <select name="category_id" class="cate-dropdown hidden-xs">
                 <option value="0">All Categories</option>
                 <option value="36">Camera</option>

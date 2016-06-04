@@ -9,6 +9,9 @@
 
   <metal:row define-macro="productList">
 
+    <tal:para define="pageItems python:3;
+              s python:getattr(request, 's', 0)">
+
     <!-- Banner -->
     <div class="category-description std container"
          tal:condition="python:hasattr(context, 'bannerImage')">
@@ -21,6 +24,8 @@
     <div class="main container">
       <div class="row">
         <div class="col-main col-sm-9 col-sm-push-3">
+
+          <!-- Title, 資料夾名稱或搜尋結果 -->
           <div class="category-title" tal:switch="template/getId">
             <h1 tal:case="string:search_result.pt"
                 i18n:translate="">Search Result(s)</h1>
@@ -58,25 +63,72 @@
                   </ul>
                 </div>
 -->
-                <div class="pages">
-                  <label>Page:</label>
+
+
+
+
+
+                <div class="pages"
+                     tal:condition="python:len(brain)>pageItems">
+                  <label>頁數:</label>
                   <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
+
+
+
+<!-- 上一頁 -->
+                    <li tal:condition="python:s > 0">
+                      <a tal:attributes="href python:'%s?key=%s&s:int=%s&t=%s' %
+                         (request.getURL(), request.form.get('key'), (0 if s-pageItems<0 else s-pageItems), request.get('t'))">&laquo;</a>
+                    </li>
+
+
+
+
+<!-- 往前頁數-->
+                    <li tal:repeat="pagenumber python:range(s/pageItems)">
+                      <a tal:content="python:pagenumber + 1"
+                         tal:attributes="href python:'%s?key=%s&s:int=%s' %
+                         (request.getURL(), request.form.get('key'), (pagenumber*pageItems))">1</a>
+                    </li>
+
+
+    <!-- Current page -->
+
+                    <li class="active"
+                        tal:condition="python:s>=0">
+                      <a href="#" tal:content="python:s/pageItems + 1">3</a>
+                    </li>
+
+
+<!-- 往後頁數 -->
+    <tal:check condition="python:(len(brain)/pageItems) > (s/pageItems +1)">
+                    <li tal:repeat="pagenumber python:range((s/pageItems +2), 1+len(brain)/pageItems)">
+                      <a tal:content="pagenumber"
+                         tal:attributes="href python:'%s?key=%s&s:int=%s' %
+                         (request.getURL(), request.form.get('key'), pagenumber*pageItems)"/>
+                    </li>
+    </tal:check>
+
+
+
+    <!-- Link to last -->
+                    <li tal:condition="python:s+pageItems<len(brain)">
+                      <a tal:attributes="href python:'%s?key=%s&s:int=%s&t=%s' %
+                         (request.getURL(), request.form.get('key'), s+pageItems, request.get('t'))">&raquo;</a>
+                    </li>
+
+
+
                   </ul>
                 </div>
+
               </div>
             </div>
 
 
             <ul class="products-grid">
 
-    <tal:repeat repeat="item brain">
+    <tal:repeat repeat="item python:brain[s:s+pageItems]">
               <li class="item col-lg-4 col-md-3 col-sm-4 col-xs-12">
                               <div class="col-item">
                                 <div class="product-image-area">
@@ -159,6 +211,8 @@
       </div>
     </div>
   <!-- End Two columns content -->
+
+    </tal:para>
   </metal:row>
 
 

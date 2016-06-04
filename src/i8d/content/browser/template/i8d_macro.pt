@@ -9,7 +9,7 @@
 
   <metal:row define-macro="productList">
 
-    <tal:para define="pageItems python:3;
+    <tal:para define="pageItems python:6;
               s python:getattr(request, 's', 0)">
 
     <!-- Banner -->

@@ -109,6 +109,11 @@ class I8dSitemap(BrowserView):
     """
 
 
+class I8dMacro(BrowserView):
+    """ i8d macro
+    """
+
+
 class TestView(BrowserView):
     """ """
 

@@ -9,4 +9,5 @@
   <object name="Provider" meta_type="Dexterity FTI"/>
   <object name="Order" meta_type="Dexterity FTI"/>
   <object name="Brand" meta_type="Dexterity FTI"/>
+  <object name="Subscribe" meta_type="Dexterity FTI"/>
 </object>

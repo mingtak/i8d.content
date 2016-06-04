@@ -30,21 +30,14 @@
           <div class="col-xs-12 col-sm-6 col-md-7">
             <div class="block-subscribe">
               <div class="newsletter">
-                <form id="newsletter_form">
+                <form id="newsletter_form" action="/@@subscribe" method="POST">
                   <h4 i18n:translate="">newsletter</h4>
                   <input i18n:attributes="placeholder; title"
-                         type="text" placeholder="Enter your email address"
+                         type="email" placeholder="Enter your email address"
                          class="input-text required-entry validate-email"
-                         title="Sign up for our newsletter" id="newsletter1" name="email">
+                         title="Sign up for our newsletter" id="newsletter1" name="email" required>
                   <button class="subscribe" title="Subscribe" type="submit"><span i18n:translate="">Subscribe</span></button>
                 </form>
-<!-- 驗證電子郵件 -->
-<script type="text/javascript">
- var frmvalidator = new Validator("newsletter_form");
- frmvalidator.addValidation("newsletter1","req","請輸入您的電子郵件");
- frmvalidator.addValidation("newsletter1","email","請輸入有效的電子郵件");
-</script>
-
               </div>
             </div>
           </div>

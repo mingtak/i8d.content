@@ -141,6 +141,11 @@ class ICoverSetting(Form.Schema):
         required=False,
     )
 
+    googleSecret = schema.TextLine(
+        title=_(u"Google reCAPTCHA Secret"),
+        required=False,
+    )
+
 
 class CoverSettingControlPanelForm(RegistryEditForm):
     form.extends(RegistryEditForm)

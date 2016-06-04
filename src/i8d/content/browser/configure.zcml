@@ -28,6 +28,13 @@
       />
 
   <browser:page
+      name="subscribe"
+      for="*"
+      class=".subscribe.Subscribe"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="shipping_method"
       for="*"
       class=".views.ShippingMethod"

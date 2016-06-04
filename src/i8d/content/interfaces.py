@@ -32,6 +32,15 @@ MAX_USED_BONUS_RATE = 0.15
 DEFAULT_USED_BONUS_RATE = 0.05
 
 
+class ISubscribe(Interface):
+    """ 電子報訂閱清單 """
+    subscribeList = schema.List(
+        title=_(u"Subscribe List"),
+        value_type=schema.TextLine(title=_(u'Subscribe'), required=False,),
+        required=False,
+    )
+
+
 class IBrand(Interface):
     """ 品牌 & 主題 """
     title = schema.TextLine(

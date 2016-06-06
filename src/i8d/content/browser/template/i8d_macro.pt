@@ -244,18 +244,14 @@
     <h4 i18n:translate="">Address</h4>
     <p i18n:translate="">You can fill below fields to select shipping to door, or select C2C shipping later.
                          (if you want to using C2C, please ignore below fields.)</p>
-
-
-<p>
-  <select name="shipping_address" class="shipping_address">
-    <option value="address1" label="Address 1" selected i18n:attributes="label"></option>
-    <option value="address2" label="Address 2" i18n:attributes="label"></option>
-    <option value="manually" label="Manually" i18n:attributes="label"></option>
-  </select>
-</p>
-
+    <p tal:condition="not:context/@@user_is_anonymous">
+      <select name="shipping_address" class="shipping_address">
+        <option value="address1" label="Address 1" selected i18n:attributes="label"></option>
+        <option value="address2" label="Address 2" i18n:attributes="label"></option>
+         <option value="manually" label="Manually" i18n:attributes="label"></option>
+      </select>
+    </p>
     <metal:macro use-macro="context/@@i8d_macro/macros/address" />
-
 </metal:row>
 
 

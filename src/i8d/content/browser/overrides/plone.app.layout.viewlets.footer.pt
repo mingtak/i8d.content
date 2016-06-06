@@ -28,18 +28,7 @@
       <div class="container">
         <div class="row">
           <div class="col-xs-12 col-sm-6 col-md-7">
-            <div class="block-subscribe">
-              <div class="newsletter">
-                <form id="newsletter_form" action="/@@subscribe" method="POST">
-                  <h4 i18n:translate="">newsletter</h4>
-                  <input i18n:attributes="placeholder; title"
-                         type="email" placeholder="Enter your email address"
-                         class="input-text required-entry validate-email"
-                         title="Sign up for our newsletter" id="newsletter1" name="email" required>
-                  <button class="subscribe" title="Subscribe" type="submit"><span i18n:translate="">Subscribe</span></button>
-                </form>
-              </div>
-            </div>
+            <metal:macro use-macro="context/@@i8d_macro/macros/subscribe" />
           </div>
           <div class="col-xs-12 col-sm-6 col-md-5">
             <div class="social">

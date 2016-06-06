@@ -13,8 +13,24 @@
                     tal:define="toc context/table_of_contents|nothing;">
 
 
-subscribe
+<script src='https://www.google.com/recaptcha/api.js?hl=zh-TW'></script>
 
+<section class="content-wrapper">
+    <div class="container">
+          <div class="row">
+            <form method='POST' action='/@@subscribe'>
+              <div class="col-lg-4 col-sm-4 col-md-4">
+              </div>
+              <div class="col-lg-8 col-sm-8 col-md-8">
+                <h3 class="pull-left">舉手之勞，確定您不是機器人!</h3>
+                <div class="g-recaptcha" data-sitekey="6LdwwSETAAAAAHcQ5cdYohMPoMNEyt-EZfszUqCA"></div>
+                <input type="email" name="email" tal:attributes="value python:request.form.get('email')" style="display:none">
+                <button class="subscribe" title="Subscribe" type="submit"><span i18n:translate="">Confirm</span></button>
+              </div>
+            </form>
+          </div>
+    </div>
+</section>
 
 </metal:content-core>
 </metal:content-core>

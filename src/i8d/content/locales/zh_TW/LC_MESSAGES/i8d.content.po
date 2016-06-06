@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-06 04:22+0000\n"
+"POT-Creation-Date: 2016-06-06 15:19+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,13 +51,13 @@ msgid "Address"
 msgstr "地址"
 
 #: ./browser/template/account_info.pt:91
-#: ./browser/template/i8d_macro.pt:251
+#: ./browser/template/i8d_macro.pt:249
 #: ./browser/template/my_account.pt:111
 msgid "Address 1"
 msgstr "常用地址 1"
 
 #: ./browser/template/account_info.pt:102
-#: ./browser/template/i8d_macro.pt:252
+#: ./browser/template/i8d_macro.pt:250
 #: ./browser/template/my_account.pt:118
 msgid "Address 2"
 msgstr "常用地址 2"
@@ -243,6 +243,7 @@ msgid "Complete Article:"
 msgstr "完整文章:"
 
 #: ./browser/template/account_info.pt:124
+#: ./browser/template/subscribe.pt:28
 msgid "Confirm"
 msgstr "確認"
 
@@ -547,7 +548,7 @@ msgstr "物流地圖網址"
 msgid "Manage Products"
 msgstr "管理商品"
 
-#: ./browser/template/i8d_macro.pt:253
+#: ./browser/template/i8d_macro.pt:251
 msgid "Manually"
 msgstr "手動填寫(清除)"
 
@@ -734,7 +735,7 @@ msgstr "請填寫市內電話號碼，如: 0223456789"
 msgid "Please listing all nickname that about this brand. For example, Microfost and MS, Separated by commas."
 msgstr "請列出所有這個品牌的所有可能唸法，例如: Microsoft, MS, 微軟...，請以半型逗號分隔."
 
-#: ./browser/template/i8d_macro.pt:270
+#: ./browser/template/i8d_macro.pt:266
 msgid "Please select a city"
 msgstr "請選擇城市"
 
@@ -1079,8 +1080,8 @@ msgid "Style Advisor"
 msgstr "帳戶資訊"
 
 #: ./browser/template/i8d_macro.pt:224
-#: ./browser/template/subscribe.pt:29
 #: ./interfaces.py:39
+#: ./profiles/default/types/Subscribe.xml
 msgid "Subscribe"
 msgstr "訂閱"
 
@@ -1177,6 +1178,10 @@ msgstr "網站"
 #: ./browser/template/cover_view.pt:253
 msgid "Website homepage"
 msgstr "網站首頁"
+
+#: ./browser/subscribe.py:60
+msgid "You are already subscribe, thanks."
+msgstr "您已經完成電子報訂閱，感謝您。"
 
 #: ./browser/template/i8d_macro.pt:245
 msgid "You can fill below fields to select shipping to door, or select C2C shipping later. (if you want to using C2C, please ignore below fields.)"

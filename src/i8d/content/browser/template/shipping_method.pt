@@ -4,30 +4,14 @@
     class="LogisticsType">
 
 
-
 <tal:switch switch="view/request/form/value">
-<tal:case case="string:cvs">
-  <h4>門市取貨，請選擇取貨店別</h4>
-  <input type="radio" name="LogisticsSubType" class="LogisticsSubType" value="UNIMARTC2C" title="7-11" checked/>
-    <img tal:attributes="src string:${context/absolute_url}/++resource++i8d.content/cvs_7_11.png" alt="7-11" title="7-11" style="width:40px"/>
-  <input type="radio" name="LogisticsSubType" class="LogisticsSubType" value="FAMIC2C" title="全家便利商店"/>
-    <img tal:attributes="src string:${context/absolute_url}/++resource++i8d.content/cvs_fami.png" alt="全家便利商店" title="全家便利商店" style="width:40px" />
+  <tal:case case="string:cvs">
+    <metal:macro use-macro="context/@@i8d_macro/macros/cvs" />
+  </tal:case>
 
-  <br/><br/>
-</tal:case>
-
-<tal:case case="string:home">
-    <h4 i18n:translate="">Address</h4>
-    <p i18n:translate="">You can fill below fields to select shipping to door, or select C2C shipping later.
-                         (if you want to using C2C, please ignore below fields.)</p>
-        <select class="city selectcity" name="city" required tal:attributes="data-selected view/profile/addr_city | nothing" title="Please select a city" i18n:attributes="title"></select>
-        <select class="district selectdistrict" name="district" required tal:attributes="data-selected view/profile/addr_district | nothing"></select>
-        <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
-        <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" required
-               tal:attributes="value view/profile/addr_address | nothing" autocomplete="on">
-<br/><br/>
-
-</tal:case>
+  <tal:case case="string:home">
+    <metal:macro use-macro="context/@@i8d_macro/macros/home" />
+  </tal:case>
 </tal:switch>
 
 </div>

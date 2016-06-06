@@ -38,7 +38,6 @@
       name="shipping_method"
       for="*"
       class=".views.ShippingMethod"
-      template="template/shipping_method.pt"
       permission="zope2.View"
       />
 

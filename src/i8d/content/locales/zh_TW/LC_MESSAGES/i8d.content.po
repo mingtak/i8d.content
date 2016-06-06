@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-06 01:46+0000\n"
+"POT-Creation-Date: 2016-06-06 04:22+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,11 +51,13 @@ msgid "Address"
 msgstr "地址"
 
 #: ./browser/template/account_info.pt:91
+#: ./browser/template/i8d_macro.pt:251
 #: ./browser/template/my_account.pt:111
 msgid "Address 1"
 msgstr "常用地址 1"
 
 #: ./browser/template/account_info.pt:102
+#: ./browser/template/i8d_macro.pt:252
 #: ./browser/template/my_account.pt:118
 msgid "Address 2"
 msgstr "常用地址 2"
@@ -545,6 +547,10 @@ msgstr "物流地圖網址"
 msgid "Manage Products"
 msgstr "管理商品"
 
+#: ./browser/template/i8d_macro.pt:253
+msgid "Manually"
+msgstr "手動填寫(清除)"
+
 #: ./interfaces.py:483
 msgid "Mapping to allPay's ItemName"
 msgstr "對映到歐付寶的 ItemName"
@@ -728,7 +734,7 @@ msgstr "請填寫市內電話號碼，如: 0223456789"
 msgid "Please listing all nickname that about this brand. For example, Microfost and MS, Separated by commas."
 msgstr "請列出所有這個品牌的所有可能唸法，例如: Microsoft, MS, 微軟...，請以半型逗號分隔."
 
-#: ./browser/template/i8d_macro.pt:247
+#: ./browser/template/i8d_macro.pt:270
 msgid "Please select a city"
 msgstr "請選擇城市"
 

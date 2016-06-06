@@ -199,11 +199,23 @@ $(function() {
 });
 
 $(function() {
-    $('input.LogisticsType').on('change', function() {
+    $(document).on('change', 'input.LogisticsType', function() {
         var value=this.value;
         $("div.LogisticsType").slideUp(function(){
             $("div.LogisticsType").load('/@@shipping_method?value='+value, function(){
                 $("div.LogisticsType").slideDown();
+                $(this).dk_tw_citySelector('.city', '.district', '.zipcode');
+            });
+        });
+    });
+});
+
+$(function() {
+    $(document).on('change', 'select.shipping_address', function() {
+        var value=this.value;
+        $("div#shipping_method_home_address").slideUp(function(){
+            $("div#shipping_method_home_address").load('/@@shipping_method_home_address?value='+value, function(){
+                $("div#shipping_method_home_address").slideDown();
                 $(this).dk_tw_citySelector('.city', '.district', '.zipcode');
             });
         });

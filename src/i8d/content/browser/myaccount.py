@@ -52,6 +52,7 @@ class AccountInfo(BrowserView):
 
         if request.form.get('name'):
             myProfile.title = request.form.get('name')
+
         myProfile.description = request.form.get('description')
         myProfile.cellPhone = request.form.get('cellphone')
         myProfile.phone = request.form.get('phone')
@@ -59,6 +60,12 @@ class AccountInfo(BrowserView):
         myProfile.addr_district = request.form.get('district')
         myProfile.addr_zip = request.form.get('zipcode')
         myProfile.addr_address = request.form.get('address')
+
+        myProfile.addr2_city = request.form.get('city2')
+        myProfile.addr2_district = request.form.get('district2')
+        myProfile.addr2_zip = request.form.get('zipcode2')
+        myProfile.addr2_address = request.form.get('address2')
+
         myProfile.email = request.form.get('email')
 
         transaction.commit()

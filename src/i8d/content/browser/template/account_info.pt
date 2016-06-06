@@ -43,7 +43,7 @@ from plone import api
                       <tr class="first odd">
                         <td i18n:translate="" class="fieldtitle">Name</td>
                         <td>
-                          <input class="accountinfo input-text" name="name" value="" type="text" autocomplete="off"
+                          <input class="accountinfo input-text" name="name" value="" type="text" autocomplete="on"
                                  tal:attributes="value view/myProfile/title">
                         </td>
                       </tr>
@@ -51,7 +51,7 @@ from plone import api
                       <tr class="even">
                         <td i18n:translate="" class="fieldtitle">Introduction</td>
                         <td>
-                          <input class="accountinfo input-text" name="description" value="" type="text" autocomplete="off"
+                          <input class="accountinfo input-text" name="description" value="" type="text" autocomplete="on"
                                  tal:attributes="value view/myProfile/description">
                         </td>
                       </tr>
@@ -60,7 +60,9 @@ from plone import api
                         <td i18n:translate="" class="fieldtitle">Phone</td>
                         <td>
                           <input class="accountinfo input-text" name="phone" value="" type="text" autocomplete="off"
-                                 placeholder="請只輸入數字，如0223456789"
+                                 placeholder="Please fill phone number include zip code, ex: 0223456789"
+                                 pattern="[0-9, -]{8,12}" title="Please fill phone number include zip code, ex: 0223456789"
+                                 i18n:attributes="placeholder; title"
                                  tal:attributes="value view/myProfile/phone">
                         </td>
                       </tr>
@@ -68,8 +70,10 @@ from plone import api
                       <tr class="even">
                         <td i18n:translate="" class="fieldtitle">Cell Phone</td>
                         <td>
-                          <input class="accountinfo input-text" name="cellphone" value="" type="text" autocomplete="off"
-                                 placeholder="請只輸入數字，如0912345678"
+                          <input class="accountinfo input-text" name="cellphone" value="" type="text" autocomplete="on"
+                                 placeholder="Please fill cell phone number, ex: 0912345678"
+                                 pattern="[0-9, -]{10,12}" title="Please fill cell phone number, ex: 0912345678"
+                                 i18n:attributes="placeholder; title"
                                  tal:attributes="value view/myProfile/cellPhone">
                         </td>
                       </tr>
@@ -77,24 +81,37 @@ from plone import api
                       <tr class="odd">
                         <td i18n:translate="" class="fieldtitle">Email</td>
                         <td>
-                          <input class="accountinfo input-text" name="email" value="" type="text" autocomplete="off"
-                                 placeholder="請輸入您的email地址"
+                          <input class="accountinfo input-text" name="email" value="" type="email" autocomplete="on"
+                                 placeholder="請輸入您的email地址" 
                                  tal:attributes="value view/myProfile/email">
                         </td>
                       </tr>
 
                       <tr class="even">
-                        <td i18n:translate="" class="fieldtitle">Address</td>
+                        <td i18n:translate="" class="fieldtitle">Address 1</td>
                         <td>
                           <select class="city selectcity" name="city" tal:attributes="data-selected view/myProfile/addr_city"></select>
                           <select class="district selectdistrict" name="district" tal:attributes="data-selected view/myProfile/addr_district"></select>
-                          <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" placeholder="郵遞區號" autocomplete="off">
+                          <input class="zipcode fillzip input-text" name="zipcode" value="" type="text" pattern="[0-9, -]{3,3}"
+                                 placeholder="郵遞區號" title="請輸入3碼郵遞區號" autocomplete="on">
                           <input class="address filladdress input-text" name="address" value="" type="text" placeholder="請輸入地址" 
-                                 tal:attributes="value view/myProfile/addr_address" autocomplete="off">
+                                 tal:attributes="value view/myProfile/addr_address" autocomplete="on">
+                        </td>
+                      </tr>
+                      <tr class="odd">
+                        <td i18n:translate="" class="fieldtitle">Address 2</td>
+                        <td>
+                          <select class="city2 selectcity" name="city2" tal:attributes="data-selected view/myProfile/addr2_city"></select>
+                          <select class="district2 selectdistrict" name="district2" tal:attributes="data-selected view/myProfile/addr2_district"></select>
+                          <input class="zipcode2 fillzip input-text" name="zipcode2" value="" type="text" pattern="[0-9, -]{3,3}"
+                                 placeholder="郵遞區號" title="請輸入3碼郵遞區號" autocomplete="on">
+                          <input class="address2 filladdress input-text" name="address2" value="" type="text" placeholder="請輸入地址" 
+                                 tal:attributes="value view/myProfile/addr2_address" autocomplete="on">
                         </td>
                       </tr>
 
-                      <tr class="last odd">
+
+                      <tr class="last event">
                         <td i18n:translate="" class="fieldtitle">Bonus</td>
                         <td>
                           <span tal:replace="view/myProfile/bonus"/> <span i18n:translate="">point(s)</span>
@@ -108,6 +125,8 @@ from plone import api
 </form>
 
 <!-- 驗證格式 -->
+
+<!-- 改採html驗證
 <script type="text/javascript">
  var frmvalidator = new Validator("account_info");
  frmvalidator.addValidation("name", "req", "請輸入您的大名");
@@ -124,11 +143,16 @@ from plone import api
  frmvalidator.addValidation("email", "req", "請輸入email信箱");
  frmvalidator.addValidation("email", "email", "請輸入正確的email格式");
 </script>
+-->
 
 <script src="/++theme++barceloneta/js/dk-tw-citySelector.min.js"></script>
 <script>
   $(function() {
   $('form').dk_tw_citySelector('.city', '.district', '.zipcode');
+  });
+
+  $(function() {
+  $('form').dk_tw_citySelector('.city2', '.district2', '.zipcode2');
   });
 </script>
 

@@ -108,13 +108,20 @@ from plone import api
                         <td tal:content="view/myProfile/email" />
                       </tr>
                       <tr class="even">
-                        <td i18n:translate="" class="fieldtitle">Address</td>
+                        <td i18n:translate="" class="fieldtitle">Address 1</td>
                         <td tal:content="python:'%s %s %s %s' % (view.myProfile.addr_city,
                                                                  view.myProfile.addr_district,
                                                                  view.myProfile.addr_zip,
                                                                  view.myProfile.addr_address)" />
                       </tr>
-                      <tr class="last odd">
+                      <tr class="odd">
+                        <td i18n:translate="" class="fieldtitle">Address 2</td>
+                        <td tal:content="python:'%s %s %s %s' % (view.myProfile.addr2_city,
+                                                                 view.myProfile.addr2_district,
+                                                                 view.myProfile.addr2_zip,
+                                                                 view.myProfile.addr2_address)" />
+                      </tr>
+                      <tr class="last even">
                         <td i18n:translate="" class="fieldtitle">Bonus</td>
                         <td> 
                           <span tal:replace="view/myProfile/bonus"/> <span i18n:translate="">point(s)</span>

@@ -331,6 +331,30 @@ class IProfile(Interface):
         required=False,
     )
 
+    addr2_city = schema.TextLine(
+        title=_(u"City"),
+        description=_(u"City name."),
+        required=False,
+    )
+
+    addr2_district = schema.TextLine(
+        title=_(u"District"),
+        description=_(u"District"),
+        required=False,
+    )
+
+    addr2_zip = schema.TextLine(
+        title=_(u"ZIP Code"),
+        description=_(u"ZIP code"),
+        required=False,
+    )
+
+    addr2_address = schema.TextLine(
+        title=_(u"Address"),
+        description=_(u"Address"),
+        required=False,
+    )
+
     bonus = schema.Int(
         title=_(u"Bonus"),
         description=_(u"Bonus"),

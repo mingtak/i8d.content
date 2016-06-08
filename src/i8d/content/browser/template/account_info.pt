@@ -145,7 +145,7 @@ from plone import api
 </script>
 -->
 
-<script src="/++theme++barceloneta/js/dk-tw-citySelector.min.js"></script>
+<script src="/++theme++barceloneta/js/dk-tw-citySelector.min.js" async></script>
 <script>
   $(function() {
   $('form').dk_tw_citySelector('.city', '.district', '.zipcode');

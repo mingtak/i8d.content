@@ -1,4 +1,4 @@
-<script type="text/javascript" src="//vbtrax.com/javascripts/va.js"></script>
+<script async type="text/javascript" src="//vbtrax.com/javascripts/va.js"></script>
 <script>
   VA.remoteLoad({
     whiteLabel: { id: 8, siteId: 1193, domain: 'vbtrax.com' },

@@ -13,7 +13,7 @@
                     tal:define="toc context/table_of_contents|nothing;">
 
 
-<script src='https://www.google.com/recaptcha/api.js?hl=zh-TW'></script>
+<script src='https://www.google.com/recaptcha/api.js?hl=zh-TW' async></script>
 
 <section class="content-wrapper">
     <div class="container">

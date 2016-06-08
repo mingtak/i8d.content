@@ -116,7 +116,7 @@
 
 
 <!-- affiliates start-->
-<script type="text/javascript" src="//vbtrax.com/javascripts/va.js"></script>
+<script type="text/javascript" src="//vbtrax.com/javascripts/va.js" async></script>
 <script tal:content="view/traceCode">
 </script>
 <!-- affiliates end -->

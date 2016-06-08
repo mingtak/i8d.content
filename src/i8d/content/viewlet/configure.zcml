@@ -4,6 +4,16 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="i8d.content">
 
+
+    <browser:viewlet
+      name="affiliates"
+      for="*"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"
+      template="template/affiliates.pt"
+      class=".viewlet.Affiliates"
+      permission="zope2.View"
+      />
+
     <browser:viewlet
       name="googleAD"
       for="*"

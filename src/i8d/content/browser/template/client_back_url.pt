@@ -13,7 +13,6 @@
                     tal:define="toc context/table_of_contents|nothing;">
 
 
-
 <section class="main-container col1-layout">
   <div class="main container">
     <div class="col-main">
@@ -114,6 +113,15 @@
       </div>
     </div>
   </div>
+
+
+<!-- affiliates start-->
+<script type="text/javascript" src="//vbtrax.com/javascripts/va.js"></script>
+<script tal:content="view/traceCode">
+</script>
+<!-- affiliates end -->
+
+
 
 </section>
 

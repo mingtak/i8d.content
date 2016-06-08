@@ -23,3 +23,6 @@ class ServiceExplanation(base.ViewletBase):
 
 class GoogleAD(base.ViewletBase):
     """  """
+
+class Affiliates(base.ViewletBase):
+    """ """

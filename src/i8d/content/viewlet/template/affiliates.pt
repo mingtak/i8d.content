@@ -1,0 +1,8 @@
+<script type="text/javascript" src="//vbtrax.com/javascripts/va.js"></script>
+<script>
+  VA.remoteLoad({
+    whiteLabel: { id: 8, siteId: 1193, domain: 'vbtrax.com' },
+    locale: "en-US", mkt: true
+  });
+</script>
+

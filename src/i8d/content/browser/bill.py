@@ -75,7 +75,7 @@ class ClientBackUrl(BrowserView):
         # 計算佣金(聯盟行銷, 預設10%)
         self.orderTotal = self.order.getObject().amount
         if self.orderTotal:
-            self.revenue = int(self.orderTotal * 0.1)
+            self.revenue = int(self.orderTotal * 0.10)
         else:
             self.revenue = 0
 

@@ -42,6 +42,13 @@
       />
 
   <browser:page
+      name="id_register"
+      for="*"
+      class=".id_register.IdRegister"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="shipping_method_home_address"
       for="*"
       class=".views.ShippingMethodHomeAddress"

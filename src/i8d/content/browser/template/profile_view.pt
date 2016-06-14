@@ -23,14 +23,17 @@ else:
     manageBrand = 'Manager' in roles
 ?>
 
+<!--
 <tal:check_roles condition="manageBrand">
 <p><strong i18n:translate="">Introduction:</strong></p>
 <div tal:content="structure context/text/raw | nothing" />
 <img tal:replace="structure context/@@images/image/mini|nothing" />
 </tal:check_roles>
+-->
 
-
+<!--
 <tal:check_roles condition="not:manageBrand">
+-->
 
   <div class="main-container col2-right-layout">
     <div class="main container">
@@ -94,9 +97,9 @@ else:
     </div>
   </div>
 
-
+<!--
 </tal:check_roles>
-
+-->
 </metal:content-core>
 </metal:content-core>
 

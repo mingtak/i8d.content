@@ -5,9 +5,7 @@ if not canSee:
     canSee = '++add++' not in econtext['request'].getURL()
 ?>
 
-<tal:check define="canSeeBackend not:context/@@can_see_backend"
-           condition="python:canSeeBackend and canSee"
-           i18n:domain="i8d.content">
+<tal:i18n i18n:domain="i8d.content">
 <!-- Header -->
   <header class="header-container">
     <div class="header-top">
@@ -88,4 +86,4 @@ if not canSee:
   </header>
   <!-- end header -->
 
-</tal:check>
+</tal:i18n>

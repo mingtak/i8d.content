@@ -1,5 +1,4 @@
   <footer class="footer bounceInUp animated"
-          tal:condition="not:context/@@can_see_backend"
           i18n:domain="i8d.content">
     <div class="brand-logo ">
       <div class="container">

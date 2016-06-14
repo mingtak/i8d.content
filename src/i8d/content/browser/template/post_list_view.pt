@@ -30,6 +30,7 @@ else:
 ?>
 
 
+<!--
 <tal:check_roles condition="manageBrand">
   <tal:getChildNodes define="items context/getChildNodes">
     <ul>
@@ -42,10 +43,11 @@ else:
     </ul>
   </tal:getChildNodes>
 </tal:check_roles>
+-->
 
-
+<!--
 <tal:check_roles condition="not:manageBrand">
-
+-->
   <section class="main-container col2-left-layout"
            tal:define="sortBy python:getattr(request, 'sortBy', 'ProductName');
                        sortBy python:'sortable_title' if sortBy == 'ProductName' else 'salePrice'">
@@ -126,7 +128,7 @@ else:
 
   </section>
   <!-- End Two columns content -->
-</tal:check_roles>
+<!-- </tal:check_roles> -->
 
 </metal:content-core>
 </metal:content-core>

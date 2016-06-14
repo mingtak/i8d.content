@@ -23,15 +23,17 @@ else:
     manageBrand = 'Manager' in roles
 ?>
 
+<!--
 <tal:check_roles condition="manageBrand">
   <p><strong>品牌別名：</strong><span tal:replace="context/nickname"/></p>
   <img tal:replace="structure context/@@images/image/mini | nothing" />
   <img tal:replace="structure context/@@images/bannerImage/preview | nothing"/><br/>
 </tal:check_roles>
+-->
 
-
+<!--
 <tal:check_roles condition="not:manageBrand">
-
+-->
   <section class="main-container col2-left-layout"
            tal:define="sortBy python:getattr(request, 'sortBy', 'ProductName');
                        sortBy python:'sortable_title' if sortBy == 'ProductName' else 'salePrice'">
@@ -44,7 +46,7 @@ else:
     </tal:brain>
   </section>
 
-</tal:check_roles>
+<!-- </tal:check_roles> -->
 
 </metal:content-core>
 </metal:content-core>

@@ -14,7 +14,7 @@
 
 
 
-<tal:frontend condition="not:context/@@can_see_backend">
+<!-- <tal:frontend condition="not:context/@@can_see_backend"> -->
  <!-- 首頁 Slider -->
  <div id="magik-slideshow" class="magik-slideshow">
   <div class="container">
@@ -239,7 +239,7 @@
   </section>
   <!-- End Recommend slider --> 
   
-</tal:frontend>
+<!-- </tal:frontend> -->
 
 
 
@@ -250,55 +250,6 @@
 
 <tal:backend condition="context/@@can_see_backend">
 
-<h2 i18n:translate="">Website homepage</h2>
-<article i18n:translate="">
-Description: All show in homepage's objects, listing below,
-want to change item, click edit button in toolbar to select.
-If want to edit object, click object, go to that page to edit.
-</article>
-
-
-<h3 i18n:translate="">Heros</h3>
-<ul>
-  <li tal:repeat="item context/heros">
-    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
-  </li>
-</ul>
-<hr/>
-
-<h3 i18n:translate="">New Product</h3>
-<ul>
-  <li tal:repeat="item context/newProduct">
-    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
-  </li>
-</ul>
-<hr/>
-
-<h3 i18n:translate="">Hot Product</h3>
-<ul>
-  <li tal:repeat="item context/hotProduct">
-    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
-  </li>
-</ul>
-<hr/>
-
-<h3 i18n:translate="">Article</h3>
-<ul>
-  <li tal:repeat="item context/article">
-    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
-  </li>
-</ul>
-<hr/>
-
-<h3 i18n:translate="">Question</h3>
-<ul>
-  <li tal:repeat="item context/question">
-    <a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title" target="_blank" />
-  </li>
-</ul>
-<hr/>
-
-</tal:backend>
 
 </metal:content-core>
 </metal:content-core>

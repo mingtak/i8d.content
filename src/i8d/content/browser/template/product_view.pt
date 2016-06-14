@@ -22,6 +22,7 @@ else:
     manageProduct = 'Manager' in roles
 ?>
 
+<!--
 <tal:check_roles condition="manageProduct">
 <p><strong>產品網址：</strong><a tal:attributes="href context/productUrl" tal:content="context/productUrl" target="_blank"/></p>
 <p><strong>庫存狀況：</strong><span tal:replace="context/inStock"/></p>
@@ -42,9 +43,9 @@ else:
 <img tal:replace="structure context/@@images/image_5/thumb | nothing" />
 
 </tal:check_roles>
+-->
 
-
-<tal:check_roles condition="not:manageProduct">
+<!-- <tal:check_roles condition="not:manageProduct"> -->
   <!-- main-container -->
   <section class="main-container col1-layout">
     <div class="main container">
@@ -454,7 +455,7 @@ else:
   </section>
 
   <!--End main-container --> 
-</tal:check_roles>
+<!-- </tal:check_roles> -->
 
 </metal:content-core>
 </metal:content-core>

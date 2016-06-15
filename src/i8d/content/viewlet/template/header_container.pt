@@ -67,7 +67,7 @@ if not canSee:
     </tal:f>
     <tal:t case="True">
           <div class="signup">      
-            <a title="註冊新帳號" data-pat-plone-modal="{prependContent: .portalMessage}" id="personaltools-join" href="http://i8d.mingtak.com.tw/@@register" class="pat-plone-modal">
+            <a title="註冊新帳號" data-pat-plone-modal="{prependContent: .portalMessage}" id="personaltools-join" href="/@@register" class="pat-plone-modal">
               <img src="/++resource++i8d.content/join_us.png">
             </a>
           </div>

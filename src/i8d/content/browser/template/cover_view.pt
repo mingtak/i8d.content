@@ -14,7 +14,6 @@
 
 
 
-<!-- <tal:frontend condition="not:context/@@can_see_backend"> -->
  <!-- 首頁 Slider -->
  <div id="magik-slideshow" class="magik-slideshow">
   <div class="container">
@@ -238,17 +237,6 @@
     </div>
   </section>
   <!-- End Recommend slider --> 
-  
-<!-- </tal:frontend> -->
-
-
-
-
-
-
-
-
-<tal:backend condition="context/@@can_see_backend">
 
 
 </metal:content-core>

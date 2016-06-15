@@ -66,17 +66,25 @@ if not canSee:
           </div>
     </tal:f>
     <tal:t case="True">
+          <div class="signup">      
+            <a title="註冊新帳號" data-pat-plone-modal="{prependContent: .portalMessage}" id="personaltools-join" href="http://i8d.mingtak.com.tw/@@register" class="pat-plone-modal">
+              <img src="/++resource++i8d.content/join_us.png">
+            </a>
+          </div>
+          <div class="signup">
+            <a title="帳號登入" id="id_login" class="ajax cboxElement" href="/@@id_login"><img src="/++resource++i8d.content/id_login.png"></a>
+          </div>
           <div class="signup">
             <a title="Google登入" href="/@@googleLogin">
-              <img src="https://www.i8d.com.tw/resource/images/googlelogin.png/@@images/image/hello" alt="google登入"/>
+              <img src="/++resource++i8d.content/google_login.png" alt="google登入"/>
             </a>
           </div>
           <div class="signup">
             <a title="臉書登入" href="/@@facebookLogin">
-              <img src="https://www.i8d.com.tw/resource/images/fblogin.png/@@images/image/hello" alt="臉書登入"/>
+              <img src="/++resource++i8d.content/fb_login.png" alt="臉書登入"/>
             </a>
           </div>
-          <span class="or"> 加入會員 </span>
+          <span class="or"> 登入/註冊 </span>
     </tal:t>
 </tal:login>
         </div>

@@ -1,25 +1,19 @@
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:tal="http://xml.zope.org/namespaces/tal"
-      xmlns:metal="http://xml.zope.org/namespaces/metal"
-      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-      metal:use-macro="context/main_template/macros/master"
-      i18n:domain="i8d.content">
-<body>
-<metal:content-core fill-slot="content-core">
-<metal:content-core define-macro="content-core"
-                    tal:define="toc context/table_of_contents|nothing;">
 
-<?python
-from plone import api
-?>
-
-id register
+<script src='https://www.google.com/recaptcha/api.js?hl=zh-TW' async></script>
+<form action="/@@add_new_user" method="post" id="add_new_user">
+    <input type="text" name="name" class="name" title="name" placeholder="Your Name(as login id, must be )" required><br>
+    <input type="email" name="email" class="email" title="email" placeholder="Email" required><br>
+    <input type="password" name="password" class="password" title="password" placeholder="Password" required><br>
+    <div class="g-recaptcha" data-sitekey="6LdwwSETAAAAAHcQ5cdYohMPoMNEyt-EZfszUqCA"></div>
+    <input id="submit" name="submit" value="註冊" type="submit">
+</form>
 
 
+<script>
+$('.ajax').colorbox({
+    onComplete : function() {
+       $(this).colorbox.resize();
+    }
+});
+</script>
 
-
-
-</metal:content-core>
-</metal:content-core>
-</body>
-</html>

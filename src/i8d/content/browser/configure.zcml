@@ -42,11 +42,29 @@
       />
 
   <browser:page
+      name="id_login"
+      for="*"
+      class=".id_register.IdLogin"
+      permission="zope2.View"
+      />
+
+<!--
+  <browser:page
       name="id_register"
       for="*"
       class=".id_register.IdRegister"
       permission="zope2.View"
       />
+-->
+
+<!--
+  <browser:page
+      name="add_new_user"
+      for="*"
+      class=".id_register.AddNewUser"
+      permission="zope2.View"
+      />
+-->
 
   <browser:page
       name="shipping_method_home_address"

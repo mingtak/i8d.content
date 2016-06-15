@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-06 15:19+0000\n"
+"POT-Creation-Date: 2016-06-15 05:18+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,11 +17,11 @@ msgstr ""
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: i8d.content\n"
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:82
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:81
 msgid ">How to buy"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:122
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:121
 msgid "About Us"
 msgstr ""
 
@@ -31,23 +31,27 @@ msgstr ""
 msgid "Account Dashboard"
 msgstr ""
 
+#: ./browser/template/id_login.pt:30
+msgid "Account ID"
+msgstr ""
+
 #: ./browser/template/account_info.pt:27
 #: ./browser/template/my_account.pt:84
 #: ./browser/template/my_order.pt:90
 msgid "Account Information"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:40
+#: ./browser/template/cover_view.pt:39
 #: ./browser/template/i8d_macro.pt:71
-#: ./browser/template/product_view.pt:191
+#: ./browser/template/product_view.pt:192
 msgid "Add to Cart"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:40
+#: ./browser/template/cover_view.pt:39
 msgid "Add to cart"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:86
+#: ./browser/template/client_back_url.pt:85
 #: ./browser/template/i8d_macro.pt:244
 #: ./browser/template/order_view.pt:86
 msgid "Address"
@@ -89,7 +93,6 @@ msgstr ""
 msgid "Answer"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:285
 #: ./interfaces.py:252
 msgid "Article"
 msgstr ""
@@ -161,11 +164,11 @@ msgstr ""
 msgid "Brand or category logo image"
 msgstr ""
 
-#: ./browser/template/product_view.pt:160
+#: ./browser/template/product_view.pt:161
 msgid "Brand:"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:94
+#: ./browser/template/client_back_url.pt:93
 #: ./browser/template/order_view.pt:93
 msgid "C2C"
 msgstr ""
@@ -232,17 +235,12 @@ msgstr ""
 msgid "Collection"
 msgstr ""
 
-#: ./browser/template/product_view.pt:271
+#: ./browser/template/product_view.pt:272
 msgid "Comments"
 msgstr ""
 
 #: ./interfaces.py:543
 msgid "Company Title"
-msgstr ""
-
-#: ./browser/template/post_view.pt:29
-#: ./browser/template/question_view.pt:29
-msgid "Complete Article:"
 msgstr ""
 
 #: ./browser/template/account_info.pt:124
@@ -287,17 +285,13 @@ msgstr ""
 msgid "Description"
 msgstr ""
 
-#: ./browser/template/product_view.pt:157
+#: ./browser/template/product_view.pt:158
 msgid "Description:"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:254
-msgid "Description: All show in homepage's objects, listing below, want to change item, click edit button in toolbar to select. If want to edit object, click object, go to that page to edit."
-msgstr ""
-
-#: ./browser/template/cover_view.pt:182
+#: ./browser/template/cover_view.pt:181
 #: ./browser/template/i8d_macro.pt:62
-#: ./browser/template/product_view.pt:316
+#: ./browser/template/product_view.pt:317
 msgid "Detail"
 msgstr ""
 
@@ -381,17 +375,15 @@ msgstr ""
 msgid "Hero Text"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:261
 #: ./interfaces.py:228
 msgid "Heros"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:277
 #: ./interfaces.py:244
 msgid "Hot Product"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:82
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:81
 #: ./browser/template/account_info.pt:188
 #: ./browser/template/my_account.pt:189
 msgid "How to buy"
@@ -418,7 +410,7 @@ msgstr ""
 msgid "Import product error"
 msgstr ""
 
-#: ./browser/template/product_view.pt:137
+#: ./browser/template/product_view.pt:138
 msgid "In Stock"
 msgstr ""
 
@@ -426,7 +418,7 @@ msgstr ""
 msgid "In Stock?"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:102
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:101
 msgid "Information"
 msgstr ""
 
@@ -441,10 +433,6 @@ msgstr ""
 #: ./browser/template/account_info.pt:52
 #: ./browser/template/my_account.pt:95
 msgid "Introduction"
-msgstr ""
-
-#: ./browser/template/profile_view.pt:27
-msgid "Introduction:"
 msgstr ""
 
 #: ./browser/template/checkout_confirm.pt:93
@@ -479,6 +467,10 @@ msgstr ""
 
 #: ./interfaces.py:117
 msgid "List Price"
+msgstr ""
+
+#: ./browser/template/id_login.pt:40
+msgid "Login"
 msgstr ""
 
 #: ./browser/coverSetting.py:124
@@ -521,7 +513,7 @@ msgstr ""
 msgid "Logistics Map URL"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:84
+#: ./browser/template/client_back_url.pt:83
 #: ./browser/template/order_view.pt:84
 msgid "Logistics Method"
 msgstr ""
@@ -534,7 +526,7 @@ msgstr ""
 msgid "Logistics express create url."
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:79
+#: ./browser/template/client_back_url.pt:78
 #: ./browser/template/order_view.pt:80
 msgid "Logistics info"
 msgstr ""
@@ -579,7 +571,7 @@ msgstr ""
 msgid "Merchant ID, for allPay"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:22
+#: ./browser/template/client_back_url.pt:21
 #: ./browser/template/order_view.pt:22
 msgid "Merchant Trade No"
 msgstr ""
@@ -621,7 +613,6 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:269
 #: ./interfaces.py:236
 msgid "New Product"
 msgstr ""
@@ -668,15 +659,15 @@ msgstr ""
 msgid "Order state."
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:110
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:109
 msgid "Orders History"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:7
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:6
 msgid "Our Brand"
 msgstr ""
 
-#: ./browser/template/product_view.pt:138
+#: ./browser/template/product_view.pt:139
 msgid "Out of Stock"
 msgstr ""
 
@@ -684,12 +675,16 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:84
+#: ./browser/template/client_back_url.pt:83
 #: ./browser/template/order_view.pt:84
 msgid "Parcel post"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:84
+#: ./browser/template/id_login.pt:35
+msgid "Password"
+msgstr ""
+
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:83
 msgid "Payment"
 msgstr ""
 
@@ -715,7 +710,7 @@ msgstr ""
 msgid "Phone Number."
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:96
+#: ./browser/template/client_back_url.pt:95
 #: ./browser/template/order_view.pt:95
 msgid "Pickup Location"
 msgstr ""
@@ -725,13 +720,25 @@ msgstr ""
 msgid "Please fill cell phone number, ex: 0912345678"
 msgstr ""
 
-#: ./browser/bill.py:135
+#: ./browser/id_register.py:35
+msgid "Please fill every field !"
+msgstr ""
+
+#: ./browser/bill.py:156
 msgid "Please fill full address information"
 msgstr ""
 
 #: ./browser/template/account_info.pt:62
 #: ./browser/template/checkout_confirm.pt:61
 msgid "Please fill phone number include zip code, ex: 0223456789"
+msgstr ""
+
+#: ./browser/template/id_login.pt:31
+msgid "Please input ID"
+msgstr ""
+
+#: ./browser/template/id_login.pt:36
+msgid "Please input password"
 msgstr ""
 
 #: ./interfaces.py:53
@@ -758,7 +765,7 @@ msgstr ""
 msgid "Private"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:127
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:126
 msgid "Private Policy"
 msgstr ""
 
@@ -766,7 +773,7 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: ./browser/template/product_view.pt:270
+#: ./browser/template/product_view.pt:271
 msgid "Product Description"
 msgstr ""
 
@@ -779,7 +786,7 @@ msgid "Product Image."
 msgstr ""
 
 #: ./browser/template/checkout_confirm.pt:37
-#: ./browser/template/client_back_url.pt:30
+#: ./browser/template/client_back_url.pt:29
 #: ./browser/template/order_view.pt:30
 msgid "Product Name"
 msgstr ""
@@ -856,7 +863,7 @@ msgstr ""
 msgid "Provider website url, must include http:// or https://"
 msgstr ""
 
-#: ./browser/template/product_view.pt:174
+#: ./browser/template/product_view.pt:175
 msgid "Provider:"
 msgstr ""
 
@@ -865,12 +872,11 @@ msgid "Pruduct URL"
 msgstr ""
 
 #: ./browser/template/checkout_confirm.pt:39
-#: ./browser/template/client_back_url.pt:32
+#: ./browser/template/client_back_url.pt:31
 #: ./browser/template/order_view.pt:32
 msgid "Qty"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:293
 #: ./interfaces.py:260
 #: ./profiles/default/types/Question.xml
 msgid "Question"
@@ -884,17 +890,17 @@ msgstr ""
 msgid "Question Title"
 msgstr ""
 
-#: ./browser/template/product_view.pt:153
+#: ./browser/template/product_view.pt:154
 msgid "Quick Overview"
 msgstr ""
 
-#: ./browser/template/post_list_view.pt:104
+#: ./browser/template/post_list_view.pt:106
 #: ./browser/template/question_list_view.pt:95
 msgid "Read"
 msgstr ""
 
 #: ./browser/template/checkout_confirm.pt:55
-#: ./browser/template/client_back_url.pt:85
+#: ./browser/template/client_back_url.pt:84
 #: ./browser/template/order_view.pt:85
 msgid "Receiver"
 msgstr ""
@@ -915,8 +921,8 @@ msgstr ""
 msgid "Recent Question"
 msgstr ""
 
-#: ./browser/template/post_view.pt:74
-#: ./browser/template/question_view.pt:114
+#: ./browser/template/post_view.pt:77
+#: ./browser/template/question_view.pt:117
 msgid "Recent iShare Posts"
 msgstr ""
 
@@ -924,7 +930,7 @@ msgstr ""
 msgid "Recently added item(s)"
 msgstr ""
 
-#: ./browser/template/product_view.pt:143
+#: ./browser/template/product_view.pt:144
 msgid "Regular Price:"
 msgstr ""
 
@@ -938,11 +944,11 @@ msgstr ""
 msgid "Related Link"
 msgstr ""
 
-#: ./browser/template/product_view.pt:377
+#: ./browser/template/product_view.pt:378
 msgid "Related Products"
 msgstr ""
 
-#: ./browser/template/product_view.pt:272
+#: ./browser/template/product_view.pt:273
 msgid "Related products"
 msgstr ""
 
@@ -960,7 +966,7 @@ msgstr ""
 msgid "Return URL"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:87
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:86
 msgid "Return policy"
 msgstr ""
 
@@ -996,21 +1002,21 @@ msgstr ""
 msgid "Sale price for the product if different from the list price, must be <= listPrice."
 msgstr ""
 
-#: ./browser/template/cover_view.pt:206
+#: ./browser/template/cover_view.pt:205
 msgid "Sale price:"
 msgstr ""
 
-#: ./browser/template/product_view.pt:289
+#: ./browser/template/product_view.pt:290
 msgid "Same Provider"
 msgstr ""
 
-#: ./viewlet/template/header_container.pt:50
+#: ./viewlet/template/header_container.pt:48
 msgid "Search"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:193
+#: ./browser/template/cover_view.pt:192
 #: ./browser/template/i8d_macro.pt:73
-#: ./browser/template/product_view.pt:327
+#: ./browser/template/product_view.pt:328
 msgid "Search Related"
 msgstr ""
 
@@ -1018,7 +1024,7 @@ msgstr ""
 msgid "Search Result(s)"
 msgstr ""
 
-#: ./viewlet/template/header_container.pt:48
+#: ./viewlet/template/header_container.pt:46
 msgid "Search here..."
 msgstr ""
 
@@ -1034,7 +1040,7 @@ msgstr ""
 msgid "ServerReplyURL, for allPay's logistics"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:124
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:123
 msgid "Service Explain"
 msgstr ""
 
@@ -1046,12 +1052,10 @@ msgstr ""
 msgid "Shipping info"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:80
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:79
 msgid "Shopping Guide"
 msgstr ""
 
-#: ./browser/template/post_view.pt:27
-#: ./browser/template/question_view.pt:27
 #: ./interfaces.py:383
 msgid "Short Text"
 msgstr ""
@@ -1064,11 +1068,11 @@ msgstr ""
 msgid "Sign up for our newsletter"
 msgstr ""
 
-#: ./browser/template/product_view.pt:147
+#: ./browser/template/product_view.pt:148
 msgid "Special Price"
 msgstr ""
 
-#: ./browser/template/product_view.pt:178
+#: ./browser/template/product_view.pt:179
 #: ./interfaces.py:202
 msgid "Standard shipping cost"
 msgstr ""
@@ -1078,7 +1082,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:93
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:92
 msgid "Style Advisor"
 msgstr ""
 
@@ -1093,7 +1097,7 @@ msgid "Subscribe List"
 msgstr ""
 
 #: ./browser/template/checkout_confirm.pt:40
-#: ./browser/template/client_back_url.pt:33
+#: ./browser/template/client_back_url.pt:32
 #: ./browser/template/order_view.pt:33
 msgid "Subtotal"
 msgstr ""
@@ -1111,8 +1115,8 @@ msgstr ""
 msgid "The list price of the product."
 msgstr ""
 
-#: ./browser/template/post_view.pt:59
-#: ./browser/template/question_view.pt:71
+#: ./browser/template/post_view.pt:62
+#: ./browser/template/question_view.pt:74
 msgid "This entry was posted on"
 msgstr ""
 
@@ -1120,7 +1124,7 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: ./browser/template/client_back_url.pt:64
+#: ./browser/template/client_back_url.pt:63
 #: ./browser/template/order_view.pt:65
 msgid "Total:"
 msgstr ""
@@ -1138,7 +1142,7 @@ msgid "Uninstalls the i8d.content add-on."
 msgstr ""
 
 #: ./browser/template/checkout_confirm.pt:38
-#: ./browser/template/client_back_url.pt:31
+#: ./browser/template/client_back_url.pt:30
 #: ./browser/template/order_view.pt:31
 msgid "Unit Price"
 msgstr ""
@@ -1165,7 +1169,7 @@ msgstr ""
 msgid "View Cart"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:39
+#: ./browser/template/cover_view.pt:38
 msgid "View More"
 msgstr ""
 
@@ -1176,10 +1180,6 @@ msgstr ""
 
 #: ./interfaces.py:460
 msgid "Website"
-msgstr ""
-
-#: ./browser/template/cover_view.pt:253
-msgid "Website homepage"
 msgstr ""
 
 #: ./browser/subscribe.py:60
@@ -1194,7 +1194,7 @@ msgstr ""
 msgid "You can use a maximum bonus points."
 msgstr ""
 
-#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:96
+#: ./browser/overrides/plone.app.layout.viewlets.footer.pt:95
 msgid "Your Account"
 msgstr ""
 
@@ -1263,7 +1263,7 @@ msgstr ""
 msgid "point(s)"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:158
+#: ./browser/template/cover_view.pt:157
 msgid "recommend"
 msgstr ""
 

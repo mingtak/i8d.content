@@ -18,3 +18,12 @@ class IdLogin(BrowserView):
     def __call__(self):
         return self.index()
 
+
+class JoinUs(BrowserView):
+    """ Join Us """
+
+    index = ViewPageTemplateFile("template/join_us.pt")
+
+    def __call__(self):
+        return self.index()
+

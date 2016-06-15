@@ -42,6 +42,13 @@
       />
 
   <browser:page
+      name="join_us"
+      for="*"
+      class=".id_register.JoinUs"
+      permission="zope2.View"
+      />
+
+  <browser:page
       name="id_login"
       for="*"
       class=".id_register.IdLogin"

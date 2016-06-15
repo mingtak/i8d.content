@@ -66,10 +66,8 @@ if not canSee:
           </div>
     </tal:f>
     <tal:t case="True">
-          <div class="signup">      
-            <a title="註冊新帳號" data-pat-plone-modal="{prependContent: .portalMessage}" id="personaltools-join" href="/@@register" class="pat-plone-modal">
-              <img src="/++resource++i8d.content/join_us.png">
-            </a>
+          <div class="signup">
+            <a title="註冊新帳號" id="join_us" class="ajax cboxElement" href="/@@join_us"><img src="/++resource++i8d.content/join_us.png"></a>
           </div>
           <div class="signup">
             <a title="帳號登入" id="id_login" class="ajax cboxElement" href="/@@id_login"><img src="/++resource++i8d.content/id_login.png"></a>

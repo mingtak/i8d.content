@@ -1,5 +1,5 @@
 
-  <form action="http://i8d.mingtak.com.tw/@@register" class="rowlike enableUnloadProtection kssattr-formname-register" data-pat-autotoc="levels: legend; section: fieldset; className: autotabs" enctype="multipart/form-data" id="form" method="post">
+  <form action="/@@register" class="rowlike enableUnloadProtection kssattr-formname-register" data-pat-autotoc="levels: legend; section: fieldset; className: autotabs" enctype="multipart/form-data" id="form" method="post">
    <!-- Default fieldset -->
    <div class="field pat-inlinevalidation kssattr-fieldname-form.widgets.fullname empty" data-fieldname="form.widgets.fullname" data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-fullname">
     <label class="horizontal" for="form-widgets-fullname">

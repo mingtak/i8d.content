@@ -72,7 +72,7 @@ else:
                     <!--blog_entry-header-inner--> 
                   </header>
                   <!--blog_entry-header clearfix-->
-                  <div class="entry-content" tal:content="structure context/text/raw" />
+                  <div class="entry-content" tal:content="structure context/text/raw | nothing" />
                 </article>
               </div>
             </div>

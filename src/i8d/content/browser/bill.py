@@ -124,12 +124,22 @@ class CheckoutConfirm(BrowserView):
 
         self.shippingFee = 0
         self.discount = 0
+        self.totalAmount = 0
         for item in self.brain:
+            qty = int(request.cookies.get(item.UID, 1))
+            self.totalAmount += item.salePrice * qty
             self.shippingFee += item.standardShippingCost            
             self.discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
 
         if self.profile and self.discount > self.profile.bonus:
             self.discount = self.profile.bonus
+
+# 應付金額：totalAmount + shippingFee - specailDiscount(滿3000折520)
+        self.payable = self.totalAmount
+        if self.payable > 3000:
+            self.payable -= 520
+        self.payable += self.shippingFee
+
 
         return self.template()
 

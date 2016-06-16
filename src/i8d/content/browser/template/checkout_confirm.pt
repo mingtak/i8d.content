@@ -11,7 +11,6 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
-
 <section class="main-container col1-layout">
   <div class="main container">
     <div class="col-main">
@@ -44,6 +43,11 @@
                   <tr class="first last">
                     <td class="a-right last" colspan="7">
 
+<button class="pull-right button btn btn-continue"
+        onclick="javascript:location.href='https://www.i8d.com.tw'" style="background:#bde">返回賣場</button>
+
+<button onclick="javascript:location.href='/shopping_cart'" class="button btn-continue right btn"
+        title="Edit Item" type="button"><span i18n:translate="">Edit Shopping Item(s)</span></button>
 
 
 <div class="mini-cart">
@@ -103,14 +107,10 @@
 <div class="mini-cart">
 <div class="actions">
 
-<button class="btn btn-checkout" title="Checkout" type="submit" i18n:translate="">Checkout</button>
+<button class="btn btn-checkout pull-left" title="Checkout" type="submit" i18n:translate="">Checkout</button>
 
 </div>
 </div>
-
-<button onclick="javascript:location.href='/shopping_cart'" class="button btn-continue"
-        title="Edit Item" type="button"><span i18n:translate="">Edit Shopping Item(s)</span></button>
-
                     </td>
                   </tr>
                 </tfoot>
@@ -143,9 +143,28 @@
 <td rowspan="1">&nbsp;</td>
 <td rowspan="1">&nbsp;</td>
 <td rowspan="1">&nbsp;</td>
+<td rowspan="1" class="right">商品金額:</td>
+<td rowspan="1">$ <span tal:replace="view/totalAmount"/></td>
+</tr>
+
+<tr>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
 <td rowspan="1" class="right">運費:</td>
 <td rowspan="1">$ <span tal:replace="view/shippingFee"/></td>
 </tr>
+
+<tr>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1">&nbsp;</td>
+<td rowspan="1" class="right"><h3 style="color:blue">本次消費應付</h3>(未計紅利折抵 / <span style="color:red">開幕期間商品金額滿3000折抵520</span>):</td>
+<td rowspan="1">$ <span tal:replace="view/payable"/></td>
+</tr>
+
+
+
 
 <tr tal:condition="python:view.profile">
 <td rowspan="1">&nbsp;</td>

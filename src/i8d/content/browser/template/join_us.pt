@@ -1,20 +1,19 @@
-
   <form action="/@@register" class="rowlike enableUnloadProtection kssattr-formname-register" data-pat-autotoc="levels: legend; section: fieldset; className: autotabs" enctype="multipart/form-data" id="form" method="post">
    <!-- Default fieldset -->
    <div class="field pat-inlinevalidation kssattr-fieldname-form.widgets.fullname empty" data-fieldname="form.widgets.fullname" data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-fullname">
     <label class="horizontal" for="form-widgets-fullname">
-     請輸入大名
+     <span style="color:blue">請輸入大名</span>
      <span class="formHelp">
       如王大明.
      </span>
     </label>
     <div class="fieldErrorBox">
     </div>
-    <input class="text-widget protectedtextline-field" id="form-widgets-fullname" name="form.widgets.fullname" type="text" value=""/>
+    <input class="input-text text-widget protectedtextline-field" id="form-widgets-fullname" name="form.widgets.fullname" type="text" value=""/>
    </div>
    <div class="field pat-inlinevalidation kssattr-fieldname-form.widgets.email empty" data-fieldname="form.widgets.email" data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-email">
     <label class="horizontal" for="form-widgets-email">
-     電子信箱
+     <span style="color:blue">電子信箱</span>
      <span class="required horizontal" title="必要的">
      </span>
      <span class="formHelp">
@@ -23,24 +22,24 @@
     </label>
     <div class="fieldErrorBox">
     </div>
-    <input class="email-widget required protectedemail-field" id="form-widgets-email" name="form.widgets.email" type="text"/>
+    <input class="input-text email-widget required protectedemail-field" id="form-widgets-email" name="form.widgets.email" type="text"/>
    </div>
    <div class="field pat-inlinevalidation kssattr-fieldname-form.widgets.username empty" data-fieldname="form.widgets.username" data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-username">
     <label class="horizontal" for="form-widgets-username">
-     帳號
+     <span style="color:blue">帳號</span>
      <span class="required horizontal" title="必要的">
      </span>
      <span class="formHelp">
-      用來登入的帳號，請以英文開頭，並只使用英文及數字，大小寫字母有差別.
+      登入用，請以英文開頭，並只使用英文及數字，字母大小寫有別.
      </span>
     </label>
     <div class="fieldErrorBox">
     </div>
-    <input class="text-widget required asciiline-field" id="form-widgets-username" name="form.widgets.username" type="text" value=""/>
+    <input class="input-text text-widget required asciiline-field" id="form-widgets-username" name="form.widgets.username" type="text" value=""/>
    </div>
    <div class="field pat-inlinevalidation kssattr-fieldname-form.widgets.password empty" data-fieldname="form.widgets.password" data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-password">
     <label class="horizontal" for="form-widgets-password">
-     密碼
+     <span style="color:blue">密碼</span>
      <span class="required horizontal" title="必要的">
      </span>
      <span class="formHelp">
@@ -49,11 +48,11 @@
     </label>
     <div class="fieldErrorBox">
     </div>
-    <input class="password-widget required password-field" id="form-widgets-password" name="form.widgets.password" type="password"/>
+    <input class="input-text password-widget required password-field" id="form-widgets-password" name="form.widgets.password" type="password"/>
    </div>
    <div class="field pat-inlinevalidation kssattr-fieldname-form.widgets.password_ctl empty" data-fieldname="form.widgets.password_ctl" data-pat-inlinevalidation='{"type":"z3c.form"}' id="formfield-form-widgets-password_ctl">
     <label class="horizontal" for="form-widgets-password_ctl">
-     確認密碼
+     <span style="color:blue">確認密碼</span>
      <span class="required horizontal" title="必要的">
      </span>
      <span class="formHelp">
@@ -62,13 +61,21 @@
     </label>
     <div class="fieldErrorBox">
     </div>
-    <input class="password-widget required password-field" id="form-widgets-password_ctl" name="form.widgets.password_ctl" type="password"/>
+    <input class="input-text password-widget required password-field" id="form-widgets-password_ctl" name="form.widgets.password_ctl" type="password"/>
    </div>
    <!-- Secondary fieldsets -->
    <div class="formControls">
-    <input class="submit-widget button-field" id="form-buttons-register" name="form.buttons.register" type="submit" value="註冊"/>
+    <input class="submit-widget button-field button btn btn-continue" id="form-buttons-register" name="form.buttons.register" type="submit" value="註冊" style="background:#6a2" />
    </div>
    <span tal:replace="structure context/@@authenticator/authenticator">
    </span>
   </form>
+
+<script>
+$('.ajax').colorbox({
+    onComplete : function() {
+       $(this).colorbox.resize({'width': '60%', });
+    }
+});
+</script>
 

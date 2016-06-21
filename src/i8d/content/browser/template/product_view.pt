@@ -51,13 +51,13 @@ else:
     <div class="main container">
       <div class="col-main">
         <div class="row">
-          <div class="product-view wow bounceInUp animated">
+          <div class="product-view wow_ bounceInUp_ animated_">
             <div class="product-essential">
               <!-- 購物車 -->
               <form action="#" method="post" id="product_addtocart_form">
                 <input name="form_key" value="6UbXroakyQlbfQzK" type="hidden">
 
-                <div class="product-img-box col-lg-5 col-sm-5 col-md-5 col-xs-12 wow bounceInRight animated">
+                <div class="product-img-box col-lg-5 col-sm-5 col-md-5 col-xs-12 wow_ bounceInRight_ animated_">
 <!--                  <div class="new-label new-top-left" id="detail-new"> New </div> -->
                   <div class="product-image">
                     <div class="large-image">
@@ -266,7 +266,7 @@ else:
             </div>
 
             <div class="product-collateral">
-              <div class="col-sm-12 wow bounceInUp animated">
+              <div class="col-sm-12 wow_ bounceInUp_ animated_">
                 <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
                   <li class="active"><a href="#product_tabs_description" data-toggle="tab" i18n:translate="">Product Description</a> </li>
                   <li><a href="#product_tabs_comments" data-toggle="tab" i18n:translate="">Comments</a></li>
@@ -372,7 +372,7 @@ else:
 
               <div class="col-sm-12">
                 <div class="box-additional">
-                  <div class="upsell-pro wow bounceInUp animated">
+                  <div class="upsell-pro wow_ bounceInUp_ animated_">
                     <div class="slider-items-products">
                       <div class="new_title center">
                         <h2 i18n:translate="">Related Products</h2>

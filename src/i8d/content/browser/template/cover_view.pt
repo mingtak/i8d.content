@@ -151,7 +151,7 @@
 
   <!-- recommend slider (嚴選商品) -->
   <section class="recommend container">
-    <div class="recommend-product-slider small-pr-slider wow bounceInUp">
+    <div class="recommend-product-slider small-pr-slider wow_ bounceInUp">
       <div class="slider-items-products">
         <div class="new_title center">
           <h2 i18n:translate="">recommend</h2>

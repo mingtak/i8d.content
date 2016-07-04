@@ -36,8 +36,8 @@ else:
 <p><strong>首頁促銷文字：</strong><span tal:replace="context/heroText"/></p>
 <p><strong>產品說明：</strong></p><div tal:content="structure context/promotionalText/output | nothing"/>
 
-<img tal:replace="structure context/@@images/image_1/thumb | nothing"/>
-<img tal:replace="structure context/@@images/image_2/thumb | nothing" />
+<img tal:replace="structure context/@@images/image_2/thumb | nothing"/>
+<img tal:replace="structure context/@@images/image_1/thumb | nothing" />
 <img tal:replace="structure context/@@images/image_3/thumb | nothing" />
 <img tal:replace="structure context/@@images/image_4/thumb | nothing" />
 <img tal:replace="structure context/@@images/image_5/thumb | nothing" />
@@ -61,10 +61,10 @@ else:
 <!--                  <div class="new-label new-top-left" id="detail-new"> New </div> -->
                   <div class="product-image">
                     <div class="large-image">
-                      <tal:img switch="python:bool(context.image_1)">
-                        <a tal:case="python:True" tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;"
+                      <tal:img switch="python:bool(context.image_2)">
+                        <a tal:case="python:True" tal:attributes="href string:${context/absolute_url}/@@images/image_2/zoomin;"
                            class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20">
-                          <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title">
+                          <img tal:attributes="src string:${context/absolute_url}/@@images/image_2/preview; alt context/Title">
                         </a>
                         <a tal:case="default" tal:attributes="href string:/resource/images/nopicture.png/@@images/image/zoomin;"
                            class="cloud-zoom" id="zoom1" rel="useWrapper: false, adjustY:0, adjustX:20">
@@ -77,12 +77,12 @@ else:
                     <div class="flexslider flexslider-thumb">
                       <ul class="previews-list slides">
                         <li>
-                          <tal:img switch="python:bool(context.image_1)">
+                          <tal:img switch="python:bool(context.image_2)">
                             <a tal:case="True"
-                               tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;
-                                               rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_1/preview'"
+                               tal:attributes="href string:${context/absolute_url}/@@images/image_2/zoomin;
+                                               rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_2/preview'"
                                class='cloud-zoom-gallery'>
-                              <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title"/>
+                              <img tal:attributes="src string:${context/absolute_url}/@@images/image_2/preview; alt context/Title"/>
                             </a>
                             <a tal:case="default"
                                tal:attributes="href string:/resource/images/nopicture.png/@@images/image/zoomin;
@@ -93,10 +93,10 @@ else:
                           </tal:img>
                         </li>
 
-                        <li tal:condition="context/image_2"><a tal:attributes="href string:${context/absolute_url}/@@images/image_2/zoomin;
-                                               rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_2/preview'"
+                        <li tal:condition="context/image_1"><a tal:attributes="href string:${context/absolute_url}/@@images/image_1/zoomin;
+                                               rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_1/preview'"
                                class='cloud-zoom-gallery'>
-                              <img tal:attributes="src string:${context/absolute_url}/@@images/image_2/preview; alt context/Title"/></a></li>
+                              <img tal:attributes="src string:${context/absolute_url}/@@images/image_1/preview; alt context/Title"/></a></li>
 
                         <li tal:condition="context/image_3"><a tal:attributes="href string:${context/absolute_url}/@@images/image_3/zoomin;
                                                rel string:useZoom: 'zoom1', smallImage: '${context/absolute_url}/images/image_3/preview'"
@@ -255,7 +255,7 @@ else:
 <!--                  <div class="product-sibebar-banner">
                     <div class="text-banner">
                       <a href="#" title="Text Banner">
-                        <img tal:replace="structure context/@@images/image_2/mini" />
+                        <img tal:replace="structure context/@@images/image_1/mini" />
                       </a>
                     </div>
                   </div>

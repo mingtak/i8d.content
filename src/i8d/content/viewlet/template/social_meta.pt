@@ -1,0 +1,3 @@
+<meta property="og:title" tal:attributes="content context/title" />
+<meta property="og:image" tal:attributes="content string:${context/absolute_url}/@@images/image_1/colorbox.png" />
+<meta property="og:description" tal:attributes="content context/description" />

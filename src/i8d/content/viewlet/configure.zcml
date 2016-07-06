@@ -6,6 +6,15 @@
 
 
     <browser:viewlet
+      name="social_meta"
+      for="i8d.content.interfaces.IProduct"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      template="template/social_meta.pt"
+      class=".viewlet.SocialMeta"
+      permission="zope2.View"
+      />
+
+    <browser:viewlet
       name="affiliates"
       for="*"
       manager="plone.app.layout.viewlets.interfaces.IHtmlHeadLinks"

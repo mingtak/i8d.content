@@ -1,0 +1,68 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+    xmlns:tal="http://xml.zope.org/namespaces/tal"
+    xmlns:metal="http://xml.zope.org/namespaces/metal"
+    xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+    lang="en"
+    metal:use-macro="context/main_template/macros/master"
+    i18n:domain="i8d.content">
+<body>
+
+
+<metal:content-core fill-slot="content-core">
+<metal:content-core define-macro="content-core"
+                    tal:define="toc context/table_of_contents|nothing;">
+
+<h1 tal:content="view/request/form/com" />
+
+<table>
+  <thead>
+    <tr>
+      <td>productId</td>
+      <td>title</td>
+      <td>description</td>
+      <td>productUrl</td>
+      <td>inStock</td>
+      <td>brand</td>
+      <td>subjects</td>
+      <td>listPrice</td>
+      <td>salePrice</td>
+      <td>image_1</td>
+      <td>image_2</td>
+      <td>image_3</td>
+      <td>image_4</td>
+      <td>image_5</td>
+      <td>promotionalText</td>
+      <td>standardShippingCost</td>
+      <td>cost</td>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr tal:repeat="item view/items">
+      <td tal:content="item/productId | nothing" />
+      <td tal:content="item/title | nothing" />
+      <td tal:content="item/description | nothing" />
+      <td tal:content="item/productUrl | nothing" />
+      <td tal:content="python:'y' if item.inStock else 'n'" />
+      <td tal:content="item/brand | nothing" />
+      <td tal:content="item/subjects | nothing" />
+      <td tal:content="item/listPrice | nothing" />
+      <td tal:content="item/salePrice | nothing" />
+      <td tal:content="item/image_1/filename | nothing"/>
+      <td tal:content="item/image_2/filename | nothing"/>
+      <td tal:content="item/image_3/filename | nothing"/>
+      <td tal:content="item/image_4/filename | nothing"/>
+      <td tal:content="item/image_5/filename | nothing"/>
+      <td tal:content="item/promotionalText/raw | nothing" />
+      <td tal:content="item/standardShippingCost | nothing" />
+      <td tal:content="item/cost | nothing" />
+    </tr>
+  </tbody>
+</table>
+
+
+</metal:content-core>
+</metal:content-core>
+
+</body>
+</html>

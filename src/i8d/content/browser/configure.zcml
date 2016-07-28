@@ -21,6 +21,13 @@
   <!-- browserview -->
 
   <browser:page
+      name="export_products"
+      for="*"
+      class=".views.ExportProducts"
+      permission="cmf.ManagePortal"
+      />
+
+  <browser:page
       name="bayes_filter"
       for="*"
       class=".bayes_filter.BayesFilter"

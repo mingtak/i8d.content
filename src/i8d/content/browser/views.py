@@ -4,6 +4,34 @@ from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 from plone import api
 from DateTime import DateTime
 import transaction
+import csv
+
+
+class ExportProducts(BrowserView):
+    """ Export Products """
+
+    index = ViewPageTemplateFile("template/export_products.pt")
+
+    def __call__(self):
+        context = self.context
+        request = self.request
+        response = request.response
+        portal = api.portal.get()
+
+        com = request.form.get('com')
+
+        if not com:
+            response.redirect(portal.absolute_url())
+            return
+
+        if not portal['products'].has_key(com):
+            response.redirect(portal.absolute_url())
+            return
+
+        comFolder = portal['products'][com]
+        self.items = comFolder.getChildNodes()
+#        import pdb; pdb.set_trace()
+        return self.index()
 
 
 class CanSeeWithDateRange(BrowserView):

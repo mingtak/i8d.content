@@ -45,7 +45,11 @@
       <td tal:content="item/productUrl | nothing" />
       <td tal:content="python:'y' if item.inStock else 'n'" />
       <td tal:content="item/brand | nothing" />
-      <td tal:content="item/subjects | nothing" />
+      <td>
+        <tal:keyword repeat="keyword item/Subject">
+          <span tal:replace="keyword" /><span tal:condition="not:repeat/keyword/end" tal:replace="string:, " />
+        </tal:keyword>
+      </td>
       <td tal:content="item/listPrice | nothing" />
       <td tal:content="item/salePrice | nothing" />
       <td tal:content="item/image_1/filename | nothing"/>

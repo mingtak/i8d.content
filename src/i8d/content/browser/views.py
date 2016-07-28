@@ -30,7 +30,6 @@ class ExportProducts(BrowserView):
 
         comFolder = portal['products'][com]
         self.items = comFolder.getChildNodes()
-#        import pdb; pdb.set_trace()
         return self.index()
 
 

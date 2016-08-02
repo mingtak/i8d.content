@@ -49,9 +49,9 @@
                                                                            href item/getURL">
                                     <tal:img switch="item/hasImage1">
                                       <img tal:case="True" tal:attributes="src string:${item/getURL}/@@images/image_1/preview;
-                                                           alt item/Title" class="img-responsive" style="max-height:200px; min-height:200px"/>
+                                                           alt item/Title" class="img-responsive"/>
                                       <img tal:case="default" tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview;
-                                                              alt item/Title" class="img-responsive" style="max-height:200px; min-height:200px"/>
+                                                              alt item/Title" class="img-responsive"/>
                                     </tal:img>
                                   </a>
                                 </div>

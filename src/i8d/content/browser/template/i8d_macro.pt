@@ -159,7 +159,7 @@
                     <li tal:repeat="pagenumber python:range((s/pageItems +2), 1+len(brain)/pageItems)">
                       <a tal:content="pagenumber"
                          tal:attributes="href python:'%s?key=%s&s:int=%s' %
-                         (request.getURL(), request.form.get('key'), pagenumber*pageItems)"/>
+                         (request.getURL(), request.form.get('key'), (pagenumber-1)*pageItems)"/>
                     </li>
     </tal:check>
 <!-- Link to last -->

@@ -67,6 +67,12 @@ def creatItem(folder, row, zipFolderName):
     portal = api.portal.get()
 
     logger.info('Begin Create Content, %s' % safe_unicode(row['title']))
+    if row['listPrice'] and row['salePrice'] and row['standardShippingCost']:
+        pass
+    else:
+        logger.error('Lost data, title:%s, please check "listPirce, saleprice, standardShippingCost"' % row['title'])
+        message = _(u"Lost data, title:%s, please check 'listPirce, saleprice, standardShippingCost'")
+        api.portal.show_message(message=message, request=folder.REQUEST, type='error')
     item = api.content.create(
         type='Product',
         title=row['title'],
@@ -90,22 +96,30 @@ def creatItem(folder, row, zipFolderName):
         if row['image_2'].strip():
             with open('%s/%s' % (zipFolderName, safe_unicode(row['image_2'].strip()))) as file:
                 item.image_2 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
-    except:pass
+    except:
+        logger.error('creatItem position 1, title:%s' % title)
+        pass
     try:
         if row['image_3'].strip():
             with open('%s/%s' % (zipFolderName, safe_unicode(row['image_3'].strip()))) as file:
                 item.image_3 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
-    except:pass
+    except:
+        logger.error('creatItem position 2, title:%s' % title)
+        pass
     try:
         if row['image_4'].strip():
             with open('%s/%s' % (zipFolderName, safe_unicode(row['image_4'].strip()))) as file:
                 item.image_4 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
-    except:pass
+    except:
+        logger.error('creatItem position 3, title:%s' % title)
+        pass
     try:
         if row['image_5'].strip():
             with open('%s/%s' % (zipFolderName, safe_unicode(row['image_5'].strip()))) as file:
                 item.image_5 = namedfile.NamedBlobImage(data=file, filename=safe_unicode('%s' % file.name.split('/')[-1]))
-    except:pass
+    except:
+        logger.error('creatItem position 4, title:%s' % title)
+        pass
 
     item.promotionalText = RichTextValue(safe_unicode(row['promotionalText']))
     item.reindexObject()

@@ -40,8 +40,11 @@ class CanSeeWithDateRange(BrowserView):
         context = self.context
 
         now = DateTime()
-        effective = DateTime(context.EffectiveDate())
-        expiration = DateTime() if context.ExpirationDate()=='None' else DateTime(context.ExpirationDate())
+        try:
+            effective = DateTime(context.EffectiveDate())
+        except:
+            effective = now
+        expiration = DateTime() if context.ExpirationDate() == 'None' else DateTime(context.ExpirationDate())
         if not api.user.is_anonymous() and set(api.user.get_roles()) & set(['Manager', 'Site Administrator']):
             return True
         if now >= effective and now <= expiration:

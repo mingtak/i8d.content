@@ -58,5 +58,5 @@ class ImportIshareNer(BrowserView):
             )
             if img:
                 ishare.image = imgFile
-            api.content.transition(obj=ishare, transition='reject')
+            api.content.transition(obj=ishare, transition='retract')
         return

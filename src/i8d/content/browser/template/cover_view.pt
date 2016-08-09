@@ -209,7 +209,7 @@
 
 
               <a class="button" style="float:right"
-                 tal:attributes="href python:'%s/ishare' % context.getParentNode().absolute_url()"
+                 tal:attributes="href python:'%s/healthy' % context.getParentNode().absolute_url()"
                  i18n:translate="">All Article</a>
             </div>
           </div>

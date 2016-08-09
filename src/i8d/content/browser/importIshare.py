@@ -52,7 +52,7 @@ class ImportIshareNer(BrowserView):
             ishare = api.content.create(
                 type='Post',
                 container=portal['ishare'],
-                title=title,
+                title=safe_unicode(title),
                 shortText='%s...' % description[0:20],
                 text = RichTextValue(safe_unicode(text))
             )

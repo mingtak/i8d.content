@@ -252,7 +252,7 @@ class ICover(Interface):
         title=_(u"Article"),
         description=_(u"Rleated items for home page article list"),
         value_type=RelationChoice(title=_(u"Related"),
-                                  source=CatalogSource(portal_type='Post', path='/i8d/ishare'),),
+                                  source=CatalogSource(portal_type='Post', path='/i8d/ishare', review_state='published'),),
         required=True,
     )
 
@@ -260,7 +260,7 @@ class ICover(Interface):
         title=_(u"Healthy"),
         description=_(u"Rleated items for home page article list"),
         value_type=RelationChoice(title=_(u"Related"),
-                                  source=CatalogSource(portal_type='Post', path='/i8d/healthy'),),
+                                  source=CatalogSource(portal_type='Post', path='/i8d/healthy', review_state='published'),),
         required=True,
     )
 

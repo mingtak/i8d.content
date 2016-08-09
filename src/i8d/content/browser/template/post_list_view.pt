@@ -66,35 +66,41 @@ else:
             <h1 tal:content="context/Title">Tilte</h1>
           </div>
 
+
+          <div class="category-products">
+
+  <tal:getChildNodes define="brain context/@@folderListing;
+                             pageItems python:6;
+                             s python:getattr(request, 's', 0)">
+
           <div class="category-products">
             <div class="toolbar">
+              <metal:macro use-macro="context/@@i8d_macro/macros/pages" />
 
-              <div class="pager">
-                <div class="pages">
-                  <label>Page:</label>
-                  <ul class="pagination">
-                    <li><a href="#">&laquo;</a></li>
-                    <li class="active"><a href="#">1</a></li>
-                    <li><a href="#">2</a></li>
-                    <li><a href="#">3</a></li>
-                    <li><a href="#">4</a></li>
-                    <li><a href="#">5</a></li>
-                    <li><a href="#">&raquo;</a></li>
-                  </ul>
-                </div>
-              </div>
             </div>
-
-
+          </div>
+         
             <ol id="products-list" class="products-list">
-  <tal:getChildNodes define="items context/getChildNodes">
-    <tal:repeat repeat="item items">
+
+
+    <tal:repeat repeat="item python:brain[s:s+pageItems]">
               <li class="item odd"
                   tal:condition="python:item.Type() == 'Post'"
                   tal:attributes="class python:'item %s' % ('odd' if repeat['item'].even else 'odd')">
                 <div class="product-image">
                   <a tal:attributes="href item/absolute_url; title item/title">
-                    <img class="small-image" src="/logo.png" alt="HTC Rhyme Sense" width="230"/>
+<tal:img switch="python:bool(item.image)">
+                    <img class="small-image"
+                         tal:case="True"
+                         tal:attributes="src string:${item/getURL}/@@images/image/preview;
+                                         alt item/Title" />
+
+                    <img class="small-image"       
+                         tal:case="default"
+                         tal:attributes="src string:/logo.png; 
+                                         alt item/Title" />
+
+</tal:img>
                   </a>
                 </div>
                 <div class="product-shop">
@@ -111,9 +117,8 @@ else:
               </li>
 
     </tal:repeat>
-  </tal:getChildNodes>
             </ol>
-
+  </tal:getChildNodes>
 
 
       </div>

@@ -1,3 +1,13 @@
 <meta property="og:title" tal:attributes="content context/title" />
-<meta property="og:image" tal:attributes="content string:${context/absolute_url}/@@images/image_1/colorbox.png" />
-<meta property="og:description" tal:attributes="content context/description" />
+
+<tal:og switch="context/portal_type">
+  <tal:product case="string:Product">
+    <meta property="og:image" tal:attributes="content string:${context/absolute_url}/@@images/image_1/colorbox.png" />
+    <meta property="og:description" tal:attributes="content context/description" />
+  </tal:product>
+  <tal:post case="string:Post">
+    <meta property="og:image" tal:attributes="content string:${context/absolute_url}/@@images/image/colorbox.png" />
+    <meta property="og:description" tal:attributes="content context/shortText" />
+  </tal:post>
+</tal:og>
+

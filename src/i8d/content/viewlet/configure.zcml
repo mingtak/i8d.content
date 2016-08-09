@@ -4,9 +4,17 @@
     xmlns:plone="http://namespaces.plone.org/plone"
     i18n_domain="i8d.content">
 
+    <browser:viewlet
+      name="post_social_meta"
+      for="i8d.content.interfaces.IPost"
+      manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
+      template="template/social_meta.pt"
+      class=".viewlet.SocialMeta"
+      permission="zope2.View"
+      />
 
     <browser:viewlet
-      name="social_meta"
+      name="product_social_meta"
       for="i8d.content.interfaces.IProduct"
       manager="plone.app.layout.viewlets.interfaces.IHtmlHead"
       template="template/social_meta.pt"

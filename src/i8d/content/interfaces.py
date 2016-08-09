@@ -252,15 +252,24 @@ class ICover(Interface):
         title=_(u"Article"),
         description=_(u"Rleated items for home page article list"),
         value_type=RelationChoice(title=_(u"Related"),
-                                  source=CatalogSource(portal_type='Post'),),
+                                  source=CatalogSource(portal_type='Post', path='/i8d/ishare'),),
         required=True,
     )
 
+    healthy = RelationList(
+        title=_(u"Healthy"),
+        description=_(u"Rleated items for home page article list"),
+        value_type=RelationChoice(title=_(u"Related"),
+                                  source=CatalogSource(portal_type='Post', path='/i8d/healthy'),),
+        required=True,
+    )
+
+    # 先改為 post 給健康專欄用, 以後看狀況再改
     question = RelationList(
         title=_(u"Question"),
         description=_(u"Rleated items for home page question list"),
         value_type=RelationChoice(title=_(u"Related"),
-                                  source=CatalogSource(portal_type='Question'),),
+                                  source=CatalogSource(portal_type='Question', ),),
         required=True,
     )
 

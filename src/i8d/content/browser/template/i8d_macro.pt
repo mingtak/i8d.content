@@ -334,7 +334,7 @@ random.shuffle(brain)
             <div class="block-title" i18n:translate="">Related Products</div>
             <div class="block-content">
               <ul>
-                <li class="item" tal:repeat="item python:brain[0:5]" style="padding-bottom:20px">
+                <li class="item" tal:repeat="item python:brain[0:6]" style="padding-bottom:20px">
                   <a class="product-image"
                      tal:attributes="title item/Title;
                                      href item/getURL;">

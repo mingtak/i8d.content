@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-06-15 05:18+0000\n"
+"POT-Creation-Date: 2016-08-09 09:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,6 +16,10 @@ msgstr ""
 "Language-Name: English\n"
 "Preferred-Encodings: utf-8 latin1\n"
 "Domain: i8d.content\n"
+
+#: ./browser/template/cover_view.pt:175
+msgid "...Read"
+msgstr ""
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:81
 msgid ">How to buy"
@@ -69,6 +73,10 @@ msgstr ""
 msgid "Address 2"
 msgstr ""
 
+#: ./browser/template/cover_view.pt:211
+msgid "All Article"
+msgstr ""
+
 #: ./browser/template/i8d_macro.pt:179
 msgid "All Brands"
 msgstr ""
@@ -81,11 +89,15 @@ msgstr ""
 msgid "All Orders"
 msgstr ""
 
+#: ./browser/template/cover_view.pt:179
+msgid "All Post"
+msgstr ""
+
 #: ./browser/coverSetting.py:57
 msgid "All in one(AIO) Checkout Server URL"
 msgstr ""
 
-#: ./interfaces.py:559
+#: ./interfaces.py:568
 msgid "Amount"
 msgstr ""
 
@@ -119,7 +131,7 @@ msgstr ""
 
 #: ./browser/template/account_info.pt:115
 #: ./browser/template/my_account.pt:125
-#: ./interfaces.py:359
+#: ./interfaces.py:368
 msgid "Bonus"
 msgstr ""
 
@@ -175,19 +187,19 @@ msgstr ""
 
 #: ./browser/template/account_info.pt:71
 #: ./browser/template/my_account.pt:103
-#: ./interfaces.py:299
+#: ./interfaces.py:308
 msgid "Cell Phone"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:65
+#: ./browser/template/checkout_confirm.pt:69
 msgid "Cell Phone Number"
 msgstr ""
 
-#: ./interfaces.py:300
+#: ./interfaces.py:309
 msgid "Cell Phone number."
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:106
+#: ./browser/template/checkout_confirm.pt:110
 msgid "Checkout"
 msgstr ""
 
@@ -207,11 +219,11 @@ msgstr ""
 msgid "Checkout HashKey, for allPay"
 msgstr ""
 
-#: ./interfaces.py:311
+#: ./interfaces.py:320
 msgid "City"
 msgstr ""
 
-#: ./interfaces.py:312
+#: ./interfaces.py:321
 msgid "City name."
 msgstr ""
 
@@ -235,11 +247,11 @@ msgstr ""
 msgid "Collection"
 msgstr ""
 
-#: ./browser/template/product_view.pt:272
+#: ./browser/template/product_view.pt:269
 msgid "Comments"
 msgstr ""
 
-#: ./interfaces.py:543
+#: ./interfaces.py:552
 msgid "Company Title"
 msgstr ""
 
@@ -248,7 +260,7 @@ msgstr ""
 msgid "Confirm"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:24
+#: ./browser/template/checkout_confirm.pt:23
 msgid "Confirm Cart / shipping info"
 msgstr ""
 
@@ -289,13 +301,13 @@ msgstr ""
 msgid "Description:"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:181
+#: ./browser/template/cover_view.pt:252
 #: ./browser/template/i8d_macro.pt:62
-#: ./browser/template/product_view.pt:317
+#: ./browser/template/product_view.pt:314
 msgid "Detail"
 msgstr ""
 
-#: ./interfaces.py:317
+#: ./interfaces.py:326
 msgid "District"
 msgstr ""
 
@@ -305,17 +317,17 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:112
+#: ./browser/template/checkout_confirm.pt:50
 msgid "Edit Shopping Item(s)"
 msgstr ""
 
 #: ./browser/template/account_info.pt:82
-#: ./browser/template/checkout_confirm.pt:70
+#: ./browser/template/checkout_confirm.pt:74
 #: ./browser/template/my_account.pt:107
 msgid "Email"
 msgstr ""
 
-#: ./interfaces.py:306
+#: ./interfaces.py:315
 msgid "Email."
 msgstr ""
 
@@ -331,11 +343,11 @@ msgstr ""
 msgid "Events can be shown in calendars."
 msgstr ""
 
-#: ./interfaces.py:287
+#: ./interfaces.py:296
 msgid "Expert Image."
 msgstr ""
 
-#: ./interfaces.py:288
+#: ./interfaces.py:297
 msgid "Expert image."
 msgstr ""
 
@@ -347,6 +359,10 @@ msgstr ""
 
 #: ./browser/template/cart_state.pt:64
 msgid "Fast Checkout"
+msgstr ""
+
+#: ./browser/template/cover_view.pt:158
+msgid "Featured Article"
 msgstr ""
 
 #: ./profiles/default/types/File.xml
@@ -371,6 +387,14 @@ msgstr ""
 msgid "Header service explanation"
 msgstr ""
 
+#: ./browser/template/cover_view.pt:189
+msgid "Health Forum"
+msgstr ""
+
+#: ./interfaces.py:260
+msgid "Healthy"
+msgstr ""
+
 #: ./interfaces.py:195
 msgid "Hero Text"
 msgstr ""
@@ -393,11 +417,11 @@ msgstr ""
 msgid "If In Stock, Please check it."
 msgstr ""
 
-#: ./interfaces.py:377
+#: ./interfaces.py:386
 msgid "If want to show this page to home page, please upload a image."
 msgstr ""
 
-#: ./interfaces.py:376
+#: ./interfaces.py:385
 #: ./profiles/default/types/Image.xml
 msgid "Image"
 msgstr ""
@@ -406,7 +430,7 @@ msgstr ""
 msgid "Images can be referenced in pages or displayed in an album."
 msgstr ""
 
-#: ./event/importProducts.py:152
+#: ./event/importProducts.py:166
 msgid "Import product error"
 msgstr ""
 
@@ -435,17 +459,17 @@ msgstr ""
 msgid "Introduction"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:93
+#: ./browser/template/checkout_confirm.pt:97
 #: ./browser/template/invoice_method.pt:6
 msgid "Invoice"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:95
+#: ./browser/template/checkout_confirm.pt:99
 #: ./browser/template/invoice_method.pt:11
 msgid "Invoice Title"
 msgstr ""
 
-#: ./interfaces.py:281
+#: ./interfaces.py:290
 msgid "Is Expert"
 msgstr ""
 
@@ -469,6 +493,10 @@ msgstr ""
 msgid "List Price"
 msgstr ""
 
+#: ./browser/template/i8d_macro.pt:352
+msgid "List Price:"
+msgstr ""
+
 #: ./browser/template/id_login.pt:40
 msgid "Login"
 msgstr ""
@@ -481,7 +509,7 @@ msgstr ""
 msgid "Logistics C2C Reply URL, for allPay's logistics"
 msgstr ""
 
-#: ./interfaces.py:590
+#: ./interfaces.py:599
 msgid "Logistics Express Create Results"
 msgstr ""
 
@@ -505,7 +533,7 @@ msgstr ""
 msgid "Logistics HashKey, for allPay"
 msgstr ""
 
-#: ./interfaces.py:582
+#: ./interfaces.py:591
 msgid "Logistics Map Results"
 msgstr ""
 
@@ -518,7 +546,7 @@ msgstr ""
 msgid "Logistics Method"
 msgstr ""
 
-#: ./interfaces.py:591
+#: ./interfaces.py:600
 msgid "Logistics express create results, feedback from allPay."
 msgstr ""
 
@@ -531,12 +559,16 @@ msgstr ""
 msgid "Logistics info"
 msgstr ""
 
-#: ./interfaces.py:583
+#: ./interfaces.py:592
 msgid "Logistics map results, feedback from allPay."
 msgstr ""
 
 #: ./browser/coverSetting.py:84
 msgid "Logistics map url"
+msgstr ""
+
+#: ./event/importProducts.py:74
+msgid "Lost data, title:%s, please check 'listPirce, saleprice, standardShippingCost'"
 msgstr ""
 
 #: ./viewlet/template/manage_products.pt:1
@@ -547,11 +579,11 @@ msgstr ""
 msgid "Manually"
 msgstr ""
 
-#: ./interfaces.py:483
+#: ./interfaces.py:492
 msgid "Mapping to allPay's ItemName"
 msgstr ""
 
-#: ./interfaces.py:477
+#: ./interfaces.py:486
 msgid "Mapping to allPay's MerchantTradeNo"
 msgstr ""
 
@@ -642,11 +674,11 @@ msgstr ""
 msgid "Order #"
 msgstr ""
 
-#: ./interfaces.py:566
+#: ./interfaces.py:575
 msgid "Order State"
 msgstr ""
 
-#: ./interfaces.py:476
+#: ./interfaces.py:485
 msgid "Order Title"
 msgstr ""
 
@@ -655,7 +687,7 @@ msgstr ""
 msgid "Order Total"
 msgstr ""
 
-#: ./interfaces.py:567
+#: ./interfaces.py:576
 msgid "Order state."
 msgstr ""
 
@@ -698,15 +730,15 @@ msgstr ""
 
 #: ./browser/template/account_info.pt:60
 #: ./browser/template/my_account.pt:99
-#: ./interfaces.py:293
+#: ./interfaces.py:302
 msgid "Phone"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:60
+#: ./browser/template/checkout_confirm.pt:64
 msgid "Phone Number"
 msgstr ""
 
-#: ./interfaces.py:294
+#: ./interfaces.py:303
 msgid "Phone Number."
 msgstr ""
 
@@ -716,20 +748,16 @@ msgid "Pickup Location"
 msgstr ""
 
 #: ./browser/template/account_info.pt:73
-#: ./browser/template/checkout_confirm.pt:66
+#: ./browser/template/checkout_confirm.pt:70
 msgid "Please fill cell phone number, ex: 0912345678"
 msgstr ""
 
-#: ./browser/id_register.py:35
-msgid "Please fill every field !"
-msgstr ""
-
-#: ./browser/bill.py:156
+#: ./browser/bill.py:166
 msgid "Please fill full address information"
 msgstr ""
 
 #: ./browser/template/account_info.pt:62
-#: ./browser/template/checkout_confirm.pt:61
+#: ./browser/template/checkout_confirm.pt:65
 msgid "Please fill phone number include zip code, ex: 0223456789"
 msgstr ""
 
@@ -773,7 +801,7 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: ./browser/template/product_view.pt:271
+#: ./browser/template/product_view.pt:268
 msgid "Product Description"
 msgstr ""
 
@@ -785,7 +813,7 @@ msgstr ""
 msgid "Product Image."
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:37
+#: ./browser/template/checkout_confirm.pt:36
 #: ./browser/template/client_back_url.pt:29
 #: ./browser/template/order_view.pt:30
 msgid "Product Name"
@@ -795,11 +823,11 @@ msgstr ""
 msgid "Product Show In Nav"
 msgstr ""
 
-#: ./interfaces.py:550
+#: ./interfaces.py:559
 msgid "Product UID(s)"
 msgstr ""
 
-#: ./interfaces.py:551
+#: ./interfaces.py:560
 msgid "Product UID(s) at shopping cart, include qty."
 msgstr ""
 
@@ -815,7 +843,7 @@ msgstr ""
 msgid "Product introduction web page include http:// or https://"
 msgstr ""
 
-#: ./interfaces.py:467
+#: ./interfaces.py:476
 msgid "Products File"
 msgstr ""
 
@@ -823,7 +851,7 @@ msgstr ""
 msgid "Profile"
 msgstr ""
 
-#: ./interfaces.py:271
+#: ./interfaces.py:280
 msgid "Profile Name"
 msgstr ""
 
@@ -843,11 +871,11 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
-#: ./interfaces.py:454
+#: ./interfaces.py:463
 msgid "Provider Logo"
 msgstr ""
 
-#: ./interfaces.py:444
+#: ./interfaces.py:453
 msgid "Provider Name"
 msgstr ""
 
@@ -855,11 +883,11 @@ msgstr ""
 msgid "Provider Show In Nav"
 msgstr ""
 
-#: ./interfaces.py:455
+#: ./interfaces.py:464
 msgid "Provider logo image"
 msgstr ""
 
-#: ./interfaces.py:461
+#: ./interfaces.py:470
 msgid "Provider website url, must include http:// or https://"
 msgstr ""
 
@@ -871,22 +899,22 @@ msgstr ""
 msgid "Pruduct URL"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:39
+#: ./browser/template/checkout_confirm.pt:38
 #: ./browser/template/client_back_url.pt:31
 #: ./browser/template/order_view.pt:32
 msgid "Qty"
 msgstr ""
 
-#: ./interfaces.py:260
+#: ./interfaces.py:269
 #: ./profiles/default/types/Question.xml
 msgid "Question"
 msgstr ""
 
-#: ./interfaces.py:405
+#: ./interfaces.py:414
 msgid "Question Detail"
 msgstr ""
 
-#: ./interfaces.py:399
+#: ./interfaces.py:408
 msgid "Question Title"
 msgstr ""
 
@@ -894,18 +922,18 @@ msgstr ""
 msgid "Quick Overview"
 msgstr ""
 
-#: ./browser/template/post_list_view.pt:106
+#: ./browser/template/post_list_view.pt:94
 #: ./browser/template/question_list_view.pt:95
 msgid "Read"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:55
+#: ./browser/template/checkout_confirm.pt:59
 #: ./browser/template/client_back_url.pt:84
 #: ./browser/template/order_view.pt:85
 msgid "Receiver"
 msgstr ""
 
-#: ./interfaces.py:489
+#: ./interfaces.py:498
 msgid "Receiver name."
 msgstr ""
 
@@ -921,7 +949,6 @@ msgstr ""
 msgid "Recent Question"
 msgstr ""
 
-#: ./browser/template/post_view.pt:77
 #: ./browser/template/question_view.pt:117
 msgid "Recent iShare Posts"
 msgstr ""
@@ -944,15 +971,16 @@ msgstr ""
 msgid "Related Link"
 msgstr ""
 
-#: ./browser/template/product_view.pt:378
+#: ./browser/template/i8d_macro.pt:334
+#: ./browser/template/product_view.pt:375
 msgid "Related Products"
 msgstr ""
 
-#: ./browser/template/product_view.pt:273
+#: ./browser/template/product_view.pt:270
 msgid "Related products"
 msgstr ""
 
-#: ./interfaces.py:434
+#: ./interfaces.py:443
 msgid "Reply Question"
 msgstr ""
 
@@ -990,8 +1018,12 @@ msgstr ""
 msgid "Rleated items for home page not product list"
 msgstr ""
 
-#: ./interfaces.py:261
+#: ./interfaces.py:270
 msgid "Rleated items for home page question list"
+msgstr ""
+
+#: ./browser/template/i8d_macro.pt:354
+msgid "Sale Price:"
 msgstr ""
 
 #: ./interfaces.py:123
@@ -1002,11 +1034,11 @@ msgstr ""
 msgid "Sale price for the product if different from the list price, must be <= listPrice."
 msgstr ""
 
-#: ./browser/template/cover_view.pt:205
+#: ./browser/template/cover_view.pt:276
 msgid "Sale price:"
 msgstr ""
 
-#: ./browser/template/product_view.pt:290
+#: ./browser/template/product_view.pt:287
 msgid "Same Provider"
 msgstr ""
 
@@ -1014,9 +1046,9 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:192
+#: ./browser/template/cover_view.pt:263
 #: ./browser/template/i8d_macro.pt:73
-#: ./browser/template/product_view.pt:328
+#: ./browser/template/product_view.pt:325
 msgid "Search Related"
 msgstr ""
 
@@ -1048,7 +1080,7 @@ msgstr ""
 msgid "Service Explanation"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:52
+#: ./browser/template/checkout_confirm.pt:56
 msgid "Shipping info"
 msgstr ""
 
@@ -1056,11 +1088,11 @@ msgstr ""
 msgid "Shopping Guide"
 msgstr ""
 
-#: ./interfaces.py:383
+#: ./interfaces.py:392
 msgid "Short Text"
 msgstr ""
 
-#: ./interfaces.py:384
+#: ./interfaces.py:393
 msgid "Short Text, show in Cover."
 msgstr ""
 
@@ -1096,18 +1128,18 @@ msgstr ""
 msgid "Subscribe List"
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:40
+#: ./browser/template/checkout_confirm.pt:39
 #: ./browser/template/client_back_url.pt:32
 #: ./browser/template/order_view.pt:33
 msgid "Subtotal"
 msgstr ""
 
 #: ./browser/template/invoice_method.pt:16
-#: ./interfaces.py:537
+#: ./interfaces.py:546
 msgid "Tax ID"
 msgstr ""
 
-#: ./interfaces.py:389
+#: ./interfaces.py:398
 msgid "Text"
 msgstr ""
 
@@ -1129,11 +1161,11 @@ msgstr ""
 msgid "Total:"
 msgstr ""
 
-#: ./interfaces.py:574
+#: ./interfaces.py:583
 msgid "Trading Results"
 msgstr ""
 
-#: ./interfaces.py:575
+#: ./interfaces.py:584
 msgid "Trading Results, feedback from allPay."
 msgstr ""
 
@@ -1141,7 +1173,7 @@ msgstr ""
 msgid "Uninstalls the i8d.content add-on."
 msgstr ""
 
-#: ./browser/template/checkout_confirm.pt:38
+#: ./browser/template/checkout_confirm.pt:37
 #: ./browser/template/client_back_url.pt:30
 #: ./browser/template/order_view.pt:31
 msgid "Unit Price"
@@ -1178,7 +1210,7 @@ msgstr ""
 msgid "View Order"
 msgstr ""
 
-#: ./interfaces.py:460
+#: ./interfaces.py:469
 msgid "Website"
 msgstr ""
 
@@ -1198,11 +1230,11 @@ msgstr ""
 msgid "Your Account"
 msgstr ""
 
-#: ./interfaces.py:323
+#: ./interfaces.py:332
 msgid "ZIP Code"
 msgstr ""
 
-#: ./interfaces.py:324
+#: ./interfaces.py:333
 msgid "ZIP code"
 msgstr ""
 
@@ -1222,7 +1254,7 @@ msgstr ""
 msgid "category_view"
 msgstr ""
 
-#: ./event/importProducts.py:121
+#: ./event/importProducts.py:135
 msgid "file name must be same as provider id and extension is zip."
 msgstr ""
 
@@ -1263,7 +1295,7 @@ msgstr ""
 msgid "point(s)"
 msgstr ""
 
-#: ./browser/template/cover_view.pt:157
+#: ./browser/template/cover_view.pt:228
 msgid "recommend"
 msgstr ""
 
@@ -1275,6 +1307,6 @@ msgstr ""
 msgid "shipped"
 msgstr ""
 
-#: ./interfaces.py:468
+#: ./interfaces.py:477
 msgid "zip file, include a .cvs file and image files"
 msgstr ""

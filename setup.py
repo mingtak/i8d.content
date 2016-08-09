@@ -51,6 +51,7 @@ setup(
         'plone.directives.form',
         'html2text',
         'naiveBayesClassifier',
+        'bs4',
     ],
     extras_require={
         'test': [

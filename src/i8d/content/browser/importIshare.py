@@ -53,8 +53,7 @@ class ImportIshareNer(BrowserView):
                 type='Post',
                 container=portal['ishare'],
                 title=title,
-                shortText=description[0:20],
-                description=description,
+                shortText='%s...' % description[0:20],
                 text = RichTextValue(safe_unicode(text))
             )
             if img:

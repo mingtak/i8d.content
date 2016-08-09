@@ -367,5 +367,17 @@ random.shuffle(brain)
   </metal:row>
 <!-- Sidebar Product list(random) End -->
 
+
+  <!-- Add this -->
+  <metal:row define-macro="addthis">
+    <!-- Go to www.addthis.com/dashboard to generate a new set of sharing buttons -->
+    <a tal:attributes="href string:https://api.addthis.com/oexchange/0.8/forward/facebook/offer?url=${context/absolute_url}&title=${context/title}&pco=tbxnj-1.0&pubid=ra-56fa88ed9f23a8f6&ct=1&" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/facebook.png" border="0" alt="Facebook"/></a>
+    <a tal:attributes="href string:https://api.addthis.com/oexchange/0.8/forward/lineme/offer?url=${context/absolute_url}&title=${context/title}&pco=tbxnj-1.0&pubid=ra-56fa88ed9f23a8f6&ct=1&" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/lineme.png" border="0" alt="LINE"/></a>
+    <a tal:attributes="href string:https://api.addthis.com/oexchange/0.8/forward/gmail/offer?url=${context/absolute_url}&title=${context/title}&pco=tbxnj-1.0&pubid=ra-56fa88ed9f23a8f6&ct=1&" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/gmail.png" border="0" alt="Gmail"/></a>
+    <a tal:attributes="href string:https://api.addthis.com/oexchange/0.8/forward/twitter/offer?url=${context/absolute_url}&title=${context/title}&pco=tbxnj-1.0&pubid=ra-56fa88ed9f23a8f6&ct=1&" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/twitter.png" border="0" alt="Twitter"/></a>
+    <a tal:attributes="href string:https://api.addthis.com/oexchange/0.8/forward/google_plusone_share/offer?url=${context/absolute_url}&title=${context/title}&pco=tbxnj-1.0&pubid=ra-56fa88ed9f23a8f6&ct=1&" target="_blank"><img src="https://cache.addthiscdn.com/icons/v3/thumbs/32x32/google_plusone_share.png" border="0" alt="Google+"/></a>
+  </metal:row>
+
+
 </body>
 </html>

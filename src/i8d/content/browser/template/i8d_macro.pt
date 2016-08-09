@@ -302,7 +302,70 @@
 
 
 
+<!-- Google AD Begin -->
+  <metal:row define-macro="googlead">
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- i8d_rwd -->
+    <ins class="adsbygoogle"
+         style="display:block"
+         data-ad-client="ca-pub-9621066722313042"
+         data-ad-slot="4162673477"
+         data-ad-format="auto"></ins>
+    <script>
+    (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
+  </metal:row>
+<!-- Google AD End -->
 
+
+<!-- Sidebar Product list(random) Begin -->
+  <metal:row define-macro="sidebar_products">
+
+<?python
+from plone import api
+import random
+portal = api.portal.get()
+catalog = portal.portal_catalog
+brain = list(catalog(Type='Product'))
+random.shuffle(brain)
+?>
+
+          <div class="block block-cart">
+            <div class="block-title" i18n:translate="">Related Products</div>
+            <div class="block-content">
+              <ul>
+                <li class="item" tal:repeat="item python:brain[0:5]" style="padding-bottom:20px">
+                  <a class="product-image"
+                     tal:attributes="title item/Title;
+                                     href item/getURL;">
+                    <img width="90"
+                         tal:attributes="alt item/Title;
+                                         src string:${item/getURL}/@@images/image_2/thumb">
+                  </a>
+                  <div class="product-details">
+                    <p class="product-name">
+                      <a tal:attributes="href item/getURL; title item/Title" tal:content="item/Title">Sample Product</a>
+                    </p>
+                    <tal:price switch="python:item.listPrice > item.salePrice">
+                      <div tal:case="True" class="price old-price">
+                        <span class="price" style="color:#aaa">
+                            <strong i18n:translate="">List Price:</strong> <span>$<span tal:replace="item/listPrice" /></span><br/>
+                        </span>
+                        <strong i18n:translate="">Sale Price:</strong> <span class="pric">$<span tal:replace="item/salePrice" /></span>
+                      </div>
+                      <div tal:case="False">
+                        <strong i18n:translate="">Sale Price:</strong> <span class="pric">$<span tal:replace="item/salePrice" /></span>
+                      </div>
+                    </tal:price>
+                    <!--access clearfix--> 
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+  </metal:row>
+<!-- Sidebar Product list(random) End -->
 
 </body>
 </html>

@@ -147,7 +147,7 @@
  <!-- end Slider -->
 
 
-  <!-- offer banner section(愛分享/健康專欄) -->
+  <!-- offer banner section(愛分享/健康資訊讚) -->
   <section class="main-container col1-layout home-content-container">
     <div class="container">
       <div class="row">
@@ -183,7 +183,7 @@
           </div>
         </div>
 
-        <!-- 健康專欄 -->
+        <!-- 健康資訊讚 -->
         <div class="col-lg-8 col-xs-12 col-sm-8 wow_ bounceInUp animated_">
           <div class="new_title center">
             <h2 i18n:translate="">Health Forum</h2>

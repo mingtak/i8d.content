@@ -386,7 +386,7 @@ msgstr "表頭服務說明"
 
 #: ./browser/template/cover_view.pt:189
 msgid "Health Forum"
-msgstr "健康專欄"
+msgstr "健康資訊讚"
 
 #: ./interfaces.py:260
 msgid "Healthy"

@@ -394,6 +394,11 @@ class IPost(Interface):
         required=False,
     )
 
+    url = schema.URI(
+        title=_(u"URL"),
+        required=False,
+    )
+
     text = RichText(
         title=_(u"Text"),
         default_mime_type='text/html',

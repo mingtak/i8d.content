@@ -36,7 +36,8 @@ class ImportIshareNer(BrowserView):
 
         for item in soup.find_all('item'):
             title = item.title.string
-            if catalog(Title=title):
+            link = item.link.string
+            if catalog(url=link):
                 continue
             text = item.description.string
             description = htmlHandle.handle(text)
@@ -53,6 +54,7 @@ class ImportIshareNer(BrowserView):
                 type='Post',
                 container=portal['ishare'],
                 title=safe_unicode(title),
+                url=link,
                 shortText='%s...' % description[0:20],
                 text = RichTextValue(safe_unicode(text))
             )

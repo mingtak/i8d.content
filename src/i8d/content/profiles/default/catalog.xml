@@ -83,6 +83,11 @@
   </index>
   <column value="inStock"/>
 
+  <index name="url" meta_type="FieldIndex">
+    <indexed_attr value="url" />
+  </index>
+  <column value="url"/>
+
   <column value="productUrl"/>
 
 </object>

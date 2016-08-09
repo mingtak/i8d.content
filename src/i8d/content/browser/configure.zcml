@@ -24,7 +24,7 @@
       name="import_ishare_ner"
       for="*"
       class=".importIshare.ImportIshareNer"
-      permission="cmf.ManagePortal"
+      permission="cmf.AddPortalContent"
       />
 
   <browser:page

@@ -103,8 +103,8 @@ else:
   </tal:getChildNodes>
 
 
+        </div>
       </div>
-    </div>
 
         <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
 
@@ -115,7 +115,7 @@ else:
         </aside>
 
 
-
+    </div>
   </section>
   <!-- End Two columns content -->
 <!-- </tal:check_roles> -->

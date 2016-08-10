@@ -144,16 +144,6 @@ from plone import api
 
                   <hr />
 
-                  <div class="col-2">
-                    <strong i18n:translate="">Recent Question</strong>
-                    <p tal:condition="not:view/questionBrain" i18n:translate="">No any question post</p>
-                    <ul tal:define="items view/questionBrain">
-                      <li tal:repeat="item items">
-                        <a tal:attributes="href item/getURL" tal:content="item/Title" />
-                      </li>
-                    </ul>
-                  </div>
-
                 </div>
 
               </div>
@@ -173,9 +163,6 @@ from plone import api
                 <li><a href="/@@account_info" i18n:translate="">Account Information</a></li>
                 <li><a href="/@@my_order" i18n:translate="">My Orders</a></li>
                 <li><a href="/ishare/++add++Post" i18n:translate="">Post Ishare</a></li>
-                <li><a href="/question/++add++Question" i18n:translate="">Have A Question</a></li>
-                <li><a href="/@@my_isare" i18n:translate="">My Ishare Post</a></li>
-                <li class="last"><a href="/@@my_question" i18n:translate="">My Question List</a></li>
               </ul>
             </div>
           </div>

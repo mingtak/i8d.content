@@ -53,10 +53,10 @@ class ImportIshareNer(BrowserView):
             ishare = api.content.create(
                 type='Post',
                 container=portal['ishare'],
-                title=safe_unicode(title),
-                url=link,
+                title=unicode(title),
+                url=unicode(link),
                 shortText='%s...' % description[0:20],
-                text = RichTextValue(safe_unicode(text))
+                text = RichTextValue(unicode(text))
             )
             if img:
                 ishare.image = imgFile

@@ -159,7 +159,7 @@
 <td rowspan="1">&nbsp;</td>
 <td rowspan="1">&nbsp;</td>
 <td rowspan="1">&nbsp;</td>
-<td rowspan="1" class="right"><h3 style="color:blue">本次消費應付</h3>(未計紅利折抵 / <span style="color:red">開幕期間商品金額滿3000折抵520</span>):</td>
+<td rowspan="1" class="right"><h3 style="color:blue">本次消費應付</h3>: </td>
 <td rowspan="1">$ <span tal:replace="view/payable"/></td>
 </tr>
 
@@ -190,7 +190,7 @@
 </section>
 
 
-<script src="/++theme++i8d.theme/js/dk-tw-citySelector.min.js" async></script>
+<script src="/++theme++i8d.theme/js/dk-tw-citySelector.min.js"></script>
 <script>
   $(function() {
   $('form').dk_tw_citySelector('.city', '.district', '.zipcode');

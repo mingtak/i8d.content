@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -* 
+# -*- coding: utf-8 -*
 from i8d.content import _
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
@@ -128,7 +128,7 @@ class CheckoutConfirm(BrowserView):
         for item in self.brain:
             qty = int(request.cookies.get(item.UID, 1))
             self.totalAmount += item.salePrice * qty
-            self.shippingFee += item.standardShippingCost            
+            self.shippingFee += item.standardShippingCost
             self.discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
 
         if self.profile and self.discount > self.profile.bonus:
@@ -136,8 +136,8 @@ class CheckoutConfirm(BrowserView):
 
 # 應付金額：totalAmount + shippingFee - specailDiscount(滿3000折520)
         self.payable = self.totalAmount
-        if self.payable > 3000:
-            self.payable -= 520
+#        if self.payable > 3000:
+#            self.payable -= 520
         self.payable += self.shippingFee
 
 
@@ -195,8 +195,8 @@ class Checkout(BrowserView):
                 discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
 
         # 計算是否滿3000，是就折520
-        if totalAmount >= 3000:
-            specialDiscount = 520
+#        if totalAmount >= 3000:
+#            specialDiscount = 520
 
         totalAmount += shippingFee
 

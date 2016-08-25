@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-09 09:17+0000\n"
+"POT-Creation-Date: 2016-08-25 03:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -27,7 +27,7 @@ msgid "About Us"
 msgstr "關於艾巴廸"
 
 #: ./browser/template/account_info.pt:171
-#: ./browser/template/my_account.pt:172
+#: ./browser/template/my_account.pt:162
 #: ./browser/template/my_order.pt:89
 msgid "Account Dashboard"
 msgstr "帳號總覽"
@@ -94,7 +94,7 @@ msgstr "更多分享"
 msgid "All in one(AIO) Checkout Server URL"
 msgstr "歐付寶 AIO 結帳連結網址"
 
-#: ./interfaces.py:568
+#: ./interfaces.py:573
 msgid "Amount"
 msgstr "總計"
 
@@ -244,11 +244,11 @@ msgstr "客戶端回覆網址，物流使用"
 msgid "Collection"
 msgstr "集合"
 
-#: ./browser/template/product_view.pt:269
+#: ./browser/template/product_view.pt:264
 msgid "Comments"
 msgstr "相關留言"
 
-#: ./interfaces.py:552
+#: ./interfaces.py:557
 msgid "Company Title"
 msgstr "公司抬頭"
 
@@ -262,7 +262,7 @@ msgid "Confirm Cart / shipping info"
 msgstr "確認購物車 / 配送資訊"
 
 #: ./browser/template/account_info.pt:192
-#: ./browser/template/my_account.pt:193
+#: ./browser/template/my_account.pt:180
 #: ./browser/template/my_order.pt:110
 msgid "Contact Us"
 msgstr "聯絡我們"
@@ -300,7 +300,7 @@ msgstr "描述:"
 
 #: ./browser/template/cover_view.pt:252
 #: ./browser/template/i8d_macro.pt:62
-#: ./browser/template/product_view.pt:314
+#: ./browser/template/product_view.pt:309
 msgid "Detail"
 msgstr "詳細內容"
 
@@ -349,7 +349,7 @@ msgid "Expert image."
 msgstr "專家圖檔。"
 
 #: ./browser/template/account_info.pt:191
-#: ./browser/template/my_account.pt:192
+#: ./browser/template/my_account.pt:179
 #: ./browser/template/my_order.pt:109
 msgid "FAQ"
 msgstr "問與答"
@@ -375,7 +375,6 @@ msgid "Google reCAPTCHA Secret"
 msgstr "Google 驗證碼密碼"
 
 #: ./browser/template/account_info.pt:175
-#: ./browser/template/my_account.pt:176
 #: ./browser/template/my_order.pt:93
 msgid "Have A Question"
 msgstr "我要提問"
@@ -406,7 +405,7 @@ msgstr "熱門商品"
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:81
 #: ./browser/template/account_info.pt:188
-#: ./browser/template/my_account.pt:189
+#: ./browser/template/my_account.pt:176
 msgid "How to buy"
 msgstr "如何購買"
 
@@ -506,7 +505,7 @@ msgstr "物流 C2C 回覆網址"
 msgid "Logistics C2C Reply URL, for allPay's logistics"
 msgstr "物流 C2C 回覆網址，歐付寶物流使用"
 
-#: ./interfaces.py:599
+#: ./interfaces.py:604
 msgid "Logistics Express Create Results"
 msgstr "新增物流訂單結果"
 
@@ -530,7 +529,7 @@ msgstr "物流 Hash Key"
 msgid "Logistics HashKey, for allPay"
 msgstr "物流 Hash Key, 歐付寶使用"
 
-#: ./interfaces.py:591
+#: ./interfaces.py:596
 msgid "Logistics Map Results"
 msgstr "物流地圖結果"
 
@@ -543,7 +542,7 @@ msgstr "物流地圖"
 msgid "Logistics Method"
 msgstr "配送方法"
 
-#: ./interfaces.py:600
+#: ./interfaces.py:605
 msgid "Logistics express create results, feedback from allPay."
 msgstr "物流新增訂單結果，由歐付寶傳回"
 
@@ -556,7 +555,7 @@ msgstr "物流新增訂單網址"
 msgid "Logistics info"
 msgstr "配送資訊"
 
-#: ./interfaces.py:592
+#: ./interfaces.py:597
 msgid "Logistics map results, feedback from allPay."
 msgstr "物流地圖結果，由歐付寶回傳"
 
@@ -576,11 +575,11 @@ msgstr "管理商品"
 msgid "Manually"
 msgstr "手動填寫(清除)"
 
-#: ./interfaces.py:492
+#: ./interfaces.py:497
 msgid "Mapping to allPay's ItemName"
 msgstr "對映到歐付寶的 ItemName"
 
-#: ./interfaces.py:486
+#: ./interfaces.py:491
 msgid "Mapping to allPay's MerchantTradeNo"
 msgstr "對映到歐付寶的 MerchantTradeNo"
 
@@ -612,7 +611,6 @@ msgid "My Account"
 msgstr "我的帳號"
 
 #: ./browser/template/account_info.pt:176
-#: ./browser/template/my_account.pt:177
 #: ./browser/template/my_order.pt:94
 msgid "My Ishare Post"
 msgstr "發表過的愛分享"
@@ -622,13 +620,12 @@ msgid "My Order"
 msgstr "歷史訂單"
 
 #: ./browser/template/account_info.pt:173
-#: ./browser/template/my_account.pt:174
+#: ./browser/template/my_account.pt:164
 #: ./browser/template/my_order.pt:91
 msgid "My Orders"
 msgstr "歷史訂單"
 
 #: ./browser/template/account_info.pt:177
-#: ./browser/template/my_account.pt:178
 #: ./browser/template/my_order.pt:95
 msgid "My Question List"
 msgstr "歷史提問"
@@ -654,10 +651,6 @@ msgstr "最新消息"
 msgid "No any ishare post"
 msgstr "尚未發表分享"
 
-#: ./browser/template/my_account.pt:149
-msgid "No any question post"
-msgstr "尚無提問"
-
 #: ./browser/template/cart_state.pt:26
 msgid "Nothing in Cart."
 msgstr "購物車無商品"
@@ -671,11 +664,11 @@ msgstr "訂單"
 msgid "Order #"
 msgstr "訂單編號"
 
-#: ./interfaces.py:575
+#: ./interfaces.py:580
 msgid "Order State"
 msgstr "訂單狀態"
 
-#: ./interfaces.py:485
+#: ./interfaces.py:490
 msgid "Order Title"
 msgstr "訂單標題"
 
@@ -684,7 +677,7 @@ msgstr "訂單標題"
 msgid "Order Total"
 msgstr "訂單總計"
 
-#: ./interfaces.py:576
+#: ./interfaces.py:581
 msgid "Order state."
 msgstr "訂單狀態"
 
@@ -779,13 +772,13 @@ msgid "Post"
 msgstr "文章"
 
 #: ./browser/template/account_info.pt:174
-#: ./browser/template/my_account.pt:175
+#: ./browser/template/my_account.pt:165
 #: ./browser/template/my_order.pt:92
 msgid "Post Ishare"
 msgstr "發表愛分享"
 
 #: ./browser/template/account_info.pt:189
-#: ./browser/template/my_account.pt:190
+#: ./browser/template/my_account.pt:177
 #: ./browser/template/my_order.pt:107
 msgid "Private"
 msgstr "隱私權政策"
@@ -798,7 +791,7 @@ msgstr "隱私權政策"
 msgid "Product"
 msgstr "商品"
 
-#: ./browser/template/product_view.pt:268
+#: ./browser/template/product_view.pt:263
 msgid "Product Description"
 msgstr "產品說明"
 
@@ -820,11 +813,11 @@ msgstr "商品名稱"
 msgid "Product Show In Nav"
 msgstr "顯示在主選單的商品"
 
-#: ./interfaces.py:559
+#: ./interfaces.py:564
 msgid "Product UID(s)"
 msgstr "商品 UID(s)"
 
-#: ./interfaces.py:560
+#: ./interfaces.py:565
 msgid "Product UID(s) at shopping cart, include qty."
 msgstr "購物車中的商品 UID ，包含數量。"
 
@@ -840,7 +833,7 @@ msgstr "商品圖檔。"
 msgid "Product introduction web page include http:// or https://"
 msgstr "商品官網網址，本項須包含 http:// 或 https://"
 
-#: ./interfaces.py:476
+#: ./interfaces.py:481
 msgid "Products File"
 msgstr "上傳商品檔案"
 
@@ -868,11 +861,11 @@ msgstr "促銷文字，本項支援 html 語法"
 msgid "Provider"
 msgstr "供應商"
 
-#: ./interfaces.py:463
+#: ./interfaces.py:468
 msgid "Provider Logo"
 msgstr "供應商商標"
 
-#: ./interfaces.py:453
+#: ./interfaces.py:458
 msgid "Provider Name"
 msgstr "供應商名稱"
 
@@ -880,11 +873,11 @@ msgstr "供應商名稱"
 msgid "Provider Show In Nav"
 msgstr "顯示在主選單的供應商"
 
-#: ./interfaces.py:464
+#: ./interfaces.py:469
 msgid "Provider logo image"
 msgstr "供應商商標圖檔"
 
-#: ./interfaces.py:470
+#: ./interfaces.py:475
 msgid "Provider website url, must include http:// or https://"
 msgstr "供應商網址，請含 http:// 或 https://"
 
@@ -907,11 +900,11 @@ msgstr "數量"
 msgid "Question"
 msgstr "提問"
 
-#: ./interfaces.py:414
+#: ./interfaces.py:419
 msgid "Question Detail"
 msgstr "提問詳細內容"
 
-#: ./interfaces.py:408
+#: ./interfaces.py:413
 msgid "Question Title"
 msgstr "提問標題"
 
@@ -930,7 +923,7 @@ msgstr "閱讀"
 msgid "Receiver"
 msgstr "收件人"
 
-#: ./interfaces.py:498
+#: ./interfaces.py:503
 msgid "Receiver name."
 msgstr "收件人姓名"
 
@@ -941,10 +934,6 @@ msgstr "最近發表愛分享"
 #: ./browser/template/my_account.pt:35
 msgid "Recent Orders"
 msgstr "最近訂單"
-
-#: ./browser/template/my_account.pt:148
-msgid "Recent Question"
-msgstr "最近提問"
 
 #: ./browser/template/question_view.pt:117
 msgid "Recent iShare Posts"
@@ -963,26 +952,26 @@ msgid "Related"
 msgstr "關連的"
 
 #: ./browser/template/account_info.pt:185
-#: ./browser/template/my_account.pt:186
+#: ./browser/template/my_account.pt:173
 #: ./browser/template/my_order.pt:103
 msgid "Related Link"
 msgstr "相關連結"
 
 #: ./browser/template/i8d_macro.pt:334
-#: ./browser/template/product_view.pt:375
+#: ./browser/template/product_view.pt:370
 msgid "Related Products"
 msgstr "相關產品"
 
-#: ./browser/template/product_view.pt:270
+#: ./browser/template/product_view.pt:265
 msgid "Related products"
 msgstr "相關產品"
 
-#: ./interfaces.py:443
+#: ./interfaces.py:448
 msgid "Reply Question"
 msgstr "回覆提問"
 
 #: ./browser/template/account_info.pt:190
-#: ./browser/template/my_account.pt:191
+#: ./browser/template/my_account.pt:178
 #: ./browser/template/my_order.pt:108
 msgid "Return Policy"
 msgstr "退貨政策"
@@ -1035,7 +1024,7 @@ msgstr "銷售價格必需小於或等於定價。"
 msgid "Sale price:"
 msgstr "售價:"
 
-#: ./browser/template/product_view.pt:287
+#: ./browser/template/product_view.pt:282
 msgid "Same Provider"
 msgstr "這個供應商還有..."
 
@@ -1045,7 +1034,7 @@ msgstr "搜尋"
 
 #: ./browser/template/cover_view.pt:263
 #: ./browser/template/i8d_macro.pt:73
-#: ./browser/template/product_view.pt:325
+#: ./browser/template/product_view.pt:320
 msgid "Search Related"
 msgstr "搜尋類似商品"
 
@@ -1132,11 +1121,11 @@ msgid "Subtotal"
 msgstr "小計"
 
 #: ./browser/template/invoice_method.pt:16
-#: ./interfaces.py:546
+#: ./interfaces.py:551
 msgid "Tax ID"
 msgstr "統一編號"
 
-#: ./interfaces.py:398
+#: ./interfaces.py:403
 msgid "Text"
 msgstr ""
 
@@ -1144,10 +1133,14 @@ msgstr ""
 msgid "The list price of the product."
 msgstr "本項商品訂價"
 
-#: ./browser/template/post_view.pt:62
+#: ./browser/template/post_view.pt:65
 #: ./browser/template/question_view.pt:74
 msgid "This entry was posted on"
 msgstr "本文發表時間:"
+
+#: ./browser/shopping_cart.py:33
+msgid "This item is no stock"
+msgstr "本商品已無庫存"
 
 #: ./interfaces.py:218
 msgid "Title"
@@ -1158,13 +1151,17 @@ msgstr "標頭"
 msgid "Total:"
 msgstr "總計"
 
-#: ./interfaces.py:583
+#: ./interfaces.py:588
 msgid "Trading Results"
 msgstr "交易結果"
 
-#: ./interfaces.py:584
+#: ./interfaces.py:589
 msgid "Trading Results, feedback from allPay."
 msgstr "交易結果，由歐付寶回傳"
+
+#: ./interfaces.py:398
+msgid "URL"
+msgstr ""
 
 #: ./configure.zcml:39
 msgid "Uninstalls the i8d.content add-on."
@@ -1207,7 +1204,7 @@ msgstr "點看更多"
 msgid "View Order"
 msgstr "查看訂單"
 
-#: ./interfaces.py:469
+#: ./interfaces.py:474
 msgid "Website"
 msgstr "網站"
 
@@ -1304,6 +1301,6 @@ msgstr "已退貨"
 msgid "shipped"
 msgstr "已出貨"
 
-#: ./interfaces.py:477
+#: ./interfaces.py:482
 msgid "zip file, include a .cvs file and image files"
 msgstr "zip 壓縮檔，包含一個 cvs 檔案及相關的圖檔"

@@ -4,7 +4,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2016-08-09 09:17+0000\n"
+"POT-Creation-Date: 2016-08-25 03:10+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -30,7 +30,7 @@ msgid "About Us"
 msgstr ""
 
 #: ./browser/template/account_info.pt:171
-#: ./browser/template/my_account.pt:172
+#: ./browser/template/my_account.pt:162
 #: ./browser/template/my_order.pt:89
 msgid "Account Dashboard"
 msgstr ""
@@ -97,7 +97,7 @@ msgstr ""
 msgid "All in one(AIO) Checkout Server URL"
 msgstr ""
 
-#: ./interfaces.py:568
+#: ./interfaces.py:573
 msgid "Amount"
 msgstr ""
 
@@ -247,11 +247,11 @@ msgstr ""
 msgid "Collection"
 msgstr ""
 
-#: ./browser/template/product_view.pt:269
+#: ./browser/template/product_view.pt:264
 msgid "Comments"
 msgstr ""
 
-#: ./interfaces.py:552
+#: ./interfaces.py:557
 msgid "Company Title"
 msgstr ""
 
@@ -265,7 +265,7 @@ msgid "Confirm Cart / shipping info"
 msgstr ""
 
 #: ./browser/template/account_info.pt:192
-#: ./browser/template/my_account.pt:193
+#: ./browser/template/my_account.pt:180
 #: ./browser/template/my_order.pt:110
 msgid "Contact Us"
 msgstr ""
@@ -303,7 +303,7 @@ msgstr ""
 
 #: ./browser/template/cover_view.pt:252
 #: ./browser/template/i8d_macro.pt:62
-#: ./browser/template/product_view.pt:314
+#: ./browser/template/product_view.pt:309
 msgid "Detail"
 msgstr ""
 
@@ -352,7 +352,7 @@ msgid "Expert image."
 msgstr ""
 
 #: ./browser/template/account_info.pt:191
-#: ./browser/template/my_account.pt:192
+#: ./browser/template/my_account.pt:179
 #: ./browser/template/my_order.pt:109
 msgid "FAQ"
 msgstr ""
@@ -378,7 +378,6 @@ msgid "Google reCAPTCHA Secret"
 msgstr ""
 
 #: ./browser/template/account_info.pt:175
-#: ./browser/template/my_account.pt:176
 #: ./browser/template/my_order.pt:93
 msgid "Have A Question"
 msgstr ""
@@ -409,7 +408,7 @@ msgstr ""
 
 #: ./browser/overrides/plone.app.layout.viewlets.footer.pt:81
 #: ./browser/template/account_info.pt:188
-#: ./browser/template/my_account.pt:189
+#: ./browser/template/my_account.pt:176
 msgid "How to buy"
 msgstr ""
 
@@ -509,7 +508,7 @@ msgstr ""
 msgid "Logistics C2C Reply URL, for allPay's logistics"
 msgstr ""
 
-#: ./interfaces.py:599
+#: ./interfaces.py:604
 msgid "Logistics Express Create Results"
 msgstr ""
 
@@ -533,7 +532,7 @@ msgstr ""
 msgid "Logistics HashKey, for allPay"
 msgstr ""
 
-#: ./interfaces.py:591
+#: ./interfaces.py:596
 msgid "Logistics Map Results"
 msgstr ""
 
@@ -546,7 +545,7 @@ msgstr ""
 msgid "Logistics Method"
 msgstr ""
 
-#: ./interfaces.py:600
+#: ./interfaces.py:605
 msgid "Logistics express create results, feedback from allPay."
 msgstr ""
 
@@ -559,7 +558,7 @@ msgstr ""
 msgid "Logistics info"
 msgstr ""
 
-#: ./interfaces.py:592
+#: ./interfaces.py:597
 msgid "Logistics map results, feedback from allPay."
 msgstr ""
 
@@ -579,11 +578,11 @@ msgstr ""
 msgid "Manually"
 msgstr ""
 
-#: ./interfaces.py:492
+#: ./interfaces.py:497
 msgid "Mapping to allPay's ItemName"
 msgstr ""
 
-#: ./interfaces.py:486
+#: ./interfaces.py:491
 msgid "Mapping to allPay's MerchantTradeNo"
 msgstr ""
 
@@ -615,7 +614,6 @@ msgid "My Account"
 msgstr ""
 
 #: ./browser/template/account_info.pt:176
-#: ./browser/template/my_account.pt:177
 #: ./browser/template/my_order.pt:94
 msgid "My Ishare Post"
 msgstr ""
@@ -625,13 +623,12 @@ msgid "My Order"
 msgstr ""
 
 #: ./browser/template/account_info.pt:173
-#: ./browser/template/my_account.pt:174
+#: ./browser/template/my_account.pt:164
 #: ./browser/template/my_order.pt:91
 msgid "My Orders"
 msgstr ""
 
 #: ./browser/template/account_info.pt:177
-#: ./browser/template/my_account.pt:178
 #: ./browser/template/my_order.pt:95
 msgid "My Question List"
 msgstr ""
@@ -657,10 +654,6 @@ msgstr ""
 msgid "No any ishare post"
 msgstr ""
 
-#: ./browser/template/my_account.pt:149
-msgid "No any question post"
-msgstr ""
-
 #: ./browser/template/cart_state.pt:26
 msgid "Nothing in Cart."
 msgstr ""
@@ -674,11 +667,11 @@ msgstr ""
 msgid "Order #"
 msgstr ""
 
-#: ./interfaces.py:575
+#: ./interfaces.py:580
 msgid "Order State"
 msgstr ""
 
-#: ./interfaces.py:485
+#: ./interfaces.py:490
 msgid "Order Title"
 msgstr ""
 
@@ -687,7 +680,7 @@ msgstr ""
 msgid "Order Total"
 msgstr ""
 
-#: ./interfaces.py:576
+#: ./interfaces.py:581
 msgid "Order state."
 msgstr ""
 
@@ -782,13 +775,13 @@ msgid "Post"
 msgstr ""
 
 #: ./browser/template/account_info.pt:174
-#: ./browser/template/my_account.pt:175
+#: ./browser/template/my_account.pt:165
 #: ./browser/template/my_order.pt:92
 msgid "Post Ishare"
 msgstr ""
 
 #: ./browser/template/account_info.pt:189
-#: ./browser/template/my_account.pt:190
+#: ./browser/template/my_account.pt:177
 #: ./browser/template/my_order.pt:107
 msgid "Private"
 msgstr ""
@@ -801,7 +794,7 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: ./browser/template/product_view.pt:268
+#: ./browser/template/product_view.pt:263
 msgid "Product Description"
 msgstr ""
 
@@ -823,11 +816,11 @@ msgstr ""
 msgid "Product Show In Nav"
 msgstr ""
 
-#: ./interfaces.py:559
+#: ./interfaces.py:564
 msgid "Product UID(s)"
 msgstr ""
 
-#: ./interfaces.py:560
+#: ./interfaces.py:565
 msgid "Product UID(s) at shopping cart, include qty."
 msgstr ""
 
@@ -843,7 +836,7 @@ msgstr ""
 msgid "Product introduction web page include http:// or https://"
 msgstr ""
 
-#: ./interfaces.py:476
+#: ./interfaces.py:481
 msgid "Products File"
 msgstr ""
 
@@ -871,11 +864,11 @@ msgstr ""
 msgid "Provider"
 msgstr ""
 
-#: ./interfaces.py:463
+#: ./interfaces.py:468
 msgid "Provider Logo"
 msgstr ""
 
-#: ./interfaces.py:453
+#: ./interfaces.py:458
 msgid "Provider Name"
 msgstr ""
 
@@ -883,11 +876,11 @@ msgstr ""
 msgid "Provider Show In Nav"
 msgstr ""
 
-#: ./interfaces.py:464
+#: ./interfaces.py:469
 msgid "Provider logo image"
 msgstr ""
 
-#: ./interfaces.py:470
+#: ./interfaces.py:475
 msgid "Provider website url, must include http:// or https://"
 msgstr ""
 
@@ -910,11 +903,11 @@ msgstr ""
 msgid "Question"
 msgstr ""
 
-#: ./interfaces.py:414
+#: ./interfaces.py:419
 msgid "Question Detail"
 msgstr ""
 
-#: ./interfaces.py:408
+#: ./interfaces.py:413
 msgid "Question Title"
 msgstr ""
 
@@ -933,7 +926,7 @@ msgstr ""
 msgid "Receiver"
 msgstr ""
 
-#: ./interfaces.py:498
+#: ./interfaces.py:503
 msgid "Receiver name."
 msgstr ""
 
@@ -943,10 +936,6 @@ msgstr ""
 
 #: ./browser/template/my_account.pt:35
 msgid "Recent Orders"
-msgstr ""
-
-#: ./browser/template/my_account.pt:148
-msgid "Recent Question"
 msgstr ""
 
 #: ./browser/template/question_view.pt:117
@@ -966,26 +955,26 @@ msgid "Related"
 msgstr ""
 
 #: ./browser/template/account_info.pt:185
-#: ./browser/template/my_account.pt:186
+#: ./browser/template/my_account.pt:173
 #: ./browser/template/my_order.pt:103
 msgid "Related Link"
 msgstr ""
 
 #: ./browser/template/i8d_macro.pt:334
-#: ./browser/template/product_view.pt:375
+#: ./browser/template/product_view.pt:370
 msgid "Related Products"
 msgstr ""
 
-#: ./browser/template/product_view.pt:270
+#: ./browser/template/product_view.pt:265
 msgid "Related products"
 msgstr ""
 
-#: ./interfaces.py:443
+#: ./interfaces.py:448
 msgid "Reply Question"
 msgstr ""
 
 #: ./browser/template/account_info.pt:190
-#: ./browser/template/my_account.pt:191
+#: ./browser/template/my_account.pt:178
 #: ./browser/template/my_order.pt:108
 msgid "Return Policy"
 msgstr ""
@@ -1038,7 +1027,7 @@ msgstr ""
 msgid "Sale price:"
 msgstr ""
 
-#: ./browser/template/product_view.pt:287
+#: ./browser/template/product_view.pt:282
 msgid "Same Provider"
 msgstr ""
 
@@ -1048,7 +1037,7 @@ msgstr ""
 
 #: ./browser/template/cover_view.pt:263
 #: ./browser/template/i8d_macro.pt:73
-#: ./browser/template/product_view.pt:325
+#: ./browser/template/product_view.pt:320
 msgid "Search Related"
 msgstr ""
 
@@ -1135,11 +1124,11 @@ msgid "Subtotal"
 msgstr ""
 
 #: ./browser/template/invoice_method.pt:16
-#: ./interfaces.py:546
+#: ./interfaces.py:551
 msgid "Tax ID"
 msgstr ""
 
-#: ./interfaces.py:398
+#: ./interfaces.py:403
 msgid "Text"
 msgstr ""
 
@@ -1147,9 +1136,13 @@ msgstr ""
 msgid "The list price of the product."
 msgstr ""
 
-#: ./browser/template/post_view.pt:62
+#: ./browser/template/post_view.pt:65
 #: ./browser/template/question_view.pt:74
 msgid "This entry was posted on"
+msgstr ""
+
+#: ./browser/shopping_cart.py:33
+msgid "This item is no stock"
 msgstr ""
 
 #: ./interfaces.py:218
@@ -1161,12 +1154,16 @@ msgstr ""
 msgid "Total:"
 msgstr ""
 
-#: ./interfaces.py:583
+#: ./interfaces.py:588
 msgid "Trading Results"
 msgstr ""
 
-#: ./interfaces.py:584
+#: ./interfaces.py:589
 msgid "Trading Results, feedback from allPay."
+msgstr ""
+
+#: ./interfaces.py:398
+msgid "URL"
 msgstr ""
 
 #: ./configure.zcml:39
@@ -1210,7 +1207,7 @@ msgstr ""
 msgid "View Order"
 msgstr ""
 
-#: ./interfaces.py:469
+#: ./interfaces.py:474
 msgid "Website"
 msgstr ""
 
@@ -1307,6 +1304,6 @@ msgstr ""
 msgid "shipped"
 msgstr ""
 
-#: ./interfaces.py:477
+#: ./interfaces.py:482
 msgid "zip file, include a .cvs file and image files"
 msgstr ""

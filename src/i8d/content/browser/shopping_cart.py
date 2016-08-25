@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+from i8d.content import _
 from Products.Five.browser import BrowserView
 from Products.Five.browser.pagetemplatefile import ViewPageTemplateFile
 #from zope.component import getMultiAdapter
@@ -25,7 +27,11 @@ class CartAdd(BrowserView):
         uid = request.form.get('uid', None)
         if not uid:
             return
-        
+
+        brain = catalog(UID=uid)
+        if brain and not brain[0].inStock:
+            return
+
         if request.form['uid'] not in itemInCart_list:
             itemInCart_list.append(request.form['uid'])
             itemInCart_list = list(set(itemInCart_list))

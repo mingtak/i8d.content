@@ -194,9 +194,19 @@ class Checkout(BrowserView):
             if not api.user.is_anonymous():
                 discount += int(item.salePrice * item.maxUsedBonus) * int(request.cookies.get(item.UID, 1))
 
-        # 計算是否滿3000，是就折520
+        # 計算是否滿3000，是就折520 / 本活動已於8/24結束
 #        if totalAmount >= 3000:
 #            specialDiscount = 520
+
+        # 8/25 開始促銷 start
+        if totalAmount >= 5000:
+            itemName += ', 滿5000加贈皇家珍珠鈣(100顆)'
+            itemDescription += ', 滿3000加贈皇家珍珠鈣(100顆)'
+        elif totalAmount >= 3000:
+            itemName += ', 滿3000加贈皇家珍珠鈣(50顆)'
+            itemDescription += ', 滿3000加贈皇家珍珠鈣(50顆)'
+        # 8/25 開始促銷 end
+
 
         totalAmount += shippingFee
 
@@ -236,6 +246,7 @@ class Checkout(BrowserView):
 
         portal = api.portal.get()
         with api.env.adopt_roles(['Manager']):
+#            import pdb ;pdb.set_trace()
             order = api.content.create(
                 type='Order',
                 title=merchantTradeNo,

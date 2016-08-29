@@ -144,11 +144,13 @@
                          (request.getURL(), request.form.get('key'), (0 if s-pageItems<0 else s-pageItems), request.get('t'))">&laquo;</a>
                     </li>
 <!-- 往前頁數-->
-                    <li tal:repeat="pagenumber python:range(s/pageItems)">
+<tal:page tal:repeat="pagenumber python:range(s/pageItems)">
+                    <li tal:condition="python:pagenumber>(s/pageItems - 4)">
                       <a tal:content="python:pagenumber + 1"
                          tal:attributes="href python:'%s?key=%s&s:int=%s' %
                          (request.getURL(), request.form.get('key'), (pagenumber*pageItems))">1</a>
                     </li>
+</tal:page>
 <!-- Current page -->
                     <li class="active"
                         tal:condition="python:s>=0">
@@ -156,11 +158,13 @@
                     </li>
 <!-- 往後頁數 -->
     <tal:check condition="python:(len(brain)/pageItems) > (s/pageItems +1)">
-                    <li tal:repeat="pagenumber python:range((s/pageItems +2), 1+len(brain)/pageItems)">
+        <tal:page repeat="pagenumber python:range((s/pageItems +2), 1+len(brain)/pageItems)">
+                    <li tal:condition="python:pagenumber<(s/pageItems + 5)">
                       <a tal:content="pagenumber"
                          tal:attributes="href python:'%s?key=%s&s:int=%s' %
                          (request.getURL(), request.form.get('key'), (pagenumber-1)*pageItems)"/>
                     </li>
+        </tal:page>
     </tal:check>
 <!-- Link to last -->
                     <li tal:condition="python:s+pageItems<len(brain)">

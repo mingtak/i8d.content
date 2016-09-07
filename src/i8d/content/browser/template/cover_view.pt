@@ -12,6 +12,10 @@
 <metal:content-core define-macro="content-core"
                     tal:define="toc context/table_of_contents|nothing;">
 
+<?python
+from plone import api
+portal=api.portal.get()
+?>
 
 
  <!-- 首頁 Slider -->
@@ -160,19 +164,22 @@
           <p/>
 
           <div class="category-products">
-            <div class="products small-list">
+            <div class="products small-list"
+                 tal:define="brain python:api.content.find(context=portal['ishare'],
+                                                           review_state='published',
+                                                           Type='Post', sort_on='created', sort_order='reverse')">
 
-              <div class="item" tal:repeat="item context/article">
+              <div class="item" tal:repeat="item python:brain[0:4]">
                 <div class="item-area">
                   <div class="product-image-area" style="width:65px">
-                    <a tal:attributes="href item/to_object/absolute_url" class="product-image">
-                      <img tal:attributes="src string:${item/to_object/absolute_url}/@@images/image/thumb; alt item/to_object/title">
+                    <a tal:attributes="href item/getURL" class="product-image">
+                      <img tal:attributes="src string:${item/getURL}/@@images/image/thumb; alt item/Title">
                     </a>
                   </div>
                   <div class="details-area">
-                    <h2 class="product-name"><a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title">Title</a></h2>
-                    <div tal:content="item/to_object/shortText" style="color:grey"/>
-                    <a tal:attributes="href item/to_object/absolute_url"><strong class="price" style="float:right" i18n:translate="">...Read</strong></a>
+                    <h2 class="product-name"><a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></h2>
+                    <div tal:content="python:item.getObject().shortText" style="color:grey"/>
+                    <a tal:attributes="href item/getURL"><strong class="price" style="float:right" i18n:translate="">...Read</strong></a>
                   </div>
                 </div>
               </div>
@@ -190,19 +197,22 @@
           </div>
           <p/>
           <div class="category-products">
-            <div class="products small-list">
+            <div class="products small-list"
+                 tal:define="brain python:api.content.find(context=portal['healthy'], 
+                                                           review_state='published', 
+                                                           Type='Post', sort_on='created', sort_order='reverse')">
 
-              <div class="item" tal:repeat="item context/healthy">
+              <div class="item" tal:repeat="item python:brain[0:5]">
                 <div class="item-area">
                   <div class="product-image-area" style="width:65px">
-                    <a tal:attributes="href item/to_object/absolute_url" class="product-image">
-                      <img tal:attributes="src string:${item/to_object/absolute_url}/@@images/image/thumb; alt item/to_object/title">
+                    <a tal:attributes="href item/getURL" class="product-image">
+                      <img tal:attributes="src string:${item/getURL}/@@images/image/thumb; alt item/Title">
                     </a>
                   </div>
                   <div class="details-area">
-                    <h2 class="product-name"><a tal:attributes="href item/to_object/absolute_url" tal:content="item/to_object/title">Title</a></h2>
-                    <div tal:content="item/to_object/shortText" style="color:grey"/>
-                    <a tal:attributes="href item/to_object/absolute_url"><strong class="price" style="float:right" i18n:translate="">...Read</strong></a>
+                    <h2 class="product-name"><a tal:attributes="href item/getURL" tal:content="item/Title">Title</a></h2>
+                    <div tal:content="python:item.getObject().shortText" style="color:grey"/>
+                    <a tal:attributes="href item/getURL"><strong class="price" style="float:right" i18n:translate="">...Read</strong></a>
                   </div>
                 </div>
               </div>

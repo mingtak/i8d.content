@@ -15,11 +15,15 @@
 
 <?python
 from plone import api
+import random
 if api.user.is_anonymous():
     manageProduct = False
 else:
     roles = api.user.get_roles()
     manageProduct = 'Manager' in roles
+
+relatedItems = list(api.content.find(Type='Product'))
+random.shuffle(relatedItems)
 ?>
 
 <!--
@@ -207,51 +211,15 @@ else:
                 <aside class="col-lg-3 col-sm-3 col-xs-12 sidebar_area hidden-xs">
 
 
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- i8d_rwd -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9621066722313042"
-     data-ad-slot="4162673477"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
-
-<!--
-                  <div class="brand-imgs">
-                    <a target="_blank" href="#">
-                      <img tal:replace="structure context/@@images/image_1/mini | nothing" />
-                    </a>
-                  </div>
-                  <div class="brand-imgs">
-                    <a target="_blank" href="#">
-                      <img tal:replace="structure context/@@images/image_1/mini | nothing" />
-                    </a>
-                  </div>
-
-                  <div class="brand-imgs">
-                    <a target="_blank" href="#">
-                      <img tal:replace="structure context/@@images/image_1/mini | nothing" />
-                    </a>
-                  </div>
-
-                  <div class="brand-imgs">
-                    <a target="_blank" href="#">
-                      <img tal:replace="structure context/@@images/image_1/mini | nothing" />
-                    </a>
-                  </div>
--->
-
-	
-<!--                  <div class="product-sibebar-banner">
-                    <div class="text-banner">
-                      <a href="#" title="Text Banner">
-                        <img tal:replace="structure context/@@images/image_1/mini" />
+                  <div class="product-sibebar-banner">
+                    <h4 class="sidebar-title">精選推薦</h4>
+                    <div class="text-banner"  tal:repeat="item python:relatedItems[0:5]">
+                      <a tal:attributes="href item/getURL; title item/Title">
+                        <img tal:attributes="src string:${item/getURL}/@@images/image_1/mini; alt item/Title" />
                       </a>
                     </div>
                   </div>
--->
+
                 </aside>
 <!-- sidebar end -->
               </form>

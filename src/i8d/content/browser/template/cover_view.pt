@@ -30,7 +30,7 @@ portal=api.portal.get()
 <tal:can_see condition="item/to_object/@@can_see_with_date_range">
 
   <tal:img switch="python:bool(item.to_object.image_1)">
-        <li tal:case="True" data-transition='random' data-slotamount='7' data-masterspeed='1000'
+        <li tal:case="True" data-transition='flyin' data-slotamount='7' data-masterspeed='1000'
             tal:attributes="data-thumb string:${item/to_object/absolute_url}/@@images/image_1/large">
           <img data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"
                tal:attributes="src string:${item/to_object/absolute_url}/@@images/image_1/large"/>
@@ -47,7 +47,7 @@ portal=api.portal.get()
                tal:content="item/to_object/description">可改為支援html</div> -->
         </li>
 
-        <li tal:case="default" data-transition='random' data-slotamount='7' data-masterspeed='1000'
+        <li tal:case="default" data-transition='flyin' data-slotamount='7' data-masterspeed='1000'
             tal:attributes="data-thumb string:/resource/images/nopicture.png/@@images/image/large">
           <img data-bgposition='left top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"
                tal:attributes="src string:/resource/images/nopicture.png/@@images/image/large"/>
@@ -76,12 +76,12 @@ portal=api.portal.get()
     <aside class="col-xs-12 col-sm-12 col-md-4">
 
      <div class="RHS-banner" style="max-height:231px; height:230px">
-      <div class="add" style="width:50%; float:left">
-        <a href="#" tal:attributes="href python:context.hotProduct[0].to_object.absolute_url()">
+      <div class="" style="width:50%; float:left">
+        <a href="#" tal:attributes="href python:context.hotProduct[0].to_object.absolute_url()" class="rhs-container">
           <tal:img switch="python:bool(context.hotProduct[0].to_object.image_1)">
-            <img tal:case="True" alt="banner-img" style="width:100%"
+            <img tal:case="True" alt="banner-img" style="width:100%" class="rhs-img"
                      tal:attributes="src python:'%s/@@images/image_1/preview' % context.hotProduct[0].to_object.absolute_url()">
-            <img tal:case="default" alt="banner-img" style="width:100%"
+            <img tal:case="default" alt="banner-img" style="width:100%" class="rhs-img"
                      tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview">
           </tal:img>
         </a>
@@ -112,12 +112,12 @@ portal=api.portal.get()
 
      <!-- 首頁 hero 右側-->
      <div class="RHS-banner" style="max-height:231px; height:230px">
-      <div class="add" style="width:50%; float:right">
-        <a href="#" tal:attributes="href python:context.hotProduct[1].to_object.absolute_url()">
+      <div class="" style="width:50%; float:right">
+        <a href="#" tal:attributes="href python:context.hotProduct[1].to_object.absolute_url()" class="rhs-container">
           <tal:img switch="python:bool(context.hotProduct[0].to_object.image_1)">
-            <img tal:case="True" alt="banner-img" src="images/RHS-men-banner.png" style="width:100%"
+            <img tal:case="True" alt="banner-img" src="images/RHS-men-banner.png" style="width:100%" class="rhs-img"
                      tal:attributes="src python:'%s/@@images/image_1/preview' % context.hotProduct[1].to_object.absolute_url()">
-            <img tal:case="default" alt="banner-img" src="images/RHS-men-banner.png" style="width:100%"
+            <img tal:case="default" alt="banner-img" src="images/RHS-men-banner.png" style="width:100%" class="rhs-img"
                      tal:attributes="src string:/resource/images/nopicture.png/@@images/image/preview">
           </tal:img>
         </a>

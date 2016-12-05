@@ -151,6 +151,153 @@ portal=api.portal.get()
  <!-- end Slider -->
 
 
+
+  <!-- 熱門話題 -->
+  <section class="recommend container">
+    <div class="recommend-product-slider small-pr-slider"
+         tal:define="brain python:api.content.find(context=portal['healthy'],
+                                  review_state='published',
+                                  Type='Post', sort_on='created', sort_order='reverse')[0:3]">
+        <div class="new_title center">
+          <h2>熱門話題</h2>
+        </div>
+
+        <div class="col-lg-4 col-xs-12 col-sm-4" tal:repeat="item brain">
+                <article class="blog_entry clearfix" style="visibility: visible;">
+                  <header class="blog_entry-header clearfix">
+                    <div class="blog_entry-header-inner">
+                      <h2 class="blog_entry-title">
+                      <a rel="bookmark"
+                         tal:attributes="href item/getURL; title item/Title" tal:content="item/Title">Title</a> </h2>
+                    </div>
+                    <!--blog_entry-header-inner--> 
+                  </header>
+                  <div class="entry-content">
+                    <div class="featured-thumb">
+                        <a tal:attributes="href item/getURL; title item/Title" class="img-container">
+                            <img class="blog-thumb img-src"
+                                 tal:attributes="src string:${item/getURL}/@@images/image/preview; alt item/Title">
+                        </a>
+                    </div>
+                    <div class="entry-content">
+                      <p>
+                        <span tal:replace="python:item.getObject().shortText" />
+ <a class="blog-btn pull-right" tal:attributes="href item/getURL">閱讀全文</a>
+                      </p>
+                    </div>
+                  </div>
+                </article>
+      </div>
+
+
+    </div>
+  </section>
+
+
+
+
+
+
+  <!-- recommend slider (嚴選商品) -->
+  <section class="recommend container">
+    <div class="recommend-product-slider small-pr-slider wow_ bounceInUp">
+      <div class="slider-items-products">
+        <div class="new_title center">
+          <h2 i18n:translate="">recommend</h2>
+        </div>
+        <div id="recommend-slider" class="product-flexslider hidden-buttons">
+          <div class="slider-items slider-width-col3"> 
+<tal:getItems define="hot context/hotProduct; 
+                      new context/newProduct;
+                      items python:hot+new;
+                      tmp python:modules['random'].shuffle(items)">
+            <!-- Item -->
+<tal:item tal:repeat="item items">
+            <div class="item" tal:condition="item/to_object/@@can_see_with_date_range">
+              <div class="col-item">
+                <div class="new-label new-top-right" tal:condition="python:item in context.newProduct">New</div>
+                <div class="sale-label sale-top-right" tal:condition="python:item in context.hotProduct">Hot</div>
+                <div class="product-image-area">
+                  <a class="product-image" tal:attributes="href item/to_object/absolute_url; title item/to_object/title">
+                    <tal:img switch="python:bool(item.to_object.image_1)">
+                      <img tal:case="True" tal:attributes="src string:${item/to_object/absolute_url}/@@images/image_2/mini; alt item/to_object/title" class="img-responsive"/>
+                      <img tal:case="default" tal:attributes="src string:/resource/images/nopicture.png/@@images/image/mini; alt item/to_object/title" class="img-responsive"/>
+                    </tal:img>
+                  </a>
+                </div>
+                <div class="actions-links"><span class="add-to-links">
+                  <tal:img switch="python:bool(item.to_object.image_1)">
+                    <a tal:case="True" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                         tal:attributes="href string:${item/to_object/absolute_url}/@@images/image_1/colorbox.png">
+                      <span i18n:translate="">Detail</span>
+                    </a>
+                    <a tal:case="default" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
+                         tal:attributes="href string:/resource/images/nopicture.png/@@images/image/colorbox.png">
+                      <span i18n:translate="">Detail</span>
+                    </a>
+                  </tal:img>
+                  <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
+                     tal:attributes="data-uid item/to_object/UID; data-update string:add" ><span i18n:translate="">Add to Cart</span></a>
+                  <a title="Search Related" class="link-compare" i18n:attributes="title"
+                     tal:define="key_string python:'key:list=%s' % item.to_object.brand"
+                     tal:attributes="href string:/search_result?${key_string}"><span i18n:translate="">Search Related</span></a></span>
+                </div>
+                <div class="info">
+                  <div class="info-inner">
+                    <div class="item-title">
+                      <a tal:attributes="title item/to_object/title; href item/to_object/absolute_url" tal:content="item/to_object/title"> Sample Product </a>
+                    </div>
+                    <!--item-title-->
+                    <div class="item-content">
+
+                      <div class="price-box" tal:condition="python:item.to_object.salePrice == item.to_object.listPrice"> <span class="regular-price"> 
+                        <span class="price"><span i18n:translate="">Sale price:</span><span tal:replace="item/to_object/listPrice" /></span> </span>
+                      </div>
+
+                      <tal:saleprice condition="python:item.to_object.salePrice < item.to_object.listPrice">
+                          <span style="Color:red; text-decoration:line-through;">
+                            <span tal:content="python:'原價:%s ' % context.hotProduct[0].to_object.listPrice"
+                                  style="color:grey;"/>
+                          </span><br/>
+                          <div class="price-box"> <span class="regular-price">
+                            <span class="price"><span i18n:translate="">Sale price:</span><span tal:replace="item/to_object/salePrice" /></span> </span>
+                          </div>
+                      </tal:saleprice>
+
+                    </div>
+                    <!--item-content--> 
+                  </div>
+                  <!--info-inner-->
+                  <div class="actions">
+                    <button type="button" title="Add to Cart" class="button btn-cart cart_add" i18n:attributes="title"
+                            tal:attributes="data-uid item/to_object/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></button>
+                  </div>
+                  <!--actions-->
+                  <div class="clearfix"> </div>
+                </div>
+              </div>
+            </div>
+</tal:item>
+            <!-- End Item --> 
+</tal:getItems>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Recommend slider --> 
+
+
+
+
+
+
+
+
+
+
+
+
   <!-- offer banner section(愛分享/健康資訊讚) -->
   <section class="main-container col1-layout home-content-container">
     <div class="container">
@@ -230,94 +377,6 @@ portal=api.portal.get()
   <!-- end offer banner section --> 
 
 
-  <!-- recommend slider (嚴選商品) -->
-  <section class="recommend container">
-    <div class="recommend-product-slider small-pr-slider wow_ bounceInUp">
-      <div class="slider-items-products">
-        <div class="new_title center">
-          <h2 i18n:translate="">recommend</h2>
-        </div>
-        <div id="recommend-slider" class="product-flexslider hidden-buttons">
-          <div class="slider-items slider-width-col3"> 
-<tal:getItems define="hot context/hotProduct; 
-                      new context/newProduct;
-                      items python:hot+new;
-                      tmp python:modules['random'].shuffle(items)">
-            <!-- Item -->
-<tal:item tal:repeat="item items">
-            <div class="item" tal:condition="item/to_object/@@can_see_with_date_range">
-              <div class="col-item">
-                <div class="new-label new-top-right" tal:condition="python:item in context.newProduct">New</div>
-                <div class="sale-label sale-top-right" tal:condition="python:item in context.hotProduct">Hot</div>
-                <div class="product-image-area">
-                  <a class="product-image" tal:attributes="href item/to_object/absolute_url; title item/to_object/title">
-                    <tal:img switch="python:bool(item.to_object.image_1)">
-                      <img tal:case="True" tal:attributes="src string:${item/to_object/absolute_url}/@@images/image_1/mini; alt item/to_object/title" class="img-responsive"/>
-                      <img tal:case="default" tal:attributes="src string:/resource/images/nopicture.png/@@images/image/mini; alt item/to_object/title" class="img-responsive"/>
-                    </tal:img>
-                  </a>
-                </div>
-                <div class="actions-links"><span class="add-to-links">
-                  <tal:img switch="python:bool(item.to_object.image_1)">
-                    <a tal:case="True" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
-                         tal:attributes="href string:${item/to_object/absolute_url}/@@images/image_1/colorbox.png">
-                      <span i18n:translate="">Detail</span>
-                    </a>
-                    <a tal:case="default" title="Detail" class="magik-btn-quickview group1" i18n:attributes="title"
-                         tal:attributes="href string:/resource/images/nopicture.png/@@images/image/colorbox.png">
-                      <span i18n:translate="">Detail</span>
-                    </a>
-                  </tal:img>
-                  <a title="Add to Cart" class="link-wishlist cart_add" i18n:attributes="title"
-                     tal:attributes="data-uid item/to_object/UID; data-update string:add" ><span i18n:translate="">Add to Cart</span></a>
-                  <a title="Search Related" class="link-compare" i18n:attributes="title"
-                     tal:define="key_string python:'key:list=%s' % item.to_object.brand"
-                     tal:attributes="href string:/search_result?${key_string}"><span i18n:translate="">Search Related</span></a></span>
-                </div>
-                <div class="info">
-                  <div class="info-inner">
-                    <div class="item-title">
-                      <a tal:attributes="title item/to_object/title; href item/to_object/absolute_url" tal:content="item/to_object/title"> Sample Product </a>
-                    </div>
-                    <!--item-title-->
-                    <div class="item-content">
-
-                      <div class="price-box" tal:condition="python:item.to_object.salePrice == item.to_object.listPrice"> <span class="regular-price"> 
-                        <span class="price"><span i18n:translate="">Sale price:</span><span tal:replace="item/to_object/listPrice" /></span> </span>
-                      </div>
-
-                      <tal:saleprice condition="python:item.to_object.salePrice < item.to_object.listPrice">
-                          <span style="Color:red; text-decoration:line-through;">
-                            <span tal:content="python:'原價:%s ' % context.hotProduct[0].to_object.listPrice"
-                                  style="color:grey;"/>
-                          </span><br/>
-                          <div class="price-box"> <span class="regular-price">
-                            <span class="price"><span i18n:translate="">Sale price:</span><span tal:replace="item/to_object/salePrice" /></span> </span>
-                          </div>
-                      </tal:saleprice>
-
-                    </div>
-                    <!--item-content--> 
-                  </div>
-                  <!--info-inner-->
-                  <div class="actions">
-                    <button type="button" title="Add to Cart" class="button btn-cart cart_add" i18n:attributes="title"
-                            tal:attributes="data-uid item/to_object/UID; data-update string:add"><span i18n:translate="">Add to Cart</span></button>
-                  </div>
-                  <!--actions-->
-                  <div class="clearfix"> </div>
-                </div>
-              </div>
-            </div>
-</tal:item>
-            <!-- End Item --> 
-</tal:getItems>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- End Recommend slider --> 
 
 
 </metal:content-core>

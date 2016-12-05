@@ -14,6 +14,7 @@
 
 <?python
 from plone import api
+import random
 portal = api.portal.get()
 
 if api.user.is_anonymous():
@@ -21,6 +22,9 @@ if api.user.is_anonymous():
 else:
     roles = api.user.get_roles()
     manageBrand = 'Manager' in roles
+
+relatedItems = list(api.content.find(Type='Product'))
+random.shuffle(relatedItems)
 ?>
 
 <!--
@@ -40,7 +44,7 @@ else:
     <div class="main container">
       <div class="row">
 
-        <div class="col-main col-sm-9 wow bounceInUp animated">
+        <div class="col-main col-sm-9">
           <div class="page-title">
             <div class="right">
                 <metal:macro use-macro="context/@@i8d_macro/macros/addthis" />
@@ -77,21 +81,21 @@ else:
         </div>
 
 
-        <div class="col-right sidebar col-sm-3 wow bounceInUp animated">
+        <div class="col-right sidebar col-sm-3">
           <div role="complementary" class="widget_wrapper13" id="secondary">
-
-
           <div class="side-nav-categories">
-<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-<!-- i8d_rwd -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9621066722313042"
-     data-ad-slot="4162673477"
-     data-ad-format="auto"></ins>
-<script>
-(adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+
+                  <div class="product-sibebar-banner">
+                    <h4 class="sidebar-title">精選推薦</h4>
+                    <div class="text-banner"  tal:repeat="item python:relatedItems[0:5]">
+                      <a tal:attributes="href item/getURL; title item/Title">
+                        <img tal:attributes="src string:${item/getURL}/@@images/image_1/mini; alt item/Title" />
+                      </a>
+                    </div>
+                  </div>
+
+
+
           </div>
 
 

@@ -72,7 +72,7 @@ random.shuffle(relatedItems)
                           class="entry-date">Jul 10, 2014</time>
                   </footer>
                 </article>
-                <div class="right">
+                <div class="right" style="margin-bottom:30px">
                     <metal:macro use-macro="context/@@i8d_macro/macros/addthis" />
                 </div>
               </div>
@@ -88,8 +88,8 @@ random.shuffle(relatedItems)
                   <div class="product-sibebar-banner">
                     <h4 class="sidebar-title">精選推薦</h4>
                     <div class="text-banner"  tal:repeat="item python:relatedItems[0:5]">
-                      <a tal:attributes="href item/getURL; title item/Title">
-                        <img tal:attributes="src string:${item/getURL}/@@images/image_1/mini; alt item/Title" />
+                      <a tal:attributes="href item/getURL; title item/Title" class="img-container">
+                        <img tal:attributes="src string:${item/getURL}/@@images/image_1/mini; alt item/Title" class="img-src"/>
                       </a>
                     </div>
                   </div>

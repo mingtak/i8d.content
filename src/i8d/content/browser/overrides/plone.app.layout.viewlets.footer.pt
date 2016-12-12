@@ -1,28 +1,6 @@
   <footer class="footer bounceInUp_ animated_ no_animated"
           i18n:domain="i8d.content">
-    <div class="brand-logo ">
-      <div class="container">
-        <div class="new_title center">
-          <h2 i18n:translate="">Our Brand</h2>
-        </div>
-        <div class="slider-items-products">
-          <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
-            <div class="slider-items slider-width-col6"
-                 tal:define="portal context/@@portal_get;
-                             brandFolder python:portal['Brand'];
-                             items brandFolder/getChildNodes">
-              <!-- Item -->
-              <div class="item" tal:repeat="item items">
-                <a tal:attributes="href item/absolute_url; title item/title">
-                  <img tal:attributes="src string:${item/absolute_url}/@@images/image/thumb; alt item/title">
-                </a>
-              </div>
-              <!-- End Item --> 
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
     <div class="footer-top">
       <div class="container">
         <div class="row">

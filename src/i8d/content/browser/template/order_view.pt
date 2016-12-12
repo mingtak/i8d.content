@@ -17,7 +17,7 @@
 <section class="main-container col1-layout">
   <div class="main container">
     <div class="col-main">
-      <div class="cart wow bounceInUp animated">
+      <div class="cart">
         <div class="page-title">
           <h2><span i18n:translate="">Merchant Trade No</span>: <span tal:replace="python:context.title" /></h2>
         </div>
@@ -75,7 +75,7 @@
 
 
 
-      <div class="cart wow bounceInUp animated">
+      <div class="cart">
         <div class="page-title">
           <h2><span i18n:translate="">Logistics info</span></h2>
 

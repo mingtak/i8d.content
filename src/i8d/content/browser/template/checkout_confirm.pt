@@ -18,7 +18,7 @@
         <div class="page-title">
           <h2>
             <a href="/resource/help_for_anon/@@without_pt" tal:condition="context/@@user_is_anonymous" class="iframe">
-              <img src="/resource/images/helper_3.png/@@images/image/help" class="wow bounceInLeft" data-wow-duration="1s"/>
+              <img src="/resource/images/helper_3.png/@@images/image/help" class="" data-wow-duration="1s"/>
             </a>
             <span style="vertical-align:bottom" i18n:translate="">Confirm Cart / shipping info</span>
           </h2>

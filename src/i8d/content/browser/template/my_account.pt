@@ -21,7 +21,7 @@ from plone import api
 <div class="main-container col2-right-layout">
     <div class="main container">
       <div class="row">
-        <section class="col-main col-sm-9 wow_ bounceInUp_ animated_">
+        <section class="col-main col-sm-9">
           <div class="my-account">
             <div class="page-title">
               <h2 i18n:translate="">My Account</h2>
@@ -154,7 +154,7 @@ from plone import api
 
 
 
-        <aside class="col-right sidebar col-sm-3 wow_ bounceInUp_ animated_">
+        <aside class="col-right sidebar col-sm-3">
           <div class="block block-account">
             <div class="block-title" i18n:translate="">My Account</div>
             <div class="block-content">

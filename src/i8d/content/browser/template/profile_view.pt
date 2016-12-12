@@ -40,7 +40,7 @@ else:
       <div class="row">
 
 
-        <div class="col-right sidebar col-sm-3 wow bounceInUp animated">
+        <div class="col-right sidebar col-sm-3">
           <div role="complementary" class="widget_wrapper13" id="secondary">
             <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
               <h3 class="widget-title" tal:content="context/title">Image</h3>
@@ -55,7 +55,7 @@ else:
 
 
 
-        <div class="col-main col-sm-6 wow bounceInUp animated">
+        <div class="col-main col-sm-6">
           <div class="page-title">
             <h2>Member Profile</h2>
             <h2>Expert Profile</h2>
@@ -79,7 +79,7 @@ else:
           </div>
         </div>
 
-        <div class="col-right sidebar col-sm-3 wow bounceInUp animated">
+        <div class="col-right sidebar col-sm-3">
           <div role="complementary" class="widget_wrapper13" id="secondary">
             <div class="popular-posts widget widget__sidebar" id="recent-posts-4">
               <h3 class="widget-title">這裏放廣告</h3>

@@ -9,6 +9,7 @@
 
 <?python
 from plone import api
+portal = api.portal.get()
 ?>
 
 <tal:def define="itemInCart python:getattr(view, 'itemInCart', request.cookies.get('itemInCart', ''));
@@ -88,12 +89,14 @@ $(document).on('click', '.cart_update', function(event){
 <script type="text/javascript">
 $(document).on('click', '.cart_add', function(event){
     $("div.top-cart-contain").load("/cart_add", {uid:this.getAttribute("data-uid")});
+    $("#prodview-cart")[0].innerHTML = "<a href='${portal/absolute_url}/@@checkout_confirm' style='color:#fff'>快速結帳</a>";
 });
 </script>
 
 <script type="text/javascript">
 $(document).on('click', '.cart_del', function(event){
     $("div.top-cart-contain").load("/cart_del", {uid:this.getAttribute("data-uid")});
+    $("#prodview-cart")[0].innerHTML = "加入購物車";
 });
 </script>
 

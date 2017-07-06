@@ -211,6 +211,11 @@ class IProduct(Interface):
         required=True,
     )
 
+    sharingText = schema.Text(
+        title=_(u"Sharing Text"),
+        required=False,
+    )
+
 
 class ICover(Interface):
     """ 首頁 """

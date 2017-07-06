@@ -100,3 +100,10 @@ def brand_indexer(obj):
     string = safe_unicode(obj.brand).encode('utf-8')
     return string
 
+
+@indexer(IProduct)
+def hasSharingText_indexer(obj):
+    if obj.sharingText:
+        return True
+    else:
+        return False

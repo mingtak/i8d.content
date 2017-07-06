@@ -190,7 +190,7 @@
 </section>
 
 
-<script src="/++theme++i8d.theme/js/dk-tw-citySelector.min.js"></script>
+<script src="/++theme++i8d.theme/js/dk-tw-citySelector.js"></script>
 <script>
   $(function() {
   $('form').dk_tw_citySelector('.city', '.district', '.zipcode');

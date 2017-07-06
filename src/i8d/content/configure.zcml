@@ -68,8 +68,8 @@
   <adapter name="productUIDs" factory=".catalog.productUIDs_indexer"/>
   <adapter name="hasImage1" factory=".catalog.hasImage1_indexer"/>
   <adapter name="url" factory=".catalog.url_indexer"/>
+  <adapter name="hasSharingText" factory=".catalog.hasSharingText_indexer"/>
 <!--  <adapter name="" factory=".catalog._indexer"/>
-  <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>
   <adapter name="" factory=".catalog._indexer"/>

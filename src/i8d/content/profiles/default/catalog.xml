@@ -90,4 +90,8 @@
 
   <column value="productUrl"/>
 
+  <index name="hasSharingText" meta_type="BooleanIndex">
+    <indexed_attr value="hasSharingText" />
+  </index>
+
 </object>
